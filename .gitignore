@@ -348,3 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+/VisualStudioProject/Foxy_Way_to_hero/Foxy_Way_to_hero/Foxy_Way_to_hero.vcxproj
