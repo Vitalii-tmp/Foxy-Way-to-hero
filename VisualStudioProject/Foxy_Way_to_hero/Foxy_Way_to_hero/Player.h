@@ -22,7 +22,7 @@ namespace godot {
 
 	// Gameplay variables
 	public:
-		const int speed = 300;
+		const int speed = 100;
 
 	private:
 		Vector2 motion;
