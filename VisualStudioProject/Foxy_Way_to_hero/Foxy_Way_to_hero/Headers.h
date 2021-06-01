@@ -7,3 +7,4 @@
 //My headers
 #include "Player.h"
 #include "PlayerSingleton.h"
+#include "SplashScreen.h"
