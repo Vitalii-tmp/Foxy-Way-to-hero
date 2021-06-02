@@ -16,6 +16,6 @@ Player::~Player() {}
 
 void Player::_process(float delta) 
 {	
-	PlayerSingleton::getSingleton()->_process(delta,this);
+	PlayerSingleton::get_singleton()->_process(delta,this);
 }
 

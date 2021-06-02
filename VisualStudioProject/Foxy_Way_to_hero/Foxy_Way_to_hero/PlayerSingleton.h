@@ -20,19 +20,23 @@ namespace godot
 
 		// Gameplay variables
 	public:
-		const int speed = 100;
+		
 	private:
+		Vector2 _motion;
 
-		Vector2 motion;
+		bool _is_alive;
 
-		bool bDead;
+		int _speed;
+		
+		float _hp;
+		float _damage;
 
 		// Gameplay methods
 	public:
 
-		static PlayerSingleton* getSingleton();
+		static PlayerSingleton* get_singleton();
 
-		void UpdateMotionFromInput();
+		void update_motion_from_input();
 
 	private:
 

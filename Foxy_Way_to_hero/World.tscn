@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -485,16 +485,21 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [sub_resource type="CircleShape2D" id=50]
 radius = 14.191
 
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 13.4066, 12.2942 )
+
 [node name="World" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 205.503, 24.0614 )
+position = Vector2( 248.389, 2.11299 )
 scale = Vector2( 2.8618, 3.83351 )
+z_index = -2
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 752, 432 )
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
+z_index = -1
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -587,4 +592,15 @@ shape = SubResource( 50 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
 scale = Vector2( 0.5, 0.5 )
+z_index = -1
 texture = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2( -0.0265045, -13.0535 )
+shape = SubResource( 51 )

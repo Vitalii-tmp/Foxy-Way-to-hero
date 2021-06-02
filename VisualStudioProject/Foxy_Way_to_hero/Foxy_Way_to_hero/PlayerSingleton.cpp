@@ -6,9 +6,11 @@ PlayerSingleton* PlayerSingleton::_instance = nullptr;
 
 PlayerSingleton::PlayerSingleton() 
 {
-	motion = Vector2(0, 0);
+	_speed = 100;
 
-	bDead = false;
+	_motion = Vector2(0, 0);
+
+	_is_alive = true;
 }
 
 
@@ -21,11 +23,11 @@ void PlayerSingleton::_init(){}
 
 void PlayerSingleton::_process(float delta, KinematicBody2D* Player)
 {
-	UpdateMotionFromInput();
-	Player->move_and_slide(motion);
+	update_motion_from_input();
+	Player->move_and_slide(_motion);
 }
 
-PlayerSingleton* PlayerSingleton::getSingleton()
+PlayerSingleton* PlayerSingleton::get_singleton()
 {
 	if( _instance==nullptr)
 	{
@@ -36,22 +38,23 @@ PlayerSingleton* PlayerSingleton::getSingleton()
 	
 }
 
-void PlayerSingleton::UpdateMotionFromInput()
+void PlayerSingleton::update_motion_from_input()
 {
-	motion = Vector2(0, 0);
+	_motion = Vector2(0, 0);
 
-	if (!bDead) 
+	if (_is_alive) 
 	{
 		Input* i = Input::get_singleton();
 
 		if (i->is_action_pressed("ui_up"))
-			motion.y -= speed;
+			_motion.y -= _speed;
 		if (i->is_action_pressed("ui_down"))
-			motion.y += speed;
+			_motion.y += _speed;
 		if (i->is_action_pressed("ui_left"))
-			motion.x -= speed;
+			_motion.x -= _speed;
 		if (i->is_action_pressed("ui_right"))
-			motion.x += speed;
+			_motion.x += _speed;
+			
 	}
 	
 }
