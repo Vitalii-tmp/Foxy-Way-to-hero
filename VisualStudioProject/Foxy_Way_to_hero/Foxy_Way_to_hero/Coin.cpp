@@ -14,7 +14,6 @@ void godot::Coin::On_body_entered(Node* body)
 {
 	if(body->get_name() == "Player")
 	{
-		/*body->call("set_coins", 50);*/
 		PlayerSingleton::get_singleton()->set_coins(50);
 		queue_free();
 	}

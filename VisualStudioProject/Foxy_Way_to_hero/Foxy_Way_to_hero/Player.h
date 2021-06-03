@@ -15,13 +15,9 @@ namespace godot {
 		static void _register_methods();
 		void _init();
 		void _process(float delta);
-		void _ready();
 
 		Player();
 		~Player();
 
-		//int coins = 0;
-
-		//void set_coins(int coins);
 	};
 }
