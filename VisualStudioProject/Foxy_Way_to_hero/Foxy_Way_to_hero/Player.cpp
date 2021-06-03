@@ -9,6 +9,7 @@ enum state
 	ATTACK
 };
 
+
 void Player::_register_methods()
 {
 	register_method((char*)"_process", &Player::_process);
@@ -17,7 +18,9 @@ void Player::_register_methods()
 	register_method((char*)"_attack_animation_is_finished", &Player::_attack_animation_is_finished);
 }
 
+
 void Player::_init() {}
+
 
 Player::Player()
 {
@@ -29,7 +32,6 @@ Player::Player()
 	_is_alive = true;
 }
 
-Player::~Player() {}
 
 void Player::_process(float delta)
 {
@@ -38,6 +40,8 @@ void Player::_process(float delta)
 
 	if (i->is_action_just_pressed("attack"))
 		_current_state = ATTACK;
+
+	
 
 
 	switch (_current_state)
@@ -53,17 +57,8 @@ void Player::_process(float delta)
 
 	}
 
-
-
-
-
-
-
-
-
-
-
 }
+
 
 void godot::Player::_ready()
 {
@@ -71,11 +66,8 @@ void godot::Player::_ready()
 	_animation_tree->set_active(true);
 
 	_animation_state = _animation_tree->get("parameters/playback");
-	/*_animation_tree->set("parameters/Idle/blend_position", _input_vector);
-	_animation_tree->set("parameters/Run/blend_position", _input_vector);
-	_animation_tree->set("parameters/Attack/blend_position", _input_vector);*/
-
 }
+
 
 void Player::_move_state()
 {
@@ -115,14 +107,18 @@ void Player::_move_state()
 	move_and_slide(_motion);
 }
 
+
 void Player::_attack_state()
 {
 	_animation_tree->set("parameters/Attack/blend_position", _input_vector);
 	_animation_state->travel("Attack");
 }
 
+
 void godot::Player::_attack_animation_is_finished()
 {
 	_current_state = MOVE;
 }
 
+
+Player::~Player() {}

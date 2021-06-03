@@ -13,10 +13,10 @@ namespace godot {
 	private:
 		GODOT_CLASS(Player, KinematicBody2D)
 
-		
-		
 
 	public:
+		Player();
+		~Player();
 
 		static void _register_methods();
 		void _init();
@@ -25,10 +25,10 @@ namespace godot {
 		
 		void _move_state();
 		void _attack_state();
+		
 		void _attack_animation_is_finished();
 
-		Player();
-		~Player();
+		
 
 
 		// Gameplay variables
