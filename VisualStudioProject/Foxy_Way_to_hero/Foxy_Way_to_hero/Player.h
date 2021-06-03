@@ -24,6 +24,8 @@ namespace godot {
 	public:
 		const int speed = 100;
 
+		int coins = 0;
+
 	private:
 		Vector2 motion;
 

@@ -4,6 +4,8 @@ using namespace godot;
 
 void Player::_register_methods() {
 	register_method((char*)"_process", &Player::_process);
+
+	register_property("coins", &Player::coins, 0);
 }
 
 void Player::_init() {}
