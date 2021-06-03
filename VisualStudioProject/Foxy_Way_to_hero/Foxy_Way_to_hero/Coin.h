@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Player.h"
+#include "PlayerSingleton.h"
 
 #include <Godot.hpp>
 #include <Area2D.hpp>

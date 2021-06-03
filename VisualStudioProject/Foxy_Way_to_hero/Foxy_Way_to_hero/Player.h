@@ -15,26 +15,13 @@ namespace godot {
 		static void _register_methods();
 		void _init();
 		void _process(float delta);
+		void _ready();
 
 		Player();
 		~Player();
 
-	// Gameplay variables
-	public:
-		const int speed = 100;
+		//int coins = 0;
 
-		int coins = 0;
-
-	private:
-		Vector2 motion;
-
-
-
-	// Gameplay methods
-	public:
-		void UpdateMotionFromInput();
-	
-	private:
-
+		//void set_coins(int coins);
 	};
 }

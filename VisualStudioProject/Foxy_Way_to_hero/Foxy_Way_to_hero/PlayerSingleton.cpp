@@ -1,3 +1,5 @@
+#include <string>
+
 #include "Headers.h"
 
 using namespace godot;
@@ -11,6 +13,8 @@ PlayerSingleton::PlayerSingleton()
 	_motion = Vector2(0, 0);
 
 	_is_alive = true;
+
+	_coins = 0;
 }
 
 
@@ -58,3 +62,10 @@ void PlayerSingleton::update_motion_from_input()
 	}
 	
 }
+
+void PlayerSingleton::set_coins(int coin)
+{
+	this->_coins += coin;
+	printf(std::to_string(this->_coins).c_str());
+}
+

@@ -27,9 +27,11 @@ namespace godot
 		bool _is_alive;
 
 		int _speed;
+		int _coins;
 		
 		float _hp;
 		float _damage;
+
 
 		// Gameplay methods
 	public:
@@ -38,6 +40,7 @@ namespace godot
 
 		void update_motion_from_input();
 
+		void set_coins(int coin);
 	private:
 
 	};
