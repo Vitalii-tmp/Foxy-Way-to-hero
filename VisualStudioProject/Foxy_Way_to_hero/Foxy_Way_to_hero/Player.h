@@ -1,10 +1,9 @@
 #pragma once
 
-#include <Godot.hpp>
-#include <KinematicBody2D.hpp>
-#include <Input.hpp>
+#include "Headers.h"
 
 namespace godot {
+	
 	class Player : public KinematicBody2D 
 	{
 	
@@ -12,13 +11,13 @@ namespace godot {
 	private:
 		GODOT_CLASS(Player, KinematicBody2D)
 	public:
+		
 		static void _register_methods();
 		void _init();
 		void _process(float delta);
 
 		Player();
 		~Player();
-
 
 	// Gameplay variables
 	public:
@@ -36,9 +35,6 @@ namespace godot {
 		void UpdateMotionFromInput();
 	
 	private:
-
-
-
 
 	};
 }
