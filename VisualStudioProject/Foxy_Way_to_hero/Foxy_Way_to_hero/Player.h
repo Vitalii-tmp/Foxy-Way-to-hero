@@ -25,10 +25,11 @@ namespace godot {
 		
 		void _move_state();
 		void _attack_state();
+		void _set_coins(int coins);
 		
 		void _attack_animation_is_finished();
 
-lay variables
+	// Gameplay variables
 	public:
 
 	private:
@@ -41,6 +42,7 @@ lay variables
 		bool _is_alive;
 
 		int _speed;
+		int _coins;
 
 		float _hp;
 		float _damage;

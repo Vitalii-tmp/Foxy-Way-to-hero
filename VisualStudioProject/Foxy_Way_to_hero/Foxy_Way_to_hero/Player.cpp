@@ -18,6 +18,7 @@ void Player::_register_methods()
 	register_method((char*)"_init", &Player::_init);
 	register_method((char*)"_ready", &Player::_ready);
 	register_method((char*)"_attack_animation_is_finished", &Player::_attack_animation_is_finished);
+	register_method("_set_coins", &Player::_set_coins);
 }
 
 
@@ -27,6 +28,7 @@ void Player::_init() {}
 Player::Player()
 {
 	_speed = 100;
+	_coins = 0;
 
 	_motion = Vector2(0, 0);
 	_input_vector = Vector2(0, 0);
@@ -121,5 +123,10 @@ void godot::Player::_attack_animation_is_finished()
 	_current_state = MOVE;
 }
 
+void Player::_set_coins(int coins)
+{
+	this->_coins += coins;
+	printf(std::to_string(this->_coins).c_str());
+}
 
 Player::~Player() {}
