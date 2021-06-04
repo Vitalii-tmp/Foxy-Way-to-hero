@@ -1,12 +1,12 @@
-[gd_scene load_steps=60 format=2]
+
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/GrassBackground.png" type="Texture" id=3]
 [ext_resource path="res://World/DirtTileset.png" type="Texture" id=4]
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=5]
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Player.gdns" type="Script" id=7]
 [ext_resource path="res://Coin.gdns" type="Script" id=8]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
 
@@ -484,14 +484,12 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 0/z_index = 0
 
-[sub_resource type="CircleShape2D" id=50]
-radius = 14.191
-
 [node name="World" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 205.503, 24.0614 )
-scale = Vector2( 2.8618, 3.83351 )
+position = Vector2( 170.915, 41.734 )
+scale = Vector2( 2.31336, 3.13418 )
+z_index = -2
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 752, 432 )
@@ -578,14 +576,8 @@ position = Vector2( 202.747, 208.88 )
 [node name="Tree3" parent="YSort/Trees" instance=ExtResource( 9 )]
 position = Vector2( -128.081, 332.473 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 186.887, 80.7012 )
-script = ExtResource( 7 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 50 )
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 173.429, 62.5543 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
 scale = Vector2( 0.5, 0.5 )
@@ -594,3 +586,4 @@ texture = ExtResource( 2 )
 [node name="Area2D" parent="." instance=ExtResource( 6 )]
 position = Vector2( 130.929, 58.2713 )
 script = ExtResource( 8 )
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
