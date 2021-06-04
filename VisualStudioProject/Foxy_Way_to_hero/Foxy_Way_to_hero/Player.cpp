@@ -27,9 +27,10 @@ void godot::Player::_init() {}
 Player::Player()
 {
 	_speed = 100;
+	_damage = 25;
 
 	_motion = Vector2(0, 0);
-	_input_vector = Vector2(0, 0);
+	_input_vector = Vector2(0, 1);
 
 	_is_alive = true;
 }
@@ -145,6 +146,16 @@ void godot::Player::_change_state_depend_on_behavior()
 		_attack_state();
 		break;
 	}
+}
+
+Vector2 godot::Player::_get_input_vector()
+{
+	return _input_vector;
+}
+
+float godot::Player::_get_damage()
+{
+	return _damage;
 }
 
 

@@ -31,7 +31,8 @@ namespace godot {
 		void _roll_animation_is_finished();
 		void _change_state_depend_on_behavior();
 
-
+		Vector2 _get_input_vector();
+		float _get_damage();
 		// Gameplay variables
 	public:
 		
