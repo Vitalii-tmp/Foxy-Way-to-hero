@@ -28,8 +28,8 @@ namespace godot {
 		void _roll_state();
 
 		void _attack_animation_is_finished();
-
-		
+		void _roll_animation_is_finished();
+		void _change_state_depend_on_behavior();
 
 
 		// Gameplay variables

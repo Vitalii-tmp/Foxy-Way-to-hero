@@ -10,16 +10,18 @@ enum state
 };
 
 
-void Player::_register_methods()
+void godot::Player::_register_methods()
 {
 	register_method((char*)"_process", &Player::_process);
 	register_method((char*)"_init", &Player::_init);
 	register_method((char*)"_ready", &Player::_ready);
 	register_method((char*)"_attack_animation_is_finished", &Player::_attack_animation_is_finished);
+	register_method((char*)"_roll_animation_is_finished", &Player::_roll_animation_is_finished);
+	
 }
 
 
-void Player::_init() {}
+void godot::Player::_init() {}
 
 
 Player::Player()
@@ -43,40 +45,22 @@ void godot::Player::_ready()
 	
 }
 
-void Player::_process(float delta)
+void godot::Player::_process(float delta)
 {
-
-	Input* i = Input::get_singleton();
-
-	if (i->is_action_just_pressed("attack"))
-		_current_state = ATTACK;
-
-	
-
-	switch (_current_state)
+	if (_is_alive)
 	{
-	case MOVE:
-		_move_state();
-		break;
-	
-	case ROLL:
-		break;
-	
-	case ATTACK:
-		_attack_state();
-		break;
+		_change_state_depend_on_behavior();
 	}
 
 }
 
 
 
-void Player::_move_state()
+void godot::Player::_move_state()
 {
 	_motion = Vector2(0, 0);
 
-	if (_is_alive)
-	{
+	
 		Input* i = Input::get_singleton();
 
 		if (i->is_action_pressed("ui_up"))
@@ -95,7 +79,7 @@ void Player::_move_state()
 		_motion = _motion.normalized() * _speed;
 
 
-	}
+	
 
 	_animation_tree->set("parameters/Idle/blend_position", _input_vector);
 	_animation_tree->set("parameters/Run/blend_position", _input_vector);
@@ -110,7 +94,7 @@ void Player::_move_state()
 }
 
 
-void Player::_attack_state()
+void godot::Player::_attack_state()
 {
 
 	_animation_tree->set("parameters/Attack/blend_position", _input_vector);
@@ -119,13 +103,48 @@ void Player::_attack_state()
 
 void godot::Player::_roll_state()
 {
-
+	_animation_tree->set("parameters/Roll/blend_position", _input_vector);
+	_animation_state->travel("Roll");
+	_input_vector = _input_vector.normalized() * _speed;
+	move_and_slide(_input_vector*1.4);
 }
 
 // call in animation tree
 void godot::Player::_attack_animation_is_finished()
 {
 	_current_state = MOVE;
+}
+
+void godot::Player::_roll_animation_is_finished()
+{
+	_current_state = MOVE;
+}
+
+void godot::Player::_change_state_depend_on_behavior()
+{
+	Input* i = Input::get_singleton();
+
+	if (i->is_action_just_pressed("attack"))
+		_current_state = ATTACK;
+
+	if (i->is_action_just_pressed("roll"))
+		_current_state = ROLL;
+
+
+	switch (_current_state)
+	{
+	case MOVE:
+		_move_state();
+		break;
+
+	case ROLL:
+		_roll_state();
+		break;
+
+	case ATTACK:
+		_attack_state();
+		break;
+	}
 }
 
 
