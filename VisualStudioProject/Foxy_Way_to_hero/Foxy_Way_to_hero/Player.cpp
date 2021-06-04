@@ -32,6 +32,16 @@ Player::Player()
 	_is_alive = true;
 }
 
+void godot::Player::_ready()
+{
+	_animation_tree = cast_to<AnimationTree>(get_node("AnimationTree"));
+	_animation_tree->set_active(true);
+
+	_animation_state = _animation_tree->get("parameters/playback");
+
+	_hit_area = cast_to<Area2D>(get_node("HitboxPivot/ShortAttackArea"));
+	
+}
 
 void Player::_process(float delta)
 {
@@ -43,30 +53,22 @@ void Player::_process(float delta)
 
 	
 
-
 	switch (_current_state)
 	{
 	case MOVE:
 		_move_state();
 		break;
+	
 	case ROLL:
 		break;
+	
 	case ATTACK:
 		_attack_state();
 		break;
-
 	}
 
 }
 
-
-void godot::Player::_ready()
-{
-	_animation_tree = cast_to<AnimationTree>(get_node("AnimationTree"));
-	_animation_tree->set_active(true);
-
-	_animation_state = _animation_tree->get("parameters/playback");
-}
 
 
 void Player::_move_state()
@@ -110,11 +112,17 @@ void Player::_move_state()
 
 void Player::_attack_state()
 {
+
 	_animation_tree->set("parameters/Attack/blend_position", _input_vector);
 	_animation_state->travel("Attack");
 }
 
+void godot::Player::_roll_state()
+{
 
+}
+
+// call in animation tree
 void godot::Player::_attack_animation_is_finished()
 {
 	_current_state = MOVE;

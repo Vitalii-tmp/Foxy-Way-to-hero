@@ -158,10 +158,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GodotLibrary.cpp" />
+    <ClCompile Include="Grass.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Root.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Grass.h" />
     <ClInclude Include="Headers.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Root.h" />

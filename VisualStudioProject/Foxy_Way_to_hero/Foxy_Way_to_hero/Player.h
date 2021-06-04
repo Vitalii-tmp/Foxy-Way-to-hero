@@ -10,10 +10,10 @@ namespace godot {
 	{
 
 		// Godot structure
-	private:
 		GODOT_CLASS(Player, KinematicBody2D)
 
 
+		// Gameplay methods
 	public:
 		Player();
 		~Player();
@@ -25,7 +25,8 @@ namespace godot {
 		
 		void _move_state();
 		void _attack_state();
-		
+		void _roll_state();
+
 		void _attack_animation_is_finished();
 
 		
@@ -33,13 +34,14 @@ namespace godot {
 
 		// Gameplay variables
 	public:
-
+		
 	private:
 		Vector2 _motion;
 		Vector2 _input_vector;
 		AnimationPlayer* _animation = nullptr;
 		AnimationTree* _animation_tree = nullptr;
 		AnimationNodeStateMachinePlayback* _animation_state = nullptr;
+		Area2D* _hit_area = nullptr;
 
 		bool _is_alive;
 
