@@ -2,7 +2,12 @@
 
 #include "Headers.h"
 
-
+enum state
+{
+	MOVE,
+	ROLL,
+	ATTACK
+};
 
 namespace godot {
 

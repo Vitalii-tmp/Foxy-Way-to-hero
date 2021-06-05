@@ -20,7 +20,7 @@ namespace godot {
 		void _ready();
 
 		void _on_player_hit_area_entered(Area2D* _other_area);
-		void _on_animated_sprite_animation_finished();
+		void _on_grass_effect_animation_finished();
 		
 
 		// Gameplay variables

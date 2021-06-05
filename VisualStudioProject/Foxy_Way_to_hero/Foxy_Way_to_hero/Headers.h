@@ -16,3 +16,4 @@
 #include "Player.h"
 #include "Grass.h"
 #include "BatAI.h"
+#include<cmath>

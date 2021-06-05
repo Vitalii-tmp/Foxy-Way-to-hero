@@ -2,12 +2,7 @@
 
 using namespace godot;
 
-enum state
-{
-	MOVE,
-	ROLL,
-	ATTACK
-};
+
 
 
 void godot::Player::_register_methods()

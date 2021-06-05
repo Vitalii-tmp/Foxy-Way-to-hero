@@ -19,7 +19,7 @@ void godot::Grass::_register_methods()
 	register_method((char*)"_init", &Grass::_init);
 	register_method((char*)"_ready", &Grass::_ready);
 	register_method((char*)"_on_player_hit_area_entered", &Grass::_on_player_hit_area_entered);
-	register_method((char*)"_on_animated_sprite_animation_finished", &Grass::_on_animated_sprite_animation_finished);
+	register_method((char*)"_on_grass_effect_animation_finished", &Grass::_on_grass_effect_animation_finished);
 	
 }
 
@@ -55,7 +55,7 @@ void godot::Grass::_on_player_hit_area_entered(Area2D* _other_area)
 	}
 }
 
-void godot::Grass::_on_animated_sprite_animation_finished()
+void godot::Grass::_on_grass_effect_animation_finished()
 {
 	
 	_animated_sprite->queue_free();
