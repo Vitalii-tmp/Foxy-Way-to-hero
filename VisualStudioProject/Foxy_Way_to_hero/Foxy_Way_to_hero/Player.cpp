@@ -12,6 +12,7 @@ void godot::Player::_register_methods()
 	register_method((char*)"_ready", &Player::_ready);
 	register_method((char*)"_attack_animation_is_finished", &Player::_attack_animation_is_finished);
 	register_method((char*)"_roll_animation_is_finished", &Player::_roll_animation_is_finished);
+	register_method((char*)"_on_hurt_area_area_entered", &Player::_on_hurt_area_area_entered);
 	
 }
 
@@ -23,6 +24,7 @@ Player::Player()
 {
 	_speed = 100;
 	_damage = 25;
+	_hp = 100;
 
 	_motion = Vector2(0, 0);
 	_input_vector = Vector2(0, 1);
@@ -43,6 +45,13 @@ void godot::Player::_ready()
 
 void godot::Player::_process(float delta)
 {
+	if (_hp <= 0)
+	{
+		_is_alive = false;
+		queue_free();
+	}
+		
+
 	if (_is_alive)
 	{
 		_change_state_depend_on_behavior();
@@ -141,6 +150,18 @@ void godot::Player::_change_state_depend_on_behavior()
 		_attack_state();
 		break;
 	}
+}
+
+void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
+{
+	if (_other_area->get_name() == "BatHitArea")
+	{
+		auto _bat_damage = cast_to<BatAI>(_other_area->get_parent())->_get_damage();
+
+		_hp -= _bat_damage;
+
+	}
+		
 }
 
 Vector2 godot::Player::_get_input_vector()

@@ -36,6 +36,8 @@ namespace godot {
 		void _roll_animation_is_finished();
 		void _change_state_depend_on_behavior();
 
+		void _on_hurt_area_area_entered(Area2D* _other_area);
+
 		Vector2 _get_input_vector();
 		float _get_damage();
 		// Gameplay variables

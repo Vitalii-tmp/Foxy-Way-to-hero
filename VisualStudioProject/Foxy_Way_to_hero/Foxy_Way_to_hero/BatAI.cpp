@@ -172,6 +172,11 @@ void godot::BatAI::_chase_state()
 	move_and_slide(_move_vector * _speed);
 }
 
+float godot::BatAI::_get_damage()
+{
+	return _damage;
+}
+
 
 godot::BatAI::~BatAI()
 {

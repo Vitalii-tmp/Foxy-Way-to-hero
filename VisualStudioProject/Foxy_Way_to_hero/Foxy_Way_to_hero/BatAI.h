@@ -35,6 +35,7 @@ namespace godot
 		void _wander_state();
 		void _chase_state();
 
+		float _get_damage();
 		//Gameplay variables
 	private:
 		
