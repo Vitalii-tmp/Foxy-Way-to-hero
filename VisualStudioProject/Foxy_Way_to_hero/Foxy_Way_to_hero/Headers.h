@@ -5,7 +5,10 @@
 #include<StaticBody2D.hpp>
 #include<Area2D.hpp>
 #include <Sprite.hpp>
+#include <Camera2D.hpp>
 
+#include<limits>
+#include <Position2D.hpp>
 #include <Input.hpp>
 #include <AnimatedSprite.hpp>
 #include <AnimationPlayer.hpp>
@@ -16,4 +19,6 @@
 #include "Player.h"
 #include "Grass.h"
 #include "BatAI.h"
+#include "CameraController.h"
+
 #include<cmath>

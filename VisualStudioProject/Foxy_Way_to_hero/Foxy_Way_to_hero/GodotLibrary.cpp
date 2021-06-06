@@ -16,4 +16,6 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<Player>();
 	register_class<Grass>();
 	register_class<BatAI>();
+	register_class<CameraController>();
+
 }

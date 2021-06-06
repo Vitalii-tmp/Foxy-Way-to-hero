@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=5]
 [ext_resource path="res://World/Grass.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Camera2D.tscn" type="PackedScene" id=8]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
 
 [sub_resource type="TileSet" id=1]
@@ -602,11 +603,8 @@ position = Vector2( 272, 112 )
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 173.429, 62.5543 )
 
-[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
-current = true
-limit_smoothed = true
-smoothing_enabled = true
-smoothing_speed = 3.089
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="Bats" type="YSort" parent="YSort"]
 
@@ -626,3 +624,14 @@ position = Vector2( -136, 216 )
 position = Vector2( -112, 344 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Camera2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 173.429, 62.5543 )
+
+[node name="BottomRight" parent="Camera2D/Limits" index="0"]
+position = Vector2( 480, 432 )
+
+[node name="TopLeft" parent="Camera2D/Limits" index="1"]
+position = Vector2( -264, -232 )
+
+[editable path="Camera2D"]
