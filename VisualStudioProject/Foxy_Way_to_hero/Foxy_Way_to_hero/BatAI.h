@@ -12,7 +12,6 @@ namespace godot
 	class BatAI :public KinematicBody2D
 	{
 
-	private:
 		GODOT_CLASS(BatAI, Area2D)
 
 	public:
@@ -25,25 +24,33 @@ namespace godot
 		void _physics_process(float delta);
 		void _ready();
 		
-		void _on_player_hit_area_entered(Area2D* _other_area);
+		void _on_hurt_area_area_entered(Area2D* _other_area);
 		void _on_player_detection_area_body_entered(Node* _other_body);
 		void _on_player_detection_area_body_exited(Node* _other_body);
 		void _on_die_effect_animation_finished();
 		void _on_hit_effect_animation_finished();
 		
+		//bat states and state changer
+		void _change_state_depend_on_player_possition();
 		void _idle_state();
 		void _wander_state();
 		void _chase_state();
 
 		float _get_damage();
+		
 		//Gameplay variables
+	public:
+
 	private:
 		
 		float _hp;
-		bool _is_alive;
 		float _damage;
-		int _current_state;
 		float _speed;
+
+		bool _is_alive;
+		
+		int _current_state;
+		
 
 		Vector2 _knockback_vector;
 		Vector2 _move_vector;
