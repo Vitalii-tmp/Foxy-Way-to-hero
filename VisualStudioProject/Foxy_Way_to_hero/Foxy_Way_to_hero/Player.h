@@ -6,7 +6,8 @@ enum state
 {
 	MOVE,
 	ROLL,
-	ATTACK
+	SHORT_ATTACK,
+	LONG_ATTACK
 };
 
 namespace godot {
@@ -31,10 +32,13 @@ namespace godot {
 		
 		//player states
 		void _move_state();
-		void _attack_state();
+		void _short_attack_state();
+		void _long_attack_state();
 		void _roll_state();
 
-		void _attack_animation_is_finished();
+		void _short_attack_animation_is_finished();
+		void _long_attack_animation_is_finished();
+
 		void _roll_animation_is_finished();
 		void _change_state_depend_on_behavior();
 

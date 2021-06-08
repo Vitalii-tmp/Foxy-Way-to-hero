@@ -8,10 +8,13 @@ void godot::Player::_register_methods()
 	register_method((char*)"_process", &Player::_process);
 	register_method((char*)"_init", &Player::_init);
 	register_method((char*)"_ready", &Player::_ready);
-	register_method((char*)"_attack_animation_is_finished", &Player::_attack_animation_is_finished);
+	register_method((char*)"_short_attack_animation_is_finished", &Player::_short_attack_animation_is_finished);
 	register_method((char*)"_roll_animation_is_finished", &Player::_roll_animation_is_finished);
 	register_method((char*)"_on_hurt_area_area_entered", &Player::_on_hurt_area_area_entered);
 	register_method((char*)"_on_hit_effect_animation_finished", &Player::_on_hit_effect_animation_finished);
+	register_method((char*)"_long_attack_animation_is_finished", &Player::_long_attack_animation_is_finished);
+	
+
 }
 
 
@@ -104,11 +107,17 @@ void godot::Player::_move_state()
 
 
 //if player attack
-void godot::Player::_attack_state()
+void godot::Player::_short_attack_state()
 {
 
 	_animation_tree->set("parameters/Attack/blend_position", _input_vector);
 	_animation_state->travel("Attack");
+}
+
+void godot::Player::_long_attack_state()
+{
+	_animation_tree->set("parameters/LongRangeAttack/blend_position", _input_vector);
+	_animation_state->travel("LongRangeAttack");
 }
 
 
@@ -123,7 +132,12 @@ void godot::Player::_roll_state()
 
 
 // after attack change state to move (calling in animation tree)
-void godot::Player::_attack_animation_is_finished()
+void godot::Player::_short_attack_animation_is_finished()
+{
+	_current_state = MOVE;
+}
+
+void godot::Player::_long_attack_animation_is_finished()
 {
 	_current_state = MOVE;
 }
@@ -140,12 +154,14 @@ void godot::Player::_change_state_depend_on_behavior()
 {
 	Input* i = Input::get_singleton();
 
-	if (i->is_action_just_pressed("attack"))
-		_current_state = ATTACK;
+	if (i->is_action_just_pressed("short_attack"))
+		_current_state = SHORT_ATTACK;
 
 	if (i->is_action_just_pressed("roll"))
 		_current_state = ROLL;
 
+	if (i->is_action_just_pressed("long_attack"))
+		_current_state = LONG_ATTACK;
 
 	switch (_current_state)
 	{
@@ -157,9 +173,14 @@ void godot::Player::_change_state_depend_on_behavior()
 		_roll_state();
 		break;
 
-	case ATTACK:
-		_attack_state();
+	case SHORT_ATTACK:
+		_short_attack_state();
 		break;
+
+	case LONG_ATTACK:
+		_long_attack_state();
+		break;
+
 	}
 }
 

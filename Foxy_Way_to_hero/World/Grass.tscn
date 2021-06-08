@@ -4,7 +4,7 @@
 [ext_resource path="res://Effects/GrassEffect.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/Area2D.gdns" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 
 [node name="Grass" type="Node2D"]
@@ -22,7 +22,7 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrassEffect/GrassArea"]
 position = Vector2( 9, 8 )
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [connection signal="animation_finished" from="GrassEffect" to="GrassEffect/GrassArea" method="_on_grass_effect_animation_finished"]
 [connection signal="area_entered" from="GrassEffect/GrassArea" to="GrassEffect/GrassArea" method="_on_player_hit_area_entered"]

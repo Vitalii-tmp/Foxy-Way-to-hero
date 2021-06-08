@@ -107,6 +107,7 @@ void godot::BatAI::_on_player_detection_area_body_entered(Node* _other_body)
 void godot::BatAI::_on_player_detection_area_body_exited(Node* _other_body)
 {
 	_current_state = IDLE;
+	_player = nullptr;
 }
 
 
