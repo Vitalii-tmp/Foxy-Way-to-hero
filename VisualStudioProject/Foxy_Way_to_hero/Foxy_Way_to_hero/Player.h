@@ -25,7 +25,8 @@ namespace godot {
 		
 		void _move_state();
 		void _attack_state();
-		void _set_coins(int coins);
+		//void _set_coins(int coins);
+		//int _get_coins();
 		
 		void _attack_animation_is_finished();
 
@@ -42,7 +43,7 @@ namespace godot {
 		bool _is_alive;
 
 		int _speed;
-		int _coins;
+		//int _coins;
 
 		float _hp;
 		float _damage;

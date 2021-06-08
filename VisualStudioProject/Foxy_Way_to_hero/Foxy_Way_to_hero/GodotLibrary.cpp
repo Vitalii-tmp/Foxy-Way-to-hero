@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Coin.h"
+#include "Loader.h"
 
 using namespace godot;
 
@@ -16,4 +17,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	
 	register_class<Player>();
 	register_class<Coin>();
+	register_class<Loader>();
 }

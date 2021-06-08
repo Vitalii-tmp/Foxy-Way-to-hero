@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://World/DirtTileset.png" type="Texture" id=4]
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=5]
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Background.gdns" type="Script" id=7]
 [ext_resource path="res://Coin.gdns" type="Script" id=8]
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
 
@@ -492,6 +493,7 @@ z_index = -2
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 752, 432 )
+script = ExtResource( 7 )
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
