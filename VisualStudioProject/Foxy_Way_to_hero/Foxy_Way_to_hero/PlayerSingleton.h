@@ -1,42 +1,57 @@
-#pragma once
-#include "Headers.h"
-namespace godot
-{
-	class PlayerSingleton
-	{
-		// Godot structure
-	private:
-
-		PlayerSingleton();
-		~PlayerSingleton();
-
-		static PlayerSingleton* _instance;
-
-	public:
-
-		void _init();
-		void _process(float delta, KinematicBody2D* Player);
-
-
-		// Gameplay variables
-	public:
-		const int speed = 100;
-	private:
-
-		Vector2 motion;
-
-		bool bDead;
-
-		// Gameplay methods
-	public:
-
-		static PlayerSingleton* getSingleton();
-
-		void UpdateMotionFromInput();
-
-	private:
-
-	};
-}
-
-
+//#pragma once
+//#include "Headers.h"
+//namespace godot
+//{
+//	class PlayerSingleton
+//	{
+//	//	// Godot structure
+//	//private:
+//
+//	//	PlayerSingleton();
+//	//	~PlayerSingleton();
+//
+//	//	static PlayerSingleton* _instance;
+//
+//	//public:
+//
+//	//	void _init();
+//	//	void _process(float delta, KinematicBody2D* Player);
+//	//	void _ready();
+//
+//	//	// Gameplay variables
+//	//public:
+//	//	
+//	//private:
+//	//	Vector2 _motion;
+//	//	Vector2 _inpun_vector;
+//	//	AnimationPlayer* _animation = nullptr;
+//
+//	//	bool _is_alive;
+//
+//	//	int _speed;
+//	//	
+//	//	float _hp;
+//	//	float _damage;
+//
+//	//	int _current_state;
+//
+//		// Gameplay methods
+//	public:
+//
+//		/*static PlayerSingleton* get_singleton();
+//
+//		void _move_state();
+//		void _attack_state();
+//		int _get_current_state();
+//
+//		Vector2 _get_motion();
+//		Vector2 _get_input_vector();*/
+//
+//		
+//
+//	private:
+//
+//	};
+//}
+//
+//
