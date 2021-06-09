@@ -4,48 +4,47 @@
 [ext_resource path="res://World/Coint.png" type="Texture" id=2]
 [ext_resource path="res://Coin.gdns" type="Script" id=3]
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 8, 8 )
 
-[sub_resource type="AtlasTexture" id=51]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
 region = Rect2( 8, 0, 8, 8 )
 
-[sub_resource type="AtlasTexture" id=52]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
 region = Rect2( 16, 0, 8, 8 )
 
-[sub_resource type="AtlasTexture" id=53]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
 region = Rect2( 24, 0, 8, 8 )
 
-[sub_resource type="SpriteFrames" id=54]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 6.0
 } ]
 
-[sub_resource type="CircleShape2D" id=55]
+[sub_resource type="CircleShape2D" id=6]
 
 [node name="Coin" type="Area2D"]
-position = Vector2( 53.8852, 108.332 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 3 )
 
 [node name="Coin" type="AnimatedSprite" parent="."]
-position = Vector2( -0.420448, -22.2648 )
+position = Vector2( 0, -20 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 54 )
+z_index = 1
+frames = SubResource( 5 )
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 55 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.0235977, 0.752533 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )

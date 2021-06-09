@@ -16,16 +16,16 @@ public:
 
 	void _ready();
 	void _process(float delta);
-	static Loader* GetSingleton();
+	static Loader* get_singleton();
 
-	void LoadCoinsData();
-	void SaveCoinsData();
+	void load_coins_data();
+	void save_coins_data() const;
 
 	void set_coins(int coins);
 private:
-	static inline Loader* instance;
+	static inline Loader* _instance;
 
-	const godot::String DataFile = "user://data.save";
+	const godot::String _dataFile = "user://data.save";
 
 	int _coins = 0;
 };

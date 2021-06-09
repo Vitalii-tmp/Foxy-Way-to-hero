@@ -4,19 +4,19 @@ void Loader::_register_methods()
 {
 	godot::register_method("_ready", &Loader::_ready);
 	godot::register_method("_process", &Loader::_process);
-	godot::register_method("LoadCoinsData", &Loader::LoadCoinsData);
-	godot::register_method("SaveCoinsData", &Loader::SaveCoinsData);
+	godot::register_method("LoadCoinsData", &Loader::load_coins_data);
+	godot::register_method("SaveCoinsData", &Loader::save_coins_data);
 }
 
 void Loader::_init()
 {
-	instance = this;
+	_instance = this;
 
 	godot::Ref<godot::File> _file = godot::File::_new();
-	if (_file->file_exists(DataFile))
-		LoadCoinsData();
+	if (_file->file_exists(_dataFile))
+		load_coins_data();
 	else
-		SaveCoinsData();
+		save_coins_data();
 }
 
 void Loader::_ready()
@@ -28,17 +28,17 @@ void Loader::_process(float delta)
 	
 }
 
-Loader* Loader::GetSingleton()
+Loader* Loader::get_singleton()
 {
-	return instance;
+	return _instance;
 }
 
-void Loader::LoadCoinsData()
+void Loader::load_coins_data()
 {
 	godot::Ref<godot::File> _file = godot::File::_new();
-	if(_file->file_exists(DataFile))
+	if(_file->file_exists(_dataFile))
 	{
-		_file->open(DataFile, _file->READ);
+		_file->open(_dataFile, _file->READ);
 
 		const godot::Dictionary rez = godot::JSON::get_singleton()->parse(_file->get_as_text())->get_result();
 
@@ -49,7 +49,7 @@ void Loader::LoadCoinsData()
 
 		_coins = rez["Number of coins"];
 
-		if(_coins>10 && _coins<1000)
+		if(_coins>10 && _coins<10000)
 			godot::Godot::print("Rabotaye");
 		else
 			godot::Godot::print("AAAAAAAAAAAA");
@@ -59,10 +59,10 @@ void Loader::LoadCoinsData()
 	}
 }
 
-void Loader::SaveCoinsData()
+void Loader::save_coins_data() const
 {
 	godot::Ref<godot::File> _file = godot::File::_new();
-	_file->open(DataFile, _file->WRITE);
+	_file->open(_dataFile, _file->WRITE);
 
 	godot::Dictionary dict;
 	dict["Number of coins"] = this->_coins;
