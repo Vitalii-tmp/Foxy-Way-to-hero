@@ -1,3 +1,5 @@
+#include <string>
+
 #include "Headers.h"
 
 using namespace godot;
@@ -8,6 +10,7 @@ void godot::Player::_register_methods()
 	register_method((char*)"_process", &Player::_process);
 	register_method((char*)"_init", &Player::_init);
 	register_method((char*)"_ready", &Player::_ready);
+
 	register_method((char*)"_short_attack_animation_is_finished", &Player::_short_attack_animation_is_finished);
 	register_method((char*)"_roll_animation_is_finished", &Player::_roll_animation_is_finished);
 	register_method((char*)"_on_hurt_area_area_entered", &Player::_on_hurt_area_area_entered);
@@ -24,6 +27,7 @@ void godot::Player::_init() {}
 Player::Player()
 {
 	_speed = 100;
+
 	_damage = 25;
 	_hp = 100;
 
@@ -114,6 +118,7 @@ void godot::Player::_short_attack_state()
 	_animation_state->travel("Attack");
 }
 
+
 void godot::Player::_long_attack_state()
 {
 	_animation_tree->set("parameters/LongRangeAttack/blend_position", _input_vector);
@@ -136,6 +141,7 @@ void godot::Player::_short_attack_animation_is_finished()
 {
 	_current_state = MOVE;
 }
+
 
 void godot::Player::_long_attack_animation_is_finished()
 {
@@ -228,3 +234,8 @@ float godot::Player::_get_damage()
 
 
 Player::~Player() {}
+
+//int Player::_get_coins()
+//{
+//	return this->_coins;
+//}

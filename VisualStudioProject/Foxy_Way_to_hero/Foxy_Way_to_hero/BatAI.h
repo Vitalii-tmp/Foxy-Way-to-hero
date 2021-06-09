@@ -9,10 +9,12 @@ namespace godot
 		CHASE
 	};
 
+	class Player;
+
 	class BatAI :public KinematicBody2D
 	{
 
-		GODOT_CLASS(BatAI, Area2D)
+		GODOT_CLASS(BatAI, KinematicBody2D)
 
 	public:
 		BatAI();
@@ -31,7 +33,7 @@ namespace godot
 		void _on_hit_effect_animation_finished();
 		
 		//bat states and state changer
-		void _change_state_depend_on_player_possition();
+		void _change_state_depend_on_player_position();
 		void _idle_state();
 		void _wander_state();
 		void _chase_state();

@@ -65,6 +65,7 @@ namespace godot {
 		bool _is_alive;
 
 		int _speed;
+		//int _coins;
 
 		float _hp;
 		float _damage;
