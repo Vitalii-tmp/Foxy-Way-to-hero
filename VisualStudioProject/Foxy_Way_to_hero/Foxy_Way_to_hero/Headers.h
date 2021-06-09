@@ -6,6 +6,11 @@
 #include <Area2D.hpp>
 #include <Sprite.hpp>
 #include <Camera2D.hpp>
+#include <Node.hpp>
+#include <File.hpp>
+#include <JSON.hpp>
+#include <JSONParseResult.hpp>
+#include <CanvasLayer.hpp>
 
 #include <limits>
 #include <Position2D.hpp>
@@ -20,5 +25,9 @@
 #include "Grass.h"
 #include "BatAI.h"
 #include "CameraController.h"
+#include "Coin.h"
+#include "UI.h"
+#include "Loader.h"
 
 #include <cmath>
+#include <string>

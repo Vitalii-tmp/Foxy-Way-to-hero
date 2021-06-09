@@ -1,9 +1,5 @@
 #pragma once
 #include "Headers.h"
-#include <Node.hpp>
-#include <File.hpp>
-#include <JSON.hpp>
-#include <JSONParseResult.hpp>
 
 class Loader : public godot::Node
 {
@@ -22,6 +18,7 @@ public:
 	void save_coins_data() const;
 
 	void set_coins(int coins);
+	int get_coins();
 private:
 	static inline Loader* _instance;
 

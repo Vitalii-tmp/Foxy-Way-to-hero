@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World/Hay.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://UI.gdns" type="Script" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -646,5 +647,20 @@ position = Vector2( 480, 432 )
 
 [node name="TopLeft" parent="Camera2D/Limits" index="1"]
 position = Vector2( -264, -232 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource( 12 )
+
+[node name="CoinText" type="Label" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -83.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = 15.0
+text = "Coins: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="Camera2D"]

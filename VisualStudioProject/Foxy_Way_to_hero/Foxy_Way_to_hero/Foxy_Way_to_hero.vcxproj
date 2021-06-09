@@ -169,6 +169,7 @@
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Root.cpp" />
+    <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BatAI.h" />
@@ -179,6 +180,7 @@
     <ClInclude Include="Loader.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Root.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
