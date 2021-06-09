@@ -49,10 +49,10 @@ void Loader::load_coins_data()
 
 		_coins = rez["Number of coins"];
 
-		if(_coins>10 && _coins<10000)
+		/*if(_coins>10 && _coins<10000)
 			godot::Godot::print("Rabotaye");
 		else
-			godot::Godot::print("AAAAAAAAAAAA");
+			godot::Godot::print("AAAAAAAAAAAA");*/
 
 		
 		//godot::Godot::print("LOAD DATA" + rez.to_json()[0]);
@@ -76,4 +76,9 @@ void Loader::set_coins(int coins)
 {
 	this->_coins += coins;
 	godot::Godot::print("Set coins");
+}
+
+int Loader::get_coins()
+{
+	return this->_coins;
 }
