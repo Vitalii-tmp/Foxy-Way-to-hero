@@ -1,6 +1,6 @@
 #pragma once
 #include "Headers.h"
-#include <CanvasLayer.hpp>
+
 
 namespace godot
 {
@@ -20,6 +20,7 @@ namespace godot
 
 		void change_coins_information();
 
+		std::string get_coins_information();
 	private:
 		static inline UI* _instance;
 	};

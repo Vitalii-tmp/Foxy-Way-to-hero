@@ -1,7 +1,4 @@
-#include "Coin.h"
-
-#include "Loader.h"
-#include "UI.h"
+#include "Headers.h"
 
 void godot::Coin::_register_methods()
 {

@@ -1,9 +1,6 @@
 #pragma once
 
-#include "Player.h"
-
-#include <Godot.hpp>
-#include <Area2D.hpp>
+#include "Headers.h"
 
 namespace godot
 {

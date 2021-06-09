@@ -1,9 +1,4 @@
-#include "UI.h"
-
-#include <string>
-
-
-#include "Loader.h"
+#include "Headers.h"
 
 
 namespace godot
@@ -22,8 +17,7 @@ namespace godot
 
 	void godot::UI::_ready()
 	{
-		auto tmp_coin = "Coins : " + std::to_string(Loader::get_singleton()->get_coins());
-		this->get_child(0)->set("text", tmp_coin.c_str());
+		this->get_child(0)->set("text", this->get_coins_information().c_str());
 	}
 
 	void godot::UI::_process(float delta)
@@ -37,8 +31,11 @@ namespace godot
 	
 	void UI::change_coins_information()
 	{
-		auto tmp_coin = "Coins : " + std::to_string(Loader::get_singleton()->get_coins());
-		this->get_child(0)->set("text", tmp_coin.c_str());
+		this->get_child(0)->set("text", this->get_coins_information().c_str());
+	}
+	std::string UI::get_coins_information()
+	{
+		return "Coins : " + std::to_string(Loader::get_singleton()->get_coins());
 	}
 }
 

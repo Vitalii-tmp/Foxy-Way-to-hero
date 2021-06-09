@@ -1,9 +1,5 @@
 #pragma once
 #include "Headers.h"
-#include <Node.hpp>
-#include <File.hpp>
-#include <JSON.hpp>
-#include <JSONParseResult.hpp>
 
 class Loader : public godot::Node
 {
