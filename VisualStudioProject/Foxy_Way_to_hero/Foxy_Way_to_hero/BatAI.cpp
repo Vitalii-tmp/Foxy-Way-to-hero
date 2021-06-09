@@ -17,15 +17,15 @@ godot::BatAI::BatAI()
 
 void godot::BatAI::_register_methods()
 {
-	register_method((char*)"_physics_process", &BatAI::_physics_process);
-	register_method((char*)"_init", &BatAI::_init);
-	register_method((char*)"_ready", &BatAI::_ready);
+	register_method("_physics_process", &BatAI::_physics_process);
+	register_method("_init", &BatAI::_init);
+	register_method("_ready", &BatAI::_ready);
 
-	register_method((char*)"_on_hurt_area_area_entered", &BatAI::_on_hurt_area_area_entered);
-	register_method((char*)"_on_die_effect_animation_finished", &BatAI::_on_die_effect_animation_finished);
-	register_method((char*)"_on_hit_effect_animation_finished", &BatAI::_on_hit_effect_animation_finished);
-	register_method((char*)"_on_player_detection_area_body_entered", &BatAI::_on_player_detection_area_body_entered);
-	register_method((char*)"_on_player_detection_area_body_exited", &BatAI::_on_player_detection_area_body_exited);
+	register_method("_on_hurt_area_area_entered", &BatAI::_on_hurt_area_area_entered);
+	register_method("_on_die_effect_animation_finished", &BatAI::_on_die_effect_animation_finished);
+	register_method("_on_hit_effect_animation_finished", &BatAI::_on_hit_effect_animation_finished);
+	register_method("_on_player_detection_area_body_entered", &BatAI::_on_player_detection_area_body_entered);
+	register_method("_on_player_detection_area_body_exited", &BatAI::_on_player_detection_area_body_exited);
 }
 
 
@@ -48,7 +48,7 @@ void godot::BatAI::_physics_process(float delta)
 {
 
 	if (_is_alive)
-		_change_state_depend_on_player_possition();
+		_change_state_depend_on_player_position();
 
 
 	if (_hp <= 0)
@@ -126,7 +126,7 @@ void godot::BatAI::_on_hit_effect_animation_finished()
 
 
 //state changer
-void godot::BatAI::_change_state_depend_on_player_possition()
+void godot::BatAI::_change_state_depend_on_player_position()
 {
 	switch (_current_state)
 	{
