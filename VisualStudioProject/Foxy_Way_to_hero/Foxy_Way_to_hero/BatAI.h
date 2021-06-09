@@ -1,13 +1,15 @@
 #pragma once
 #include"Headers.h"
+
+enum state
+{
+	IDLE,
+	WANDER,
+	CHASE
+};
+
 namespace godot
 {
-	enum state
-	{
-		IDLE,
-		WANDER,
-		CHASE
-	};
 
 	class Player;
 

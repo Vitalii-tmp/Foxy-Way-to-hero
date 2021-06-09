@@ -1,6 +1,6 @@
 #include <string>
-
 #include "Headers.h"
+
 
 using namespace godot;
 
@@ -17,11 +17,14 @@ void godot::Player::_register_methods()
 	register_method((char*)"_on_hit_effect_animation_finished", &Player::_on_hit_effect_animation_finished);
 	register_method((char*)"_long_attack_animation_is_finished", &Player::_long_attack_animation_is_finished);
 	
-
+	register_method((char*)"_fire", &Player::_fire);
 }
 
 
-void godot::Player::_init() {}
+void godot::Player::_init() 
+{
+	_instance = this;
+}
 
 //set default variables value
 Player::Player()
@@ -35,6 +38,7 @@ Player::Player()
 	_input_vector = Vector2(0, 1);
 
 	_is_alive = true;
+	_can_fire = true;
 }
 
 
@@ -48,6 +52,9 @@ void godot::Player::_ready()
 
 	_hit_area = cast_to<Area2D>(get_node("HitboxPivot/ShortAttackArea"));
 	_hit_effect = cast_to<AnimatedSprite>(get_node("HitEffect"));
+
+	_resource_loader = ResourceLoader::get_singleton();
+	
 }
 
 
@@ -123,6 +130,7 @@ void godot::Player::_long_attack_state()
 {
 	_animation_tree->set("parameters/LongRangeAttack/blend_position", _input_vector);
 	_animation_state->travel("LongRangeAttack");
+
 }
 
 
@@ -166,8 +174,13 @@ void godot::Player::_change_state_depend_on_behavior()
 	if (i->is_action_just_pressed("roll"))
 		_current_state = ROLL;
 
-	if (i->is_action_just_pressed("long_attack"))
+	if (i->is_action_just_pressed("long_attack")&&_can_fire)
 		_current_state = LONG_ATTACK;
+	
+		
+	
+	
+		
 
 	switch (_current_state)
 	{
@@ -220,6 +233,12 @@ void godot::Player::_on_hit_effect_animation_finished()
 	_hit_effect->set_frame(0);
 }
 
+void godot::Player::_fire()
+{
+	Ref<PackedScene> prefab = _resource_loader->load("res://World/Bullet.tscn");
+	add_child(prefab->instance());
+}
+
 
 Vector2 godot::Player::_get_input_vector()
 {
@@ -234,6 +253,11 @@ float godot::Player::_get_damage()
 
 
 Player::~Player() {}
+
+Player* godot::Player::_get_singleton()
+{
+	return _instance;
+}
 
 //int Player::_get_coins()
 //{

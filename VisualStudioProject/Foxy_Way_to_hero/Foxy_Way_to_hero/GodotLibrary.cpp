@@ -1,8 +1,4 @@
-#include "Player.h"
-#include "Coin.h"
-#include "Loader.h"
 #include "Headers.h"
-#include "UI.h"
 
 using namespace godot;
 
@@ -24,4 +20,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<BatAI>();
 	register_class<CameraController>();
 	register_class<UI>();
+	register_class<Bullet>();
 }

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/zholud.jpg-6db476fcacf220a07eb38a7c0833b90f.stex"
+path="res://.import/Bullet.png-32ac22ff50c5e7849daa254e8d923908.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/zholud.jpg"
-dest_files=[ "res://.import/zholud.jpg-6db476fcacf220a07eb38a7c0833b90f.stex" ]
+source_file="res://World/Bullet.png"
+dest_files=[ "res://.import/Bullet.png-32ac22ff50c5e7849daa254e8d923908.stex" ]
 
 [params]
 
