@@ -7,11 +7,13 @@
 radius = 3.27867
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 4.89252
+radius = 3.41315
 
 [node name="Bullet" type="Node"]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 0.0371628, -2.11827 )
+z_index = -1
 collision_layer = 2
 script = ExtResource( 2 )
 
@@ -30,4 +32,3 @@ shape = SubResource( 2 )
 
 [connection signal="area_entered" from="KinematicBody2D/LongAttackArea" to="KinematicBody2D" method="_on_detect_area_area_entered"]
 [connection signal="body_entered" from="KinematicBody2D/LongAttackArea" to="KinematicBody2D" method="_on_detect_area_body_entered"]
-[connection signal="body_shape_entered" from="KinematicBody2D/LongAttackArea" to="KinematicBody2D" method="_on_detect_area_shape_entered"]

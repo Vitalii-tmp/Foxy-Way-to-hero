@@ -7,7 +7,7 @@ namespace godot
 
 	class Bullet : public KinematicBody2D
 	{
-		
+
 		GODOT_CLASS(Bullet, KinematicBody2D);
 
 	public:
@@ -29,6 +29,7 @@ namespace godot
 
 		//Player* _player;
 		Vector2 _move_vector;
+		Vector2 _start_possition;
 	};
 
 

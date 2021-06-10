@@ -128,6 +128,7 @@ void godot::Player::_short_attack_state()
 
 void godot::Player::_long_attack_state()
 {
+	
 	_animation_tree->set("parameters/LongRangeAttack/blend_position", _input_vector);
 	_animation_state->travel("LongRangeAttack");
 
@@ -174,13 +175,13 @@ void godot::Player::_change_state_depend_on_behavior()
 	if (i->is_action_just_pressed("roll"))
 		_current_state = ROLL;
 
-	if (i->is_action_just_pressed("long_attack")&&_can_fire)
-		_current_state = LONG_ATTACK;
+	if (Loader::get_singleton()->get_coins() > 0)
+	{
+		if (i->is_action_just_pressed("long_attack") && _can_fire)
+			_current_state = LONG_ATTACK;
+	}
+
 	
-		
-	
-	
-		
 
 	switch (_current_state)
 	{
@@ -233,10 +234,14 @@ void godot::Player::_on_hit_effect_animation_finished()
 	_hit_effect->set_frame(0);
 }
 
+
 void godot::Player::_fire()
 {
 	Ref<PackedScene> prefab = _resource_loader->load("res://World/Bullet.tscn");
 	add_child(prefab->instance());
+
+	Loader::get_singleton()->set_coins(-1);
+	UI::get_singleton()->change_coins_information();
 }
 
 
@@ -253,6 +258,7 @@ float godot::Player::_get_damage()
 
 
 Player::~Player() {}
+
 
 Player* godot::Player::_get_singleton()
 {

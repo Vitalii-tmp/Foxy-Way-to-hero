@@ -12,6 +12,8 @@ godot::BatAI::BatAI()
 	_knockback_vector = Vector2(0, 0);
 	_move_vector = Vector2(0, 0);
 
+	_current_state = IDLE;
+
 }
 
 
@@ -98,7 +100,6 @@ void godot::BatAI::_on_hurt_area_area_entered(Area2D* _other_area)
 
 		//knock back bat
 		_knockback_vector = _vector.normalized() * 150;
-
 		_hp -= _pl_damage;
 	}
 
@@ -122,8 +123,12 @@ void godot::BatAI::_on_player_detection_area_body_entered(Node* _other_body)
 //when player go out detection area ston chasing him
 void godot::BatAI::_on_player_detection_area_body_exited(Node* _other_body)
 {
-	_current_state = IDLE;
-	_player = nullptr;
+	if (_other_body->get_name() == "Player")
+	{
+		_current_state = IDLE;
+		_player = nullptr;
+	}
+	
 }
 
 
@@ -144,11 +149,7 @@ void godot::BatAI::_on_hit_effect_animation_finished()
 //state changer
 void godot::BatAI::_change_state_depend_on_player_position()
 {
-	auto _distance_to_player = sqrt(pow((this->get_global_position().x - Player::_get_singleton()->get_global_position().x), 2) +
-		pow((this->get_global_position().y - Player::_get_singleton()->get_global_position().y), 2));
-
-	if (_distance_to_player < 60)
-		_current_state = CHASE;
+	
 
 	switch (_current_state)
 	{
@@ -180,8 +181,9 @@ void godot::BatAI::_idle_state()
 void godot::BatAI::_wander_state()
 {
 	//check distance to player
-	auto _distance_to_player = sqrt(pow((this->get_global_position().x - Player::_get_singleton()->get_global_position().x), 2) +
-		pow((this->get_global_position().y - Player::_get_singleton()->get_global_position().y), 2));
+	auto _distance_to_player = sqrt(pow((this->get_global_position().x - _player->get_global_position().x), 2) +
+		pow((this->get_global_position().y - _player->get_global_position().y), 2));
+
 
 	//looking on player
 	if (_player->get_global_position().x - this->get_global_position().x < 0)
@@ -194,6 +196,8 @@ void godot::BatAI::_wander_state()
 	if (_distance_to_player < 60)
 		_current_state = CHASE;
 
+	_knockback_vector = _knockback_vector.move_toward(Vector2::ZERO, 5);
+	move_and_slide(_knockback_vector);
 
 }
 

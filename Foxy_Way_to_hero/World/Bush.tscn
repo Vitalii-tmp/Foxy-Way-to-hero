@@ -7,7 +7,9 @@
 radius = 8.0
 height = 12.0
 
-[node name="Bush" type="StaticBody2D"]
+[node name="Bush" type="StaticBody2D" groups=[
+"_enviroment",
+]]
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 position = Vector2( 0, 3 )

@@ -6,7 +6,9 @@
 [sub_resource type="CapsuleShape2D" id=1]
 height = 6.0
 
-[node name="Tree" type="StaticBody2D"]
+[node name="Tree" type="StaticBody2D" groups=[
+"_enviroment",
+]]
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
