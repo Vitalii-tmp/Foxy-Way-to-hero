@@ -19,6 +19,10 @@
 #include <AnimationPlayer.hpp>
 #include <AnimationTree.hpp>
 #include <AnimationNodeStateMachinePlayback.hpp>
+#include <ResourceLoader.hpp>
+#include <ResourceLoader.hpp>
+#include <PackedScene.hpp>
+#include <Timer.hpp>
 
 //My headers
 #include "Player.h"
@@ -28,6 +32,6 @@
 #include "Coin.h"
 #include "UI.h"
 #include "Loader.h"
-
+#include "Bullet.h"
 #include <cmath>
 #include <string>

@@ -73,26 +73,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\..\..\Foxy_Way_to_hero\</OutDir>
-    <IncludePath>E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\include\gen;E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\include\core;E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\include;E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\godot-headers;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\godot-headers;D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\include\gen;D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\include;D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\include\core;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\..\..\Foxy_Way_to_hero\</OutDir>
-    <IncludePath>E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\include\gen;E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\include\core;E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\include;E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\godot-headers;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\godot-headers;D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\include\gen;D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\include;D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\include\core;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\..\..\Foxy_Way_to_hero\</OutDir>
-    <IncludePath>E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\include\gen;E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\include\core;E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\include;E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\godot-headers;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\godot-headers;D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\include\gen;D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\include;D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\include\core;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\..\..\Foxy_Way_to_hero\</OutDir>
-    <IncludePath>E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\include\gen;E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\include\core;E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\include;E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\godot-headers;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\programming %28zanachki%29\godot\Foxy-Way-to-hero\GodotBindings\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\godot-headers;D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\include\gen;D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\include;D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\include\core;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\MyStudy\FUGAS\Godot\GodotProjects\Foxy-Way-to-hero\GodotBindings\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -162,6 +162,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BatAI.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CameraController.cpp" />
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="GodotLibrary.cpp" />
@@ -173,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BatAI.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="CameraController.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="Grass.h" />
