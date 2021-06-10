@@ -237,7 +237,7 @@ void godot::Player::_on_hit_effect_animation_finished()
 
 void godot::Player::_fire()
 {
-	Ref<PackedScene> prefab = _resource_loader->load("res://World/Bullet.tscn");
+	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/Bullet.tscn");
 	add_child(prefab->instance());
 
 	Loader::get_singleton()->set_coins(-1);

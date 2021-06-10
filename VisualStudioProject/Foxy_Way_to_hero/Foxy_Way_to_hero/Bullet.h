@@ -22,7 +22,7 @@ namespace godot
 		void _ready();
 		void _on_detect_area_body_entered(Node2D* _other_body);
 		void _on_detect_area_area_entered(Area2D* _other_area);
-		void _on_detect_area_shape_entered(Node2D* _other_shape);
+		
 		//Gameplay variables
 
 	private:

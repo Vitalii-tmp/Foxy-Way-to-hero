@@ -1,17 +1,17 @@
 [gd_scene load_steps=62 format=2]
 
-[ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://World/GrassBackground.png" type="Texture" id=3]
-[ext_resource path="res://World/DirtTileset.png" type="Texture" id=4]
-[ext_resource path="res://World/CliffTileset.png" type="Texture" id=5]
-[ext_resource path="res://World/Grass.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
-[ext_resource path="res://World/Camera2D.tscn" type="PackedScene" id=8]
-[ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
-[ext_resource path="res://World/Hay.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Coin.tscn" type="PackedScene" id=11]
-[ext_resource path="res://UI.gdns" type="Script" id=12]
+[ext_resource path="res://Scenes/Environment/Bush.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Environment/GrassBackground.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Environment/DirtTileset.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Environment/CliffTileset.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Environment/Grass.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Enemies/Bat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Camera/Camera2D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Environment/Tree.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Environment/Hay.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Items/Coin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scripts/UI.gdns" type="Script" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -643,6 +643,7 @@ position = Vector2( 44.3693, 106.87 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
 position = Vector2( 214.686, 59.4985 )
+zoom = Vector2( 2, 2 )
 
 [node name="BottomRight" parent="Camera2D/Limits" index="0"]
 position = Vector2( 480, 432 )
