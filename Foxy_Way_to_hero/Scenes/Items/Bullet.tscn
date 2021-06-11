@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Shadows/SmallShadow.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Items/Bullet.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Bullet.gdns" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 3.27867
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 3.74068
+
+[node name="Bullet" type="Node"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 0.0371628, -2.11827 )
+scale = Vector2( 0.721076, 0.679999 )
+z_index = -1
+collision_layer = 2
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 0.520277, 0 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 0.111486, -0.148651 )
+shape = SubResource( 1 )
+
+[node name="LongAttackArea" type="Area2D" parent="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/LongAttackArea"]
+position = Vector2( 0.0468216, -0.210699 )
+shape = SubResource( 2 )
+
+[node name="Shadow" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 0.0124006, 6.07677 )
+scale = Vector2( 0.551063, 0.534941 )
+texture = ExtResource( 1 )
+
+[connection signal="area_entered" from="KinematicBody2D/LongAttackArea" to="KinematicBody2D" method="_on_detect_area_area_entered"]
+[connection signal="body_entered" from="KinematicBody2D/LongAttackArea" to="KinematicBody2D" method="_on_detect_area_body_entered"]

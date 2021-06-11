@@ -1,16 +1,19 @@
 #pragma once
-
 #include "Headers.h"
 
-enum state
-{
-	MOVE,
-	ROLL,
-	SHORT_ATTACK,
-	LONG_ATTACK
-};
+
 
 namespace godot {
+
+	//class Bullet;
+
+	enum state
+	{
+		MOVE,
+		ROLL,
+		SHORT_ATTACK,
+		LONG_ATTACK
+	};
 
 	class Player : public KinematicBody2D
 	{
@@ -19,17 +22,18 @@ namespace godot {
 		GODOT_CLASS(Player, KinematicBody2D)
 
 
-		
+
 	public:
 		Player();
 		~Player();
 
+		static Player* _get_singleton();
 		// Gameplay methods
 		static void _register_methods();
 		void _init();
 		void _process(float delta);
 		void _ready();
-		
+
 		//player states
 		void _move_state();
 		void _short_attack_state();
@@ -44,25 +48,31 @@ namespace godot {
 
 		void _on_hurt_area_area_entered(Area2D* _other_area);
 		void _on_hit_effect_animation_finished();
+		
+		void _fire();
 
 		Vector2 _get_input_vector();
 		float _get_damage();
-		
-		
+
+
 		// Gameplay variables
 	public:
-		
+
 	private:
-		
+
+		static inline Player* _instance;
+
+
 		Vector2 _motion;
 		Vector2 _input_vector;
 		AnimationPlayer* _animation = nullptr;
 		AnimationTree* _animation_tree = nullptr;
-		AnimatedSprite* _hit_effect=nullptr;
+		AnimatedSprite* _hit_effect = nullptr;
 		AnimationNodeStateMachinePlayback* _animation_state = nullptr;
 		Area2D* _hit_area = nullptr;
 
 		bool _is_alive;
+		bool _can_fire;
 
 		int _speed;
 		//int _coins;
@@ -71,5 +81,8 @@ namespace godot {
 		float _damage;
 
 		int _current_state;
+
+		Ref<PackedScene>* _bullet;
+		ResourceLoader* _resource_loader;
 	};
 }
