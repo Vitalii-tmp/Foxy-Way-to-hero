@@ -1,4 +1,5 @@
 #pragma once
+#define _USE_MATH_DEFINES
 //Godot headers
 #include <Godot.hpp>
 #include <KinematicBody2D.hpp>
