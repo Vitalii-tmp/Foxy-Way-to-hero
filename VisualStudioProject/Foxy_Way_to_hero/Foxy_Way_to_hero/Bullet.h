@@ -30,6 +30,14 @@ namespace godot
 		//Player* _player;
 		Vector2 _move_vector;
 		Vector2 _start_possition;
+
+		float _speed;
+		float _current_x;
+		float _current_y;
+
+		float _time;
+
+		float _angle;
 	};
 
 
