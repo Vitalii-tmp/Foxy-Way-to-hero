@@ -4,6 +4,8 @@
 
 namespace godot {
 
+	class Acorn;
+	
 	class Grass : public Area2D
 	{
 	private:
@@ -21,6 +23,8 @@ namespace godot {
 
 		void _on_player_hit_area_entered(Area2D* _other_area);
 		void _on_grass_effect_animation_finished();
+
+		void _on_player_acorn_entered(Area2D* _other_area);
 		
 
 		// Gameplay variables
@@ -30,11 +34,12 @@ namespace godot {
 
 		AnimatedSprite* _animated_sprite = nullptr;
 		Sprite* _sprite = nullptr;
+		//Sprite* _acorn = nullptr;
 
+		//Acorn* _acorn = nullptr;
 
-
-
-
+		/*Ref<PackedScene>* _bullet;*/
+		ResourceLoader* _resource_loader;
 	};
 
 }

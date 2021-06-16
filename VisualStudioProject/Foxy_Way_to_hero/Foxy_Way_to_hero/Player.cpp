@@ -175,7 +175,7 @@ void godot::Player::_change_state_depend_on_behavior()
 	if (i->is_action_just_pressed("roll"))
 		_current_state = ROLL;
 
-	if (Loader::get_singleton()->get_coins() > 0)
+	if (Loader::get_singleton()->get_acorns() > 0)
 	{
 		if (i->is_action_just_pressed("long_attack") && _can_fire)
 			_current_state = LONG_ATTACK;
@@ -240,8 +240,11 @@ void godot::Player::_fire()
 	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/Bullet.tscn");
 	add_child(prefab->instance());
 
-	Loader::get_singleton()->set_coins(-1);
-	UI::get_singleton()->change_coins_information();
+	Loader::get_singleton()->set_acorns(-1);
+	//Loader::get_singleton()->save_acorns_data();
+	Loader::get_singleton()->save_all_fields();
+	
+	UI::get_singleton()->change_acorns_information();
 }
 
 

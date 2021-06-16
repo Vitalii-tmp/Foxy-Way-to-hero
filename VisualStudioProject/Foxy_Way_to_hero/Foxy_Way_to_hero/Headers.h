@@ -34,5 +34,6 @@
 #include "UI.h"
 #include "Loader.h"
 #include "Bullet.h"
+#include "Acorn.h"
 #include <cmath>
 #include <string>
