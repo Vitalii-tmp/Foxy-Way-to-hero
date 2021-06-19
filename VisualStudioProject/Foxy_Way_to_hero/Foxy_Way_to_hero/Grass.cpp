@@ -58,6 +58,7 @@ void godot::Grass::_on_player_hit_area_entered(Area2D* _other_area)
 
 void godot::Grass::_on_grass_effect_animation_finished()
 {
+	srand(time(NULL));
 	_animated_sprite->queue_free();
 
 	const auto pos = this->get_global_position();
@@ -67,7 +68,9 @@ void godot::Grass::_on_grass_effect_animation_finished()
 	auto* acorn = cast_to<Node2D>(prefab->instance());
 	get_node("/root/World/YSort/")->add_child(acorn);
 
-	acorn->set_global_position(pos+Vector2(8, 8));
+	auto num = rand() % 7 + 5;
+
+	acorn->set_global_position(pos+Vector2(num, num));
 }
 
 void godot::Grass::_on_player_acorn_entered(Area2D* _other_area)

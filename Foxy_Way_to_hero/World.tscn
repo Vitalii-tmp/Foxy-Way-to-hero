@@ -678,4 +678,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button" type="Button" parent="UI"]
+margin_right = 56.0
+margin_bottom = 20.0
+text = "Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [editable path="Camera2D"]
