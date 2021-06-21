@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Scenes/Environment/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/Environment/Hay.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Items/Coin.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scripts/UI.gdns" type="Script" id=12]
+[ext_resource path="res://Scripts/PauseButton.gdns" type="Script" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -682,6 +683,7 @@ __meta__ = {
 margin_right = 56.0
 margin_bottom = 20.0
 text = "Pause"
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

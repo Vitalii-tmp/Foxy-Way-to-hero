@@ -12,6 +12,7 @@
 #include <JSON.hpp>
 #include <JSONParseResult.hpp>
 #include <CanvasLayer.hpp>
+#include <Button.hpp>
 
 #include <limits>
 #include <Position2D.hpp>
@@ -35,5 +36,6 @@
 #include "Loader.h"
 #include "Bullet.h"
 #include "Acorn.h"
+#include "PauseButton.h"
 #include <cmath>
 #include <string>
