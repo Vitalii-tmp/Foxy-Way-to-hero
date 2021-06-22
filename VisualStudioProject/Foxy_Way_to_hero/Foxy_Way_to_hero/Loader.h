@@ -1,29 +1,41 @@
 #pragma once
 #include "Headers.h"
 
-class Loader : public godot::Node
+namespace godot
 {
-private:
-	GODOT_CLASS(Loader, Node);
+	class Loader : public godot::Node
+	{
+	private:
+		GODOT_CLASS(Loader, Node);
 
-public:
-	static void _register_methods();
-	void _init();
+	public:
+		static void _register_methods();
+		void _init();
 
-	void _ready();
-	void _process(float delta);
-	static Loader* get_singleton();
+		void _ready();
+		void _process(float delta);
+		static Loader* get_singleton();
 
-	void load_coins_data();
-	void save_coins_data() const;
+		void load_coins_data();
+		void save_coins_data() const;
 
-	void set_coins(int coins);
-	int get_coins();
-private:
-	static inline Loader* _instance;
+		void load_acorns_data();
+		void save_acorns_data() const;
 
-	const godot::String _dataFile = "user://data.save";
+		void save_all_fields();
 
-	int _coins = 0;
-};
+		void set_coins(int coins);
+		void set_acorns(int acorns);
+
+		int get_coins() const;
+		int get_acorns() const;
+	private:
+		static inline Loader* _instance;
+
+		const String _dataFile = "user://data.save";
+
+		int _coins = 0;
+		int _acorns = 0;
+	};
+}
 

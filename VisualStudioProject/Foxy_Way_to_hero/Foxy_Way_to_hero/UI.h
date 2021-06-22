@@ -18,9 +18,11 @@ namespace godot
 
 		static UI* get_singleton();
 
-		void change_coins_information();
+		void change_coins_information() const;
+		void change_acorns_information() const;
 
-		std::string get_coins_information();
+		std::string get_coins_information() const;
+		std::string get_acorns_information() const;
 	private:
 		static inline UI* _instance;
 	};
