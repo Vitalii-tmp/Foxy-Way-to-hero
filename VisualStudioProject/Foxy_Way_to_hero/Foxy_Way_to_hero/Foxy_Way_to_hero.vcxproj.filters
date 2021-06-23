@@ -45,9 +45,6 @@
     <ClCompile Include="CameraController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Acorn.cpp">
-      <Filter>Source Files\Items</Filter>
-    </ClCompile>
     <ClCompile Include="BatAI.cpp">
       <Filter>Source Files\Enenmies</Filter>
     </ClCompile>
@@ -63,11 +60,14 @@
     <ClCompile Include="Loader.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="PauseButton.cpp">
-      <Filter>Source Files\UI</Filter>
-    </ClCompile>
     <ClCompile Include="UI.cpp">
       <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Acorn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseButton.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -86,12 +86,6 @@
     <ClInclude Include="UI.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="PauseButton.h">
-      <Filter>Header Files\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Acorn.h">
-      <Filter>Header Files\Items</Filter>
-    </ClInclude>
     <ClInclude Include="Bullet.h">
       <Filter>Header Files\Items</Filter>
     </ClInclude>
@@ -106,6 +100,12 @@
     </ClInclude>
     <ClInclude Include="BatAI.h">
       <Filter>Header Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Acorn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseButton.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
