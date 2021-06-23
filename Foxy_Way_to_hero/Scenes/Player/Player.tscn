@@ -830,6 +830,7 @@ shape = SubResource( 58 )
 visible = false
 position = Vector2( -2.38419e-07, -8 )
 scale = Vector2( 0.9139, 0.903492 )
+frame = 1
 
 [node name="Shadow" type="Sprite" parent="."]
 position = Vector2( 0, 2.8419 )

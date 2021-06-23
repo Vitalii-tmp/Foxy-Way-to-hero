@@ -69,6 +69,12 @@
     <ClCompile Include="UI.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="ContinueButton.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="HealthUI.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -106,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="BatAI.h">
       <Filter>Header Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="ContinueButton.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthUI.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
