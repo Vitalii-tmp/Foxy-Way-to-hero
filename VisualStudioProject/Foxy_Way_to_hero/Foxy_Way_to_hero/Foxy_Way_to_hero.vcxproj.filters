@@ -13,6 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Items">
+      <UniqueIdentifier>{7e0ce67d-6bb6-4eec-afae-e63f035e3299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Enemies">
+      <UniqueIdentifier>{066254d8-0963-4fea-953a-27d81380ea47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Items">
+      <UniqueIdentifier>{bf944b2d-1e51-45ea-85fa-0df6059b8cc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Enenmies">
+      <UniqueIdentifier>{6524b4e1-a89f-4b36-8dfb-804e5673f019}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{fefaa08c-1b07-451e-87d2-f6e89f9f8efe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{a344c19c-789f-431d-a4a3-27a92eaa5f52}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GodotLibrary.cpp">
@@ -24,26 +42,32 @@
     <ClCompile Include="Root.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BatAI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CameraController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Grass.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Acorn.cpp">
+      <Filter>Source Files\Items</Filter>
     </ClCompile>
-    <ClCompile Include="Coin.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Loader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UI.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="BatAI.cpp">
+      <Filter>Source Files\Enenmies</Filter>
     </ClCompile>
     <ClCompile Include="Bullet.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Coin.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Grass.cpp">
+      <Filter>Source Files\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Loader.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseButton.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,26 +80,32 @@
     <ClInclude Include="Headers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BatAI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CameraController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Grass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Coin.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Loader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="UI.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseButton.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Acorn.h">
+      <Filter>Header Files\Items</Filter>
     </ClInclude>
     <ClInclude Include="Bullet.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Coin.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Grass.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Loader.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="BatAI.h">
+      <Filter>Header Files\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
