@@ -13,6 +13,9 @@ namespace godot
 		void _ready();
 
 		void _on_button_pause_pressed();
+
+	private:
+		ResourceLoader* _resource_loader = nullptr;
 	};
 }
 
