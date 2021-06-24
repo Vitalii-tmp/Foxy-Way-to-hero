@@ -3,48 +3,48 @@
 [ext_resource path="res://Scripts/Acorn.gdns" type="Script" id=2]
 [ext_resource path="res://Sprites/Items/AcornAnimation2.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
 region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=19]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "Anim2",
 "speed": 7.0
 } ]
 
-[sub_resource type="CircleShape2D" id=20]
+[sub_resource type="CircleShape2D" id=8]
 radius = 3.56665
 
 [node name="Acorn" type="Node2D"]
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( -0.917706, 1.91883 )
-frames = SubResource( 19 )
+frames = SubResource( 7 )
 animation = "Anim2"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2"]
@@ -52,4 +52,4 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2/Area2D"]
 position = Vector2( 4.7484, 4.03817 )
-shape = SubResource( 20 )
+shape = SubResource( 8 )

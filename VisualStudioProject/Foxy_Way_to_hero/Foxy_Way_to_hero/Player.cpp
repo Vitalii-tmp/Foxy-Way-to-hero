@@ -260,6 +260,11 @@ float godot::Player::_get_damage()
 	return _damage;
 }
 
+int godot::Player::_get_current_state()
+{
+	return _current_state;
+}
+
 
 Player::~Player() {}
 

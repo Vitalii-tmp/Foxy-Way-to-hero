@@ -53,7 +53,7 @@ namespace godot {
 
 		Vector2 _get_input_vector();
 		float _get_damage();
-
+		int _get_current_state();
 
 		// Gameplay variables
 	public:

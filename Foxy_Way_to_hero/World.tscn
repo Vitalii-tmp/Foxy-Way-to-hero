@@ -608,7 +608,7 @@ position = Vector2( 160, 160 )
 position = Vector2( 272, 112 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 214.686, 59.4985 )
+position = Vector2( 160, 90 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
@@ -619,10 +619,10 @@ remote_path = NodePath("../../../Camera2D")
 position = Vector2( 144.063, -166.932 )
 
 [node name="Bat2" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 296, 88 )
+position = Vector2( 294.665, 91.3371 )
 
 [node name="Bat3" parent="YSort/Bats" instance=ExtResource( 7 )]
-position = Vector2( 272, 328 )
+position = Vector2( 273.335, 313.317 )
 
 [node name="Bat4" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -136, 216 )
@@ -644,7 +644,7 @@ position = Vector2( 44.3693, 106.87 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 214.686, 59.4985 )
+position = Vector2( 160, 90 )
 
 [node name="BottomRight" parent="Camera2D/Limits" index="0"]
 position = Vector2( 480, 432 )

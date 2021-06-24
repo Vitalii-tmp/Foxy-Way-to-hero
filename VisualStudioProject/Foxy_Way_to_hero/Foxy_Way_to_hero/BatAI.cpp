@@ -245,6 +245,13 @@ void godot::BatAI::_chase_state()
 	move_and_slide(_knockback_vector);
 
 	move_and_slide(_move_vector * _speed);
+
+
+	if (_distance_to_player < 1 && Player::_get_singleton()->_get_current_state()!=ROLL)
+		_knockback_vector = ( this->get_global_position()- _player->get_global_position()).normalized()*_speed*3;
+		
+	
+		
 }
 
 
