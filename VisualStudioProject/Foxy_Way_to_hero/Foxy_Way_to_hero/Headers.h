@@ -43,5 +43,6 @@
 #include "HealthUI.h"
 #include "RestartButton.h"
 #include "QuitButton.h"
+#include "LoadSceneButton.h"
 #include <cmath>
 #include <string>

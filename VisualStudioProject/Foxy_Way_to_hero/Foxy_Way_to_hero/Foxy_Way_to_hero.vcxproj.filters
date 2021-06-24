@@ -87,6 +87,9 @@
     <ClCompile Include="QuitButton.cpp">
       <Filter>Source Files\UI\Buttons</Filter>
     </ClCompile>
+    <ClCompile Include="LoadSceneButton.cpp">
+      <Filter>Source Files\UI\Buttons</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -135,6 +138,9 @@
       <Filter>Header Files\UI\Buttons</Filter>
     </ClInclude>
     <ClInclude Include="QuitButton.h">
+      <Filter>Header Files\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadSceneButton.h">
       <Filter>Header Files\UI\Buttons</Filter>
     </ClInclude>
   </ItemGroup>
