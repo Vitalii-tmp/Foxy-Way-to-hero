@@ -173,6 +173,7 @@
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="PauseButton.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RestartButton.cpp" />
     <ClCompile Include="Root.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
@@ -189,6 +190,7 @@
     <ClInclude Include="Loader.h" />
     <ClInclude Include="PauseButton.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="RestartButton.h" />
     <ClInclude Include="Root.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>

@@ -14,7 +14,6 @@ void godot::HealthUI::_init()
 
 void godot::HealthUI::_ready()
 {
-	//connect("animation_finished", this, "_delete_next_full_heart");
 }
 
 godot::HealthUI* godot::HealthUI::_get_singleton()

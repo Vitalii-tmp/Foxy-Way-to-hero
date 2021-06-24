@@ -75,6 +75,9 @@
     <ClCompile Include="HealthUI.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="RestartButton.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -117,6 +120,9 @@
       <Filter>Header Files\UI</Filter>
     </ClInclude>
     <ClInclude Include="HealthUI.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="RestartButton.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>

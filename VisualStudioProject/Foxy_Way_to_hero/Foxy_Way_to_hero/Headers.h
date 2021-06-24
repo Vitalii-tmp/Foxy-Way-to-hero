@@ -41,5 +41,6 @@
 #include "PauseButton.h"
 #include "ContinueButton.h"
 #include "HealthUI.h"
+#include "RestartButton.h"
 #include <cmath>
 #include <string>
