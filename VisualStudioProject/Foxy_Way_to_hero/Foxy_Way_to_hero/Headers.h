@@ -13,6 +13,8 @@
 #include <JSONParseResult.hpp>
 #include <CanvasLayer.hpp>
 #include <Button.hpp>
+#include <SceneTree.hpp>
+#include <Control.hpp>
 
 #include <limits>
 #include <Position2D.hpp>
@@ -37,5 +39,7 @@
 #include "Bullet.h"
 #include "Acorn.h"
 #include "PauseButton.h"
+#include "ContinueButton.h"
+#include "HealthUI.h"
 #include <cmath>
 #include <string>

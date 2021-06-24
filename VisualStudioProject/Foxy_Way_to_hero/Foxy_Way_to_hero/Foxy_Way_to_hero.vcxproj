@@ -166,8 +166,10 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CameraController.cpp" />
     <ClCompile Include="Coin.cpp" />
+    <ClCompile Include="ContinueButton.cpp" />
     <ClCompile Include="GodotLibrary.cpp" />
     <ClCompile Include="Grass.cpp" />
+    <ClCompile Include="HealthUI.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="PauseButton.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -180,8 +182,10 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="CameraController.h" />
     <ClInclude Include="Coin.h" />
+    <ClInclude Include="ContinueButton.h" />
     <ClInclude Include="Grass.h" />
     <ClInclude Include="Headers.h" />
+    <ClInclude Include="HealthUI.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="PauseButton.h" />
     <ClInclude Include="Player.h" />

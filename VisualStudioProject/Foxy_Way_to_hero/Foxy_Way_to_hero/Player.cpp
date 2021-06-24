@@ -216,6 +216,7 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 		{
 
 			_hp -= _bat_damage;
+			HealthUI::_get_singleton()->_turn_on_hit_anim();
 
 			_hit_effect->set_visible(true);
 			_hit_effect->play();
