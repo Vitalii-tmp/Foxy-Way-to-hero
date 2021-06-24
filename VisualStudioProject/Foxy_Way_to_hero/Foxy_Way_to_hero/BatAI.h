@@ -58,6 +58,7 @@ namespace godot
 
 		Vector2 _knockback_vector;
 		Vector2 _move_vector;
+		Vector2 _start_position;
 
 		AnimatedSprite* _die_effect = nullptr;
 		AnimatedSprite* _hit_effect = nullptr;
