@@ -26,4 +26,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<ContinueButton>();
 	register_class<HealthUI>();
 	register_class<RestartButton>();
+	register_class<QuitButton>();
 }

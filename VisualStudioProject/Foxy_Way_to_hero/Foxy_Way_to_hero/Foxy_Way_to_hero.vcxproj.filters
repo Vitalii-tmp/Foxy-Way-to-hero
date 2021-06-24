@@ -31,6 +31,12 @@
     <Filter Include="Header Files\UI">
       <UniqueIdentifier>{a344c19c-789f-431d-a4a3-27a92eaa5f52}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\UI\Buttons">
+      <UniqueIdentifier>{7aec02b2-22af-4094-8a5c-e2c5c4ccd157}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI\Buttons">
+      <UniqueIdentifier>{11e56930-7fe2-41ce-a30d-32c5f6311246}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GodotLibrary.cpp">
@@ -63,20 +69,23 @@
     <ClCompile Include="Loader.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="PauseButton.cpp">
-      <Filter>Source Files\UI</Filter>
-    </ClCompile>
     <ClCompile Include="UI.cpp">
-      <Filter>Source Files\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="ContinueButton.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="HealthUI.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="ContinueButton.cpp">
+      <Filter>Source Files\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseButton.cpp">
+      <Filter>Source Files\UI\Buttons</Filter>
+    </ClCompile>
     <ClCompile Include="RestartButton.cpp">
-      <Filter>Source Files\UI</Filter>
+      <Filter>Source Files\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="QuitButton.cpp">
+      <Filter>Source Files\UI\Buttons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -93,9 +102,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UI.h">
-      <Filter>Header Files\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="PauseButton.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
     <ClInclude Include="Acorn.h">
@@ -116,14 +122,20 @@
     <ClInclude Include="BatAI.h">
       <Filter>Header Files\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="ContinueButton.h">
-      <Filter>Header Files\UI</Filter>
-    </ClInclude>
     <ClInclude Include="HealthUI.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="ContinueButton.h">
+      <Filter>Header Files\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseButton.h">
+      <Filter>Header Files\UI\Buttons</Filter>
+    </ClInclude>
     <ClInclude Include="RestartButton.h">
-      <Filter>Header Files\UI</Filter>
+      <Filter>Header Files\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="QuitButton.h">
+      <Filter>Header Files\UI\Buttons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
