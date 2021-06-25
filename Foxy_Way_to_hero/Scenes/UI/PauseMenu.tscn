@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/ContinueButton.gdns" type="Script" id=1]
+[ext_resource path="res://Scripts/RestartButton.gdns" type="Script" id=2]
+[ext_resource path="res://Scripts/QuitButton.gdns" type="Script" id=3]
+[ext_resource path="res://Scripts/LoadSceneButton.gdns" type="Script" id=4]
 
 [node name="PauseMenuCanvasLayer" type="CanvasLayer"]
 pause_mode = 2
@@ -16,6 +19,7 @@ margin_right = 42.3751
 margin_bottom = -18.5796
 rect_pivot_offset = Vector2( 48.6602, 20 )
 text = "Main Menu"
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -45,11 +49,12 @@ margin_top = 21.0
 margin_right = 42.0
 margin_bottom = 41.0
 text = "Restart"
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ExitButton" type="Button" parent="."]
+[node name="QuitButton" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -58,7 +63,8 @@ margin_left = -39.4204
 margin_top = -37.6818
 margin_right = 41.5796
 margin_bottom = -17.6818
-text = "Exit"
+text = "Quit"
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
