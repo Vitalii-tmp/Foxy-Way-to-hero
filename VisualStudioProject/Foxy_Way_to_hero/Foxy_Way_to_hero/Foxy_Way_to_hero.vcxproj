@@ -171,8 +171,11 @@
     <ClCompile Include="Grass.cpp" />
     <ClCompile Include="HealthUI.cpp" />
     <ClCompile Include="Loader.cpp" />
+    <ClCompile Include="LoadSceneButton.cpp" />
     <ClCompile Include="PauseButton.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="QuitButton.cpp" />
+    <ClCompile Include="RestartButton.cpp" />
     <ClCompile Include="Root.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
@@ -187,8 +190,11 @@
     <ClInclude Include="Headers.h" />
     <ClInclude Include="HealthUI.h" />
     <ClInclude Include="Loader.h" />
+    <ClInclude Include="LoadSceneButton.h" />
     <ClInclude Include="PauseButton.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="QuitButton.h" />
+    <ClInclude Include="RestartButton.h" />
     <ClInclude Include="Root.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
