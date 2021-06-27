@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Sprites/Effects/HitEffect.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/UI/HeartUIFull.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/UI/HeartUIEmpty.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/HealthUI.gdns" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 24, 0, 24, 24 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "hitAnim",
+"speed": 7.0
+} ]
+
+[node name="Node2D" type="Control"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullHeart4" type="Sprite" parent="."]
+position = Vector2( 15.0624, 2.46952 )
+z_index = 1
+texture = ExtResource( 2 )
+offset = Vector2( 40.557, 3.32507 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="FullHeart4"]
+visible = false
+position = Vector2( 39.8783, 2.16911 )
+scale = Vector2( 0.652386, 0.652386 )
+frames = SubResource( 3 )
+animation = "hitAnim"
+
+[node name="FullHeart3" type="Sprite" parent="."]
+position = Vector2( -0.991924, 2.39519 )
+z_index = 1
+texture = ExtResource( 2 )
+offset = Vector2( 40.557, 3.32507 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="FullHeart3"]
+visible = false
+position = Vector2( 39.7477, 2.57715 )
+scale = Vector2( 0.652386, 0.652386 )
+frames = SubResource( 3 )
+animation = "hitAnim"
+
+[node name="FullHeart2" type="Sprite" parent="."]
+position = Vector2( 23.6594, 5.86892 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="FullHeart2"]
+visible = false
+position = Vector2( -0.754847, -1.23029 )
+scale = Vector2( 0.652386, 0.652386 )
+frames = SubResource( 3 )
+animation = "hitAnim"
+
+[node name="FullHeart" type="Sprite" parent="."]
+position = Vector2( 7.72897, 5.89958 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="FullHeart"]
+visible = false
+position = Vector2( -0.675636, -1.09409 )
+scale = Vector2( 0.652386, 0.652386 )
+frames = SubResource( 3 )
+animation = "hitAnim"
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+margin_left = 0.363884
+margin_top = 0.644754
+margin_right = 40.3639
+margin_bottom = 40.6448
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmptyHeart" type="Sprite" parent="AspectRatioContainer"]
+position = Vector2( -2.05364, -14.7754 )
+texture = ExtResource( 3 )
+offset = Vector2( 9.52452, 20.6024 )
+
+[node name="EmptyHeart2" type="Sprite" parent="AspectRatioContainer"]
+position = Vector2( -2.05364, -14.7754 )
+texture = ExtResource( 3 )
+offset = Vector2( 25.5016, 20.6024 )
+
+[node name="EmptyHeart3" type="Sprite" parent="AspectRatioContainer"]
+position = Vector2( 29.721, -14.8805 )
+texture = ExtResource( 3 )
+offset = Vector2( 9.52452, 20.6024 )
+
+[node name="EmptyHeart4" type="Sprite" parent="AspectRatioContainer"]
+position = Vector2( 29.7953, -14.8805 )
+texture = ExtResource( 3 )
+offset = Vector2( 25.5016, 20.6024 )
+
+[connection signal="animation_finished" from="FullHeart4/AnimatedSprite" to="." method="_delete_next_full_heart"]
+[connection signal="animation_finished" from="FullHeart3/AnimatedSprite2" to="." method="_delete_next_full_heart"]
+[connection signal="animation_finished" from="FullHeart2/AnimatedSprite3" to="." method="_delete_next_full_heart"]
+[connection signal="animation_finished" from="FullHeart/AnimatedSprite4" to="." method="_delete_next_full_heart"]
