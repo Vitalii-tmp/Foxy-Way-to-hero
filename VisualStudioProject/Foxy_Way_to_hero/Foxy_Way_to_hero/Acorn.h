@@ -13,25 +13,20 @@ namespace godot
 		void _process(float delta);
 		void _ready();
 
-		//Acorn();
+		Acorn();
+		~Acorn();
 
-		void _on_acorn_player_entered(Node* body);
-		void _acorn_animation_effect_finished();
+		void _on_acorn_area_body_entered(Node* body);
+		
 
-	/*private:
-		float _time;
-		float _angle;
-		float _current_x;
-		float _current_y;
+	private:
+		
 		
 		int _speed;
 
 		Vector2 _move_vector;
-		Vector2 _start_position;*/
-
-	private:
-		//AnimatedSprite* _animated_sprite = nullptr;
-		//AnimatedSprite* _sprite = nullptr;
+        
+		KinematicBody2D* _acorn_kinematic_body = nullptr;
 	};
 
 }

@@ -20,17 +20,12 @@ void godot::Grass::_register_methods()
 	register_method("_ready", &Grass::_ready);
 	register_method("_on_player_hit_area_entered", &Grass::_on_player_hit_area_entered);
 	register_method("_on_grass_effect_animation_finished", &Grass::_on_grass_effect_animation_finished);
-	register_method("_on_player_acorn_entered", &Grass::_on_player_acorn_entered);
-	register_method("_on_acorn_effect_animation_finished", &Grass::_on_acorn_effect_animation_finished);
 }
 
 
 void godot::Grass::_init()
 {
-	//connect("area_entered", this, "_on_player_hit_area_entered");
-	//connect("area_entered", this, "_on_player_acorn_entered");
-
-	//connect("animation_finished", this, "_on_acorn_effect_animation_finished");
+	
 }
 
 
@@ -38,9 +33,8 @@ void godot::Grass::_ready()
 {
 	_animated_sprite = cast_to<AnimatedSprite>(get_parent());
 	_sprite = cast_to<Sprite>(get_parent()->get_parent()->get_child(0));
-	_acorn_animated_sprite = cast_to<AnimatedSprite>(get_parent()->get_parent()->get_child(2));
-
 	_resource_loader = ResourceLoader::get_singleton();
+
 }
 
 
@@ -56,6 +50,8 @@ void godot::Grass::_on_player_hit_area_entered(Area2D* _other_area)
 		_sprite->queue_free();
 		_animated_sprite->set_visible(true);
 		_animated_sprite->play("Animation");
+
+		_add_acorn();
 	}
 }
 
@@ -64,31 +60,24 @@ void godot::Grass::_on_grass_effect_animation_finished()
 {
 	
 	_animated_sprite->set_visible(false);
-	_acorn_animated_sprite->set_visible(true);
-	_acorn_animated_sprite->play("AcornAnimation");
-
 	
-}
-
-void godot::Grass::_on_player_acorn_entered(Area2D* _other_area)
-{
-}
-
-void godot::Grass::_on_acorn_effect_animation_finished()
-{
-	srand(time(NULL));
-
-	_acorn_animated_sprite->queue_free();
 	_animated_sprite->queue_free();
 
+	
+
+}
+
+void godot::Grass::_add_acorn()
+{
 	const auto pos = this->get_global_position();
 
 	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/Acorn.tscn");
 
-	auto* acorn = cast_to<Node2D>(prefab->instance());
+	auto acorn = cast_to<KinematicBody2D>(prefab->instance());
 	get_node("/root/World/YSort/")->add_child(acorn);
 
-	auto num = rand() % 7 + 5;
-
-	acorn->set_global_position(pos + Vector2(num, num));
+	acorn->set_global_position(pos + Vector2(8, 8));
 }
+
+
+
