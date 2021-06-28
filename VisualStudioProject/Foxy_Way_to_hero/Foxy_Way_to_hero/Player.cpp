@@ -7,17 +7,17 @@ using namespace godot;
 //register methods using in godot
 void godot::Player::_register_methods()
 {
-	register_method((char*)"_process", &Player::_process);
-	register_method((char*)"_init", &Player::_init);
-	register_method((char*)"_ready", &Player::_ready);
+	register_method("_process", &Player::_process);
+	register_method("_init", &Player::_init);
+	register_method("_ready", &Player::_ready);
 
-	register_method((char*)"_short_attack_animation_is_finished", &Player::_short_attack_animation_is_finished);
-	register_method((char*)"_roll_animation_is_finished", &Player::_roll_animation_is_finished);
-	register_method((char*)"_on_hurt_area_area_entered", &Player::_on_hurt_area_area_entered);
-	register_method((char*)"_on_hit_effect_animation_finished", &Player::_on_hit_effect_animation_finished);
-	register_method((char*)"_long_attack_animation_is_finished", &Player::_long_attack_animation_is_finished);
+	register_method("_short_attack_animation_is_finished", &Player::_short_attack_animation_is_finished);
+	register_method("_roll_animation_is_finished", &Player::_roll_animation_is_finished);
+	register_method("_on_hurt_area_area_entered", &Player::_on_hurt_area_area_entered);
+	register_method("_on_hit_effect_animation_finished", &Player::_on_hit_effect_animation_finished);
+	register_method("_long_attack_animation_is_finished", &Player::_long_attack_animation_is_finished);
 	
-	register_method((char*)"_fire", &Player::_fire);
+	register_method("_fire", &Player::_fire);
 }
 
 
@@ -66,6 +66,14 @@ void godot::Player::_process(float delta)
 		_is_alive = false;
 		//destroy player
 		queue_free();
+
+		Ref<PackedScene> death_menu = _resource_loader->load("res://Scenes/UI/DeathMenu.tscn");
+
+		get_node("/root/World")->set_name("to_delete");
+		get_node("/root/to_delete")->queue_free();
+		get_tree()->set_pause(false);
+
+		get_node("/root")->add_child(death_menu->instance());
 	}
 		
 
