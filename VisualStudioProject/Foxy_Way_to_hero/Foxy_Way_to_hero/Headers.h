@@ -45,5 +45,6 @@
 #include "QuitButton.h"
 #include "LoadSceneButton.h"
 #include "Tomb.h"
+#include "CheckPoint.h"
 #include <cmath>
 #include <string>
