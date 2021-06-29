@@ -151,7 +151,7 @@ void godot::BatAI::_on_hit_effect_animation_finished()
 void godot::BatAI::_change_state_depend_on_player_position()
 {
 	
-
+	
 	switch (_current_state)
 	{
 	case IDLE:
@@ -199,6 +199,7 @@ void godot::BatAI::_idle_state()
 
 void godot::BatAI::_wander_state()
 {
+
 	//check distance to player
 	auto _distance_to_player = sqrt(pow((this->get_global_position().x - _player->get_global_position().x), 2) +
 		pow((this->get_global_position().y - _player->get_global_position().y), 2));

@@ -6,7 +6,7 @@ void godot::Acorn::_register_methods()
 	register_method("_ready", &Acorn::_ready);
 	register_method("_process", &Acorn::_process);
 }
-
+		
 void godot::Acorn::_init()
 {
 	connect("body_entered", this, "_on_acorn_area_body_entered");

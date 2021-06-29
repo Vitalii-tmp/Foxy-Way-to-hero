@@ -44,5 +44,6 @@
 #include "RestartButton.h"
 #include "QuitButton.h"
 #include "LoadSceneButton.h"
+#include "Tomb.h"
 #include <cmath>
 #include <string>
