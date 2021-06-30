@@ -3,6 +3,12 @@
 
 namespace godot
 {
+	enum task
+	{
+		ACORNS,
+		COINS
+	};
+	
 	class Countryman : public Node2D
 	{
 		GODOT_CLASS(Countryman, Node2D);
@@ -13,12 +19,16 @@ namespace godot
 		void _ready();
 
 		void _on_detection_area_entered(Node* node);
-		
+		void _from_detection_area_exit(Node* node);
+
+		void _buy_items();
 	private:
 
 		Area2D* _detection_area = nullptr;
 		Sprite* _dialog_window = nullptr;
-		Label* _task = nullptr;
+		Label* _task_label = nullptr;
+
+		task _task;
 	};
 }
 

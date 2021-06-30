@@ -682,6 +682,21 @@ position = Vector2( 368, -312 )
 [node name="Countryman" parent="YSort" instance=ExtResource( 16 )]
 position = Vector2( 336.372, -356.221 )
 
+[node name="Countryman4" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 336.387, -165.801 )
+
+[node name="Countryman5" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 245.57, 355.555 )
+
+[node name="Countryman6" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( -90.7889, 190.739 )
+
+[node name="Countryman2" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 238.379, -44.4974 )
+
+[node name="Countryman3" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 48.0543, -284.321 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
