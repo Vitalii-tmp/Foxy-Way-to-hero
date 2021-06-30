@@ -18,6 +18,8 @@ void godot::Player::_register_methods()
 	register_method("_long_attack_animation_is_finished", &Player::_long_attack_animation_is_finished);
 	
 	register_method("_fire", &Player::_fire);
+	register_method("_death", &Player::_death);
+	
 }
 
 
@@ -55,6 +57,8 @@ void godot::Player::_ready()
 
 	_resource_loader = ResourceLoader::get_singleton();
 	
+	/*_death_timer = Timer::_new();
+	this->add_child(_death_timer);*/
 }
 
 
@@ -65,15 +69,29 @@ void godot::Player::_process(float delta)
 	{
 		_is_alive = false;
 		//destroy player
-		queue_free();
+		
 
-		Ref<PackedScene> death_menu = _resource_loader->load("res://Scenes/UI/DeathMenu.tscn");
+		Ref<PackedScene> _tmp_tomb = _resource_loader->load("res://Scenes/Items/Tomb.tscn");
 
-		get_node("/root/World")->set_name("to_delete");
+		/*get_node("/root/World")->set_name("to_delete");
 		get_node("/root/to_delete")->queue_free();
 		get_tree()->set_pause(false);
 
-		get_node("/root")->add_child(death_menu->instance());
+		get_node("/root")->add_child(_tomb->instance());*/
+		auto tomb = cast_to<Node2D>(_tmp_tomb->instance());
+		tomb->set_global_position(this->get_global_position()+Vector2(0,-12));
+		get_node("/root/World/YSort/")->add_child(tomb);
+		
+		/*if (!_death_timer->is_connected("timeout", this, "_death"))
+		{
+			Godot::print("Timer connected");
+			_death_timer->connect("timeout", this, "_death");
+			_death_timer->start(2);
+		}*/
+		
+
+		queue_free();
+		
 	}
 		
 
@@ -215,22 +233,26 @@ void godot::Player::_change_state_depend_on_behavior()
 //hurt area take damage from enemies
 void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 {
-	if (_other_area->get_name() == "BatHitArea")
+	if (_is_alive)
 	{
-		auto _bat_damage = cast_to<BatAI>(_other_area->get_parent())->_get_damage();
-
-		//if player is rolling dont damage from bats
-		if (_current_state != ROLL)
+		if (_other_area->get_name() == "BatHitArea")
 		{
+			auto _bat_damage = cast_to<BatAI>(_other_area->get_parent())->_get_damage();
 
-			_hp -= _bat_damage;
-			HealthUI::_get_singleton()->_turn_on_hit_anim();
+			//if player is rolling dont damage from bats
+			if (_current_state != ROLL)
+			{
 
-			_hit_effect->set_visible(true);
-			_hit_effect->play();
+				_hp -= _bat_damage;
+				HealthUI::_get_singleton()->_turn_on_hit_anim();
+
+				_hit_effect->set_visible(true);
+				_hit_effect->play();
+			}
+
 		}
-		
 	}
+	
 		
 }
 
@@ -255,6 +277,21 @@ void godot::Player::_fire()
 	UI::get_singleton()->change_acorns_information();
 }
 
+void godot::Player::_death()
+{
+	Godot::print("Timer disconnected");
+	_death_timer->disconnect("timeout", this, "_death");
+	
+	Ref<PackedScene> _death_menu = _resource_loader->load("res://Scenes/UI/DeathMenu.tscn");
+
+	//get_node("/root/World")->set_name("to_delete");
+	//get_node("/root/to_delete")->queue_free();
+		
+	get_node("/root")->add_child(_death_menu->instance());
+
+	queue_free();
+}
+
 
 Vector2 godot::Player::_get_input_vector()
 {
@@ -265,6 +302,16 @@ Vector2 godot::Player::_get_input_vector()
 float godot::Player::_get_damage()
 {
 	return _damage;
+}
+
+int godot::Player::_get_current_state()
+{
+	return _current_state;
+}
+
+bool godot::Player::_get_is_alive()
+{
+	return _is_alive;
 }
 
 

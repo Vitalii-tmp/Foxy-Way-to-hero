@@ -43,6 +43,7 @@ void godot::BatAI::_ready()
 	_bat_sprite = cast_to<AnimatedSprite>(get_node("BatSprite"));
 	_hit_effect = cast_to<AnimatedSprite>(get_node("HitEffect"));
 
+	_start_position = get_global_position();
 }
 
 
@@ -125,8 +126,8 @@ void godot::BatAI::_on_player_detection_area_body_exited(Node* _other_body)
 {
 	if (_other_body->get_name() == "Player")
 	{
-		_current_state = IDLE;
-		_player = nullptr;
+		_current_state =IDLE;
+		//_player = nullptr;
 	}
 	
 }
@@ -150,7 +151,7 @@ void godot::BatAI::_on_hit_effect_animation_finished()
 void godot::BatAI::_change_state_depend_on_player_position()
 {
 	
-
+	
 	switch (_current_state)
 	{
 	case IDLE:
@@ -174,12 +175,31 @@ void godot::BatAI::_idle_state()
 	_knockback_vector = _knockback_vector.move_toward(Vector2::ZERO, 5);
 	move_and_slide(_knockback_vector);
 
+	auto _distance_to_start_position = sqrt(pow((this->get_global_position().x - _start_position.x), 2) +
+		pow((this->get_global_position().y - _start_position.y), 2));
+
+	if (_distance_to_start_position>1)
+	{
+		_move_vector = (_start_position - this->get_global_position()).normalized();
+		_move_vector = _move_vector.move_toward(_move_vector, 5);
+		move_and_slide(_move_vector * _speed);
+
+		//looking on start position
+		if (_start_position.x - this->get_global_position().x < 0)
+			_bat_sprite->set_flip_h(true);
+
+		if (_start_position.x - this->get_global_position().x > 0)
+			_bat_sprite->set_flip_h(false);
+	}
+
+	
 	
 }
 
 
 void godot::BatAI::_wander_state()
 {
+
 	//check distance to player
 	auto _distance_to_player = sqrt(pow((this->get_global_position().x - _player->get_global_position().x), 2) +
 		pow((this->get_global_position().y - _player->get_global_position().y), 2));
@@ -193,7 +213,7 @@ void godot::BatAI::_wander_state()
 		_bat_sprite->set_flip_h(false);
 
 	//if player too close chase him
-	if (_distance_to_player < 60)
+	if (_distance_to_player < 75)
 		_current_state = CHASE;
 
 	_knockback_vector = _knockback_vector.move_toward(Vector2::ZERO, 5);
@@ -215,11 +235,24 @@ void godot::BatAI::_chase_state()
 	if (_move_vector.x > 0)
 		_bat_sprite->set_flip_h(false);
 
-	
+	//check distance to player
+	auto _distance_to_player = sqrt(pow((this->get_global_position().x - _player->get_global_position().x), 2) +
+		pow((this->get_global_position().y - _player->get_global_position().y), 2));
+
+	if (_distance_to_player > 100)
+		_current_state = WANDER;
+
 	_knockback_vector = _knockback_vector.move_toward(Vector2::ZERO, 5);
 	move_and_slide(_knockback_vector);
 
 	move_and_slide(_move_vector * _speed);
+
+
+	if (_distance_to_player < 1 && Player::_get_singleton()->_get_current_state()!=ROLL)
+		_knockback_vector = ( this->get_global_position()- _player->get_global_position()).normalized()*_speed*3;
+		
+	
+		
 }
 
 

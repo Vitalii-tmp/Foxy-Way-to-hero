@@ -31,12 +31,6 @@
     <Filter Include="Header Files\UI">
       <UniqueIdentifier>{a344c19c-789f-431d-a4a3-27a92eaa5f52}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\UI\Buttons">
-      <UniqueIdentifier>{7aec02b2-22af-4094-8a5c-e2c5c4ccd157}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\UI\Buttons">
-      <UniqueIdentifier>{11e56930-7fe2-41ce-a30d-32c5f6311246}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GodotLibrary.cpp">
@@ -50,9 +44,6 @@
     </ClCompile>
     <ClCompile Include="CameraController.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Acorn.cpp">
-      <Filter>Source Files\Items</Filter>
     </ClCompile>
     <ClCompile Include="BatAI.cpp">
       <Filter>Source Files\Enenmies</Filter>
@@ -72,23 +63,32 @@
     <ClCompile Include="UI.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="HealthUI.cpp">
-      <Filter>Source Files\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="ContinueButton.cpp">
-      <Filter>Source Files\UI\Buttons</Filter>
+    <ClCompile Include="Acorn.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PauseButton.cpp">
-      <Filter>Source Files\UI\Buttons</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RestartButton.cpp">
-      <Filter>Source Files\UI\Buttons</Filter>
+    <ClCompile Include="ContinueButton.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="QuitButton.cpp">
-      <Filter>Source Files\UI\Buttons</Filter>
+    <ClCompile Include="HealthUI.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LoadSceneButton.cpp">
-      <Filter>Source Files\UI\Buttons</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QuitButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RestartButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tomb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckPoint.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -107,9 +107,6 @@
     <ClInclude Include="UI.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="Acorn.h">
-      <Filter>Header Files\Items</Filter>
-    </ClInclude>
     <ClInclude Include="Bullet.h">
       <Filter>Header Files\Items</Filter>
     </ClInclude>
@@ -125,23 +122,32 @@
     <ClInclude Include="BatAI.h">
       <Filter>Header Files\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="HealthUI.h">
-      <Filter>Header Files\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="ContinueButton.h">
-      <Filter>Header Files\UI\Buttons</Filter>
+    <ClInclude Include="Acorn.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PauseButton.h">
-      <Filter>Header Files\UI\Buttons</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RestartButton.h">
-      <Filter>Header Files\UI\Buttons</Filter>
+    <ClInclude Include="ContinueButton.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="QuitButton.h">
-      <Filter>Header Files\UI\Buttons</Filter>
+    <ClInclude Include="HealthUI.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LoadSceneButton.h">
-      <Filter>Header Files\UI\Buttons</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QuitButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RestartButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tomb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckPoint.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

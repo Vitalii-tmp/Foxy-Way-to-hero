@@ -746,7 +746,7 @@ states/Run/node = SubResource( 46 )
 states/Run/position = Vector2( -880, -12 )
 transitions = [ "Idle", "Run", SubResource( 47 ), "Run", "Idle", SubResource( 48 ), "Idle", "Attack", SubResource( 49 ), "Attack", "Idle", SubResource( 50 ), "Idle", "Roll", SubResource( 51 ), "Roll", "Idle", SubResource( 52 ), "Idle", "LongRangeAttack", SubResource( 53 ), "LongRangeAttack", "Idle", SubResource( 54 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -1547.97, -23.773 )
+graph_offset = Vector2( -1547.97, -97.957 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=56]
 
@@ -801,7 +801,7 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 56 )
 parameters/Attack/blend_position = Vector2( 0, 1 )
-parameters/Idle/blend_position = Vector2( 0, 1 )
+parameters/Idle/blend_position = Vector2( -0.0867734, 0.5 )
 parameters/LongRangeAttack/blend_position = Vector2( 0, 0 )
 parameters/Roll/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )

@@ -50,11 +50,12 @@ namespace godot {
 		void _on_hit_effect_animation_finished();
 		
 		void _fire();
+		void _death();
 
 		Vector2 _get_input_vector();
 		float _get_damage();
-
-
+		int _get_current_state();
+		bool _get_is_alive();
 		// Gameplay variables
 	public:
 
@@ -70,6 +71,7 @@ namespace godot {
 		AnimatedSprite* _hit_effect = nullptr;
 		AnimationNodeStateMachinePlayback* _animation_state = nullptr;
 		Area2D* _hit_area = nullptr;
+		Timer* _death_timer = nullptr;
 
 		bool _is_alive;
 		bool _can_fire;
