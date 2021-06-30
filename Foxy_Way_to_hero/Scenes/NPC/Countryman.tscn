@@ -67,6 +67,7 @@ playing = true
 shape = SubResource( 11 )
 
 [node name="DialogWindowTask" type="Sprite" parent="."]
+visible = false
 position = Vector2( 18.6161, -21.8232 )
 texture = ExtResource( 2 )
 

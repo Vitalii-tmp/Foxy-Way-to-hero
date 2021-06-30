@@ -27,6 +27,7 @@
 #include <ResourceLoader.hpp>
 #include <PackedScene.hpp>
 #include <Timer.hpp>
+#include <Label.hpp>
 
 //My headers
 #include "Player.h"
@@ -46,5 +47,6 @@
 #include "LoadSceneButton.h"
 #include "Tomb.h"
 #include "CheckPoint.h"
+#include "Countryman.h"
 #include <cmath>
 #include <string>

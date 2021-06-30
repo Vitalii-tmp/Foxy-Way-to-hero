@@ -168,6 +168,7 @@
     <ClCompile Include="CheckPoint.cpp" />
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="ContinueButton.cpp" />
+    <ClCompile Include="Countryman.cpp" />
     <ClCompile Include="GodotLibrary.cpp" />
     <ClCompile Include="Grass.cpp" />
     <ClCompile Include="HealthUI.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="CheckPoint.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="ContinueButton.h" />
+    <ClInclude Include="Countryman.h" />
     <ClInclude Include="Grass.h" />
     <ClInclude Include="Headers.h" />
     <ClInclude Include="HealthUI.h" />
