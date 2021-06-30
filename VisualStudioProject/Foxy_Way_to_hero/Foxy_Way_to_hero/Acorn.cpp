@@ -48,7 +48,7 @@ void godot::Acorn::_on_acorn_area_body_entered(Node* body)
 		Loader::get_singleton()->set_acorns(1);
 		//Loader::get_singleton()->save_acorns_data();
 
-		Loader::get_singleton()->save_all_fields();
+		//Loader::get_singleton()->save_all_fields();
 
 		UI::get_singleton()->change_acorns_information();
 		

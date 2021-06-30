@@ -59,6 +59,8 @@ void godot::Player::_ready()
 	
 	/*_death_timer = Timer::_new();
 	this->add_child(_death_timer);*/
+
+	set_global_position(Loader::get_singleton()->get_start_position());
 }
 
 
@@ -272,8 +274,7 @@ void godot::Player::_fire()
 
 	Loader::get_singleton()->set_acorns(-1);
 	//Loader::get_singleton()->save_acorns_data();
-	Loader::get_singleton()->save_all_fields();
-	
+	//Loader::get_singleton()->save_all_fields();
 	UI::get_singleton()->change_acorns_information();
 }
 
