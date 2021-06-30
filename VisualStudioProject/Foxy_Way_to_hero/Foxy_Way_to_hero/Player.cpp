@@ -249,7 +249,6 @@ void godot::Player::_fire()
 	add_child(prefab->instance());
 
 	Loader::get_singleton()->set_acorns(-1);
-	//Loader::get_singleton()->save_acorns_data();
 	Loader::get_singleton()->save_all_fields();
 	
 	UI::get_singleton()->change_acorns_information();
@@ -276,7 +275,3 @@ Player* godot::Player::_get_singleton()
 	return _instance;
 }
 
-//int Player::_get_coins()
-//{
-//	return this->_coins;
-//}
