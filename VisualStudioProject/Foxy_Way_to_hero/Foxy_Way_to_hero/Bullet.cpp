@@ -13,6 +13,7 @@ godot::Bullet::Bullet()
 	_speed = 300;
 
 	_angle = M_PI / 20;
+	_diagonal_shoot_angle = M_PI / 10;
 }
 
 
@@ -53,16 +54,16 @@ void godot::Bullet::_process(float delta)
 	//gravity on diagonal shoot 
 
 	if (_move_vector.x == (float)(sqrt(2) / 2) && _move_vector.y == (float)(sqrt(2) / 2))
-		_current_y = _start_possition.y + _speed * sin(_angle) * _time + 300 * pow(_time, 2) / 2;
+		_current_y = _start_possition.y + _speed * sin(_diagonal_shoot_angle) * _time + 300 * pow(_time, 2) / 2;
 
 	if (_move_vector.x == -(float)(sqrt(2) / 2) && _move_vector.y == -(float)(sqrt(2) / 2))
-		_current_y = _start_possition.y - _speed * sin(_angle) * _time - 300 * pow(_time, 2) / 2;
+		_current_y = _start_possition.y - _speed * sin(_diagonal_shoot_angle) * _time - 300 * pow(_time, 2) / 2;
 
 	if (_move_vector.x == (float)(sqrt(2) / 2) && _move_vector.y == -(float)(sqrt(2) / 2))
-		_current_y = _start_possition.y - _speed * sin(_angle) * _time - 300 * pow(_time, 2) / 2;
+		_current_y = _start_possition.y - _speed * sin(_diagonal_shoot_angle) * _time - 300 * pow(_time, 2) / 2;
 
 	if (_move_vector.x == -(float)(sqrt(2) / 2) && _move_vector.y == (float)(sqrt(2) / 2))
-		_current_y = _start_possition.y + _speed * sin(_angle) * _time + 300 * pow(_time, 2) / 2;
+		_current_y = _start_possition.y + _speed * sin(_diagonal_shoot_angle) * _time + 300 * pow(_time, 2) / 2;
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////
 

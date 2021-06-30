@@ -38,6 +38,7 @@ namespace godot
 		float _time;
 
 		float _angle;
+		float _diagonal_shoot_angle;
 	};
 
 
