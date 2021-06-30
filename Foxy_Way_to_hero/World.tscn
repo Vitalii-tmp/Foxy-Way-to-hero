@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Scenes/Environment/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scripts/PauseButton.gdns" type="Script" id=13]
 [ext_resource path="res://Scenes/UI/HealthUI.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Items/CheckPoint.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Enemies/Boar.tscn" type="PackedScene" id=16]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -703,6 +704,11 @@ position = Vector2( 368, -312 )
 
 [node name="CheckPoint2" parent="YSort/CheckPoints" instance=ExtResource( 15 )]
 position = Vector2( 80, 240 )
+
+[node name="Boars" type="YSort" parent="YSort"]
+
+[node name="Boar" parent="YSort/Boars" instance=ExtResource( 16 )]
+position = Vector2( 144, 56 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

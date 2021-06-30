@@ -48,3 +48,4 @@
 #include "CheckPoint.h"
 #include <cmath>
 #include <string>
+#include "BoarAI.h"
