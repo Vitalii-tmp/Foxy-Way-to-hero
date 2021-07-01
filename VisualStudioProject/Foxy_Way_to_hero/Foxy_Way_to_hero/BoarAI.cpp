@@ -63,7 +63,7 @@ void godot::BoarAI::_walk_state()
 		_timer->connect("timeout", this, "_set_move_vector");
 		_timer->start(4);
 	}
-	move_and_slide(_move_vector);
+	move_and_slide(_move_vector*_walk_speed);
 
 	_knockback_vector = _knockback_vector.move_toward(Vector2::ZERO, 5);
 	move_and_slide(_knockback_vector);
@@ -187,6 +187,17 @@ void godot::BoarAI::_on_hit_effect_animation_finished()
 
 void godot::BoarAI::_set_move_vector()
 {
+	if (_move_vector == Vector2(0, 0)) 
+	{
+		_move_vector.x = -360 + rand() % 721;
+		_move_vector.y = -360 + rand() % 721;
+		_move_vector = _move_vector.normalized();
+	}
+	else
+		_move_vector = Vector2(0, 0);
+
+		
+	
 }
 
 float godot::BoarAI::_get_damage()

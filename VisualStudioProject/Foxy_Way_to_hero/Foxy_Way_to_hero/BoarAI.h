@@ -35,7 +35,7 @@ namespace godot
 		void _on_detection_area_body_entered(Node2D* _other_body);
 		void _on_hurt_area_area_entered(Area2D* _other_area);
 		void _on_hit_effect_animation_finished();
-
+		void _set_move_vector();
 
 		float _get_damage();
 		bool _get_agressive();
