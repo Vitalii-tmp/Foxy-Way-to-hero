@@ -670,12 +670,6 @@ position = Vector2( -136, 216 )
 [node name="Bat5" parent="YSort/Bats" instance=ExtResource( 7 )]
 position = Vector2( -112, 344 )
 
-[node name="Coin3" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 113.86, 76.7099 )
-
-[node name="Coin" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 44.3693, 106.87 )
-
 [node name="CheckPoint" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 368, -312 )
 
@@ -696,6 +690,53 @@ position = Vector2( 238.379, -44.4974 )
 
 [node name="Countryman3" parent="YSort" instance=ExtResource( 16 )]
 position = Vector2( 48.0543, -284.321 )
+
+[node name="Coins" type="YSort" parent="YSort"]
+
+[node name="Coin3" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 113.86, 76.7099 )
+
+[node name="Coin" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 44.3693, 106.87 )
+
+[node name="Coin2" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( -17.4695, 82.4913 )
+
+[node name="Coin4" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 4.53087, 150.573 )
+
+[node name="Coin5" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 138.666, 37.4711 )
+
+[node name="Coin6" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 139.063, -14.1195 )
+
+[node name="Coin7" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 231.132, -152.223 )
+
+[node name="Coin8" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 244.625, -85.5525 )
+
+[node name="Coin9" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 155.731, 83.5057 )
+
+[node name="Coin10" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 177.161, 8.10413 )
+
+[node name="Coin11" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 156.525, -61.7415 )
+
+[node name="Coin12" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 223.342, -210.522 )
+
+[node name="Coin13" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 272.341, -236.358 )
+
+[node name="Coin14" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 308.868, -270.212 )
+
+[node name="Coin15" parent="YSort/Coins" instance=ExtResource( 11 )]
+position = Vector2( 257.196, -280.903 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

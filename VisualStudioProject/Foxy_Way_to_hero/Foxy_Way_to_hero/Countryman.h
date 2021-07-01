@@ -26,9 +26,11 @@ namespace godot
 
 		Area2D* _detection_area = nullptr;
 		Sprite* _dialog_window = nullptr;
+		Sprite* _store_menu = nullptr;
 		Label* _task_label = nullptr;
 
 		task _task;
+		bool _is_in_area = false;
 	};
 }
 

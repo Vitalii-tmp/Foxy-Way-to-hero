@@ -28,6 +28,7 @@
 #include <PackedScene.hpp>
 #include <Timer.hpp>
 #include <Label.hpp>
+#include <TextureButton.hpp>
 
 //My headers
 #include "Player.h"
@@ -48,5 +49,7 @@
 #include "Tomb.h"
 #include "CheckPoint.h"
 #include "Countryman.h"
+#include "StoreButton.h"
+#include "Meat.h"
 #include <cmath>
 #include <string>

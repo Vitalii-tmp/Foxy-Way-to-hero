@@ -31,4 +31,6 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<Tomb>();
 	register_class<CheckPoint>();
 	register_class<Countryman>();
+	register_class<StoreButton>();
+	register_class<Meat>();
 }
