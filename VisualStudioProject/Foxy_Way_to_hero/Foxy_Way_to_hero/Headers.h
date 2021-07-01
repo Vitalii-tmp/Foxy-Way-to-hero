@@ -16,7 +16,6 @@
 #include <SceneTree.hpp>
 #include <Control.hpp>
 
-#include <limits>
 #include <Position2D.hpp>
 #include <Input.hpp>
 #include <AnimatedSprite.hpp>
@@ -27,7 +26,7 @@
 #include <ResourceLoader.hpp>
 #include <PackedScene.hpp>
 #include <Timer.hpp>
-
+#include <Array.hpp>
 //My headers
 #include "Player.h"
 #include "Grass.h"
@@ -46,6 +45,8 @@
 #include "LoadSceneButton.h"
 #include "Tomb.h"
 #include "CheckPoint.h"
+#include "BoarAI.h"
+
+//cpp headers
 #include <cmath>
 #include <string>
-#include "BoarAI.h"
