@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Environment/VestPointer.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Shadows/SmallShadow.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 2.74487
+height = 2.41419
+
+[node name="VestPointer" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.222725, -1.33635 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( -0.758, -13.066 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( 0.167042, 0.946579 )
+z_index = -1
+texture = ExtResource( 2 )

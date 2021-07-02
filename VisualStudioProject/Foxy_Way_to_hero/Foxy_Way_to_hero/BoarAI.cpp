@@ -59,12 +59,21 @@ void godot::BoarAI::_process(float delta)
 
 	//Godot::print(String::num(_hp));
 	if (_hp <= 0)
-		queue_free();
-
-	if (_move_vector != Vector2(0, 0))
-		_animation_state->travel("Run");
-	else
-		_animation_state->travel("Idle");
+	{
+		_is_alive = false;
+		_agressive = false;
+		_animation_state->travel("Die");
+		_animation_tree->set("parameters/Die/blend_position", _look_vector);
+		//queue_free();
+	}
+		
+	if (_is_alive)
+	{
+		if (_move_vector != Vector2(0, 0))
+			_animation_state->travel("Run");
+		else
+			_animation_state->travel("Idle");
+	}
 }
 
 void godot::BoarAI::_walk_state()
