@@ -15,6 +15,7 @@
 #include <Button.hpp>
 #include <SceneTree.hpp>
 #include <Control.hpp>
+#include <Texture.hpp>
 
 #include <limits>
 #include <Position2D.hpp>

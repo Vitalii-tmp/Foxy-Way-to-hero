@@ -56,7 +56,16 @@ void godot::Backpack::_add_element(Meat* el)
 		if(_items[i] == nullptr)
 		{
 			auto item = cast_to<KinematicBody2D>(prefab->instance());
-			add_child(item);
+			//item->set_position(Vector2(0, 0));
+			//Control* cntrl = Control::_new();
+			TextureButton* rect = TextureButton::_new();
+			rect->set_normal_texture(cast_to<Sprite>(item->get_child(0))->get_texture());
+			rect->set_custom_minimum_size(Vector2(29, 29));
+			rect->set_stretch_mode(3);
+			rect->set_expand(true);
+			/*cntrl->set_custom_minimum_size(Vector2(16, 16));
+			cntrl->add_child(item);*/
+			get_child(1)->add_child(rect);
 			_items[i] = el;
 			flag = true;
 			Godot::print("add element");
