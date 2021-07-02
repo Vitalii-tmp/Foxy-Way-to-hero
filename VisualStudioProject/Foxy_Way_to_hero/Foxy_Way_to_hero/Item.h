@@ -3,28 +3,20 @@
 
 namespace godot
 {
-	enum type
+	class Item : public Area2D
 	{
-		MEAT,
-		CHEESE,
-		FISH,
-		RED_FISH
-	};
-	
-	class Meat : public Area2D
-	{
-		GODOT_CLASS(Meat, Area2D);
-
+	private:
+		GODOT_CLASS(Item, Area2D)
 	public:
 		static void _register_methods();
 		void _init();
 		void _process(float delta);
 		void _ready();
+
 		void _on_item_area_body_entered(Node* body);
 
-		type _type;
-	private:
 		
+	private:
 
 		int _speed = 60;
 

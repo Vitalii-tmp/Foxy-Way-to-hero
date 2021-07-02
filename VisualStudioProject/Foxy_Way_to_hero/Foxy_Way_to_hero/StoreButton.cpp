@@ -22,19 +22,17 @@ void godot::StoreButton::_on_button_pressed()
 
 	const auto pos = cast_to<Node2D>(this->get_parent()->get_parent())->get_global_position();
 
-	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/Meat.tscn");
+	Ref<PackedScene> prefab;
 
-	auto meat = cast_to<KinematicBody2D>(prefab->instance());
+	
+
 	
 	if(get_name() == "MeatButton")
 	{
 		if(coins>=50)
 		{
 			Loader::get_singleton()->set_coins(-50);
-
-			
-			cast_to<Sprite>(meat->get_child(0))->set_visible(true);
-			
+			prefab = _resource_loader->load("res://Scenes/Items/Meat.tscn");
 		}
 	}
 	else if(get_name() == "CheeseButton")
@@ -42,10 +40,7 @@ void godot::StoreButton::_on_button_pressed()
 		if (coins >= 40)
 		{
 			Loader::get_singleton()->set_coins(-40);
-
-
-			cast_to<Sprite>(meat->get_child(2))->set_visible(true);
-
+			prefab = _resource_loader->load("res://Scenes/Items/Cheese.tscn");
 		}
 	}
 	else if(get_name() == "FishButton")
@@ -53,10 +48,7 @@ void godot::StoreButton::_on_button_pressed()
 		if (coins >= 60)
 		{
 			Loader::get_singleton()->set_coins(-60);
-
-
-			cast_to<Sprite>(meat->get_child(3))->set_visible(true);
-
+			prefab = _resource_loader->load("res://Scenes/Items/Fish.tscn");
 		}
 	}
 	else if(get_name() == "RedFishButton")
@@ -64,16 +56,15 @@ void godot::StoreButton::_on_button_pressed()
 		if (coins >= 100)
 		{
 			Loader::get_singleton()->set_coins(-100);
-
-
-			cast_to<Sprite>(meat->get_child(4))->set_visible(true);
-
+			prefab = _resource_loader->load("res://Scenes/Items/RedFish.tscn");
 		}
 	}
 
-	get_node("/root/World/YSort/")->add_child(meat);
+	auto item = cast_to<KinematicBody2D>(prefab->instance());
 
-	meat->set_global_position(pos + Vector2(0, 10));
+	get_node("/root/World/YSort/")->add_child(item);
+
+	item->set_global_position(pos + Vector2(0, 10));
 	
 	UI::get_singleton()->change_coins_information();
 	Loader::get_singleton()->save_all_fields();

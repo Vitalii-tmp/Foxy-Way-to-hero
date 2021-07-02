@@ -52,4 +52,11 @@ void godot::LoadSceneButton::_on_button_pressed()
 
 		get_node("/root")->add_child(world->instance());
 	}
+
+	if(get_name() == "BackpackButton")
+	{
+		if (cast_to<Node2D>(Player::_get_singleton()->get_child(8))->is_visible() == true)
+			cast_to<Node2D>(Player::_get_singleton()->get_child(8))->set_visible(false);
+		else cast_to<Node2D>(Player::_get_singleton()->get_child(8))->set_visible(true);
+	}
 }

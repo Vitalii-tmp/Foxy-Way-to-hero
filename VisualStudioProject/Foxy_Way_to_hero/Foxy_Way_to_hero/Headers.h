@@ -50,6 +50,7 @@
 #include "CheckPoint.h"
 #include "Countryman.h"
 #include "StoreButton.h"
+#include "Backpack.h"
 #include "Meat.h"
 #include <cmath>
 #include <string>

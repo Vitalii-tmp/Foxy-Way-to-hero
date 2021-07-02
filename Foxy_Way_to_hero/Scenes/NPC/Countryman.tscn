@@ -47,6 +47,7 @@ shape = SubResource( 5 )
 visible = false
 position = Vector2( 21.9532, -24.6598 )
 scale = Vector2( 1.27809, 1.35457 )
+z_index = 1
 texture = ExtResource( 2 )
 
 [node name="LabelTask" type="Label" parent="DialogWindowTask"]
@@ -83,3 +84,4 @@ text = "press E to buy something"
 visible = false
 position = Vector2( 53.5374, -32.7337 )
 scale = Vector2( 0.744435, 0.744435 )
+z_index = 1

@@ -41,6 +41,7 @@ Player::Player()
 
 	_is_alive = true;
 	_can_fire = true;
+
 }
 
 
@@ -56,9 +57,19 @@ void godot::Player::_ready()
 	_hit_effect = cast_to<AnimatedSprite>(get_node("HitEffect"));
 
 	_resource_loader = ResourceLoader::get_singleton();
+
+
+	auto backpack_node = cast_to<Node2D>(get_child(8));
+	_backpack = cast_to<Backpack>(backpack_node);
+
 	
 	/*_death_timer = Timer::_new();
 	this->add_child(_death_timer);*/
+
+	/*Loader::get_singleton()->set_coins(9900);
+	Loader::get_singleton()->save_all_fields();
+
+	UI::get_singleton()->change_coins_information();*/
 }
 
 
@@ -312,6 +323,11 @@ bool godot::Player::_get_is_alive()
 {
 	return _is_alive;
 }
+
+//void godot::Player::_add_to_backpack(Meat* meat)
+//{
+//	_backpack->add_element(meat);
+//}
 
 
 Player::~Player() {}

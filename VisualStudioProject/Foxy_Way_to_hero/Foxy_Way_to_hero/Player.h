@@ -4,6 +4,8 @@
 
 
 namespace godot {
+	class Meat;
+	class Backpack;
 
 	//class Bullet;
 
@@ -56,9 +58,10 @@ namespace godot {
 		float _get_damage();
 		int _get_current_state();
 		bool _get_is_alive();
+		void _add_to_backpack(Meat* meat);
 		// Gameplay variables
 	public:
-
+		Backpack* _backpack = nullptr;
 	private:
 
 		static inline Player* _instance;
@@ -72,6 +75,7 @@ namespace godot {
 		AnimationNodeStateMachinePlayback* _animation_state = nullptr;
 		Area2D* _hit_area = nullptr;
 		Timer* _death_timer = nullptr;
+	
 
 		bool _is_alive;
 		bool _can_fire;
