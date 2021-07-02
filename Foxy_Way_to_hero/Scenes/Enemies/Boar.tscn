@@ -1,65 +1,349 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Sprites/Enemies/Boar.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Enemies/Boar.gdns" type="Script" id=2]
 [ext_resource path="res://Scenes/Effects/HitEffect.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Shadows/LargeShadow.png" type="Texture" id=4]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="Animation" id=1]
+resource_name = "DieLeft"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoarSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 45, 46, 47, 48 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "DieRight"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoarSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "HurtLeft"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoarSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 41, 41, 42, 43 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "HurtRight"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoarSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 15 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "IdleLeft"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoarSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 29, 30, 31, 32 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "IdleRight"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoarSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoarSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 33, 34, 35, 36, 37, 38, 39, 40 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoarHitArea:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -24.601, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.8
+loop = true
+step = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoarSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BoarHitArea:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "StopLeft"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoarSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 55, 56, 57 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "StopRight"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("BoarSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 26, 27, 28 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "IdleLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "IdleRight"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "IdleLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "IdleRight"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=15]
+blend_point_0/node = SubResource( 11 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 12 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 13 )
+blend_point_2/pos = Vector2( 0, -4 )
+blend_point_3/node = SubResource( 14 )
+blend_point_3/pos = Vector2( 0, 4 )
+min_space = Vector2( -1, -4 )
+max_space = Vector2( 1, 4 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "MoveRight"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "MoveLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "MoveLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "MoveLeft"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=20]
+blend_point_0/node = SubResource( 16 )
+blend_point_0/pos = Vector2( 1, 0 )
+blend_point_1/node = SubResource( 17 )
+blend_point_1/pos = Vector2( -1, 0 )
+blend_point_2/node = SubResource( 18 )
+blend_point_2/pos = Vector2( 0, 4 )
+blend_point_3/node = SubResource( 19 )
+blend_point_3/pos = Vector2( 0, -4 )
+min_space = Vector2( -1, -4 )
+max_space = Vector2( 1, 4 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachine" id=23]
+states/Idle/node = SubResource( 15 )
+states/Idle/position = Vector2( 313, 103 )
+states/Run/node = SubResource( 20 )
+states/Run/position = Vector2( 512, 103 )
+transitions = [ "Idle", "Run", SubResource( 21 ), "Run", "Idle", SubResource( 22 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=24]
+
+[sub_resource type="CapsuleShape2D" id=25]
 radius = 6.60498
 height = 14.9322
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=26]
 radius = 8.77995
 height = 9.76583
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 6.71285
+[sub_resource type="CircleShape2D" id=27]
+radius = 9.15876
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=28]
 radius = 144.489
 
 [node name="Boar" type="KinematicBody2D"]
-scale = Vector2( 0.9, 0.9 )
+position = Vector2( 0.0701561, 0 )
+scale = Vector2( 1.1, 1.1 )
 script = ExtResource( 2 )
 
 [node name="BoarSprite" type="Sprite" parent="."]
-scale = Vector2( 0.9, 0.9 )
+position = Vector2( 0.909091, 5.379 )
+scale = Vector2( 1.15, 1.15 )
 texture = ExtResource( 1 )
+offset = Vector2( 0, -10.467 )
+hframes = 58
+frame = 4
+
+[node name="Shadow" type="Sprite" parent="BoarSprite"]
+position = Vector2( -0.13609, 2.02938 )
+scale = Vector2( 0.956479, 0.536873 )
+z_index = -1
+texture = ExtResource( 4 )
+
+[node name="AnimationBoar" type="AnimationPlayer" parent="."]
+anims/DieLeft = SubResource( 1 )
+anims/DieRight = SubResource( 2 )
+anims/HurtLeft = SubResource( 3 )
+anims/HurtRight = SubResource( 4 )
+anims/IdleLeft = SubResource( 5 )
+anims/IdleRight = SubResource( 6 )
+anims/MoveLeft = SubResource( 7 )
+anims/MoveRight = SubResource( 8 )
+anims/StopLeft = SubResource( 9 )
+anims/StopRight = SubResource( 10 )
+
+[node name="AnimationBoarTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 23 )
+anim_player = NodePath("../AnimationBoar")
+parameters/playback = SubResource( 24 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( 2.424, 0.224 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.749, 3.088 )
 rotation = 1.5708
-scale = Vector2( 0.9, 0.9 )
-shape = SubResource( 1 )
+scale = Vector2( 1.1, 1.1 )
+shape = SubResource( 25 )
 
 [node name="HurtArea" type="Area2D" parent="."]
-scale = Vector2( 0.9, 0.9 )
+scale = Vector2( 1.1, 1.1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea"]
 position = Vector2( 1.00286, 0.943874 )
 rotation = 1.5708
-scale = Vector2( 0.9, 0.9 )
-shape = SubResource( 2 )
+scale = Vector2( 1.1, 1.1 )
+shape = SubResource( 26 )
 
 [node name="BoarHitArea" type="Area2D" parent="."]
-scale = Vector2( 0.9, 0.9 )
+position = Vector2( 0, -4.054 )
+scale = Vector2( 1.1, 1.1 )
 collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoarHitArea"]
 position = Vector2( 13.0373, 4.95534 )
-scale = Vector2( 0.9, 0.9 )
-shape = SubResource( 3 )
+scale = Vector2( 1.1, 1.1 )
+shape = SubResource( 27 )
 
 [node name="DetectionArea" type="Area2D" parent="."]
-scale = Vector2( 0.9, 0.9 )
+scale = Vector2( 1.1, 1.1 )
 collision_layer = 2
 collision_mask = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 modulate = Color( 1, 1, 1, 0.290196 )
-scale = Vector2( 0.9, 0.9 )
-shape = SubResource( 4 )
+position = Vector2( 0.0689483, 0.0689483 )
+scale = Vector2( 1.1, 1.1 )
+shape = SubResource( 28 )
 
 [node name="HitEffect" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -68,4 +352,5 @@ scale = Vector2( 0.76219, 0.76219 )
 
 [connection signal="area_entered" from="HurtArea" to="." method="_on_hurt_area_area_entered"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="animation_finished" from="HitEffect" to="." method="_on_hit_effect_animation_finished"]

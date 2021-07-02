@@ -66,6 +66,8 @@ namespace godot {
 
 		Vector2 _motion;
 		Vector2 _input_vector;
+		Vector2 _knockback_vector;
+
 		AnimationPlayer* _animation = nullptr;
 		AnimationTree* _animation_tree = nullptr;
 		AnimatedSprite* _hit_effect = nullptr;

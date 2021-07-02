@@ -142,6 +142,9 @@ void godot::Player::_move_state()
 
 
 	move_and_slide(_motion);
+
+	_knockback_vector = _knockback_vector.move_toward(Vector2::ZERO, 5);
+	move_and_slide(_knockback_vector);
 }
 
 
@@ -151,6 +154,9 @@ void godot::Player::_short_attack_state()
 
 	_animation_tree->set("parameters/Attack/blend_position", _input_vector);
 	_animation_state->travel("Attack");
+
+	_knockback_vector = _knockback_vector.move_toward(Vector2::ZERO, 5);
+	move_and_slide(_knockback_vector);
 }
 
 
@@ -159,6 +165,9 @@ void godot::Player::_long_attack_state()
 
 	_animation_tree->set("parameters/LongRangeAttack/blend_position", _input_vector);
 	_animation_state->travel("LongRangeAttack");
+
+	_knockback_vector = _knockback_vector.move_toward(Vector2::ZERO, 5);
+	move_and_slide(_knockback_vector);
 
 }
 
@@ -170,6 +179,9 @@ void godot::Player::_roll_state()
 	_animation_state->travel("Roll");
 	_input_vector = _input_vector.normalized() * _speed;
 	move_and_slide(_input_vector * 1.4);
+
+	_knockback_vector = _knockback_vector.move_toward(Vector2::ZERO, 5);
+	move_and_slide(_knockback_vector);
 }
 
 
@@ -257,7 +269,7 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 
 		if (_other_area->get_name() == "BoarHitArea")
 		{
-
+			auto _boar = cast_to<BoarAI>(_other_area->get_parent());
 			auto _boar_damage = cast_to<BoarAI>(_other_area->get_parent())->_get_damage();
 			auto _boar_agressive= cast_to<BoarAI>(_other_area->get_parent())->_get_agressive();
 			
@@ -268,9 +280,11 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 
 				_hit_effect->set_visible(true);
 				_hit_effect->play();
+				_knockback_vector = _boar->_get_move_vector().normalized() * 150;
 			}
 			
-
+			
+			
 
 		}
 	}

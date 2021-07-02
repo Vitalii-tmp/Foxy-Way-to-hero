@@ -27,6 +27,7 @@
 #include <PackedScene.hpp>
 #include <Timer.hpp>
 #include <Array.hpp>
+#include<RandomNumberGenerator.hpp>
 //My headers
 #include "Player.h"
 #include "Grass.h"

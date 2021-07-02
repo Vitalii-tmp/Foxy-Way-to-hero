@@ -708,7 +708,10 @@ position = Vector2( 80, 240 )
 [node name="Boars" type="YSort" parent="YSort"]
 
 [node name="Boar" parent="YSort/Boars" instance=ExtResource( 16 )]
-position = Vector2( 168, -280 )
+position = Vector2( 64, -472 )
+
+[node name="Boar3" parent="YSort/Boars" instance=ExtResource( 16 )]
+position = Vector2( 192, -432 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -722,7 +725,7 @@ smoothing_speed = 5.0
 position = Vector2( 560, 432 )
 
 [node name="TopLeft" parent="Camera2D/Limits" index="1"]
-position = Vector2( -232, -424 )
+position = Vector2( -224, -696 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource( 12 )
