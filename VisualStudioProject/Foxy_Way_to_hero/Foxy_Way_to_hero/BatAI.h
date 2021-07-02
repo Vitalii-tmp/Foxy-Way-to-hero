@@ -1,12 +1,7 @@
 #pragma once
 #include"Headers.h"
 
-enum state
-{
-	IDLE,
-	WANDER,
-	CHASE
-};
+
 
 namespace godot
 {
@@ -17,6 +12,13 @@ namespace godot
 	{
 
 		GODOT_CLASS(BatAI, KinematicBody2D)
+		
+		enum state
+		{
+			IDLE,
+			WANDER,
+			CHASE
+		};
 
 	public:
 		BatAI();

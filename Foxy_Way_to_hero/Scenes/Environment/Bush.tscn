@@ -10,6 +10,7 @@ height = 12.0
 [node name="Bush" type="StaticBody2D" groups=[
 "_enviroment",
 ]]
+collision_layer = 33
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 position = Vector2( 0, 3 )

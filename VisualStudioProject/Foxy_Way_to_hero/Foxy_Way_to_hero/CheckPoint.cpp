@@ -42,5 +42,6 @@ void godot::CheckPoint::_on_check_point_area_body_exited(Node* _other_body)
 void godot::CheckPoint::_on_check_point_animation_finished()
 {
 	//save data
+	Loader::get_singleton()->set_start_position(this->get_global_position()+Vector2(0,30));
 	Loader::get_singleton()->save_all_fields();
 }

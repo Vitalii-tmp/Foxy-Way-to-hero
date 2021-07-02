@@ -9,6 +9,7 @@ height = 6.0
 [node name="Tree" type="StaticBody2D" groups=[
 "_enviroment",
 ]]
+collision_layer = 33
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
