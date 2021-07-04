@@ -17,7 +17,6 @@
 #include <Control.hpp>
 #include <Texture.hpp>
 
-#include <limits>
 #include <Position2D.hpp>
 #include <Input.hpp>
 #include <AnimatedSprite.hpp>
@@ -30,7 +29,8 @@
 #include <Timer.hpp>
 #include <Label.hpp>
 #include <TextureButton.hpp>
-
+#include <Array.hpp>
+#include<RandomNumberGenerator.hpp>
 //My headers
 #include "Player.h"
 #include "Grass.h"
@@ -53,5 +53,8 @@
 #include "StoreButton.h"
 #include "Backpack.h"
 #include "Meat.h"
+#include "BoarAI.h"
+
+//cpp headers
 #include <cmath>
 #include <string>

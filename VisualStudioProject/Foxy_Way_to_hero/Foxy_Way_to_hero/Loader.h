@@ -26,16 +26,23 @@ namespace godot
 
 		void set_coins(int coins);
 		void set_acorns(int acorns);
+		void set_start_position(Vector2 start_position);
 
 		int get_coins() const;
 		int get_acorns() const;
+
+		
+		Vector2 get_start_position();
+
+		void load_start_position_data();
 	private:
 		static inline Loader* _instance;
 
-		const String _dataFile = "user://data.save";
+		const String _dataFile = "data.save";
 
-		int _coins = 0;
-		int _acorns = 0;
+		int _coins ;
+		int _acorns ;
+		Vector2 _player_start_position;
 	};
 }
 

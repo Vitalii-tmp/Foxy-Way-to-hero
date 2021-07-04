@@ -164,6 +164,7 @@
     <ClCompile Include="Acorn.cpp" />
     <ClCompile Include="Backpack.cpp" />
     <ClCompile Include="BatAI.cpp" />
+    <ClCompile Include="BoarAI.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CameraController.cpp" />
     <ClCompile Include="CheckPoint.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="Acorn.h" />
     <ClInclude Include="Backpack.h" />
     <ClInclude Include="BatAI.h" />
+    <ClInclude Include="BoarAI.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="CameraController.h" />
     <ClInclude Include="CheckPoint.h" />

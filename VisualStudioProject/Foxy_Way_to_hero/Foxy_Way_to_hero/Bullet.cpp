@@ -91,7 +91,7 @@ void godot::Bullet::_ready()
 
 void godot::Bullet::_on_detect_area_body_entered(Node2D* _other_body)
 {
-	if (_other_body->is_in_group("_enviroment"))
+	if (_other_body->is_in_group("_enviroment")|| _other_body->is_in_group("_wall"))
 		queue_free();
 }
 

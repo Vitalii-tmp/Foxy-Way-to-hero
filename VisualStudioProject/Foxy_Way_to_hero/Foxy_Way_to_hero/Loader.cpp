@@ -11,6 +11,8 @@ namespace godot
 		register_method("save_coins_data", &Loader::save_coins_data);
 		register_method("load_acorns_data", &Loader::load_acorns_data);
 		register_method("save_acorns_data", &Loader::save_acorns_data);
+		register_method("load_start_position_data", &Loader::load_start_position_data);
+		//register_method("save_start_position_data", &Loader::save_start_position_data);
 	}
 
 	void Loader::_init()
@@ -20,8 +22,10 @@ namespace godot
 		Ref<File> _file = File::_new();
 		if (_file->file_exists(_dataFile))
 		{
+			load_start_position_data();
 			load_coins_data();
 			load_acorns_data();
+			
 		}
 		else
 		{
@@ -35,7 +39,7 @@ namespace godot
 
 	void Loader::_process(float delta)
 	{
-
+		
 	}
 
 	Loader* Loader::get_singleton()
@@ -53,6 +57,10 @@ namespace godot
 			const Dictionary rez = JSON::get_singleton()->parse(_file->get_as_text())->get_result();
 
 			_coins = rez["Number of coins"];
+			//Godot::print(_player_start_position);
+			//Godot::print(String::num(_acorns));
+			Godot::print(String::num(_coins));
+			_file->close();
 		}
 	}
 
@@ -80,6 +88,10 @@ namespace godot
 			const Dictionary rez = JSON::get_singleton()->parse(_file->get_as_text())->get_result();
 
 			_acorns = rez["Number of acorns"];
+			//Godot::print(_player_start_position);
+			Godot::print(String::num(_acorns));
+			//Godot::print(String::num(_coins));
+			_file->close();
 		}
 	}
 
@@ -95,7 +107,7 @@ namespace godot
 		_file->close();
 	}
 
-	void Loader::save_all_fields()
+	void Loader::save_all_fields() 
 	{
 		Ref<File> _file = File::_new();
 		_file->open(_dataFile, _file->WRITE);
@@ -103,9 +115,15 @@ namespace godot
 		Dictionary dict;
 		dict["Number of acorns"] = this->_acorns;
 		dict["Number of coins"] = this->_coins;
-
+		dict["Start position x"] = this->_player_start_position.x;
+		dict["Start position y"] = this->_player_start_position.y;
+		
 		_file->store_string(dict.to_json());
 		_file->close();
+
+		Godot::print("save all "+_player_start_position);
+		Godot::print("save all " + String::num(_acorns));
+		Godot::print("save all " + String::num(_coins));
 	}
 
 	void Loader::set_coins(int coins)
@@ -126,5 +144,35 @@ namespace godot
 	int Loader::get_acorns() const
 	{
 		return this->_acorns;
+	}
+	
+	void Loader::set_start_position(Vector2 start_position)
+	{
+		_player_start_position = start_position;
+	}
+	
+	
+	Vector2 Loader::get_start_position()
+	{
+		return _player_start_position;
+	}
+	
+	
+	void Loader::load_start_position_data()
+	{
+		Godot::print("load_start_position_data");
+		Ref<File> _file = File::_new();
+		if (_file->file_exists(_dataFile))
+		{
+			_file->open(_dataFile, _file->READ);
+
+			const Dictionary rez = JSON::get_singleton()->parse(_file->get_as_text())->get_result();
+
+			_player_start_position.x = rez["Start position x"];
+			_player_start_position.y = rez["Start position y"];
+
+			Godot::print(_player_start_position);
+			_file->close();
+		}
 	}
 }
