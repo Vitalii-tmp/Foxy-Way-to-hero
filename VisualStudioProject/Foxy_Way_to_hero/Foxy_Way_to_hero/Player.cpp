@@ -56,7 +56,7 @@ void godot::Player::_ready()
 	_hit_area = cast_to<Area2D>(get_node("HitboxPivot/ShortAttackArea"));
 	_hit_effect = cast_to<AnimatedSprite>(get_node("HitEffect"));
 
-	_resource_loader = ResourceLoader::get_singleton()
+	_resource_loader = ResourceLoader::get_singleton();
 
 	auto backpack_node = cast_to<Node2D>(get_child(8));
 	_backpack = cast_to<Backpack>(backpack_node);

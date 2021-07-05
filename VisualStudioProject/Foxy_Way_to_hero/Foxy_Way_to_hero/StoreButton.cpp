@@ -26,14 +26,15 @@ void godot::StoreButton::_on_button_pressed()
 
 	
 
-	
 	if(get_name() == "MeatButton")
 	{
-		if(coins>=50)
+		if (coins >= 50)
 		{
 			Loader::get_singleton()->set_coins(-50);
 			prefab = _resource_loader->load("res://Scenes/Items/Meat.tscn");
 		}
+		else
+			return;
 	}
 	else if(get_name() == "CheeseButton")
 	{
@@ -42,6 +43,8 @@ void godot::StoreButton::_on_button_pressed()
 			Loader::get_singleton()->set_coins(-40);
 			prefab = _resource_loader->load("res://Scenes/Items/Cheese.tscn");
 		}
+		else
+			return;
 	}
 	else if(get_name() == "FishButton")
 	{
@@ -50,6 +53,8 @@ void godot::StoreButton::_on_button_pressed()
 			Loader::get_singleton()->set_coins(-60);
 			prefab = _resource_loader->load("res://Scenes/Items/Fish.tscn");
 		}
+		else
+			return;
 	}
 	else if(get_name() == "RedFishButton")
 	{
@@ -58,6 +63,8 @@ void godot::StoreButton::_on_button_pressed()
 			Loader::get_singleton()->set_coins(-100);
 			prefab = _resource_loader->load("res://Scenes/Items/RedFish.tscn");
 		}
+		else
+			return;
 	}
 
 	auto item = cast_to<KinematicBody2D>(prefab->instance());

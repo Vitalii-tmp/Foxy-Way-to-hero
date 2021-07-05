@@ -163,6 +163,7 @@
   <ItemGroup>
     <ClCompile Include="Acorn.cpp" />
     <ClCompile Include="Backpack.cpp" />
+    <ClCompile Include="BackpackItemButton.cpp" />
     <ClCompile Include="BatAI.cpp" />
     <ClCompile Include="BoarAI.cpp" />
     <ClCompile Include="Bullet.cpp" />
@@ -189,6 +190,7 @@
   <ItemGroup>
     <ClInclude Include="Acorn.h" />
     <ClInclude Include="Backpack.h" />
+    <ClInclude Include="BackpackItemButton.h" />
     <ClInclude Include="BatAI.h" />
     <ClInclude Include="BoarAI.h" />
     <ClInclude Include="Bullet.h" />

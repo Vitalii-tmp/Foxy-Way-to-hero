@@ -54,6 +54,7 @@
 #include "Backpack.h"
 #include "Meat.h"
 #include "BoarAI.h"
+#include "BackpackItemButton.h"
 
 //cpp headers
 #include <cmath>

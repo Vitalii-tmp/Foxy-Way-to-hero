@@ -102,6 +102,12 @@
     <ClCompile Include="Meat.cpp">
       <Filter>Source Files\Items</Filter>
     </ClCompile>
+    <ClCompile Include="BoarAI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BackpackItemButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -175,6 +181,12 @@
     </ClInclude>
     <ClInclude Include="Meat.h">
       <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="BoarAI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BackpackItemButton.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
