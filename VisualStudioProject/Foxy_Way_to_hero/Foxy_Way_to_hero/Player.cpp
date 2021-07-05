@@ -271,8 +271,8 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 		{
 			auto _boar = cast_to<BoarAI>(_other_area->get_parent());
 			auto _boar_damage = cast_to<BoarAI>(_other_area->get_parent())->_get_damage();
-			auto _boar_agressive= cast_to<BoarAI>(_other_area->get_parent())->_get_agressive();
-			
+			auto _boar_agressive = cast_to<BoarAI>(_other_area->get_parent())->_get_agressive();
+
 			if (_boar_agressive == true)
 			{
 				_hp -= _boar_damage;
@@ -282,9 +282,25 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 				_hit_effect->play();
 				_knockback_vector = _boar->_get_move_vector().normalized() * 150;
 			}
-			
-			
-			
+
+
+
+		}
+
+
+
+		if (_other_area->get_name() == "SnakeHitArea")
+		{
+			auto _snake = cast_to<SnakeAI>(_other_area->get_parent());
+			auto _snake_damage = cast_to<SnakeAI>(_other_area->get_parent())->_get_damage();
+
+
+			_hp -= _snake_damage;
+			HealthUI::_get_singleton()->_turn_on_hit_anim();
+
+			_hit_effect->set_visible(true);
+			_hit_effect->play();
+
 
 		}
 	}

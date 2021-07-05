@@ -28,6 +28,8 @@
 #include <Timer.hpp>
 #include <Array.hpp>
 #include<RandomNumberGenerator.hpp>
+
+
 //My headers
 #include "Player.h"
 #include "Grass.h"
@@ -47,6 +49,7 @@
 #include "Tomb.h"
 #include "CheckPoint.h"
 #include "BoarAI.h"
+#include "SnakeAI.h"
 
 //cpp headers
 #include <cmath>

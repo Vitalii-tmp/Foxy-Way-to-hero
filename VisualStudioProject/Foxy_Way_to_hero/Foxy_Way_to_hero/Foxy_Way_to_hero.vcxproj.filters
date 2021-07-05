@@ -93,6 +93,9 @@
     <ClCompile Include="BoarAI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SnakeAI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -153,6 +156,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BoarAI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeAI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

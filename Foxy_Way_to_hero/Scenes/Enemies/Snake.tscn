@@ -1,0 +1,547 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://Sprites/Enemies/Cobra.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Shadows/MediumShadow.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Effects/HitEffect.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Snake.gdns" type="Script" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 2.19137
+height = 1.42679
+
+[sub_resource type="Animation" id=2]
+resource_name = "AttackLeft"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("SnakeSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 50, 51, 52, 53 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.56, 0.368 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SnakeHitArea/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SnakeHitArea/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2.1274, -9.0936 ), Vector2( -8.599, -10.299 ), Vector2( 0.164, -10.299 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_on_attack_animation_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "AttackRight"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("SnakeSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19, 20, 21 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.56, 0.368 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SnakeHitArea/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.132, -10.299 ), Vector2( 9.676, -10.299 ), Vector2( 2.112, -10.299 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SnakeHitArea/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_on_attack_animation_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "DieLeft"
+tracks/0/type = "value"
+tracks/0/path = NodePath("SnakeSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 58, 59, 60, 61, 62, 63 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.393, -0.456 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.56, 0.368 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "DieRight"
+tracks/0/type = "value"
+tracks/0/path = NodePath("SnakeSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 26, 27, 28, 29, 30, 31 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.619, -0.456 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.56, 0.368 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "IdleLeft"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("SnakeSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 33, 34, 35, 36, 37, 38, 39 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.56, 0.368 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("SnakeSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.56, 0.368 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "MoveLeft"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("SnakeSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 40, 41, 42, 43, 44, 45, 46, 47 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.56, 0.368 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("SnakeSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11, 12, 13, 14, 15 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.56, 0.368 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "AttackLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "AttackRight"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "AttackRight"
+
+[sub_resource type="AnimationNodeBlendTree" id=33]
+
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "AttackRight"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=20]
+blend_point_0/node = SubResource( 30 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 31 )
+blend_point_1/pos = Vector2( 0, 4 )
+blend_point_2/node = SubResource( 32 )
+blend_point_2/pos = Vector2( 0, -3.8 )
+blend_point_3/node = SubResource( 33 )
+blend_point_3/pos = Vector2( 0, -3.8 )
+blend_point_4/node = SubResource( 34 )
+blend_point_4/pos = Vector2( 1, 0.1 )
+min_space = Vector2( -1, -4 )
+max_space = Vector2( 1, 4 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "DieLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "DieLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "DieRight"
+
+[sub_resource type="AnimationNodeAnimation" id=42]
+animation = "DieRight"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=43]
+blend_point_0/node = SubResource( 39 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 40 )
+blend_point_1/pos = Vector2( 0, 4 )
+blend_point_2/node = SubResource( 41 )
+blend_point_2/pos = Vector2( 0, -4 )
+blend_point_3/node = SubResource( 42 )
+blend_point_3/pos = Vector2( 1, 0 )
+min_space = Vector2( -1, -4 )
+max_space = Vector2( 1, 4 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "IdleLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "IdleLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "IdleRight"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "IdleRight"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=14]
+blend_point_0/node = SubResource( 10 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 11 )
+blend_point_1/pos = Vector2( 0, 4 )
+blend_point_2/node = SubResource( 12 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 13 )
+blend_point_3/pos = Vector2( 0, -4 )
+min_space = Vector2( -1, -4 )
+max_space = Vector2( 1, 4 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "MoveLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "MoveLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "MoveRight"
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "MoveRight"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=21]
+blend_point_0/node = SubResource( 35 )
+blend_point_0/pos = Vector2( -1, 0.1 )
+blend_point_1/node = SubResource( 36 )
+blend_point_1/pos = Vector2( 0, 4 )
+blend_point_2/node = SubResource( 37 )
+blend_point_2/pos = Vector2( 0, -3.9 )
+blend_point_3/node = SubResource( 38 )
+blend_point_3/pos = Vector2( 1, 0.1 )
+min_space = Vector2( -1, -4 )
+max_space = Vector2( 1, 4 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+
+[sub_resource type="AnimationNodeStateMachine" id=15]
+states/Attack/node = SubResource( 20 )
+states/Attack/position = Vector2( 287, 161 )
+states/Die/node = SubResource( 43 )
+states/Die/position = Vector2( 135, 69 )
+states/Idle/node = SubResource( 14 )
+states/Idle/position = Vector2( 287, 69 )
+states/Move/node = SubResource( 21 )
+states/Move/position = Vector2( 470, 69 )
+transitions = [ "Idle", "Attack", SubResource( 22 ), "Attack", "Idle", SubResource( 23 ), "Idle", "Move", SubResource( 24 ), "Move", "Idle", SubResource( 25 ), "Die", "Idle", SubResource( 44 ), "Idle", "Die", SubResource( 45 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
+
+[sub_resource type="CapsuleShape2D" id=46]
+radius = 4.1289
+height = 6.79702
+
+[sub_resource type="CircleShape2D" id=18]
+radius = 6.61226
+
+[sub_resource type="CircleShape2D" id=19]
+radius = 54.6204
+
+[node name="Snake" type="KinematicBody2D"]
+script = ExtResource( 4 )
+
+[node name="SnakeSprite" type="Sprite" parent="."]
+position = Vector2( 1.90735e-06, -0.132432 )
+texture = ExtResource( 1 )
+offset = Vector2( 0.933, -14.19 )
+hframes = 64
+frame = 53
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="AnimationSnake" type="AnimationPlayer" parent="."]
+anims/AttackLeft = SubResource( 2 )
+anims/AttackRight = SubResource( 3 )
+anims/DieLeft = SubResource( 4 )
+anims/DieRight = SubResource( 5 )
+anims/IdleLeft = SubResource( 6 )
+anims/IdleRight = SubResource( 7 )
+anims/MoveLeft = SubResource( 8 )
+anims/MoveRight = SubResource( 9 )
+
+[node name="AnimationSnakeTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 15 )
+anim_player = NodePath("../AnimationSnake")
+active = true
+parameters/playback = SubResource( 16 )
+parameters/Attack/blend_position = Vector2( 0, 0 )
+parameters/Die/blend_position = Vector2( 0, 0 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Move/blend_position = Vector2( 0, 0 )
+
+[node name="SnakeHitArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnakeHitArea"]
+position = Vector2( 0.164, -10.299 )
+shape = SubResource( 46 )
+disabled = true
+
+[node name="SnakeHurtArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnakeHurtArea"]
+position = Vector2( 1.7, -5.131 )
+shape = SubResource( 18 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( 5.56, 0.368 )
+scale = Vector2( 1.06066, 0.723172 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource( 19 )
+
+[node name="HitEffect" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 1.88503, -6.05196 )
+scale = Vector2( 0.362956, 0.362956 )
+
+[connection signal="area_entered" from="SnakeHurtArea" to="." method="_on_hurt_area_area_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="animation_finished" from="HitEffect" to="." method="_on_hit_effect_animation_finished"]

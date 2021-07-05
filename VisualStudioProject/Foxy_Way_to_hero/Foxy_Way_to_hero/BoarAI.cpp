@@ -42,7 +42,7 @@ void godot::BoarAI::_ready()
 	_timer = Timer::_new();
 	this->add_child(_timer);
 
-	_animation_tree = cast_to<AnimationTree>(get_child(2));
+	_animation_tree = cast_to<AnimationTree>(get_node("AnimationBoarTree"));
 	_animation_tree->set_active(true);
 
 	_animation_state = _animation_tree->get("parameters/playback");
