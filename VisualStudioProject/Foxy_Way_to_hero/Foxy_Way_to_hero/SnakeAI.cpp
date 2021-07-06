@@ -139,9 +139,8 @@ void godot::SnakeAI::_chase_state()
 		pow((this->get_global_position().y - _player->get_global_position().y), 2));
 
 
-	if (_distance_to_player < 13)
+	if (_distance_to_player < 17)
 	{
-		
 		_animation_state->travel("Attack");
 		_is_attaking = true;
 		//_current_state = IDLE;
