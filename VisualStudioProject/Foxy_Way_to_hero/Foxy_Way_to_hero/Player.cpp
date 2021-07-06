@@ -21,6 +21,7 @@ void godot::Player::_register_methods()
 	register_method("_death", &Player::_death);
 
 	register_method("_on_escape_pressed", &Player::_on_escape_pressed);
+	register_method("_reset_player_speed", &Player::_reset_player_speed);
 }
 
 
@@ -72,6 +73,9 @@ void godot::Player::_ready()
 	UI::get_singleton()->change_coins_information();*/
 	/*_death_timer = Timer::_new();
 	this->add_child(_death_timer);*/
+
+	_hurt_timer = Timer::_new();
+	this->add_child(_hurt_timer);
 
 	set_global_position(Loader::get_singleton()->get_start_position());
 }
@@ -285,8 +289,8 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 		{
 			auto _boar = cast_to<BoarAI>(_other_area->get_parent());
 			auto _boar_damage = cast_to<BoarAI>(_other_area->get_parent())->_get_damage();
-			auto _boar_agressive= cast_to<BoarAI>(_other_area->get_parent())->_get_agressive();
-			
+			auto _boar_agressive = cast_to<BoarAI>(_other_area->get_parent())->_get_agressive();
+
 			if (_boar_agressive == true)
 			{
 				_hp -= _boar_damage;
@@ -296,9 +300,33 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 				_hit_effect->play();
 				_knockback_vector = _boar->_get_move_vector().normalized() * 150;
 			}
-			
-			
-			
+
+
+
+		}
+
+
+
+		if (_other_area->get_name() == "SnakeHitArea")
+		{
+			auto _snake = cast_to<SnakeAI>(_other_area->get_parent());
+			auto _snake_damage = cast_to<SnakeAI>(_other_area->get_parent())->_get_damage();
+
+
+			_hp -= _snake_damage;
+			HealthUI::_get_singleton()->_turn_on_hit_anim();
+
+			_hit_effect->set_visible(true);
+			_hit_effect->play();
+
+			_speed = 50;
+
+			if (!_hurt_timer->is_connected("timeout", this, "_reset_player_speed"))
+			{
+				//Godot::print("Timer connected");
+				_hurt_timer->connect("timeout", this, "_reset_player_speed");
+				_hurt_timer->start(4);
+			}
 
 		}
 	}
@@ -362,6 +390,7 @@ bool godot::Player::_get_is_alive()
 	return _is_alive;
 }
 
+
 void godot::Player::_on_escape_pressed()
 {
 	Input* i = Input::get_singleton();
@@ -374,6 +403,17 @@ void godot::Player::_on_escape_pressed()
 
 		auto* menu = cast_to<CanvasLayer>(prefab->instance());
 		get_node("/root/World/UI/")->add_child(menu);
+	}
+}
+void godot::Player::_reset_player_speed()
+{
+	this->_speed = 100.f;
+
+	if (_hurt_timer->is_connected("timeout", this, "_reset_player_speed"))
+	{
+		//Godot::print("Timer connected");
+		_hurt_timer->disconnect("timeout", this, "_reset_player_speed");
+		
 	}
 }
 

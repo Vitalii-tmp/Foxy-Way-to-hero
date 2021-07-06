@@ -30,7 +30,7 @@
 #include <Label.hpp>
 #include <TextureButton.hpp>
 #include <Array.hpp>
-#include<RandomNumberGenerator.hpp>
+#include <RandomNumberGenerator.hpp>
 #include <CenterContainer.hpp>
 //My headers
 #include "Player.h"
@@ -55,6 +55,7 @@
 #include "Backpack.h"
 #include "Meat.h"
 #include "BoarAI.h"
+#include "SnakeAI.h"
 #include "BackpackItemButton.h"
 
 //cpp headers
