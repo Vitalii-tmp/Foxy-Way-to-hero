@@ -15,6 +15,7 @@
 #include <Button.hpp>
 #include <SceneTree.hpp>
 #include <Control.hpp>
+#include <Texture.hpp>
 
 #include <Position2D.hpp>
 #include <Input.hpp>
@@ -26,6 +27,8 @@
 #include <ResourceLoader.hpp>
 #include <PackedScene.hpp>
 #include <Timer.hpp>
+#include <Label.hpp>
+#include <TextureButton.hpp>
 #include <Array.hpp>
 #include<RandomNumberGenerator.hpp>
 //My headers
@@ -46,7 +49,12 @@
 #include "LoadSceneButton.h"
 #include "Tomb.h"
 #include "CheckPoint.h"
+#include "Countryman.h"
+#include "StoreButton.h"
+#include "Backpack.h"
+#include "Meat.h"
 #include "BoarAI.h"
+#include "BackpackItemButton.h"
 
 //cpp headers
 #include <cmath>

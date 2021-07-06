@@ -1,9 +1,10 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Sprites/Player/Player.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gdns" type="Script" id=2]
 [ext_resource path="res://Scenes/Effects/HitEffect.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Shadows/MediumShadow.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Items/Backpack.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.54762
@@ -837,6 +838,12 @@ position = Vector2( 0, 2.8419 )
 scale = Vector2( 1.18383, 0.903016 )
 z_index = -1
 texture = ExtResource( 4 )
+
+[node name="Backpack" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 100, 50 )
+scale = Vector2( 0.7, 0.7 )
+z_index = 1
 
 [connection signal="area_entered" from="HurtArea" to="." method="_on_hurt_area_area_entered"]
 [connection signal="animation_finished" from="HitEffect" to="." method="_on_hit_effect_animation_finished"]
