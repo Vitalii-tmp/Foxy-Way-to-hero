@@ -31,6 +31,8 @@
 #include <TextureButton.hpp>
 #include <Array.hpp>
 #include<RandomNumberGenerator.hpp>
+
+
 //My headers
 #include "Player.h"
 #include "Grass.h"
@@ -54,6 +56,7 @@
 #include "Backpack.h"
 #include "Meat.h"
 #include "BoarAI.h"
+#include "SnakeAI.h"
 #include "BackpackItemButton.h"
 
 //cpp headers

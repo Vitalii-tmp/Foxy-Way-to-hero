@@ -75,7 +75,7 @@ namespace godot
 		Array _entered_bodies;
 		Timer* _timer = nullptr;
 
-		AnimationPlayer* _animation = nullptr;
+		AnimationPlayer* _animation_player = nullptr;
 		AnimationTree* _animation_tree = nullptr;
 		AnimationNodeStateMachinePlayback* _animation_state = nullptr;
 

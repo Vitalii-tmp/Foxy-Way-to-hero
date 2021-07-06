@@ -66,7 +66,9 @@ namespace godot
 		AnimatedSprite* _hit_effect = nullptr;
 		AnimatedSprite* _bat_sprite = nullptr;
 
-		Player* _player;
+		Player* _player=nullptr;
+
+		Area2D* _bat_hit_area=nullptr;
 	};
 }
 

@@ -809,7 +809,7 @@ parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 position = Vector2( 0, -4 )
-rotation = 4.71239
+rotation = 1.5708
 
 [node name="ShortAttackArea" type="Area2D" parent="HitboxPivot"]
 position = Vector2( 15, 0 )

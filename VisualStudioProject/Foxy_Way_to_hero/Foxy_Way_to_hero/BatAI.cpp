@@ -42,7 +42,8 @@ void godot::BatAI::_ready()
 	_die_effect = cast_to<AnimatedSprite>(get_node("DieEffect"));
 	_bat_sprite = cast_to<AnimatedSprite>(get_node("BatSprite"));
 	_hit_effect = cast_to<AnimatedSprite>(get_node("HitEffect"));
-
+	_bat_hit_area = cast_to<Area2D>(get_node("BatHitArea"));
+		
 	_start_position = get_global_position();
 }
 
@@ -61,6 +62,7 @@ void godot::BatAI::_physics_process(float delta)
 
 	if (!_is_alive)
 	{
+		_bat_hit_area->queue_free();
 		_bat_sprite->set_visible(false);
 		_die_effect->set_visible(true);
 		_die_effect->play();

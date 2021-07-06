@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Environment/Statue.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Shadows/LargeShadow.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 9.8161
+height = 11.0255
+
+[node name="Statue" type="StaticBody2D"]
+scale = Vector2( 1.1, 1.1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.286345, -2.6912 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="StatueSprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 0, -23.041 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( 0.21646, 1.08231 )
+scale = Vector2( 1.17137, 1.17137 )
+z_index = -1
+texture = ExtResource( 2 )
