@@ -5,13 +5,14 @@
 [ext_resource path="res://Scenes/Items/Tomb.gdns" type="Script" id=3]
 
 [node name="Tomb" type="Sprite"]
-position = Vector2( -0.264865, -17.7233 )
+position = Vector2( -0.265, 0 )
 scale = Vector2( 0.798649, 0.717948 )
 texture = ExtResource( 1 )
+offset = Vector2( 0, -28.066 )
 script = ExtResource( 3 )
 
 [node name="LargeShadow" type="Sprite" parent="."]
-position = Vector2( -0.0921004, 25.677 )
+position = Vector2( -0.092, -0.685 )
 scale = Vector2( 1.06218, 1 )
 z_index = -1
 texture = ExtResource( 2 )

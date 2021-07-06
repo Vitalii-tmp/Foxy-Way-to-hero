@@ -50,6 +50,7 @@ void godot::SnakeAI::_physics_process(float delta)
 	if (_hp <= 0)
 	{
 		_is_alive = false;
+		_animation_state->travel("Die");
 	}
 
 	if (_is_alive && !_is_attaking)
@@ -59,6 +60,13 @@ void godot::SnakeAI::_physics_process(float delta)
 		else
 			_animation_state->travel("Idle");
 	}
+
+	_animation_tree->set("parameters/Idle/blend_position", _look_vector);
+	_animation_tree->set("parameters/Move/blend_position", _look_vector);
+	_animation_tree->set("parameters/Attack/blend_position", _look_vector);
+	_animation_tree->set("parameters/Die/blend_position", _look_vector);
+
+	
 }
 
 
@@ -161,8 +169,8 @@ void godot::SnakeAI::_chase_state()
 	if (_move_vector != Vector2(0, 0))
 		_look_vector = _move_vector.normalized();
 
-	_animation_tree->set("parameters/Move/blend_position", _look_vector);
-	_animation_tree->set("parameters/Attack/blend_position", _look_vector);
+	//_animation_tree->set("parameters/Move/blend_position", _look_vector);
+	//_animation_tree->set("parameters/Attack/blend_position", _look_vector);
 }
 
 
@@ -184,7 +192,7 @@ void godot::SnakeAI::_on_hurt_area_area_entered(Area2D* _other_area)
 		auto _pl_damage = Player::_get_singleton()->_get_damage();
 
 		//knock back bat
-		_knockback_vector = _vector.normalized() * 150;
+		_knockback_vector = _vector.normalized() * 50;
 
 		_hp -= _pl_damage;
 	}
@@ -200,7 +208,7 @@ void godot::SnakeAI::_on_hurt_area_area_entered(Area2D* _other_area)
 		auto _pl_damage = Player::_get_singleton()->_get_damage();
 
 		//knock back bat
-		_knockback_vector = _vector.normalized() * 150;
+		_knockback_vector = _vector.normalized() * 50;
 		_hp -= _pl_damage;
 	}
 }
@@ -260,8 +268,8 @@ void godot::SnakeAI::walk()
 	if (_move_vector != Vector2(0, 0))
 		_look_vector = _move_vector.normalized();
 
-	_animation_tree->set("parameters/Idle/blend_position", _look_vector);
-	_animation_tree->set("parameters/Move/blend_position", _look_vector);
+	//_animation_tree->set("parameters/Idle/blend_position", _look_vector);
+	//_animation_tree->set("parameters/Move/blend_position", _look_vector);
 }
 
 void godot::SnakeAI::_change_move_vector()

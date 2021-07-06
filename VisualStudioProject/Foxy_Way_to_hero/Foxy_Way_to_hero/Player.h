@@ -59,6 +59,8 @@ namespace godot {
 		int _get_current_state();
 		bool _get_is_alive();
 		void _add_to_backpack(Meat* meat);
+		
+		void _reset_player_speed();
 		// Gameplay variables
 	public:
 		Backpack* _backpack = nullptr;
@@ -76,8 +78,9 @@ namespace godot {
 		AnimatedSprite* _hit_effect = nullptr;
 		AnimationNodeStateMachinePlayback* _animation_state = nullptr;
 		Area2D* _hit_area = nullptr;
+		
 		Timer* _death_timer = nullptr;
-	
+		Timer* _hurt_timer = nullptr;
 
 		bool _is_alive;
 		bool _can_fire;
