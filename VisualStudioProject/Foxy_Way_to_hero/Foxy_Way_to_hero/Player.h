@@ -59,6 +59,8 @@ namespace godot {
 		int _get_current_state();
 		bool _get_is_alive();
 		void _add_to_backpack(Meat* meat);
+
+		void _on_escape_pressed();
 		// Gameplay variables
 	public:
 		Backpack* _backpack = nullptr;

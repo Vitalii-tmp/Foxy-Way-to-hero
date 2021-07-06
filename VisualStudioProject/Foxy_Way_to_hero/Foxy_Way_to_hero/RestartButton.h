@@ -12,6 +12,7 @@ namespace godot
 		void _init();
 
 		void _ready();
+		void _process(float delta);
 
 		void _on_restart_button_pressed();
 

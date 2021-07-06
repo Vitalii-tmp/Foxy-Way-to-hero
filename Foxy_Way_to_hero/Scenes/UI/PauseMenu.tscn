@@ -1,83 +1,170 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/ContinueButton.gdns" type="Script" id=1]
 [ext_resource path="res://Scripts/RestartButton.gdns" type="Script" id=2]
 [ext_resource path="res://Scripts/QuitButton.gdns" type="Script" id=3]
 [ext_resource path="res://Scripts/LoadSceneButton.gdns" type="Script" id=4]
+[ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/UI/menuBackground.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Shadows/MenuShadow.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/button.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=2]
+size = 72
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 72
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 72
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 72
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 5 )
 
 [node name="PauseMenuCanvasLayer" type="CanvasLayer"]
 pause_mode = 2
+layer = 2
 
-[node name="MainMenuButton" type="Button" parent="."]
+[node name="MainMenuButton" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -40.6249
-margin_top = -38.5796
-margin_right = 42.3751
-margin_bottom = -18.5796
+margin_left = -84.2742
+margin_top = 2.06094
+margin_right = 373.726
+margin_bottom = 133.061
+rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 48.6602, 20 )
-text = "Main Menu"
+texture_normal = ExtResource( 8 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ContinueButton" type="Button" parent="."]
+[node name="Label" type="Label" parent="MainMenuButton"]
+margin_left = 27.4589
+margin_top = 25.1555
+margin_right = 437.459
+margin_bottom = 97.1555
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "main menu"
+align = 1
+valign = 1
+
+[node name="ContinueButton" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -40.0
-margin_top = -10.0
-margin_right = 43.0
-margin_bottom = 10.0
-text = "Continue"
+margin_left = -46.3848
+margin_top = -36.0903
+margin_right = 411.615
+margin_bottom = 80.9097
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 8 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RestartButton" type="Button" parent="."]
+[node name="Label" type="Label" parent="ContinueButton"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 437.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "continue"
+align = 1
+valign = 1
+
+[node name="RestartButton" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -40.0
-margin_top = 21.0
-margin_right = 42.0
-margin_bottom = 41.0
-text = "Restart"
+margin_left = -46.0934
+margin_top = -9.34829
+margin_right = 411.907
+margin_bottom = 107.652
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 8 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="Label" type="Label" parent="RestartButton"]
+margin_left = 24.0
+margin_top = 26.0
+margin_right = 433.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "restart"
+align = 1
+valign = 1
+
+[node name="QuitButton" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -39.4204
-margin_top = -37.6818
-margin_right = 41.5796
-margin_bottom = -17.6818
-text = "Quit"
+margin_left = -44.9885
+margin_top = -45.9226
+margin_right = 413.011
+margin_bottom = 71.0774
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 8 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="QuitButton"]
+margin_left = 24.0
+margin_top = 23.0
+margin_right = 434.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "quit"
+align = 1
+valign = 1
+
 [node name="MenuLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -45.0
-margin_right = 44.0
-margin_bottom = 26.0
+margin_left = -45.4205
+margin_top = 21.4429
+margin_right = 43.5795
+margin_bottom = 47.4429
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MENU"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 159.854, 89.4038 )
+scale = Vector2( 0.26102, 0.262155 )
+z_index = -1
+texture = ExtResource( 6 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( 158.929, 90.8168 )
+scale = Vector2( 21.3917, 12.4047 )
+z_index = -2
+texture = ExtResource( 7 )

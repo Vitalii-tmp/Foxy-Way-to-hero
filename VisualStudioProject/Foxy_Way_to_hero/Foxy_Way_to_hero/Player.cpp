@@ -20,6 +20,7 @@ void godot::Player::_register_methods()
 	register_method("_fire", &Player::_fire);
 	register_method("_death", &Player::_death);
 
+	register_method("_on_escape_pressed", &Player::_on_escape_pressed);
 }
 
 
@@ -58,7 +59,7 @@ void godot::Player::_ready()
 
 	_resource_loader = ResourceLoader::get_singleton();
 
-	auto backpack_node = cast_to<Node2D>(get_child(8));
+	auto backpack_node = cast_to<Node2D>(get_node("/root/World/UI/Backpack"));
 	_backpack = cast_to<Backpack>(backpack_node);
 
 	
@@ -111,6 +112,7 @@ void godot::Player::_process(float delta)
 
 	if (_is_alive)
 	{
+		_on_escape_pressed();
 		_change_state_depend_on_behavior();
 	}
 
@@ -358,6 +360,21 @@ int godot::Player::_get_current_state()
 bool godot::Player::_get_is_alive()
 {
 	return _is_alive;
+}
+
+void godot::Player::_on_escape_pressed()
+{
+	Input* i = Input::get_singleton();
+
+	if (i->is_action_just_pressed("ui_cancel") && !get_tree()->is_paused())
+	{
+		get_tree()->set_pause(true);
+
+		Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/UI/PauseMenu.tscn");
+
+		auto* menu = cast_to<CanvasLayer>(prefab->instance());
+		get_node("/root/World/UI/")->add_child(menu);
+	}
 }
 
 //void godot::Player::_add_to_backpack(Meat* meat)

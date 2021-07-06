@@ -56,8 +56,15 @@ void godot::Meat::_on_item_area_body_entered(Node* body)
 {
 	if (body->get_name() == "Player")
 	{
+		Godot::print("Collision with player");
+		if(Player::_get_singleton()->_backpack == nullptr)
+		{
+			Godot::print("NULLPTR");
+
+		}
 		if (Player::_get_singleton()->_backpack->_can_add_element())
 		{
+			Godot::print("can add element");
 			Player::_get_singleton()->_backpack->_add_element(this);
 			get_parent()->queue_free();
 		}

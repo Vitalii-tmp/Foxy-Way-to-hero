@@ -15,16 +15,21 @@ void ContinueButton::_init()
 void ContinueButton::_ready()
 {
 	_menu = cast_to<CanvasLayer>(get_parent());
-	_pause_button = cast_to<Button>(get_parent()->get_parent()->get_child(2));
+	//_pause_button = cast_to<Button>(get_parent()->get_parent()->get_child(2));
 
 	connect("pressed", this, "_on_button_continue_pressed");
 }
+
+//void godot::ContinueButton::_process(float delta)
+//{
+//	
+//}
 
 void ContinueButton::_on_button_continue_pressed()
 {
 	Godot::print("Continue button pressed");
 	get_tree()->set_pause(false);
-	_pause_button->set_visible(true);
+	//_pause_button->set_visible(true);
 
 	_menu->queue_free();
 }
