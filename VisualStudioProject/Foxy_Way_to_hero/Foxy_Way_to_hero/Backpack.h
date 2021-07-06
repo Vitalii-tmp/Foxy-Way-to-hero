@@ -18,6 +18,7 @@ namespace godot
 
 		void _add_element(Meat* el);
 		bool _can_add_element();
+		void _remove_by_name(String name);
 		
 		Backpack();
 		~Backpack();

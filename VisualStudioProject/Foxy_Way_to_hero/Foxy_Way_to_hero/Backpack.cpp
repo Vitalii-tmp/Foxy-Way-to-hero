@@ -69,13 +69,11 @@ void godot::Backpack::_add_element(Meat* el)
 		else{
 			if (_items[i] == nullptr)
 			{
-
-
-				cast_to<TextureButton>(_b)->set_normal_texture(cast_to<Sprite>(item->get_child(0))->get_texture());
-				cast_to<TextureButton>(_b)->set_custom_minimum_size(Vector2(29, 29));
-				cast_to<TextureButton>(_b)->set_stretch_mode(3);
-				cast_to<TextureButton>(_b)->set_expand(true);
-				cast_to<TextureButton>(_b)->set_name(name);
+				_b->set_normal_texture(cast_to<Sprite>(item->get_child(0))->get_texture());
+				_b->set_custom_minimum_size(Vector2(29, 29));
+				_b->set_stretch_mode(3);
+				_b->set_expand(true);
+				_b->set_name(name);
 				get_child(1)->add_child(_b);
 				_items[i] = el;
 				flag = true;
@@ -101,6 +99,18 @@ bool godot::Backpack::_can_add_element()
 	}
 
 	return flag;
+}
+
+void godot::Backpack::_remove_by_name(String name)
+{
+	for(int i = 0; i<8; i++)
+	{
+		if(get_child(1)->get_child(i)->get_name() == name)
+		{
+			Godot::print("if name equals");
+			_items[i] = nullptr;
+		}
+	}
 }
 
 godot::Backpack::Backpack()

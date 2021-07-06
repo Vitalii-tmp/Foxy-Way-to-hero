@@ -16,5 +16,7 @@ namespace godot {
 
 	private:
 		ResourceLoader* _resource_loader;
+
+		Label* _label = nullptr;
 	};
 }
