@@ -10,7 +10,6 @@ void godot::Acorn::_register_methods()
 void godot::Acorn::_init()
 {
 	connect("body_entered", this, "_on_acorn_area_body_entered");
-	
 }
 
 godot::Acorn::Acorn()
