@@ -1060,7 +1060,7 @@ font_data = ExtResource( 33 )
 [node name="World" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 159.776, -65.5074 )
+position = Vector2( 143, -85.5308 )
 scale = Vector2( 3.13614, 3.44448 )
 z_index = -2
 texture = ExtResource( 3 )
@@ -1461,10 +1461,8 @@ align = 1
 valign = 1
 
 [node name="HealthUI" parent="UI" instance=ExtResource( 14 )]
-margin_left = 1.02386
-margin_top = 0.0432966
-margin_right = 1.02386
-margin_bottom = 0.0432966
+margin_left = 0.363884
+margin_right = 0.363884
 
 [node name="BackpackButton" type="TextureButton" parent="UI"]
 anchor_left = 1.0
