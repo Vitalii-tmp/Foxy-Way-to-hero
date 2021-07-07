@@ -7,17 +7,17 @@
 font_data = ExtResource( 1 )
 
 [node name="BackpackItem" type="TextureButton"]
+rect_scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Count" type="Label" parent="."]
-visible = false
-margin_left = 16.313
-margin_top = 17.2833
-margin_right = 52.313
-margin_bottom = 33.2833
+margin_left = 9.41821
+margin_top = 10.9331
+margin_right = 45.4182
+margin_bottom = 26.9331
 rect_scale = Vector2( 0.4, 0.4 )
 custom_fonts/font = SubResource( 1 )
 text = "1"

@@ -3,6 +3,7 @@
 void godot::RestartButton::_register_methods()
 {
 	register_method("_ready", &RestartButton::_ready);
+	register_method("_process", &RestartButton::_process);
 	register_method("_on_restart_button_pressed", &RestartButton::_on_restart_button_pressed);
 }
 
@@ -15,6 +16,19 @@ void godot::RestartButton::_ready()
 	connect("pressed", this, "_on_restart_button_pressed");
 
 	_resource_loader = ResourceLoader::get_singleton();
+}
+
+void godot::RestartButton::_process(float delta)
+{
+	Input* i = Input::get_singleton();
+
+
+	if (i->is_action_just_pressed("ui_cancel") && get_tree()->is_paused())
+	{
+		Godot::print("esc action");
+		get_tree()->set_pause(false);
+		this->get_parent()->queue_free();
+	}
 }
 
 void godot::RestartButton::_on_restart_button_pressed()

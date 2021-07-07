@@ -40,11 +40,11 @@ namespace godot
 	}
 	std::string UI::get_coins_information() const
 	{
-		return "Coins : " + std::to_string(Loader::get_singleton()->get_coins());
+		return std::to_string(Loader::get_singleton()->get_coins());
 	}
 	std::string UI::get_acorns_information() const
 	{
-		return "Acorns : " + std::to_string(Loader::get_singleton()->get_acorns());
+		return std::to_string(Loader::get_singleton()->get_acorns());
 	}
 }
 

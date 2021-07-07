@@ -60,6 +60,8 @@ namespace godot {
 		bool _get_is_alive();
 		float _get_hp();
 		void _add_to_backpack(Meat* meat);
+
+		void _on_escape_pressed();
 		
 		void _reset_player_speed();
 		// Gameplay variables

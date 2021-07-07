@@ -57,6 +57,7 @@ void godot::Backpack::_add_element(Meat* el)
 	backpack_item = _resource_loader->load("res://Scenes/Items/BackpackItem.tscn");
 	auto item = cast_to<KinematicBody2D>(prefab->instance());
 	auto _b = cast_to<TextureButton>(backpack_item->instance());
+	//auto _cen = CenterContainer::_new();
 	for (int i = 0; i < 8; i++)
 	{
 
@@ -70,10 +71,12 @@ void godot::Backpack::_add_element(Meat* el)
 			if (_items[i] == nullptr)
 			{
 				_b->set_normal_texture(cast_to<Sprite>(item->get_child(0))->get_texture());
-				_b->set_custom_minimum_size(Vector2(29, 29));
+				_b->set_custom_minimum_size(Vector2(13, 14));
 				_b->set_stretch_mode(3);
 				_b->set_expand(true);
 				_b->set_name(name);
+				/*_cen->add_child(_b);
+				_cen->set_custom_minimum_size(Vector2(22, 22));*/
 				get_child(1)->add_child(_b);
 				_items[i] = el;
 				flag = true;

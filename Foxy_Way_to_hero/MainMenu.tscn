@@ -1,34 +1,95 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Sprites/Background/background.jpg" type="Texture" id=1]
+[ext_resource path="res://Sprites/UI/button.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/LoadSceneButton.gdns" type="Script" id=2]
+[ext_resource path="res://Sprites/Background/111_4.jpg" type="Texture" id=3]
+[ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scripts/QuitButton.gdns" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 4 )
 
 [node name="MainMenu" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 160.448, 89.1587 )
 scale = Vector2( 0.166405, 0.166058 )
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 83.4303
-margin_top = 0.420448
-margin_right = 242.43
-margin_bottom = 33.4204
-text = "Foxy: way to hero"
+[node name="PlayButton" type="TextureButton" parent="."]
+margin_left = 5.49491
+margin_top = 94.8565
+margin_right = 44.4949
+margin_bottom = 104.856
+rect_scale = Vector2( 2.5, 2.5 )
+texture_normal = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PlayButton"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 36.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "play"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="Button" parent="."]
-margin_left = 108.0
-margin_top = 78.6464
-margin_right = 223.0
-margin_bottom = 98.6464
-text = "Play"
-script = ExtResource( 2 )
+[node name="SettingsButton" type="TextureButton" parent="."]
+margin_left = 4.88638
+margin_top = 121.432
+margin_right = 43.8864
+margin_bottom = 131.432
+rect_scale = Vector2( 2.5, 2.5 )
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SettingsButton"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 36.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "settings"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="TextureButton" parent="."]
+margin_left = 5.0
+margin_top = 147.0
+margin_right = 44.0
+margin_bottom = 157.0
+rect_scale = Vector2( 2.5, 2.5 )
+texture_normal = ExtResource( 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="QuitButton"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 36.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "quit"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

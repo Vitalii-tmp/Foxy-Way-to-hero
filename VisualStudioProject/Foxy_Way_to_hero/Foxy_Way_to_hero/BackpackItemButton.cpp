@@ -33,7 +33,7 @@ void godot::BackpackItemButton::_process(float delta)
 
 void godot::BackpackItemButton::_on_item_button_pressed()
 {
-	const auto pos = cast_to<Node2D>(this->get_parent()->get_parent()->get_parent())->get_global_position();
+	const auto pos = cast_to<Node2D>(Player::_get_singleton())->get_global_position();
 	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/" + this->get_name() + ".tscn");
 
 	auto text = _label->get_text();
@@ -44,15 +44,6 @@ void godot::BackpackItemButton::_on_item_button_pressed()
 
 		get_node("/root/World/YSort/")->add_child(item);
 
-		item->set_global_position(pos + Vector2(0, 30));
-	}
-	else {
-		Godot::print("<1");
-		//Player::_get_singleton()->_backpack->_remove_by_name(this->get_name());
-		//this->queue_free();
-		/*if (text.to_int() - 1 > 0) {
-			Player::_get_singleton()->_backpack->_remove_by_name(this->get_name());
-			this->queue_free();
-		}*/
+		item->set_global_position(pos + Vector2(0, 20));
 	}
 }

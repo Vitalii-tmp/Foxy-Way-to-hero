@@ -55,8 +55,8 @@ void godot::LoadSceneButton::_on_button_pressed()
 
 	if(get_name() == "BackpackButton")
 	{
-		if (cast_to<Node2D>(Player::_get_singleton()->get_child(8))->is_visible() == true)
-			cast_to<Node2D>(Player::_get_singleton()->get_child(8))->set_visible(false);
-		else cast_to<Node2D>(Player::_get_singleton()->get_child(8))->set_visible(true);
+		if (cast_to<Node2D>(get_node("/root/World/UI/Backpack"))->is_visible())
+			cast_to<Node2D>(get_node("/root/World/UI/Backpack"))->set_visible(false);
+		else cast_to<Node2D>(get_node("/root/World/UI/Backpack"))->set_visible(true);
 	}
 }
