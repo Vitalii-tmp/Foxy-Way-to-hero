@@ -7,7 +7,7 @@ using namespace godot;
 //register methods using in godot
 void godot::Player::_register_methods()
 {
-	register_method("_process", &Player::_process);
+	register_method("_physics_process", &Player::_physics_process);
 	register_method("_init", &Player::_init);
 	register_method("_ready", &Player::_ready);
 
@@ -32,10 +32,11 @@ void godot::Player::_init()
 //set default variables value
 Player::Player()
 {
-	_speed = 100;
+	_speed = 100.f;
 
-	_damage = 25;
-	_hp = 100;
+	_damage = 25.f;
+	_hp = 100.f;
+	_hunger = 160.f;
 
 	_motion = Vector2(0, 0);
 	_input_vector = Vector2(0, 1);
@@ -81,8 +82,9 @@ void godot::Player::_ready()
 
 
 //call every frame
-void godot::Player::_process(float delta)
+void godot::Player::_physics_process(float delta)
 {
+	HealthUI::_get_singleton()->_set_health(_hp);
 	if (_hp <= 0)
 	{
 		_is_alive = false;
@@ -116,8 +118,18 @@ void godot::Player::_process(float delta)
 	if (_is_alive)
 	{
 		_change_state_depend_on_behavior();
+		
+		_hunger -= delta;
+
+		if (_hunger <= 0)
+			_hunger = 0;
+		
+		if (_hunger <= 0)
+			_hp -= delta;
 	}
 
+	Godot::print(String::num(_hp));
+	
 }
 
 
@@ -275,7 +287,7 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 			{
 
 				_hp -= _bat_damage;
-				HealthUI::_get_singleton()->_turn_on_hit_anim();
+				//HealthUI::_get_singleton()->_turn_on_hit_anim();
 
 				_hit_effect->set_visible(true);
 				_hit_effect->play();
@@ -292,7 +304,7 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 			if (_boar_agressive == true)
 			{
 				_hp -= _boar_damage;
-				HealthUI::_get_singleton()->_turn_on_hit_anim();
+				//HealthUI::_get_singleton()->_turn_on_hit_anim();
 
 				_hit_effect->set_visible(true);
 				_hit_effect->play();
@@ -312,7 +324,7 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 
 
 			_hp -= _snake_damage;
-			HealthUI::_get_singleton()->_turn_on_hit_anim();
+			//HealthUI::_get_singleton()->_turn_on_hit_anim();
 
 			_hit_effect->set_visible(true);
 			_hit_effect->play();
@@ -386,6 +398,11 @@ int godot::Player::_get_current_state()
 bool godot::Player::_get_is_alive()
 {
 	return _is_alive;
+}
+
+float godot::Player::_get_hp()
+{
+	return _hp;
 }
 
 void godot::Player::_reset_player_speed()

@@ -73,6 +73,9 @@ position = Vector2( 7.72897, 5.89958 )
 z_index = 1
 texture = ExtResource( 2 )
 hframes = 2
+__meta__ = {
+"_edit_bone_": true
+}
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="FullHeart"]
 visible = false
