@@ -130,7 +130,7 @@ void godot::Player::_physics_process(float delta)
 			_hp -= delta;
 	}
 
-	Godot::print(String::num(_hp));
+	//Godot::print(String::num(_hp));
 	
 }
 

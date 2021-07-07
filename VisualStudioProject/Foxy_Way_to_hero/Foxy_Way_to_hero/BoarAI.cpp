@@ -3,12 +3,15 @@
 godot::BoarAI::BoarAI()
 {
 	_is_alive = true;
+	_can_move = true;
 	_current_state = WALK;
 	_agressive = false;
 	_hp = 100.f;
-	_damage = 35.f;
+	_damage = 10.f;
 	_run_speed = 80.f;
 	_walk_speed = 30.f;
+
+	_is_stoping = false;
 }
 
 
@@ -25,7 +28,8 @@ void godot::BoarAI::_register_methods()
 	register_method("_on_hurt_area_area_entered", &BoarAI::_on_hurt_area_area_entered);
 	register_method("_on_hit_effect_animation_finished", &BoarAI::_on_hit_effect_animation_finished);
 	register_method("_set_move_vector", &BoarAI::_set_move_vector);
-
+	register_method("_on_boar_hit_area_area_entered", &BoarAI::_on_boar_hit_area_area_entered);
+	register_method("_change_to_can_move", &BoarAI::_change_to_can_move);
 
 
 }
@@ -52,7 +56,7 @@ void godot::BoarAI::_ready()
 
 void godot::BoarAI::_process(float delta)
 {
-	if (_is_alive)
+	if (_is_alive && _can_move)
 	{
 		_change_state();
 	}
@@ -66,14 +70,35 @@ void godot::BoarAI::_process(float delta)
 		_animation_tree->set("parameters/Die/blend_position", _look_vector);
 		//queue_free();
 	}
-		
-	if (_is_alive)
+
+
+	if (_is_stoping)
+	{
+
+		if (get_node("/root/World")->find_node("Player") != nullptr)
+		{
+
+
+			//Godot::print("MoveVector " + _move_vector);
+			//_move_vector = _move_vector.move_toward(Vector2(0, 0), 5);
+			move_and_slide(_move_vector.normalized() * _walk_speed);
+			_move_vector = _move_vector.move_toward(Vector2::ZERO, 2);
+		}
+		else
+			_move_vector = _move_vector.normalized();
+	}
+
+
+	if (_is_alive && !_is_stoping)
 	{
 		if (_move_vector != Vector2(0, 0))
 			_animation_state->travel("Run");
 		else
 			_animation_state->travel("Idle");
 	}
+
+	
+	Godot::print(_animation_state->get_current_node());
 }
 
 void godot::BoarAI::_walk_state()
@@ -137,7 +162,7 @@ void godot::BoarAI::_walk()
 {
 	if (!_timer->is_connected("timeout", this, "_set_move_vector"))
 	{
-		
+
 		Godot::print("Timer connected");
 		_timer->connect("timeout", this, "_set_move_vector");
 
@@ -189,15 +214,6 @@ void godot::BoarAI::_on_detection_area_body_entered(Node2D* _other_body)
 		}
 
 	}
-	else
-	{
-		if (_other_body->is_in_group("_enviroment"))
-		{
-			_entered_bodies.push_back(_other_body);
-			Godot::print("add to list");
-		}
-
-	}
 }
 
 void godot::BoarAI::_on_detection_area_body_exited(Node2D* _other_body)
@@ -238,10 +254,19 @@ void godot::BoarAI::_on_hurt_area_area_entered(Area2D* _other_area)
 	}
 }
 
+void godot::BoarAI::_on_boar_hit_area_area_entered(Area2D* _other_area)
+{
+	if (_other_area->get_name() == "PlayerHurtArea" && _agressive)
+	{
+		_stoping();
+	}
+}
+
 void godot::BoarAI::_on_hit_effect_animation_finished()
 {
 	_hit_effect->set_visible(false);
 	_hit_effect->set_frame(0);
+
 }
 
 void godot::BoarAI::_set_move_vector()
@@ -271,6 +296,32 @@ void godot::BoarAI::_set_move_vector()
 
 void godot::BoarAI::_stoping()
 {
+	_is_stoping = true;
+	_can_move = false;
+	if (!_timer->is_connected("timeout", this, "_change_to_can_move"))
+	{
+
+		Godot::print("Timer aaaaaaaaaaaaaaaaaaaa connected");
+		_timer->connect("timeout", this, "_change_to_can_move");
+
+		_timer->start(0.5);
+	}
+
+	
+	_move_vector *= _walk_speed;
+
+	_animation_state->travel("Stop");
+	_animation_tree->set("parameters/Stop/blend_position", _move_vector.normalized());
+	//Godot::print("LookVector " + _look_vector);
+}
+
+void godot::BoarAI::_change_to_can_move()
+{
+	if (_timer->is_connected("timeout", this, "_change_to_can_move"))
+		_timer->disconnect("timeout", this, "_change_to_can_move");
+
+	_is_stoping = false;
+	_can_move = true;
 }
 
 float godot::BoarAI::_get_damage()
