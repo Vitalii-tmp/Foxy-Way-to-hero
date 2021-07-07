@@ -9,23 +9,23 @@
 [ext_resource path="res://Sprites/Shadows/MenuShadow.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/UI/button.png" type="Texture" id=8]
 
+[sub_resource type="DynamicFont" id=1]
+size = 7
+font_data = ExtResource( 5 )
+
 [sub_resource type="DynamicFont" id=2]
-size = 72
+size = 7
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 72
+size = 7
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 72
+size = 7
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 72
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 5 )
 
 [node name="PauseMenuCanvasLayer" type="CanvasLayer"]
@@ -37,11 +37,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -84.2742
-margin_top = 2.06094
-margin_right = 373.726
-margin_bottom = 133.061
-rect_scale = Vector2( 0.2, 0.2 )
+margin_left = 32.4005
+margin_top = 46.2711
+margin_right = 71.4005
+margin_bottom = 56.2711
+rect_scale = Vector2( 2.7, 2.7 )
 rect_pivot_offset = Vector2( 48.6602, 20 )
 texture_normal = ExtResource( 8 )
 script = ExtResource( 4 )
@@ -50,11 +50,11 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="MainMenuButton"]
-margin_left = 27.4589
-margin_top = 25.1555
-margin_right = 437.459
-margin_bottom = 97.1555
-custom_fonts/font = SubResource( 2 )
+margin_left = 3.21852
+margin_top = 0.979115
+margin_right = 36.2185
+margin_bottom = 8.97911
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "main menu"
 align = 1
@@ -65,11 +65,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -46.3848
-margin_top = -36.0903
-margin_right = 411.615
-margin_bottom = 80.9097
-rect_scale = Vector2( 0.2, 0.2 )
+margin_left = -50.5791
+margin_top = -44.1619
+margin_right = -11.5791
+margin_bottom = -34.1619
+rect_scale = Vector2( 2.7, 2.7 )
 texture_normal = ExtResource( 8 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -77,11 +77,11 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="ContinueButton"]
-margin_left = 25.0
-margin_top = 25.0
-margin_right = 437.0
-margin_bottom = 93.0
-custom_fonts/font = SubResource( 3 )
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 36.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "continue"
 align = 1
@@ -92,11 +92,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -46.0934
-margin_top = -9.34829
-margin_right = 411.907
-margin_bottom = 107.652
-rect_scale = Vector2( 0.2, 0.2 )
+margin_left = -50.2045
+margin_top = -15.7272
+margin_right = -11.2045
+margin_bottom = -5.72717
+rect_scale = Vector2( 2.7, 2.7 )
 texture_normal = ExtResource( 8 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -104,26 +104,29 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="RestartButton"]
-margin_left = 24.0
-margin_top = 26.0
-margin_right = 433.0
-margin_bottom = 95.0
-custom_fonts/font = SubResource( 4 )
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 36.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "restart"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="QuitButton" type="TextureButton" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -44.9885
-margin_top = -45.9226
-margin_right = 413.011
-margin_bottom = 71.0774
-rect_scale = Vector2( 0.2, 0.2 )
+margin_left = -50.2045
+margin_top = -49.7272
+margin_right = -11.2045
+margin_bottom = -39.7272
+rect_scale = Vector2( 2.7, 2.7 )
 texture_normal = ExtResource( 8 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -131,15 +134,18 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="QuitButton"]
-margin_left = 24.0
-margin_top = 23.0
-margin_right = 434.0
-margin_bottom = 94.0
-custom_fonts/font = SubResource( 5 )
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 36.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "quit"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MenuLabel" type="Label" parent="."]
 anchor_left = 0.5
@@ -148,7 +154,7 @@ margin_left = -45.4205
 margin_top = 21.4429
 margin_right = 43.5795
 margin_bottom = 47.4429
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MENU"
 align = 1
@@ -158,8 +164,8 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 159.854, 89.4038 )
-scale = Vector2( 0.26102, 0.262155 )
+position = Vector2( 163.185, 90.4247 )
+scale = Vector2( 2.63918, 2.69287 )
 z_index = -1
 texture = ExtResource( 6 )
 

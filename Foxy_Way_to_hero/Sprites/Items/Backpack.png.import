@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/backpack.png-cd9cb558da0032cdd6edf1ea16cb72b2.stex"
+path="res://.import/Backpack.png-57c67787a83599e9440fc3b8d128c213.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/backpack.png"
-dest_files=[ "res://.import/backpack.png-cd9cb558da0032cdd6edf1ea16cb72b2.stex" ]
+source_file="res://Sprites/Items/Backpack.png"
+dest_files=[ "res://.import/Backpack.png-57c67787a83599e9440fc3b8d128c213.stex" ]
 
 [params]
 

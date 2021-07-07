@@ -71,7 +71,7 @@ void godot::Backpack::_add_element(Meat* el)
 			if (_items[i] == nullptr)
 			{
 				_b->set_normal_texture(cast_to<Sprite>(item->get_child(0))->get_texture());
-				_b->set_custom_minimum_size(Vector2(22, 17));
+				_b->set_custom_minimum_size(Vector2(13, 14));
 				_b->set_stretch_mode(3);
 				_b->set_expand(true);
 				_b->set_name(name);
