@@ -17,7 +17,7 @@ namespace godot
 
 	private:
 		CanvasLayer* _menu = nullptr;
-		Button* _pause_button = nullptr;
+		TextureButton* _pause_button = nullptr;
 	};
 }
 
