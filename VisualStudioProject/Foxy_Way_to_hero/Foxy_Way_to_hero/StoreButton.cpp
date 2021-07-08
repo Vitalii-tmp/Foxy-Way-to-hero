@@ -24,6 +24,8 @@ void godot::StoreButton::_on_button_pressed()
 
 	Ref<PackedScene> prefab;
 
+	String name;
+
 	
 
 	if(get_name() == "MeatButton")
@@ -32,6 +34,7 @@ void godot::StoreButton::_on_button_pressed()
 		{
 			Loader::get_singleton()->set_coins(-50);
 			prefab = _resource_loader->load("res://Scenes/Items/Meat.tscn");
+			name = "Meat";
 		}
 		else
 			return;
@@ -42,6 +45,7 @@ void godot::StoreButton::_on_button_pressed()
 		{
 			Loader::get_singleton()->set_coins(-40);
 			prefab = _resource_loader->load("res://Scenes/Items/Cheese.tscn");
+			name = "Cheese";
 		}
 		else
 			return;
@@ -52,6 +56,7 @@ void godot::StoreButton::_on_button_pressed()
 		{
 			Loader::get_singleton()->set_coins(-60);
 			prefab = _resource_loader->load("res://Scenes/Items/Fish.tscn");
+			name = "Fish";
 		}
 		else
 			return;
@@ -62,6 +67,7 @@ void godot::StoreButton::_on_button_pressed()
 		{
 			Loader::get_singleton()->set_coins(-100);
 			prefab = _resource_loader->load("res://Scenes/Items/RedFish.tscn");
+			name = "RedFish";
 		}
 		else
 			return;
@@ -69,9 +75,10 @@ void godot::StoreButton::_on_button_pressed()
 
 	auto item = cast_to<KinematicBody2D>(prefab->instance());
 
-	get_node("/root/World/YSort/")->add_child(item);
+	get_node(NodePath("/root/World/YSort/"+name+"/"))->add_child(item);
 
 	item->set_global_position(pos + Vector2(0, 10));
+	item->set_name(name);
 	
 	UI::get_singleton()->change_coins_information();
 	Loader::get_singleton()->save_all_fields();

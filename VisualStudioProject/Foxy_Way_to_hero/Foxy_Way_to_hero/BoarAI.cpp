@@ -99,7 +99,7 @@ void godot::BoarAI::_physics_process(float delta)
 	
 
 	
-	Godot::print(_animation_state->get_current_node());
+	//Godot::print(_animation_state->get_current_node());
 }
 
 void godot::BoarAI::_walk_state()

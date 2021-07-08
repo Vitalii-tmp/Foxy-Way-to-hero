@@ -14,8 +14,8 @@ font_data = ExtResource( 4 )
 [node name="MainMenu" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 160.448, 89.1587 )
-scale = Vector2( 0.166405, 0.166058 )
+position = Vector2( 159.781, 90.0426 )
+scale = Vector2( 0.1671, 0.167695 )
 texture = ExtResource( 3 )
 
 [node name="PlayButton" type="TextureButton" parent="."]

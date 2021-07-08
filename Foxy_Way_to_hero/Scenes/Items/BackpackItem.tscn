@@ -15,10 +15,10 @@ __meta__ = {
 }
 
 [node name="Count" type="Label" parent="."]
-margin_left = 9.41821
-margin_top = 10.9331
-margin_right = 45.4182
-margin_bottom = 26.9331
+margin_left = 4.36921
+margin_top = 9.69154
+margin_right = 40.3692
+margin_bottom = 25.6915
 rect_scale = Vector2( 0.4, 0.4 )
 custom_fonts/font = SubResource( 1 )
 text = "1"

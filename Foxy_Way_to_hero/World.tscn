@@ -1368,6 +1368,14 @@ position = Vector2( 190.938, -55.2084 )
 [node name="Countryman" parent="YSort/NPC" instance=ExtResource( 27 )]
 position = Vector2( 94.6011, -472.794 )
 
+[node name="Meat" type="YSort" parent="YSort"]
+
+[node name="Cheese" type="YSort" parent="YSort"]
+
+[node name="Fish" type="YSort" parent="YSort"]
+
+[node name="RedFish" type="YSort" parent="YSort"]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
