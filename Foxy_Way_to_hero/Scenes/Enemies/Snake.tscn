@@ -74,6 +74,18 @@ tracks/4/keys = {
 "method": "_on_attack_animation_finished"
 } ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("DetectionArea/DetectionAreaCollision:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "AttackRight"
@@ -139,6 +151,18 @@ tracks/4/keys = {
 "args": [  ],
 "method": "_on_attack_animation_finished"
 } ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("DetectionArea/DetectionAreaCollision:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -479,14 +503,14 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id=37]
 states/Attack/node = SubResource( 15 )
-states/Attack/position = Vector2( 287, 161 )
+states/Attack/position = Vector2( 552, 174 )
 states/Die/node = SubResource( 20 )
 states/Die/position = Vector2( 135, 69 )
 states/Idle/node = SubResource( 25 )
 states/Idle/position = Vector2( 287, 69 )
 states/Move/node = SubResource( 30 )
 states/Move/position = Vector2( 470, 69 )
-transitions = [ "Idle", "Attack", SubResource( 31 ), "Attack", "Idle", SubResource( 32 ), "Idle", "Move", SubResource( 33 ), "Move", "Idle", SubResource( 34 ), "Die", "Idle", SubResource( 35 ), "Idle", "Die", SubResource( 36 ) ]
+transitions = [ "Idle", "Move", SubResource( 31 ), "Move", "Idle", SubResource( 32 ), "Die", "Idle", SubResource( 33 ), "Idle", "Die", SubResource( 34 ), "Move", "Attack", SubResource( 35 ), "Attack", "Move", SubResource( 36 ) ]
 start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=38]
@@ -509,7 +533,7 @@ position = Vector2( 1.90735e-06, -0.132432 )
 texture = ExtResource( 1 )
 offset = Vector2( 0.933, -14.19 )
 hframes = 64
-frame = 63
+frame = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 5.393, -0.456 )
@@ -540,7 +564,7 @@ collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SnakeHitArea"]
-position = Vector2( 0.164, -10.299 )
+position = Vector2( 2.112, -10.299 )
 shape = SubResource( 39 )
 disabled = true
 
@@ -552,7 +576,7 @@ position = Vector2( 1.7, -5.131 )
 shape = SubResource( 40 )
 
 [node name="Shadow" type="Sprite" parent="."]
-position = Vector2( 5.56, 0.368 )
+position = Vector2( -3.56, 0.368 )
 scale = Vector2( 1.06066, 0.723172 )
 z_index = -1
 texture = ExtResource( 2 )
@@ -561,7 +585,7 @@ texture = ExtResource( 2 )
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+[node name="DetectionAreaCollision" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource( 41 )
 
 [node name="HitEffect" parent="." instance=ExtResource( 3 )]
