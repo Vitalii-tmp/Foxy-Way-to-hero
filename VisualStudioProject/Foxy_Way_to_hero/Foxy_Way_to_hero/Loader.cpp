@@ -25,7 +25,7 @@ namespace godot
 			load_start_position_data();
 			load_coins_data();
 			load_acorns_data();
-			
+			load_backpack_data();
 		}
 		else
 		{
@@ -117,6 +117,10 @@ namespace godot
 		dict["Number of coins"] = this->_coins;
 		dict["Start position x"] = this->_player_start_position.x;
 		dict["Start position y"] = this->_player_start_position.y;
+		dict["Number of meat"] = this->_numMeat;
+		dict["Number of cheese"] = this->_numCheese;
+		dict["Number of fish"] = this->_numFish;
+		dict["Number of red fish"] = this->_numRedFish;
 		
 		_file->store_string(dict.to_json());
 		_file->close();
@@ -145,10 +149,50 @@ namespace godot
 	{
 		return this->_acorns;
 	}
+
+	int Loader::get_num_meat()
+	{
+		return this->_numMeat;
+	}
+
+	int Loader::get_num_cheese()
+	{
+		return this->_numCheese;
+	}
+
+	int Loader::get_num_fish()
+	{
+		return this->_numFish;
+	}
+
+	int Loader::get_num_red_fish()
+	{
+		return this->_numRedFish;
+	}
 	
 	void Loader::set_start_position(Vector2 start_position)
 	{
 		_player_start_position = start_position;
+	}
+
+	void Loader::set_num_meat(int numMeat)
+	{
+		_numMeat = numMeat;
+	}
+
+	void Loader::set_num_cheese(int numCheese)
+	{
+		_numCheese = numCheese;
+	}
+
+	void Loader::set_num_fish(int numFish)
+	{
+		_numFish = numFish;
+	}
+
+	void Loader::set_num_red_fish(int numRedFish)
+	{
+		_numRedFish = numRedFish;
 	}
 	
 	
@@ -172,6 +216,25 @@ namespace godot
 			_player_start_position.y = rez["Start position y"];
 
 			Godot::print(_player_start_position);
+			_file->close();
+		}
+	}
+	
+	void Loader::load_backpack_data()
+	{
+		Ref<File> _file = File::_new();
+		if (_file->file_exists(_dataFile))
+		{
+			_file->open(_dataFile, _file->READ);
+
+			const Dictionary rez = JSON::get_singleton()->parse(_file->get_as_text())->get_result();
+
+			_numMeat = rez["Number of meat"];
+			_numCheese = rez["Number of cheese"];
+			_numFish = rez["Number of fish"];
+			_numRedFish = rez["Number of red fish"];
+			
+			//Godot::print(_player_start_position);
 			_file->close();
 		}
 	}
