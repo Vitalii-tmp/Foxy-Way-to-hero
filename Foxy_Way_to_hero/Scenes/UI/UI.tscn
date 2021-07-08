@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/UI.gdns" type="Script" id=1]
 [ext_resource path="res://Sprites/Items/Backpack.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/UI/acornUI.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/HealthUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Items/Backpack.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Sprites/UI/menuBackground.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/UI/button.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Items/Coint.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/LoadSceneButton.gdns" type="Script" id=9]
@@ -101,9 +100,3 @@ hframes = 4
 position = Vector2( 273.665, 22.5648 )
 scale = Vector2( 2.18096, 2.18096 )
 texture = ExtResource( 3 )
-
-[node name="Scroll" type="Sprite" parent="."]
-position = Vector2( 287.56, 30.9989 )
-scale = Vector2( 0.962968, 0.853882 )
-z_index = -1
-texture = ExtResource( 6 )
