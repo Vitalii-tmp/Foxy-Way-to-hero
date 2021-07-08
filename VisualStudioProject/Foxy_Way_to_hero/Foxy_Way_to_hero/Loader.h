@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Headers.h"
 
 namespace godot
@@ -27,14 +28,22 @@ namespace godot
 		void set_coins(int coins);
 		void set_acorns(int acorns);
 		void set_start_position(Vector2 start_position);
+		void set_num_meat(int numMeat);
+		void set_num_cheese(int numCheese);
+		void set_num_fish(int numFish);
+		void set_num_red_fish(int numRedFish);
 
 		int get_coins() const;
 		int get_acorns() const;
-
+		int get_num_meat();
+		int get_num_cheese();
+		int get_num_fish();
+		int get_num_red_fish();
 		
 		Vector2 get_start_position();
 
 		void load_start_position_data();
+		void load_backpack_data();
 	private:
 		static inline Loader* _instance;
 
@@ -43,6 +52,11 @@ namespace godot
 		int _coins ;
 		int _acorns ;
 		Vector2 _player_start_position;
+
+		int _numMeat = 0;
+		int _numCheese = 0;
+		int _numFish = 0;
+		int _numRedFish = 0;
 	};
 }
 

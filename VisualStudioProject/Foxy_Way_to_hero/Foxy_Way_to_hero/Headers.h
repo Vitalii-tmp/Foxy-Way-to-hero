@@ -16,6 +16,7 @@
 #include <SceneTree.hpp>
 #include <Control.hpp>
 #include <Texture.hpp>
+#include <Vector2.hpp>
 
 #include <Position2D.hpp>
 #include <Input.hpp>
