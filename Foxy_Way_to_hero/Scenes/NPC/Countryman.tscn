@@ -35,10 +35,11 @@ script = ExtResource( 3 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
 animation = "manAnim"
-frame = 2
 playing = true
 
 [node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource( 5 )

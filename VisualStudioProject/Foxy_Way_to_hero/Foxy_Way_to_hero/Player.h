@@ -33,7 +33,7 @@ namespace godot {
 		// Gameplay methods
 		static void _register_methods();
 		void _init();
-		void _process(float delta);
+		void _physics_process(float delta);
 		void _ready();
 
 		//player states
@@ -58,6 +58,7 @@ namespace godot {
 		float _get_damage();
 		int _get_current_state();
 		bool _get_is_alive();
+		float _get_hp();
 		void _add_to_backpack(Meat* meat);
 
 		void _on_escape_pressed();
@@ -68,7 +69,7 @@ namespace godot {
 		Backpack* _backpack = nullptr;
 	private:
 
-		static inline Player* _instance;
+		static inline Player* _instance = nullptr;
 
 
 		Vector2 _motion;
@@ -92,6 +93,7 @@ namespace godot {
 
 		float _hp;
 		float _damage;
+		float _hunger;
 
 		int _current_state;
 

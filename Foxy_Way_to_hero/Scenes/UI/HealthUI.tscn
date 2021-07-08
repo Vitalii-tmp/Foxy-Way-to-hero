@@ -27,50 +27,59 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FullHeart4" type="Sprite" parent="."]
-position = Vector2( 15.0624, 2.46952 )
+[node name="FullHeart" type="Sprite" parent="."]
+position = Vector2( 10.964, 8.83 )
+scale = Vector2( 1.5, 1.5 )
 z_index = 1
 texture = ExtResource( 2 )
-offset = Vector2( 40.557, 3.32507 )
+hframes = 2
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="FullHeart4"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="FullHeart"]
 visible = false
 position = Vector2( 39.8783, 2.16911 )
 scale = Vector2( 0.652386, 0.652386 )
 frames = SubResource( 3 )
 animation = "hitAnim"
 
-[node name="FullHeart3" type="Sprite" parent="."]
-position = Vector2( -0.991924, 2.39519 )
+[node name="FullHeart2" type="Sprite" parent="."]
+position = Vector2( 36.051, 8.83 )
+scale = Vector2( 1.5, 1.5 )
 z_index = 1
 texture = ExtResource( 2 )
-offset = Vector2( 40.557, 3.32507 )
+hframes = 2
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="FullHeart3"]
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="FullHeart2"]
 visible = false
 position = Vector2( 39.7477, 2.57715 )
 scale = Vector2( 0.652386, 0.652386 )
 frames = SubResource( 3 )
 animation = "hitAnim"
 
-[node name="FullHeart2" type="Sprite" parent="."]
-position = Vector2( 23.6594, 5.86892 )
+[node name="FullHeart3" type="Sprite" parent="."]
+position = Vector2( 61.08, 8.83 )
+scale = Vector2( 1.5, 1.5 )
 z_index = 1
 texture = ExtResource( 2 )
+hframes = 2
 
-[node name="AnimatedSprite3" type="AnimatedSprite" parent="FullHeart2"]
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="FullHeart3"]
 visible = false
 position = Vector2( -0.754847, -1.23029 )
 scale = Vector2( 0.652386, 0.652386 )
 frames = SubResource( 3 )
 animation = "hitAnim"
 
-[node name="FullHeart" type="Sprite" parent="."]
-position = Vector2( 7.72897, 5.89958 )
+[node name="FullHeart4" type="Sprite" parent="."]
+position = Vector2( 86.063, 8.83 )
+scale = Vector2( 1.5, 1.5 )
 z_index = 1
 texture = ExtResource( 2 )
+hframes = 2
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="AnimatedSprite4" type="AnimatedSprite" parent="FullHeart"]
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="FullHeart4"]
 visible = false
 position = Vector2( -0.675636, -1.09409 )
 scale = Vector2( 0.652386, 0.652386 )
@@ -78,35 +87,35 @@ frames = SubResource( 3 )
 animation = "hitAnim"
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
-margin_left = 0.363884
-margin_top = 0.644754
-margin_right = 40.3639
-margin_bottom = 40.6448
+margin_left = -0.594879
+margin_top = 0.453407
+margin_right = 84.4051
+margin_bottom = 17.4534
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="EmptyHeart" type="Sprite" parent="AspectRatioContainer"]
-position = Vector2( -2.05364, -14.7754 )
+position = Vector2( 87, 7.474 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
-offset = Vector2( 9.52452, 20.6024 )
 
 [node name="EmptyHeart2" type="Sprite" parent="AspectRatioContainer"]
-position = Vector2( -2.05364, -14.7754 )
+position = Vector2( 62, 7.672 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
-offset = Vector2( 25.5016, 20.6024 )
 
 [node name="EmptyHeart3" type="Sprite" parent="AspectRatioContainer"]
-position = Vector2( 29.721, -14.8805 )
+position = Vector2( 37, 7.56064 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
-offset = Vector2( 9.52452, 20.6024 )
 
 [node name="EmptyHeart4" type="Sprite" parent="AspectRatioContainer"]
-position = Vector2( 29.7953, -14.8805 )
+position = Vector2( 12, 7.56063 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
-offset = Vector2( 25.5016, 20.6024 )
 
-[connection signal="animation_finished" from="FullHeart4/AnimatedSprite" to="." method="_delete_next_full_heart"]
-[connection signal="animation_finished" from="FullHeart3/AnimatedSprite2" to="." method="_delete_next_full_heart"]
-[connection signal="animation_finished" from="FullHeart2/AnimatedSprite3" to="." method="_delete_next_full_heart"]
-[connection signal="animation_finished" from="FullHeart/AnimatedSprite4" to="." method="_delete_next_full_heart"]
+[connection signal="animation_finished" from="FullHeart/AnimatedSprite" to="." method="_delete_next_full_heart"]
+[connection signal="animation_finished" from="FullHeart2/AnimatedSprite2" to="." method="_delete_next_full_heart"]
+[connection signal="animation_finished" from="FullHeart3/AnimatedSprite3" to="." method="_delete_next_full_heart"]
+[connection signal="animation_finished" from="FullHeart4/AnimatedSprite4" to="." method="_delete_next_full_heart"]
