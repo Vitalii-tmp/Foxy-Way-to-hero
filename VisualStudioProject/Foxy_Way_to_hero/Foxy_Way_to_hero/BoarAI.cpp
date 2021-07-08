@@ -19,7 +19,7 @@ godot::BoarAI::BoarAI()
 void godot::BoarAI::_register_methods()
 {
 
-	register_method("_process", &BoarAI::_process);
+	register_method("_physics_process", &BoarAI::_physics_process);
 	register_method("_init", &BoarAI::_init);
 	register_method("_ready", &BoarAI::_ready);
 
@@ -54,7 +54,7 @@ void godot::BoarAI::_ready()
 	_timer_start_time = RandomNumberGenerator::_new();
 }
 
-void godot::BoarAI::_process(float delta)
+void godot::BoarAI::_physics_process(float delta)
 {
 	if (_is_alive && _can_move)
 	{
@@ -77,25 +77,26 @@ void godot::BoarAI::_process(float delta)
 
 		if (get_node("/root/World")->find_node("Player") != nullptr)
 		{
-
-
 			//Godot::print("MoveVector " + _move_vector);
 			//_move_vector = _move_vector.move_toward(Vector2(0, 0), 5);
 			move_and_slide(_move_vector.normalized() * _walk_speed);
-			_move_vector = _move_vector.move_toward(Vector2::ZERO, 2);
+			//_move_vector = _move_vector.move_toward(Vector2::ZERO, 2);
 		}
 		else
 			_move_vector = _move_vector.normalized();
+
+		Godot::print("LookVector " + _move_vector.normalized());
 	}
-
-
-	if (_is_alive && !_is_stoping)
+	
+	if (_is_alive && _can_move)
 	{
 		if (_move_vector != Vector2(0, 0))
 			_animation_state->travel("Run");
 		else
 			_animation_state->travel("Idle");
 	}
+
+	
 
 	
 	Godot::print(_animation_state->get_current_node());
@@ -296,6 +297,7 @@ void godot::BoarAI::_set_move_vector()
 
 void godot::BoarAI::_stoping()
 {
+	
 	_is_stoping = true;
 	_can_move = false;
 	if (!_timer->is_connected("timeout", this, "_change_to_can_move"))
@@ -306,22 +308,22 @@ void godot::BoarAI::_stoping()
 
 		_timer->start(0.5);
 	}
+	
+	_animation_tree->set("parameters/Stop/blend_position", _move_vector.normalized());
+	_animation_state->travel("Stop");
 
 	
-	_move_vector *= _walk_speed;
-
-	_animation_state->travel("Stop");
-	_animation_tree->set("parameters/Stop/blend_position", _move_vector.normalized());
-	//Godot::print("LookVector " + _look_vector);
 }
 
 void godot::BoarAI::_change_to_can_move()
 {
+	_is_stoping = false;
+	_can_move = true;
+
 	if (_timer->is_connected("timeout", this, "_change_to_can_move"))
 		_timer->disconnect("timeout", this, "_change_to_can_move");
 
-	_is_stoping = false;
-	_can_move = true;
+	
 }
 
 float godot::BoarAI::_get_damage()
