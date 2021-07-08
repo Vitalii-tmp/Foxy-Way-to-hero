@@ -75,7 +75,7 @@ void godot::StoreButton::_on_button_pressed()
 
 	auto item = cast_to<KinematicBody2D>(prefab->instance());
 
-	get_node("/root/World/YSort/")->add_child(item);
+	get_node(NodePath("/root/World/YSort/"+name+"/"))->add_child(item);
 
 	item->set_global_position(pos + Vector2(0, 10));
 	item->set_name(name);

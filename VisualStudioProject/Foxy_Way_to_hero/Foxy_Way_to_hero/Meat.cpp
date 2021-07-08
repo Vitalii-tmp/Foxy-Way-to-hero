@@ -28,7 +28,7 @@ void godot::Meat::_ready()
 	auto _y = 0 + rand() % 200;
 	_move_vector = Vector2(_x, _y);
 
-	auto name = get_parent()->get_child(0)->get_name();
+	auto name = get_parent()->get_parent()->get_name();
 
 	if(name == "Meat")
 	{
