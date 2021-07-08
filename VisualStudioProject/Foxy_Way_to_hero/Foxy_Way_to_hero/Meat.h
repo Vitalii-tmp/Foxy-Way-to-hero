@@ -23,6 +23,9 @@ namespace godot
 		void _on_item_area_body_entered(Node* body);
 
 		type _type;
+
+		Meat() = default;
+		Meat(String name);
 	private:
 		
 

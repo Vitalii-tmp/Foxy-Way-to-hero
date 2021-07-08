@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/ContinueButton.gdns" type="Script" id=1]
 [ext_resource path="res://Scripts/RestartButton.gdns" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Sprites/UI/menuBackground.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Shadows/MenuShadow.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/UI/button.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/UI/buttonHover.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 7
@@ -44,6 +45,8 @@ margin_bottom = 56.2711
 rect_scale = Vector2( 2.7, 2.7 )
 rect_pivot_offset = Vector2( 48.6602, 20 )
 texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -71,6 +74,8 @@ margin_right = -11.5791
 margin_bottom = -34.1619
 rect_scale = Vector2( 2.7, 2.7 )
 texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -98,6 +103,8 @@ margin_right = -11.2045
 margin_bottom = -5.72717
 rect_scale = Vector2( 2.7, 2.7 )
 texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -128,6 +135,8 @@ margin_right = -11.2045
 margin_bottom = -39.7272
 rect_scale = Vector2( 2.7, 2.7 )
 texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false

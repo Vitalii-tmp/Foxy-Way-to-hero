@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/UI/button.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/LoadSceneButton.gdns" type="Script" id=2]
 [ext_resource path="res://Sprites/Background/111_4.jpg" type="Texture" id=3]
 [ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Scripts/QuitButton.gdns" type="Script" id=5]
+[ext_resource path="res://Sprites/UI/buttonHover.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
@@ -24,6 +25,8 @@ margin_right = 44.4949
 margin_bottom = 104.856
 rect_scale = Vector2( 2.5, 2.5 )
 texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -50,6 +53,8 @@ margin_right = 43.8864
 margin_bottom = 131.432
 rect_scale = Vector2( 2.5, 2.5 )
 texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -75,6 +80,8 @@ margin_right = 44.0
 margin_bottom = 157.0
 rect_scale = Vector2( 2.5, 2.5 )
 texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false

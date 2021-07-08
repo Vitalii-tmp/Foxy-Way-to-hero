@@ -25,7 +25,7 @@ void godot::Meat::_ready()
 	_meat_kinematic_body = cast_to<KinematicBody2D>(get_parent());
 
 	auto _x = -100 + rand() % 200;
-	auto _y = -100 + rand() % 200;
+	auto _y = 0 + rand() % 200;
 	_move_vector = Vector2(_x, _y);
 
 	auto name = get_parent()->get_child(0)->get_name();
@@ -68,5 +68,29 @@ void godot::Meat::_on_item_area_body_entered(Node* body)
 			Player::_get_singleton()->_backpack->_add_element(this);
 			get_parent()->queue_free();
 		}
+	}
+}
+
+godot::Meat::Meat(String name)
+{
+	if (name == "Meat")
+	{
+		_type = MEAT;
+		Godot::print("Meat");
+	}
+	else if (name == "Cheese")
+	{
+		_type = CHEESE;
+		Godot::print("Cheese");
+	}
+	else if (name == "Fish")
+	{
+		_type = FISH;
+		Godot::print("Fish");
+	}
+	else if (name == "RedFish")
+	{
+		_type = RED_FISH;
+		Godot::print("Red fish");
 	}
 }
