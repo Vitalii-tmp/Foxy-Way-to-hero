@@ -21,7 +21,7 @@ namespace godot
 		void _process(float delta);
 		void _ready();
 		void _on_item_area_body_entered(Node* body);
-
+		Sprite* _item_sprite = nullptr;
 		type _type;
 
 		Meat() = default;
@@ -34,6 +34,8 @@ namespace godot
 		Vector2 _move_vector;
 
 		KinematicBody2D* _meat_kinematic_body = nullptr;
+
+		
 	};
 }
 
