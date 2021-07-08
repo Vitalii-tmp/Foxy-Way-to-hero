@@ -7,8 +7,8 @@ godot::BoarAI::BoarAI()
 	_current_state = WALK;
 	_agressive = false;
 	_hp = 100.f;
-	_damage = 10.f;
-	_run_speed = 80.f;
+	_damage = 30.f;
+	_run_speed = 85.f;
 	_walk_speed = 30.f;
 
 	_is_stoping = false;
