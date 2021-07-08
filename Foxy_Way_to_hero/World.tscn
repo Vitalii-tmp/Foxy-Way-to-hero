@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=2]
+[gd_scene load_steps=145 format=2]
 
 [ext_resource path="res://Scenes/Environment/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -11,7 +11,9 @@
 [ext_resource path="res://Scenes/Environment/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Environment/Hay.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Items/Coin.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/UI/UI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scripts/UI.gdns" type="Script" id=12]
+[ext_resource path="res://Scripts/PauseButton.gdns" type="Script" id=13]
+[ext_resource path="res://Scenes/UI/HealthUI.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Items/CheckPoint.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Enemies/Boar.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Environment/Statue.tscn" type="PackedScene" id=17]
@@ -23,9 +25,15 @@
 [ext_resource path="res://Scenes/Environment/LowStone.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Scenes/Environment/Steps.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Sprites/Environment/CliffTilesetNoCollision.png" type="Texture" id=25]
-[ext_resource path="res://Scenes/Enemies/Snake.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Scenes/NPC/Countryman.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Scenes/Environment/WaterTileMap.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scripts/LoadSceneButton.gdns" type="Script" id=28]
+[ext_resource path="res://Scenes/Enemies/Snake.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Items/Backpack.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Sprites/Items/Backpack.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/UI/button.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=33]
+[ext_resource path="res://Sprites/UI/acornUI.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Items/Coint.png" type="Texture" id=35]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -1039,10 +1047,20 @@ points = PoolVector2Array( 0, 0, 5.39206, 0, 5.39206, 5.40688, 0, 5.40688 )
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="DynamicFont" id=108]
+font_data = ExtResource( 33 )
+
+[sub_resource type="DynamicFont" id=109]
+font_data = ExtResource( 33 )
+
+[sub_resource type="DynamicFont" id=110]
+size = 8
+font_data = ExtResource( 33 )
+
 [node name="World" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 159.776, -65.5074 )
+position = Vector2( 143, -85.5308 )
 scale = Vector2( 3.13614, 3.44448 )
 z_index = -2
 texture = ExtResource( 3 )
@@ -1071,8 +1089,6 @@ tile_set = SubResource( 107 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 393210, 0, 65545, 393211, 0, 131073, 393212, 0, 131073 )
-
-[node name="WaterTileMap" parent="." instance=ExtResource( 29 )]
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -1363,7 +1379,7 @@ position = Vector2( -128, 176 )
 
 [node name="Snakes" type="YSort" parent="YSort"]
 
-[node name="Snake" parent="YSort/Snakes" instance=ExtResource( 26 )]
+[node name="Snake" parent="YSort/Snakes" instance=ExtResource( 29 )]
 position = Vector2( 190.938, -55.2084 )
 
 [node name="NPC" type="YSort" parent="YSort"]
@@ -1384,6 +1400,100 @@ position = Vector2( 560, 432 )
 [node name="TopLeft" parent="Camera2D/Limits" index="1"]
 position = Vector2( -226.365, -809.515 )
 
-[node name="UI" parent="." instance=ExtResource( 12 )]
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource( 12 )
+
+[node name="CoinText" type="Label" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -33.3972
+margin_top = 31.3414
+margin_right = -17.3972
+margin_bottom = 47.3414
+custom_fonts/font = SubResource( 108 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AcornText" type="Label" parent="UI"]
+anchor_left = 1.0
+anchor_top = 0.078
+anchor_right = 1.0
+anchor_bottom = 0.078
+margin_left = -32.4027
+margin_top = -7.04
+margin_right = -19.4027
+margin_bottom = 8.96
+custom_fonts/font = SubResource( 109 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseButton" type="TextureButton" parent="UI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -19.5
+margin_right = 19.5
+margin_bottom = 10.0
+texture_normal = ExtResource( 32 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/PauseButton"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 36.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 110 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "pause"
+align = 1
+valign = 1
+
+[node name="HealthUI" parent="UI" instance=ExtResource( 14 )]
+margin_left = 0.363884
+margin_right = 0.363884
+
+[node name="BackpackButton" type="TextureButton" parent="UI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.4347
+margin_top = -44.9703
+margin_right = -15.4347
+margin_bottom = -13.9703
+rect_scale = Vector2( 1.3, 1.3 )
+texture_normal = ExtResource( 31 )
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Backpack" parent="UI" instance=ExtResource( 30 )]
+visible = false
+position = Vector2( 218.636, 153.732 )
+z_index = -1
+
+[node name="coin" type="Sprite" parent="UI"]
+position = Vector2( 274.428, 37.5844 )
+scale = Vector2( 2.86218, 2.68008 )
+texture = ExtResource( 35 )
+hframes = 4
+
+[node name="acorn" type="Sprite" parent="UI"]
+position = Vector2( 274.306, 12.4184 )
+scale = Vector2( 2.51221, 2.51221 )
+texture = ExtResource( 34 )
 
 [editable path="Camera2D"]

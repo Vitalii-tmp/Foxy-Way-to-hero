@@ -3,7 +3,7 @@
 godot::SnakeAI::SnakeAI()
 {
 	_hp = 75;
-	_damage = 25;
+	_damage = 15;
 	_speed = 30;
 
 	_is_alive = true;

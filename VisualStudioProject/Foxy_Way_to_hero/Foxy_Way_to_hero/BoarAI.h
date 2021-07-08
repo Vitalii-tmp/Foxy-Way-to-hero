@@ -24,7 +24,7 @@ namespace godot
 		static void _register_methods();
 		void _init();
 		void _ready();
-		void _process(float delta);
+		void _physics_process(float delta);
 
 		void _walk_state();
 		void _wander_state();
@@ -38,9 +38,11 @@ namespace godot
 		void _on_detection_area_body_exited(Node2D* _other_body);
 
 		void _on_hurt_area_area_entered(Area2D* _other_area);
+		void _on_boar_hit_area_area_entered(Area2D* _other_area);
 		void _on_hit_effect_animation_finished();
 		void _set_move_vector();
 		void _stoping();
+		void _change_to_can_move();
 
 		float _get_damage();
 		bool _get_agressive();
@@ -60,7 +62,7 @@ namespace godot
 		bool _is_alive;
 		bool _agressive;
 		bool _can_move;
-
+		bool _is_stoping;
 
 		Vector2 _move_vector;
 		Vector2 _prew_position;
