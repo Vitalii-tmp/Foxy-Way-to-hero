@@ -156,7 +156,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -24.601, 0 ) ]
+"values": [ Vector2( -17.388, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BoarHitArea/CollisionShape2D:disabled")
@@ -165,16 +165,15 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=8]
 length = 0.8
 loop = true
-step = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("BoarSprite:frame")
 tracks/0/interp = 1
@@ -206,10 +205,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -415,8 +414,8 @@ radius = 8.77995
 height = 9.76583
 
 [sub_resource type="CapsuleShape2D" id=43]
-radius = 10.457
-height = 0.0
+radius = 7.4717
+height = 6.94469
 
 [sub_resource type="CircleShape2D" id=44]
 radius = 144.489
@@ -432,7 +431,7 @@ scale = Vector2( 1.15, 1.15 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, -10.467 )
 hframes = 58
-frame = 4
+frame = 40
 
 [node name="Shadow" type="Sprite" parent="BoarSprite"]
 position = Vector2( -0.13609, 2.02938 )
@@ -479,12 +478,13 @@ scale = Vector2( 1.1, 1.1 )
 shape = SubResource( 42 )
 
 [node name="BoarHitArea" type="Area2D" parent="."]
+position = Vector2( -17.388, 0 )
 scale = Vector2( 1.1, 1.1 )
 collision_layer = 16
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoarHitArea"]
-position = Vector2( 10.792, 4.955 )
+position = Vector2( 7.05, 1.763 )
 rotation = 1.5708
 scale = Vector2( 1.1, 1.1 )
 shape = SubResource( 43 )
