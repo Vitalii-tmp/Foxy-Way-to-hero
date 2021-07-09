@@ -16,14 +16,14 @@ namespace godot
 		void _process(float delta);
 		void _ready();
 
-		void _add_element(Meat* el);
-		bool _can_add_element();
+		//void _add_element(Item* el);
+		//bool _can_add_element(Item* el);
 		void _remove_by_name(String name);
 
 		int _get_number_meat();
 		int _get_number_fish();
 		int _get_number_cheese();
-		int _get_number_red_fish();
+		int _get_number_speed_item();
 		
 		Backpack();
 		~Backpack();
@@ -34,6 +34,6 @@ namespace godot
 		int _number_meat = 0;
 		int _number_cheese = 0;
 		int _number_fish = 0;
-		int _number_red_fish = 0;
+		int _number_speed_item = 0;
 	};
 }

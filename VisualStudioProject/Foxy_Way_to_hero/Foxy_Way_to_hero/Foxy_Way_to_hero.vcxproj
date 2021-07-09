@@ -176,6 +176,7 @@
     <ClCompile Include="GodotLibrary.cpp" />
     <ClCompile Include="Grass.cpp" />
     <ClCompile Include="HealthUI.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="LoadSceneButton.cpp" />
     <ClCompile Include="Meat.cpp" />

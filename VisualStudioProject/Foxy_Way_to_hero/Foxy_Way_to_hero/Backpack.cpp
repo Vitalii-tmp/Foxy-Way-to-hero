@@ -22,7 +22,7 @@ void godot::Backpack::_ready()
 	_number_meat = Loader::get_singleton()->get_num_meat();
 	_number_cheese = Loader::get_singleton()->get_num_cheese();
 	_number_fish = Loader::get_singleton()->get_num_fish();
-	_number_red_fish = Loader::get_singleton()->get_num_red_fish();
+	_number_speed_item = Loader::get_singleton()->get_num_speed_item();
 
 	Godot::print(String::num(_number_meat));
 
@@ -61,12 +61,12 @@ void godot::Backpack::_ready()
 	_items[2] = _b3;
 
 	auto _b4 = cast_to<TextureButton>(get_child(1)->get_child(3));
-	prefab4 = _resource_loader->load("res://Scenes/Items/RedFish.tscn");
-	name = "RedFish";
+	prefab4 = _resource_loader->load("res://Scenes/Items/SpeedItem.tscn");
+	name = "SpeedItem";
 	_b4->set_normal_texture(cast_to<Sprite>(prefab4->instance()->get_child(0))->get_texture());
 	_b4->set_stretch_mode(3);
 	_b4->set_expand(true);
-	cast_to<Label>(get_node("GridContainer")->get_child(3)->get_child(0))->set_text(std::to_string(_number_red_fish).c_str());
+	cast_to<Label>(get_node("GridContainer")->get_child(3)->get_child(0))->set_text(std::to_string(_number_speed_item).c_str());
 	_items[3] = _b4;
 
 	for(int i = 4; i<8; i++)
@@ -75,7 +75,7 @@ void godot::Backpack::_ready()
 	}
 }
 
-void godot::Backpack::_add_element(Meat* el)
+void godot::Backpack::_add_element(Item* el)
 {
 	bool flag = false;
 	String name;
@@ -119,19 +119,20 @@ void godot::Backpack::_add_element(Meat* el)
 		}
 		else if (i == 3)
 		{
-			Loader::get_singleton()->set_num_red_fish(cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int());
-			_number_red_fish = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int();
+			Loader::get_singleton()->set_num_speed_item(cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int());
+			_number_speed_item = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int();
 		}
 	}
 }
 
-bool godot::Backpack::_can_add_element()
+bool godot::Backpack::_can_add_element(Item* el)
 {
 	bool flag = false;
 
 	for (int i = 0; i < 8; i++)
 	{
-		if (_items[i] == nullptr)
+		if (_items[i]->get_name() == el->get_parent()->get_parent()->get_name() 
+			&& cast_to<Label>(_items[i]->get_child(0))->get_text().to_int()<20)
 		{
 			flag = true;
 			break;
@@ -168,9 +169,9 @@ int godot::Backpack::_get_number_cheese()
 	return _number_cheese;
 }
 
-int godot::Backpack::_get_number_red_fish()
+int godot::Backpack::_get_number_speed_item()
 {
-	return _number_red_fish;
+	return _number_speed_item;
 }
 
 godot::Backpack::Backpack()

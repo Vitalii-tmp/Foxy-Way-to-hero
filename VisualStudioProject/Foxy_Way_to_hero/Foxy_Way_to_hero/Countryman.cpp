@@ -20,7 +20,7 @@ void godot::Countryman::_process(float delta)
 		str = "HI! You can \nbuy some eat in\n my store";
 	}
 	else {
-		str = "Are you hunger?\nWelcome in my store";
+		str = "Are you hunger?\nWelcome in\n my store";
 	}
 
 	_task_label->set("text", str.c_str());

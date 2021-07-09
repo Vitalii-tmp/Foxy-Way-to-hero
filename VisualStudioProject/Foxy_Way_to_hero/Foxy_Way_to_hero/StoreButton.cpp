@@ -61,7 +61,7 @@ void godot::StoreButton::_on_button_pressed()
 		else
 			return;
 	}
-	else if(get_name() == "RedFishButton")
+	/*else if(get_name() == "RedFishButton")
 	{
 		if (coins >= 100)
 		{
@@ -71,7 +71,7 @@ void godot::StoreButton::_on_button_pressed()
 		}
 		else
 			return;
-	}
+	}*/
 
 	auto item = cast_to<KinematicBody2D>(prefab->instance());
 
