@@ -28,7 +28,7 @@ void godot::Meat::_ready()
 	auto _y = 0 + rand() % 200;
 	_move_vector = Vector2(_x, _y);
 
-	auto name = get_parent()->get_child(0)->get_name();
+	auto name = get_parent()->get_parent()->get_name();
 
 	if(name == "Meat")
 	{
@@ -50,24 +50,27 @@ void godot::Meat::_ready()
 		_type = RED_FISH;
 		Godot::print("Red fish");
 	}
+
+	_item_sprite = cast_to<Sprite>(get_child(0));
 }
 
 void godot::Meat::_on_item_area_body_entered(Node* body)
 {
 	if (body->get_name() == "Player")
 	{
-		Godot::print("Collision with player");
+		/*Godot::print("Collision with player");
 		if(Player::_get_singleton()->_backpack == nullptr)
 		{
 			Godot::print("NULLPTR");
 
 		}
 		if (Player::_get_singleton()->_backpack->_can_add_element())
-		{
+		{*/
 			Godot::print("can add element");
 			Player::_get_singleton()->_backpack->_add_element(this);
+			Godot::print("aaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 			get_parent()->queue_free();
-		}
+		//}
 	}
 }
 

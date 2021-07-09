@@ -8,7 +8,7 @@ namespace godot
 		GODOT_CLASS(Backpack, Node2D);
 		
 		//const int _SIZE = 12;
-		Meat* _items[8];
+		TextureButton* _items[8];
 
 	public:
 		static void _register_methods();
