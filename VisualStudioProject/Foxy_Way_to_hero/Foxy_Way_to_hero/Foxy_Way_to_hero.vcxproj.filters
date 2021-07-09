@@ -176,10 +176,10 @@
     <ClInclude Include="SnakeAI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BackpackItemButton.h">
+    <ClInclude Include="Backpack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Backpack.h">
+    <ClInclude Include="BackpackItemButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Countryman.h">

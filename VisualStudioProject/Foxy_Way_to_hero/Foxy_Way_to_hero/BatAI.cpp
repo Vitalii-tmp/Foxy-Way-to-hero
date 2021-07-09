@@ -43,7 +43,7 @@ void godot::BatAI::_ready()
 	_bat_sprite = cast_to<AnimatedSprite>(get_node("BatSprite"));
 	_hit_effect = cast_to<AnimatedSprite>(get_node("HitEffect"));
 	_bat_hit_area = cast_to<Area2D>(get_node("BatHitArea"));
-		
+
 	_start_position = get_global_position();
 }
 
@@ -54,11 +54,6 @@ void godot::BatAI::_physics_process(float delta)
 	if (_is_alive)
 		_change_state_depend_on_player_position();
 
-
-	if (_hp <= 0)
-	{
-		_is_alive = false;
-	}
 
 	if (!_is_alive)
 	{
@@ -106,6 +101,17 @@ void godot::BatAI::_on_hurt_area_area_entered(Area2D* _other_area)
 		_hp -= _pl_damage;
 	}
 
+	if (_hp <= 0)
+	{
+		_is_alive = false;
+
+
+		_is_alive = false;
+		_bat_sprite->set_visible(false);
+		_die_effect->set_visible(true);
+		_die_effect->play();
+
+	}
 }
 
 
@@ -128,10 +134,10 @@ void godot::BatAI::_on_player_detection_area_body_exited(Node* _other_body)
 {
 	if (_other_body->get_name() == "Player")
 	{
-		_current_state =IDLE;
+		_current_state = IDLE;
 		//_player = nullptr;
 	}
-	
+
 }
 
 
@@ -152,8 +158,8 @@ void godot::BatAI::_on_hit_effect_animation_finished()
 //state changer
 void godot::BatAI::_change_state_depend_on_player_position()
 {
-	
-	
+
+
 	switch (_current_state)
 	{
 	case IDLE:
@@ -180,7 +186,7 @@ void godot::BatAI::_idle_state()
 	auto _distance_to_start_position = sqrt(pow((this->get_global_position().x - _start_position.x), 2) +
 		pow((this->get_global_position().y - _start_position.y), 2));
 
-	if (_distance_to_start_position>1)
+	if (_distance_to_start_position > 1)
 	{
 		_move_vector = (_start_position - this->get_global_position()).normalized();
 		_move_vector = _move_vector.move_toward(_move_vector, 5);
@@ -194,8 +200,8 @@ void godot::BatAI::_idle_state()
 			_bat_sprite->set_flip_h(false);
 	}
 
-	
-	
+
+
 }
 
 
@@ -250,11 +256,11 @@ void godot::BatAI::_chase_state()
 	move_and_slide(_move_vector * _speed);
 
 
-	if (_distance_to_player < 1 && Player::_get_singleton()->_get_current_state()!=ROLL)
-		_knockback_vector = ( this->get_global_position()- _player->get_global_position()).normalized()*_speed*3;
-		
-	
-		
+	if (_distance_to_player < 1 && Player::_get_singleton()->_get_current_state() != ROLL)
+		_knockback_vector = (this->get_global_position() - _player->get_global_position()).normalized() * _speed * 3;
+
+
+
 }
 
 
