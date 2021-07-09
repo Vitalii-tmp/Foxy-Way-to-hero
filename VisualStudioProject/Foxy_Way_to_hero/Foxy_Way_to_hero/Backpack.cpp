@@ -75,7 +75,7 @@ void godot::Backpack::_ready()
 	}
 }
 
-void godot::Backpack::_add_element(Item* el)
+void godot::Backpack::_add_element(Meat* el)
 {
 	bool flag = false;
 	String name;
@@ -125,7 +125,7 @@ void godot::Backpack::_add_element(Item* el)
 	}
 }
 
-bool godot::Backpack::_can_add_element(Item* el)
+bool godot::Backpack::_can_add_element(Meat* el)
 {
 	bool flag = false;
 
