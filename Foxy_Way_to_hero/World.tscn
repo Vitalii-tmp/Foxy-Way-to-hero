@@ -1809,19 +1809,19 @@ points = PoolVector2Array( 64, 64, 48.9459, 64, 48.9459, 35.6263, 64, 35.6263 )
 [sub_resource type="ConvexPolygonShape2D" id=261]
 points = PoolVector2Array( 0, 36.324, 15.9213, 36.324, 15.9213, 64, 0, 64 )
 
-[sub_resource type="ConvexPolygonShape2D" id=264]
+[sub_resource type="ConvexPolygonShape2D" id=262]
 points = PoolVector2Array( 16.4877, 7.78229, 0.401733, 7.78229, 0.401733, 0, 16.4877, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=265]
+[sub_resource type="ConvexPolygonShape2D" id=263]
 points = PoolVector2Array( 64, 7.78229, 46.9153, 7.78229, 46.9153, 0, 64, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=266]
+[sub_resource type="ConvexPolygonShape2D" id=264]
 points = PoolVector2Array( 0, 6.35062, 16.1353, 6.35062, 16.1353, 64, 0, 64 )
 
-[sub_resource type="ConvexPolygonShape2D" id=267]
+[sub_resource type="ConvexPolygonShape2D" id=265]
 points = PoolVector2Array( 64, 64, 46.946, 64, 46.946, 0.992249, 64, 0.992249 )
 
-[sub_resource type="TileSet" id=268]
+[sub_resource type="TileSet" id=266]
 0/name = "Walls.png 0"
 0/texture = ExtResource( 14 )
 0/tex_offset = Vector2( 0, 0 )
@@ -2484,6 +2484,18 @@ points = PoolVector2Array( 64, 64, 46.946, 64, 46.946, 0.992249, 64, 0.992249 )
 "autotile_coord": Vector2( 3, 4 ),
 "one_way": false,
 "one_way_margin": 1.0,
+"shape": SubResource( 262 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 4 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 263 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 4 ),
+"one_way": false,
+"one_way_margin": 1.0,
 "shape": SubResource( 264 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
@@ -2492,22 +2504,10 @@ points = PoolVector2Array( 64, 64, 46.946, 64, 46.946, 0.992249, 64, 0.992249 )
 "one_way_margin": 1.0,
 "shape": SubResource( 265 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 3, 4 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 266 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 3, 4 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 267 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="TileSet" id=269]
+[sub_resource type="TileSet" id=267]
 0/name = "StoneGround.png 0"
 0/texture = ExtResource( 26 )
 0/tex_offset = Vector2( 0, 0 )
@@ -2587,7 +2587,7 @@ tile_data = PoolIntArray( -983016, 0, 262146, -983015, 0, 131076, -983014, 0, 13
 [node name="WallTileMap" type="TileMap" parent="." groups=[
 "_wall",
 ]]
-tile_set = SubResource( 268 )
+tile_set = SubResource( 266 )
 cell_tile_origin = 2
 cell_y_sort = true
 show_collision = true
@@ -2595,7 +2595,7 @@ format = 1
 tile_data = PoolIntArray( -1703941, 0, 4, -1703940, 0, 196609, -1703939, 0, 196609, -1703938, 0, 196609, -1703937, 0, 196609, -1769472, 0, 196609, -1769471, 0, 196609, -1769470, 0, 196609, -1769469, 0, 196609, -1769468, 0, 196609, -1769467, 0, 196609, -1769466, 0, 196609, -1769465, 0, 196609, -1769464, 0, 196609, -1769463, 0, 196609, -1769462, 0, 196609, -1769461, 0, 196609, -1769460, 0, 196609, -1769459, 0, 196609, -1769458, 0, 196609, -1769457, 0, 196609, -1769456, 0, 196609, -1769455, 0, 196609, -1769454, 0, 7, -1638405, 0, 65539, -1703918, 0, 65539, -1572869, 0, 65539, -1638382, 0, 65539, -1507333, 0, 65539, -1572846, 0, 65539, -1441797, 0, 65539, -1507310, 0, 65539, -1376261, 0, 65539, -1441774, 0, 65539, -1310726, 0, 4, -1310725, 0, 196615, -1376238, 0, 65539, -1245190, 0, 65539, -1310702, 0, 65539, -1179654, 0, 196612, -1179653, 0, 7, -1245166, 0, 65539, -1114117, 0, 65539, -1179630, 0, 65539, -1048581, 0, 65539, -1114094, 0, 65539, -983045, 0, 65539, -1048559, 0, 4, -1048558, 0, 196615, -917509, 0, 65539, -983023, 0, 65539, -851973, 0, 65539, -917488, 0, 4, -917487, 0, 196615, -786437, 0, 131076, -786436, 0, 1, -786435, 0, 1, -786434, 0, 1, -786433, 0, 1, -851968, 0, 1, -851967, 0, 2, -851965, 0, 0, -851964, 0, 1, -851963, 0, 2, -851962, 0, 262145, -851961, 0, 0, -851960, 0, 2, -851952, 0, 65539, -720901, 0, 131072, -720900, 0, 131073, -720899, 0, 262146, -720898, 0, 131073, -720897, 0, 65542, -786432, 0, 65541, -786431, 0, 196613, -786430, 0, 6, -786429, 0, 131078, -786428, 0, 65537, -786427, 0, 65538, -786425, 0, 65536, -786424, 0, 65538, -786417, 0, 0, -786416, 0, 131079, -655361, 0, 131072, -720896, 0, 131074, -720894, 0, 65536, -720893, 0, 65541, -720892, 0, 131073, -720891, 0, 131074, -720889, 0, 131072, -720888, 0, 196613, -720887, 0, 196609, -720886, 0, 6, -720885, 0, 5, -720884, 0, 196609, -720883, 0, 196609, -720882, 0, 196609, -720881, 0, 196614, -720880, 0, 131074, -655358, 0, 131072, -655357, 0, 131074, -655350, 0, 131072, -655349, 0, 65543, -589813, 0, 131075 )
 
 [node name="StoneGroundTileMap" type="TileMap" parent="."]
-tile_set = SubResource( 269 )
+tile_set = SubResource( 267 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
