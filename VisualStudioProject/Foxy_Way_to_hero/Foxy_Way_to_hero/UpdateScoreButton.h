@@ -20,6 +20,9 @@ namespace godot
 
 		TextureButton* _meat_item;
 		TextureButton* _cheese_item;
+
+		Label* _label_meat;
+		Label* _label_cheese;
 	};
 }
 
