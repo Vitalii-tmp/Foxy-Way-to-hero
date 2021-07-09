@@ -58,6 +58,8 @@
 #include "BoarAI.h"
 #include "SnakeAI.h"
 #include "BackpackItemButton.h"
+#include "Craftman.h"
+#include "UpdateScoreButton.h"
 
 //cpp headers
 #include <cmath>

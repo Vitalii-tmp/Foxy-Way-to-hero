@@ -24,10 +24,10 @@ script = ExtResource( 1 )
 [node name="CoinText" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -35.8782
-margin_top = 35.7453
-margin_right = -17.8782
-margin_bottom = 51.7453
+margin_left = -35.8492
+margin_top = 25.9038
+margin_right = -17.8492
+margin_bottom = 41.9038
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10"
@@ -40,10 +40,10 @@ __meta__ = {
 [node name="AcornText" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -36.0
-margin_top = 15.0
-margin_right = -19.0
-margin_bottom = 31.0
+margin_left = -35.9711
+margin_top = 5.15847
+margin_right = -18.9711
+margin_bottom = 21.1585
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10"
@@ -91,12 +91,12 @@ position = Vector2( 221.701, 155.711 )
 z_index = -1
 
 [node name="CoinUI" type="Sprite" parent="."]
-position = Vector2( 273.794, 44.3087 )
+position = Vector2( 273.823, 34.4672 )
 scale = Vector2( 2.40101, 2.25236 )
 texture = ExtResource( 8 )
 hframes = 4
 
 [node name="AcornUI" type="Sprite" parent="."]
-position = Vector2( 273.665, 22.5648 )
+position = Vector2( 273.694, 12.7233 )
 scale = Vector2( 2.18096, 2.18096 )
 texture = ExtResource( 3 )

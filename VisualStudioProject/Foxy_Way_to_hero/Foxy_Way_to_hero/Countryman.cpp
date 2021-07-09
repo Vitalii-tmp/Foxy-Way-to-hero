@@ -17,10 +17,10 @@ void godot::Countryman::_process(float delta)
 {
 	std::string str;
 	if (_task == ACORNS) {
-		str = std::to_string(Loader::get_singleton()->get_acorns()) + "/30 acorns\n to buy wheat";
+		str = "HI! You can \nbuy some eat in\n my store";
 	}
 	else {
-		str = std::to_string(Loader::get_singleton()->get_coins()) + "/150 coins\n to buy carrot";
+		str = "Are you hunger?\nWelcome in my store";
 	}
 
 	_task_label->set("text", str.c_str());

@@ -19,12 +19,12 @@ void godot::Backpack::_process(float delta)
 void godot::Backpack::_ready()
 {
 	_resource_loader = ResourceLoader::get_singleton();
-	int numMeat = Loader::get_singleton()->get_num_meat();
-	int numCheese = Loader::get_singleton()->get_num_cheese();
-	int numFish = Loader::get_singleton()->get_num_fish();
-	int numRedFish = Loader::get_singleton()->get_num_red_fish();
+	_number_meat = Loader::get_singleton()->get_num_meat();
+	_number_cheese = Loader::get_singleton()->get_num_cheese();
+	_number_fish = Loader::get_singleton()->get_num_fish();
+	_number_red_fish = Loader::get_singleton()->get_num_red_fish();
 
-	Godot::print(String::num(numMeat));
+	Godot::print(String::num(_number_meat));
 
 	Ref<PackedScene> prefab, prefab2, prefab3, prefab4, backpack_item;
 
@@ -37,7 +37,7 @@ void godot::Backpack::_ready()
 	_b->set_normal_texture(cast_to<Sprite>(prefab->instance()->get_child(0))->get_texture());
 	_b->set_stretch_mode(3);
 	_b->set_expand(true);
-	cast_to<Label>(get_node("GridContainer")->get_child(0)->get_child(0))->set_text(std::to_string(numMeat).c_str());
+	cast_to<Label>(get_node("GridContainer")->get_child(0)->get_child(0))->set_text(std::to_string(_number_meat).c_str());
 	_items[0] = _b;
 
 	auto _b2 = cast_to<TextureButton>(get_child(1)->get_child(1));
@@ -47,8 +47,8 @@ void godot::Backpack::_ready()
 	_b2->set_stretch_mode(3);
 	_b2->set_expand(true);
 	Godot::print(_b2->get_name());
-	cast_to<Label>(get_node("GridContainer")->get_child(1)->get_child(0))->set_text(std::to_string(numCheese).c_str());
-	Godot::print("Number of cheese: " + String::num(numCheese));
+	cast_to<Label>(get_node("GridContainer")->get_child(1)->get_child(0))->set_text(std::to_string(_number_cheese).c_str());
+	Godot::print("Number of cheese: " + String::num(_number_cheese));
 	_items[1] = _b2;
 
 	auto _b3 = cast_to<TextureButton>(get_child(1)->get_child(2));
@@ -57,7 +57,7 @@ void godot::Backpack::_ready()
 	_b3->set_normal_texture(cast_to<Sprite>(prefab3->instance()->get_child(0))->get_texture());
 	_b3->set_stretch_mode(3);
 	_b3->set_expand(true);
-	cast_to<Label>(get_node("GridContainer")->get_child(2)->get_child(0))->set_text(std::to_string(numFish).c_str());
+	cast_to<Label>(get_node("GridContainer")->get_child(2)->get_child(0))->set_text(std::to_string(_number_fish).c_str());
 	_items[2] = _b3;
 
 	auto _b4 = cast_to<TextureButton>(get_child(1)->get_child(3));
@@ -66,7 +66,7 @@ void godot::Backpack::_ready()
 	_b4->set_normal_texture(cast_to<Sprite>(prefab4->instance()->get_child(0))->get_texture());
 	_b4->set_stretch_mode(3);
 	_b4->set_expand(true);
-	cast_to<Label>(get_node("GridContainer")->get_child(3)->get_child(0))->set_text(std::to_string(numRedFish).c_str());
+	cast_to<Label>(get_node("GridContainer")->get_child(3)->get_child(0))->set_text(std::to_string(_number_red_fish).c_str());
 	_items[3] = _b4;
 
 	for(int i = 4; i<8; i++)
@@ -105,18 +105,22 @@ void godot::Backpack::_add_element(Meat* el)
 		if (i == 0)
 		{
 			Loader::get_singleton()->set_num_meat(cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int());
+			_number_meat = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int();
 		}
 		else if (i == 1)
 		{
 			Loader::get_singleton()->set_num_cheese(cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int());
+			_number_cheese = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int();
 		}
 		else if (i == 2)
 		{
 			Loader::get_singleton()->set_num_fish(cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int());
+			_number_fish = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int();
 		}
 		else if (i == 3)
 		{
 			Loader::get_singleton()->set_num_red_fish(cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int());
+			_number_red_fish = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int();
 		}
 	}
 }
@@ -147,6 +151,26 @@ void godot::Backpack::_remove_by_name(String name)
 			_items[i] = nullptr;
 		}
 	}
+}
+
+int godot::Backpack::_get_number_meat()
+{
+	return _number_meat;
+}
+
+int godot::Backpack::_get_number_fish()
+{
+	return _number_fish;
+}
+
+int godot::Backpack::_get_number_cheese()
+{
+	return _number_cheese;
+}
+
+int godot::Backpack::_get_number_red_fish()
+{
+	return _number_red_fish;
 }
 
 godot::Backpack::Backpack()

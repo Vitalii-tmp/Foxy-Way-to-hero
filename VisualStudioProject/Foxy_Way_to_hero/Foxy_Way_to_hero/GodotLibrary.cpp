@@ -37,4 +37,6 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<BoarAI>();
 	register_class<SnakeAI>();
 	register_class<BackpackItemButton>();
+	register_class<Craftman>();
+	register_class<UpdateScoreButton>();
 }
