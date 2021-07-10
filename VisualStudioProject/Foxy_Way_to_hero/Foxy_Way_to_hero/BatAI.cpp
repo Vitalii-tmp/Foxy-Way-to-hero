@@ -169,7 +169,6 @@ void godot::BatAI::_on_hit_effect_animation_finished()
 void godot::BatAI::_change_state_depend_on_player_position()
 {
 	
-	
 	switch (_current_state)
 	{
 	case IDLE:

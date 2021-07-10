@@ -121,6 +121,7 @@ namespace godot
 		dict["Number of cheese"] = this->_numCheese;
 		dict["Number of fish"] = this->_numFish;
 		dict["Number of speed item"] = this->_numSpeedItem;
+		dict["Number of bat wings"] = this->_numBatWings;
 		
 		_file->store_string(dict.to_json());
 		_file->close();
@@ -169,6 +170,11 @@ namespace godot
 	{
 		return this->_numSpeedItem;
 	}
+
+	int Loader::get_num_bat_wings()
+	{
+		return this->_numBatWings;
+	}
 	
 	void Loader::set_start_position(Vector2 start_position)
 	{
@@ -193,6 +199,11 @@ namespace godot
 	void Loader::set_num_speed_item(int numSpeedItem)
 	{
 		_numSpeedItem = numSpeedItem;
+	}
+
+	void Loader::set_num_bat_wings(int numBatWings)
+	{
+		_numBatWings = numBatWings;
 	}
 	
 	
@@ -233,6 +244,7 @@ namespace godot
 			_numCheese = rez["Number of cheese"];
 			_numFish = rez["Number of fish"];
 			_numSpeedItem = rez["Number of speed item"];
+			_numBatWings = rez["Number of bat wings"];
 			
 			//Godot::print(_player_start_position);
 			_file->close();

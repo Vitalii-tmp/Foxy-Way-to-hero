@@ -60,6 +60,7 @@
 #include "Craftman.h"
 #include "UpdateScoreButton.h"
 #include "Item.h"
+#include "HungerUI.h"
 
 //cpp headers
 #include <cmath>

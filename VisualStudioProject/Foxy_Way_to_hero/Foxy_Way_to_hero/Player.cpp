@@ -64,6 +64,8 @@ void godot::Player::_ready()
 	auto backpack_node = cast_to<Node2D>(get_node("/root/World/UI/Backpack"));
 	_backpack = cast_to<Backpack>(backpack_node);
 
+	HungerUI::_get_singleton()->_set_full_player_hunger(_hunger);
+
 	
 	/*_death_timer = Timer::_new();
 	this->add_child(_death_timer);*/
@@ -120,17 +122,18 @@ void godot::Player::_physics_process(float delta)
 	{
 		//_on_escape_pressed();
 		_change_state_depend_on_behavior();
-		
-		_hunger -= delta;
 
-		if (_hunger <= 0)
+		_hunger -= delta;
+		HungerUI::_get_singleton()->_set_player_hunger(_hunger);
+
+		if (HungerUI::_get_singleton()->_get_player_hunger()<=0)
 			_hunger = 0;
 		
 		if (_hunger <= 0)
 			_hp -= delta;
 	}
 
-	//Godot::print(String::num(_hp));
+	//Godot::print(String::num(_hunger));
 	
 }
 

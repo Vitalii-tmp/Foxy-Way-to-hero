@@ -29,6 +29,7 @@ namespace godot
 		int _get_number_fish();
 		int _get_number_cheese();
 		int _get_number_speed_item();
+		int _get_number_bat_wins();
 		
 		Backpack();
 		~Backpack();
@@ -40,5 +41,6 @@ namespace godot
 		int _number_cheese = 0;
 		int _number_fish = 0;
 		int _number_speed_item = 0;
+		int _number_bat_wings = 0;
 	};
 }

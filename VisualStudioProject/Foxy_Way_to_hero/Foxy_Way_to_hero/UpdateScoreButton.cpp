@@ -38,7 +38,7 @@ void godot::UpdateScoreButton::_update_speed_player()
 	if(Player::_get_singleton()->_backpack->_get_number_meat() >= 3 && Player::_get_singleton()->_backpack->_get_number_cheese() >= 1)
 	{
 		Godot::print("_update_speed_player");
-		Player::_get_singleton()->_set_player_speed(200.f);
+		/*Player::_get_singleton()->_set_player_speed(200.f);*/
 
 		_label_meat->set_text(String::num(_label_meat->get_text().to_int() - 3));
 		_label_cheese->set_text(String::num(_label_cheese->get_text().to_int() - 1));

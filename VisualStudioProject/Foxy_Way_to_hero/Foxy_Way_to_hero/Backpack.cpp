@@ -23,10 +23,12 @@ void godot::Backpack::_ready()
 	_number_cheese = Loader::get_singleton()->get_num_cheese();
 	_number_fish = Loader::get_singleton()->get_num_fish();
 	_number_speed_item = Loader::get_singleton()->get_num_speed_item();
+	_number_bat_wings = Loader::get_singleton()->get_num_bat_wings();
 
 	Godot::print(String::num(_number_meat));
 
-	Ref<PackedScene> prefab, prefab2, prefab3, prefab4, backpack_item;
+	Ref<PackedScene> prefab, prefab2, prefab3, prefab4,
+		prefab5, backpack_item;
 
 	String name;
 
@@ -69,7 +71,16 @@ void godot::Backpack::_ready()
 	cast_to<Label>(get_node("GridContainer")->get_child(3)->get_child(0))->set_text(std::to_string(_number_speed_item).c_str());
 	_items[3] = _b4;
 
-	for (int i = 4; i < 8; i++)
+	auto _b5 = cast_to<TextureButton>(get_child(1)->get_child(4));
+	prefab4 = _resource_loader->load("res://Scenes/Items/BatWing.tscn");
+	name = "BatWing";
+	_b5->set_normal_texture(cast_to<Sprite>(prefab4->instance()->get_child(0))->get_texture());
+	_b5->set_stretch_mode(3);
+	_b5->set_expand(true);
+	cast_to<Label>(get_node("GridContainer")->get_child(4)->get_child(0))->set_text(std::to_string(_number_bat_wings).c_str());
+	_items[4] = _b5;
+
+	for (int i = 5; i < 8; i++)
 	{
 		_items[i] = cast_to<TextureButton>(get_child(1)->get_child(i));
 	}
@@ -167,7 +178,7 @@ void godot::Backpack::_add_item(Item* item)
 			break;
 		}
 	}
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		if (i == 0)
 		{
@@ -188,6 +199,11 @@ void godot::Backpack::_add_item(Item* item)
 		{
 			Loader::get_singleton()->set_num_speed_item(cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int());
 			_number_speed_item = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int();
+		}
+		else if (i == 4)
+		{
+			Loader::get_singleton()->set_num_bat_wings(cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int());
+			_number_bat_wings = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int();
 		}
 	}
 }
@@ -239,6 +255,11 @@ int godot::Backpack::_get_number_cheese()
 int godot::Backpack::_get_number_speed_item()
 {
 	return _number_speed_item;
+}
+
+int godot::Backpack::_get_number_bat_wins()
+{
+	return 0;
 }
 
 godot::Backpack::Backpack()

@@ -39,4 +39,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<Craftman>();
 	register_class<UpdateScoreButton>();
 	register_class<Item>();
+	register_class<HungerUI>();
 }
