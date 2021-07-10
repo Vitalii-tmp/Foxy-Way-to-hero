@@ -69,13 +69,80 @@ void godot::Backpack::_ready()
 	cast_to<Label>(get_node("GridContainer")->get_child(3)->get_child(0))->set_text(std::to_string(_number_speed_item).c_str());
 	_items[3] = _b4;
 
-	for(int i = 4; i<8; i++)
+	for (int i = 4; i < 8; i++)
 	{
 		_items[i] = cast_to<TextureButton>(get_child(1)->get_child(i));
 	}
 }
 
-void godot::Backpack::_add_element(Meat* el)
+//void godot::Backpack::_add_element(Item* el)
+//{
+//	bool flag = false;
+//	String name;
+//
+//	Ref<PackedScene> backpack_item;
+//
+//	backpack_item = _resource_loader->load("res://Scenes/Items/BackpackItem.tscn");
+//
+//	auto item = cast_to<KinematicBody2D>(el->get_parent());
+//
+//	auto _b = cast_to<TextureButton>(backpack_item->instance());
+//
+//	for (int i = 0; i < 8; i++)
+//	{
+//
+//		if (get_node("GridContainer")->get_child(i)->get_name() == item->get_parent()->get_name())
+//		{
+//			Godot::print(item->get_name());
+//			auto text = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text();
+//			cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->set_text(std::to_string((text.to_int()) + 1).c_str());
+//
+//			break;
+//		}
+//	}
+//	for (int i = 0; i < 4; i++)
+//	{
+//		if (i == 0)
+//		{
+//			Loader::get_singleton()->set_num_meat(cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int());
+//			_number_meat = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int();
+//		}
+//		else if (i == 1)
+//		{
+//			Loader::get_singleton()->set_num_cheese(cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int());
+//			_number_cheese = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int();
+//		}
+//		else if (i == 2)
+//		{
+//			Loader::get_singleton()->set_num_fish(cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int());
+//			_number_fish = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int();
+//		}
+//		else if (i == 3)
+//		{
+//			Loader::get_singleton()->set_num_speed_item(cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int());
+//			_number_speed_item = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text().to_int();
+//		}
+//	}
+//}
+
+//bool godot::Backpack::_can_add_element(Item* el)
+//{
+//	bool flag = false;
+//
+//	for (int i = 0; i < 8; i++)
+//	{
+//		if (_items[i]->get_name() == el->get_parent()->get_parent()->get_name() 
+//			&& cast_to<Label>(_items[i]->get_child(0))->get_text().to_int()<20)
+//		{
+//			flag = true;
+//			break;
+//		}
+//	}
+//
+//	return flag;
+//}
+
+void godot::Backpack::_add_item(Item* item)
 {
 	bool flag = false;
 	String name;
@@ -84,16 +151,16 @@ void godot::Backpack::_add_element(Meat* el)
 
 	backpack_item = _resource_loader->load("res://Scenes/Items/BackpackItem.tscn");
 
-	auto item = cast_to<KinematicBody2D>(el->get_parent());
+	auto _item = cast_to<KinematicBody2D>(item->get_parent());
 
 	auto _b = cast_to<TextureButton>(backpack_item->instance());
 
 	for (int i = 0; i < 8; i++)
 	{
 
-		if (get_node("GridContainer")->get_child(i)->get_name() == item->get_parent()->get_name())
+		if (get_node("GridContainer")->get_child(i)->get_name() == _item->get_parent()->get_name())
 		{
-			Godot::print(item->get_name());
+			Godot::print(_item->get_name());
 			auto text = cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->get_text();
 			cast_to<Label>(get_child(1)->get_child(i)->get_child(0))->set_text(std::to_string((text.to_int()) + 1).c_str());
 
@@ -125,14 +192,14 @@ void godot::Backpack::_add_element(Meat* el)
 	}
 }
 
-bool godot::Backpack::_can_add_element(Meat* el)
+bool godot::Backpack::_can_add_item(Item* item)
 {
 	bool flag = false;
 
 	for (int i = 0; i < 8; i++)
 	{
-		if (_items[i]->get_name() == el->get_parent()->get_parent()->get_name() 
-			&& cast_to<Label>(_items[i]->get_child(0))->get_text().to_int()<20)
+		if (_items[i]->get_name() == item->get_parent()->get_parent()->get_name()
+			&& cast_to<Label>(_items[i]->get_child(0))->get_text().to_int() < 20)
 		{
 			flag = true;
 			break;

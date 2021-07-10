@@ -3,6 +3,8 @@
 
 namespace godot
 {
+	class Item;
+	
 	class Backpack : public Node2D
 	{
 		GODOT_CLASS(Backpack, Node2D);
@@ -16,8 +18,11 @@ namespace godot
 		void _process(float delta);
 		void _ready();
 
-		void _add_element(Meat* el);
-		bool _can_add_element(Meat* el);
+		/*void _add_element(Item* el);
+		bool _can_add_element(Item* el);*/
+
+		void _add_item(Item* item);
+		bool _can_add_item(Item* item);
 		void _remove_by_name(String name);
 
 		int _get_number_meat();
