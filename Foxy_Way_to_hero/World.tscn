@@ -3032,6 +3032,10 @@ position = Vector2( -16.9599, -630.729 )
 
 [node name="SpeedItem" type="YSort" parent="YSort"]
 
+[node name="BoarFur" type="YSort" parent="YSort"]
+
+[node name="BatWing" type="YSort" parent="YSort"]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
