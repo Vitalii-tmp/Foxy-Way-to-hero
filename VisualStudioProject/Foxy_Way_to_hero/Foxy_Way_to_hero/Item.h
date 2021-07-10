@@ -3,6 +3,14 @@
 
 namespace godot
 {
+	enum type
+	{
+		MEAT,
+		CHEESE,
+		FISH,
+		SPEED_ITEM
+	};
+	
 	class Item : public Area2D
 	{
 	private:
@@ -14,7 +22,8 @@ namespace godot
 		void _ready();
 
 		void _on_item_area_body_entered(Node* body);
-
+		Sprite* _item_sprite = nullptr;
+		type _type;
 		
 	private:
 

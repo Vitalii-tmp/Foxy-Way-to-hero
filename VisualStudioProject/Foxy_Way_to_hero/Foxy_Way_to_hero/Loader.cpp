@@ -120,7 +120,7 @@ namespace godot
 		dict["Number of meat"] = this->_numMeat;
 		dict["Number of cheese"] = this->_numCheese;
 		dict["Number of fish"] = this->_numFish;
-		dict["Number of red fish"] = this->_numRedFish;
+		dict["Number of speed item"] = this->_numSpeedItem;
 		
 		_file->store_string(dict.to_json());
 		_file->close();
@@ -165,9 +165,9 @@ namespace godot
 		return this->_numFish;
 	}
 
-	int Loader::get_num_red_fish()
+	int Loader::get_num_speed_item()
 	{
-		return this->_numRedFish;
+		return this->_numSpeedItem;
 	}
 	
 	void Loader::set_start_position(Vector2 start_position)
@@ -190,9 +190,9 @@ namespace godot
 		_numFish = numFish;
 	}
 
-	void Loader::set_num_red_fish(int numRedFish)
+	void Loader::set_num_speed_item(int numSpeedItem)
 	{
-		_numRedFish = numRedFish;
+		_numSpeedItem = numSpeedItem;
 	}
 	
 	
@@ -232,7 +232,7 @@ namespace godot
 			_numMeat = rez["Number of meat"];
 			_numCheese = rez["Number of cheese"];
 			_numFish = rez["Number of fish"];
-			_numRedFish = rez["Number of red fish"];
+			_numSpeedItem = rez["Number of speed item"];
 			
 			//Godot::print(_player_start_position);
 			_file->close();

@@ -59,11 +59,13 @@ namespace godot {
 		int _get_current_state();
 		bool _get_is_alive();
 		float _get_hp();
-		void _add_to_backpack(Meat* meat);
+		//void _add_to_backpack(Meat* meat);
 
 		void _on_escape_pressed();
 		
 		void _reset_player_speed();
+
+		void _set_player_speed(float speed);
 		// Gameplay variables
 	public:
 		Backpack* _backpack = nullptr;
@@ -88,7 +90,7 @@ namespace godot {
 		bool _is_alive;
 		bool _can_fire;
 
-		int _speed;
+		float _speed;
 		//int _coins;
 
 		float _hp;

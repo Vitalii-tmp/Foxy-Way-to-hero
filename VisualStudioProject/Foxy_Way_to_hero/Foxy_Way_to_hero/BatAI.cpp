@@ -45,6 +45,8 @@ void godot::BatAI::_ready()
 	_bat_hit_area = cast_to<Area2D>(get_node("BatHitArea"));
 
 	_start_position = get_global_position();
+
+	_resource_loader = ResourceLoader::get_singleton();
 }
 
 
@@ -57,10 +59,14 @@ void godot::BatAI::_physics_process(float delta)
 
 	if (!_is_alive)
 	{
+		
+
 		_bat_hit_area->queue_free();
 		_bat_sprite->set_visible(false);
 		_die_effect->set_visible(true);
 		_die_effect->play();
+
+		
 	}
 
 
@@ -143,7 +149,17 @@ void godot::BatAI::_on_player_detection_area_body_exited(Node* _other_body)
 
 void godot::BatAI::_on_die_effect_animation_finished()
 {
+	auto pos = this->get_global_position();
+	
 	queue_free();
+
+	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/BatWing.tscn");
+
+	auto item = cast_to<KinematicBody2D>(prefab->instance());
+
+	get_node(NodePath("/root/World/YSort/BatWing/"))->add_child(item);
+
+	item->set_global_position(pos + Vector2(0, 20));
 }
 
 

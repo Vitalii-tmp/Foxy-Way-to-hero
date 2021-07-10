@@ -31,14 +31,14 @@ namespace godot
 		void set_num_meat(int numMeat);
 		void set_num_cheese(int numCheese);
 		void set_num_fish(int numFish);
-		void set_num_red_fish(int numRedFish);
+		void set_num_speed_item(int numSpeedItem);
 
 		int get_coins() const;
 		int get_acorns() const;
 		int get_num_meat();
 		int get_num_cheese();
 		int get_num_fish();
-		int get_num_red_fish();
+		int get_num_speed_item();
 		
 		Vector2 get_start_position();
 
@@ -56,7 +56,7 @@ namespace godot
 		int _numMeat = 0;
 		int _numCheese = 0;
 		int _numFish = 0;
-		int _numRedFish = 0;
+		int _numSpeedItem = 0;
 	};
 }
 
