@@ -69,6 +69,8 @@ namespace godot
 		Player* _player=nullptr;
 
 		Area2D* _bat_hit_area=nullptr;
+
+		ResourceLoader* _resource_loader;
 	};
 }
 
