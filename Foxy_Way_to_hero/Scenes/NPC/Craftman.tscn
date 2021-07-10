@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Craftman.gdns" type="Script" id=1]
+[ext_resource path="res://Sprites/NPC/Generic Male NPCs.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/NPC/RecipeMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/NPC/dialog_window.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 320, 480, 80, 120 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 142.542
+
+[sub_resource type="DynamicFont" id=4]
+size = 3
+font_data = ExtResource( 5 )
+
+[node name="Craftman" type="Node2D"]
+scale = Vector2( 0.42, 0.380001 )
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 3 )
+
+[node name="RecipeMenu" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 141.764, -98.4571 )
+scale = Vector2( 2.00626, 2.00626 )
+z_index = 1
+
+[node name="DialogWindow" type="Sprite" parent="."]
+visible = false
+position = Vector2( 52.1143, -66.4615 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Dialog" type="Label" parent="DialogWindow"]
+margin_left = -11.0748
+margin_top = -6.72783
+margin_right = 28.9252
+margin_bottom = 7.27217
+rect_scale = Vector2( 0.523809, 0.824561 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "I can boil a stew 
+which could update 
+your score, damage 
+and smth else"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

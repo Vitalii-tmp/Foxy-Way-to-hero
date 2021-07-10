@@ -118,7 +118,7 @@ void godot::Player::_physics_process(float delta)
 
 	if (_is_alive)
 	{
-		_on_escape_pressed();
+		//_on_escape_pressed();
 		_change_state_depend_on_behavior();
 		
 		_hunger -= delta;
@@ -435,6 +435,11 @@ void godot::Player::_reset_player_speed()
 		_hurt_timer->disconnect("timeout", this, "_reset_player_speed");
 		
 	}
+}
+
+void godot::Player::_set_player_speed(float speed)
+{
+	_speed = speed;
 }
 
 //void godot::Player::_add_to_backpack(Meat* meat)

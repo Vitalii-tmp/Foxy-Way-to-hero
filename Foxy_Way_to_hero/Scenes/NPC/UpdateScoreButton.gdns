@@ -3,6 +3,6 @@
 [ext_resource path="res://GDNLib.gdnlib" type="GDNativeLibrary" id=1]
 
 [resource]
-resource_name = "Meat"
-class_name = "Meat"
+resource_name = "UpdateScoreButton"
+class_name = "UpdateScoreButton"
 library = ExtResource( 1 )

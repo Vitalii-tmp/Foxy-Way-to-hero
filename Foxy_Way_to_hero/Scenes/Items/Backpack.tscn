@@ -44,7 +44,7 @@ margin_bottom = 14.0
 rect_min_size = Vector2( 13, 14 )
 rect_scale = Vector2( 1, 1 )
 
-[node name="RedFish" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="SpeedItem" parent="GridContainer" instance=ExtResource( 3 )]
 margin_left = 51.0
 margin_right = 64.0
 margin_bottom = 14.0

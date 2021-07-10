@@ -172,12 +172,13 @@
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="ContinueButton.cpp" />
     <ClCompile Include="Countryman.cpp" />
+    <ClCompile Include="Craftman.cpp" />
     <ClCompile Include="GodotLibrary.cpp" />
     <ClCompile Include="Grass.cpp" />
     <ClCompile Include="HealthUI.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="LoadSceneButton.cpp" />
-    <ClCompile Include="Meat.cpp" />
     <ClCompile Include="PauseButton.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="QuitButton.cpp" />
@@ -187,6 +188,7 @@
     <ClCompile Include="StoreButton.cpp" />
     <ClCompile Include="Tomb.cpp" />
     <ClCompile Include="UI.cpp" />
+    <ClCompile Include="UpdateScoreButton.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Acorn.h" />
@@ -200,13 +202,13 @@
     <ClInclude Include="Coin.h" />
     <ClInclude Include="ContinueButton.h" />
     <ClInclude Include="Countryman.h" />
+    <ClInclude Include="Craftman.h" />
     <ClInclude Include="Grass.h" />
     <ClInclude Include="Headers.h" />
     <ClInclude Include="HealthUI.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="LoadSceneButton.h" />
-    <ClInclude Include="Meat.h" />
     <ClInclude Include="PauseButton.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="QuitButton.h" />
@@ -216,6 +218,7 @@
     <ClInclude Include="StoreButton.h" />
     <ClInclude Include="Tomb.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="UpdateScoreButton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

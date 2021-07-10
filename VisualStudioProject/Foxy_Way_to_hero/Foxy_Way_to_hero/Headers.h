@@ -54,10 +54,12 @@
 #include "Countryman.h"
 #include "StoreButton.h"
 #include "Backpack.h"
-#include "Meat.h"
 #include "BoarAI.h"
 #include "SnakeAI.h"
 #include "BackpackItemButton.h"
+#include "Craftman.h"
+#include "UpdateScoreButton.h"
+#include "Item.h"
 
 //cpp headers
 #include <cmath>
