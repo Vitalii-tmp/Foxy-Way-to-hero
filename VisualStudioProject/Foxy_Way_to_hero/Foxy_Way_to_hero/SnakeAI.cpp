@@ -33,8 +33,6 @@ void godot::SnakeAI::_register_methods()
 	register_method("_on_hit_effect_animation_finished", &SnakeAI::_on_hit_effect_animation_finished);
 	register_method("_change_move_vector", &SnakeAI::_change_move_vector);
 	
-	
-
 }
 
 void godot::SnakeAI::_init()
@@ -82,6 +80,8 @@ void godot::SnakeAI::_ready()
 	_animation_tree->set_active(true);
 
 	_animation_state = _animation_tree->get("parameters/playback");
+
+	_resource_loader = ResourceLoader::get_singleton();
 }
 
 godot::SnakeAI::~SnakeAI()
@@ -210,6 +210,47 @@ void godot::SnakeAI::_on_hurt_area_area_entered(Area2D* _other_area)
 		//knock back bat
 		_knockback_vector = _vector.normalized() * 50;
 		_hp -= _pl_damage;
+	}
+
+	if (_other_area->get_name() == "ShortAttackArea")
+	{
+		//play hit affect
+		_hit_effect->set_visible(true);
+		_hit_effect->play();
+
+		auto _vector = Player::_get_singleton()->_get_input_vector();
+		auto _pl_damage = Player::_get_singleton()->_get_damage();
+
+		_knockback_vector = _vector.normalized() * 150;
+		_hp -= _pl_damage;
+	}
+
+	if (_other_area->get_name() == "LongAttackArea")
+	{
+		//play hit affect
+		_hit_effect->set_visible(true);
+		_hit_effect->play();
+
+		auto _vector = Player::_get_singleton()->_get_input_vector();
+		auto _pl_damage = Player::_get_singleton()->_get_damage();
+
+		_knockback_vector = _vector.normalized() * 100;
+		_hp -= _pl_damage;
+	}
+
+	if (_hp <= 0 &&(_other_area->get_name() == "LongAttackArea"|| _other_area->get_name() == "ShortAttackArea"))
+	{
+
+		auto pos = this->get_global_position();
+
+		Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/SnakeSpike.tscn");
+
+		auto item = cast_to<KinematicBody2D>(prefab->instance());
+
+		get_node(NodePath("/root/World/YSort/SnakeSpikes/"))->add_child(item);
+
+		item->set_global_position(pos);
+
 	}
 }
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=302 format=2]
+[gd_scene load_steps=322 format=2]
 
 [ext_resource path="res://Scenes/Environment/Cactus.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -31,6 +31,9 @@
 [ext_resource path="res://Scenes/Enemies/Snake.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Sprites/Environment/Sound.png" type="Texture" id=30]
 [ext_resource path="res://Scenes/Environment/CactusType2.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Sprites/NPC/alchemist.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Shadows/LargeShadow.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Items/JugType2.png" type="Texture" id=34]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -2577,6 +2580,78 @@ points = PoolVector2Array( 64, 40.7893, 0.046936, 40.7893, 0.046936, 29.9051, 64
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="AtlasTexture" id=271]
+atlas = ExtResource( 34 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=272]
+atlas = ExtResource( 34 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=273]
+atlas = ExtResource( 34 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=274]
+atlas = ExtResource( 34 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=275]
+atlas = ExtResource( 34 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=276]
+atlas = ExtResource( 34 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=277]
+atlas = ExtResource( 34 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=278]
+atlas = ExtResource( 34 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=279]
+atlas = ExtResource( 34 )
+region = Rect2( 256, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=280]
+atlas = ExtResource( 34 )
+region = Rect2( 288, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=281]
+atlas = ExtResource( 34 )
+region = Rect2( 320, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=282]
+atlas = ExtResource( 34 )
+region = Rect2( 352, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=283]
+atlas = ExtResource( 34 )
+region = Rect2( 384, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=284]
+atlas = ExtResource( 34 )
+region = Rect2( 416, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=285]
+atlas = ExtResource( 34 )
+region = Rect2( 448, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=286]
+atlas = ExtResource( 34 )
+region = Rect2( 480, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=287]
+animations = [ {
+"frames": [ SubResource( 271 ), SubResource( 272 ), SubResource( 273 ), SubResource( 274 ), SubResource( 275 ), SubResource( 276 ), SubResource( 277 ), SubResource( 278 ), SubResource( 279 ), SubResource( 280 ), SubResource( 281 ), SubResource( 282 ), SubResource( 283 ), SubResource( 284 ), SubResource( 285 ), SubResource( 286 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
 [node name="World" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
@@ -3050,6 +3125,12 @@ position = Vector2( 95.9329, -1304.32 )
 [node name="CactusType4" parent="YSort/Cactuses" instance=ExtResource( 31 )]
 position = Vector2( 287.657, -1341.74 )
 
+[node name="BatWing" type="YSort" parent="YSort"]
+
+[node name="BoarFur" type="YSort" parent="YSort"]
+
+[node name="SnakeSpikes" type="YSort" parent="YSort"]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
@@ -3064,5 +3145,28 @@ position = Vector2( 1346.3, 450.741 )
 position = Vector2( -513.403, -1825.19 )
 
 [node name="UI" parent="." instance=ExtResource( 12 )]
+
+[node name="alchemist" type="Sprite" parent="."]
+position = Vector2( 91.122, -1140.35 )
+z_index = -1
+texture = ExtResource( 32 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="alchemist"]
+position = Vector2( 2.08619, 21.9605 )
+scale = Vector2( 0.816313, 0.816313 )
+frames = SubResource( 287 )
+frame = 1
+playing = true
+
+[node name="LargeShadow" type="Sprite" parent="alchemist"]
+position = Vector2( -8.5976, 26.406 )
+z_index = -1
+texture = ExtResource( 33 )
+
+[node name="LargeShadow2" type="Sprite" parent="alchemist"]
+position = Vector2( 2.0862, 29.5565 )
+scale = Vector2( 0.830163, 0.7203 )
+z_index = -1
+texture = ExtResource( 33 )
 
 [editable path="Camera2D"]
