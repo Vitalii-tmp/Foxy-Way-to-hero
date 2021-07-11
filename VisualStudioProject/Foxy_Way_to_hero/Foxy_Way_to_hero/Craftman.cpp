@@ -20,7 +20,7 @@ void godot::Craftman::_ready()
 	_detection_area->connect("body_exited", this, "_from_detection_area_exit");
 
 	_recipe_menu = cast_to<Sprite>(get_child(2));
-	_dialog_window = cast_to<Sprite>(get_child(3));
+	_dialog_window = cast_to<Sprite>(UI::get_singleton()->get_node("DialogCraftMan"));
 }
 
 void godot::Craftman::_process(float delta)
