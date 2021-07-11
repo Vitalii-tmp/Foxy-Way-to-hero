@@ -18,7 +18,6 @@ godot::BoarAI::BoarAI()
 
 void godot::BoarAI::_register_methods()
 {
-
 	register_method("_physics_process", &BoarAI::_physics_process);
 	register_method("_init", &BoarAI::_init);
 	register_method("_ready", &BoarAI::_ready);
@@ -30,8 +29,6 @@ void godot::BoarAI::_register_methods()
 	register_method("_set_move_vector", &BoarAI::_set_move_vector);
 	register_method("_on_boar_hit_area_area_entered", &BoarAI::_on_boar_hit_area_area_entered);
 	register_method("_change_to_can_move", &BoarAI::_change_to_can_move);
-
-
 }
 
 
@@ -52,6 +49,7 @@ void godot::BoarAI::_ready()
 	_animation_state = _animation_tree->get("parameters/playback");
 
 	_timer_start_time = RandomNumberGenerator::_new();
+	_resource_loader = ResourceLoader::get_singleton();
 }
 
 void godot::BoarAI::_physics_process(float delta)
@@ -87,7 +85,7 @@ void godot::BoarAI::_physics_process(float delta)
 
 		Godot::print("LookVector " + _move_vector.normalized());
 	}
-	
+
 	if (_is_alive && _can_move)
 	{
 		if (_move_vector != Vector2(0, 0))
@@ -96,9 +94,9 @@ void godot::BoarAI::_physics_process(float delta)
 			_animation_state->travel("Idle");
 	}
 
-	
 
-	
+
+
 	//Godot::print(_animation_state->get_current_node());
 }
 
@@ -253,6 +251,21 @@ void godot::BoarAI::_on_hurt_area_area_entered(Area2D* _other_area)
 		_knockback_vector = _vector.normalized() * 100;
 		_hp -= _pl_damage;
 	}
+
+	if (_hp <= 0 && (_other_area->get_name() == "LongAttackArea" || _other_area->get_name() == "ShortAttackArea"))
+	{
+
+		auto pos = this->get_global_position();
+
+		Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/BoarFur.tscn");
+
+		auto item = cast_to<KinematicBody2D>(prefab->instance());
+
+		get_node(NodePath("/root/World/YSort/BoarFur/"))->add_child(item);
+
+		item->set_global_position(pos);
+
+	}
 }
 
 void godot::BoarAI::_on_boar_hit_area_area_entered(Area2D* _other_area)
@@ -297,22 +310,20 @@ void godot::BoarAI::_set_move_vector()
 
 void godot::BoarAI::_stoping()
 {
-	
+
 	_is_stoping = true;
 	_can_move = false;
 	if (!_timer->is_connected("timeout", this, "_change_to_can_move"))
 	{
-
 		Godot::print("Timer aaaaaaaaaaaaaaaaaaaa connected");
 		_timer->connect("timeout", this, "_change_to_can_move");
-
 		_timer->start(0.5);
 	}
-	
+
 	_animation_tree->set("parameters/Stop/blend_position", _move_vector.normalized());
 	_animation_state->travel("Stop");
 
-	
+
 }
 
 void godot::BoarAI::_change_to_can_move()
@@ -323,7 +334,7 @@ void godot::BoarAI::_change_to_can_move()
 	if (_timer->is_connected("timeout", this, "_change_to_can_move"))
 		_timer->disconnect("timeout", this, "_change_to_can_move");
 
-	
+
 }
 
 float godot::BoarAI::_get_damage()

@@ -82,6 +82,8 @@ namespace godot
 		AnimationNodeStateMachinePlayback* _animation_state = nullptr;
 
 		RandomNumberGenerator* _timer_start_time = nullptr;
+
+		ResourceLoader* _resource_loader;
 	};
 }
 
