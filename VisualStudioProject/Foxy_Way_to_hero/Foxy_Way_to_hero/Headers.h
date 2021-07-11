@@ -61,6 +61,7 @@
 #include "UpdateScoreButton.h"
 #include "Item.h"
 #include "HungerUI.h"
+#include "TypingMessage.h"
 
 //cpp headers
 #include <cmath>
