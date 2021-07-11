@@ -54,7 +54,7 @@ visible = false
 frames = SubResource( 3 )
 
 [node name="FullMeat4" type="Sprite" parent="."]
-position = Vector2( 61.9255, -0.00782776 )
+position = Vector2( 59.9255, -0.00782776 )
 texture = ExtResource( 1 )
 hframes = 2
 
@@ -63,25 +63,25 @@ visible = false
 frames = SubResource( 3 )
 
 [node name="EmptyMeat" type="Sprite" parent="."]
-position = Vector2( 0.336182, -0.0809566 )
+position = Vector2( 1.33905, 0.573074 )
 scale = Vector2( 0.677027, 0.677027 )
 z_index = -1
 texture = ExtResource( 2 )
 
 [node name="EmptyMeat2" type="Sprite" parent="."]
-position = Vector2( 20.2595, -0.178681 )
+position = Vector2( 21.3423, 0.506329 )
 scale = Vector2( 0.677027, 0.677027 )
 z_index = -1
 texture = ExtResource( 2 )
 
 [node name="EmptyMeat3" type="Sprite" parent="."]
-position = Vector2( 40.8265, -0.207351 )
+position = Vector2( 41.7651, 0.397499 )
 scale = Vector2( 0.677027, 0.677027 )
 z_index = -1
 texture = ExtResource( 2 )
 
 [node name="EmptyMeat4" type="Sprite" parent="."]
-position = Vector2( 62.1839, -0.0814056 )
+position = Vector2( 61.2504, 0.563476 )
 scale = Vector2( 0.677027, 0.677027 )
 z_index = -1
 texture = ExtResource( 2 )

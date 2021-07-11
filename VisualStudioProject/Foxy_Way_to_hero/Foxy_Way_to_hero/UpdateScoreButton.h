@@ -18,11 +18,11 @@ namespace godot
 	private:
 		ResourceLoader* _resource_loader;
 
-		TextureButton* _meat_item;
-		TextureButton* _cheese_item;
+		TextureButton* _wing_item;
+		TextureButton* _fur_item;
 
-		Label* _label_meat;
-		Label* _label_cheese;
+		Label* _label_wing;
+		Label* _label_fur;
 	};
 }
 

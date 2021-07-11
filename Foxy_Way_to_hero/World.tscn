@@ -3028,13 +3028,15 @@ position = Vector2( -16.9599, -630.729 )
 
 [node name="Fish" type="YSort" parent="YSort"]
 
-[node name="RedFish" type="YSort" parent="YSort"]
-
 [node name="SpeedItem" type="YSort" parent="YSort"]
 
 [node name="BoarFur" type="YSort" parent="YSort"]
 
 [node name="BatWing" type="YSort" parent="YSort"]
+
+[node name="SnakeFang" type="YSort" parent="YSort"]
+
+[node name="DamageItem" type="YSort" parent="YSort"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

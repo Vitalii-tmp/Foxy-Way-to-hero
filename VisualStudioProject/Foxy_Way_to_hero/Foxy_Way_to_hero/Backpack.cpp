@@ -259,7 +259,22 @@ int godot::Backpack::_get_number_speed_item()
 
 int godot::Backpack::_get_number_bat_wins()
 {
-	return 0;
+	return _number_bat_wings;
+}
+
+int godot::Backpack::_get_number_boar_fur()
+{
+	return _number_boar_fur;
+}
+
+int godot::Backpack::_get_number_snake_fang()
+{
+	return _number_snake_fang;
+}
+
+int godot::Backpack::_get_number_damage_item()
+{
+	return _number_damage_item;
 }
 
 godot::Backpack::Backpack()

@@ -30,6 +30,9 @@ namespace godot
 		int _get_number_cheese();
 		int _get_number_speed_item();
 		int _get_number_bat_wins();
+		int _get_number_boar_fur();
+		int _get_number_snake_fang();
+		int _get_number_damage_item();
 		
 		Backpack();
 		~Backpack();
@@ -42,5 +45,8 @@ namespace godot
 		int _number_fish = 0;
 		int _number_speed_item = 0;
 		int _number_bat_wings = 0;
+		int _number_boar_fur = 0;
+		int _number_snake_fang = 0;
+		int _number_damage_item = 0;
 	};
 }

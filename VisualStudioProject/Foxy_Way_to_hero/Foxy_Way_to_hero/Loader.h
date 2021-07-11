@@ -33,6 +33,9 @@ namespace godot
 		void set_num_fish(int numFish);
 		void set_num_speed_item(int numSpeedItem);
 		void set_num_bat_wings(int numBatWings);
+		void set_num_boar_furs(int numBoarFurs);
+		void set_num_snake_fangs(int numSnakeFangs);
+		void set_num_damage_item(int numDamageItem);
 
 		int get_coins() const;
 		int get_acorns() const;
@@ -41,6 +44,9 @@ namespace godot
 		int get_num_fish();
 		int get_num_speed_item();
 		int get_num_bat_wings();
+		int get_num_boar_furs();
+		int get_num_snake_fangs();
+		int get_num_damage_item();
 		
 		Vector2 get_start_position();
 
@@ -60,6 +66,9 @@ namespace godot
 		int _numFish = 0;
 		int _numSpeedItem = 0;
 		int _numBatWings = 0;
+		int _numBoarFurs = 0;
+		int _numSnakeFangs = 0;
+		int _numDamageItem = 0;
 	};
 }
 

@@ -22,7 +22,7 @@ void godot::HungerUI::_ready()
 
 void godot::HungerUI::_process()
 {
-	if (_player_hunger >_full_player_hunger*0.85)
+	if (_player_hunger >_full_player_hunger*0.75)
 	{
 		_fourth_meat->set_visible(true);
 		_fourth_meat->set_frame(0);
@@ -31,7 +31,7 @@ void godot::HungerUI::_process()
 		_third_meat->set_visible(true);
 	}
 
-	if (_player_hunger > _full_player_hunger*0.75 && _player_hunger <= _full_player_hunger*0.875)
+	/*if (_player_hunger > _full_player_hunger*0.75 && _player_hunger <= _full_player_hunger*0.875)
 	{
 		_fourth_meat->set_visible(true);
 		_fourth_meat->set_frame(1);
@@ -39,9 +39,9 @@ void godot::HungerUI::_process()
 		_first_meat->set_visible(true);
 		_second_meat->set_visible(true);
 		_third_meat->set_visible(true);
-	}
+	}*/
 
-	if (_player_hunger > _full_player_hunger*0.625 && _player_hunger <= _full_player_hunger*0.75)
+	if (_player_hunger > _full_player_hunger*0.5 && _player_hunger <= _full_player_hunger*0.75)
 	{
 		_first_meat->set_visible(true);
 		_second_meat->set_visible(true);
@@ -50,16 +50,16 @@ void godot::HungerUI::_process()
 		_fourth_meat->set_visible(false);
 	}
 
-	if (_player_hunger > _full_player_hunger*0.50 && _player_hunger <= _full_player_hunger*0.625)
+	/*if (_player_hunger > _full_player_hunger*0.50 && _player_hunger <= _full_player_hunger*0.625)
 	{
 		_first_meat->set_visible(true);
 		_second_meat->set_visible(true);
 		_third_meat->set_visible(true);
 		_third_meat->set_frame(1);
 		_fourth_meat->set_visible(false);
-	}
+	}*/
 
-	if (_player_hunger > _full_player_hunger*0.375 && _player_hunger <= _full_player_hunger*0.50)
+	if (_player_hunger > _full_player_hunger*0.25 && _player_hunger <= _full_player_hunger*0.5)
 	{
 		_first_meat->set_visible(true);
 		_second_meat->set_visible(true);
@@ -68,16 +68,16 @@ void godot::HungerUI::_process()
 		_fourth_meat->set_visible(false);
 	}
 
-	if (_player_hunger > _full_player_hunger*0.25 && _player_hunger <= _full_player_hunger*0.375)
+	/*if (_player_hunger > _full_player_hunger*0.25 && _player_hunger <= _full_player_hunger*0.375)
 	{
 		_first_meat->set_visible(true);
 		_second_meat->set_visible(true);
 		_second_meat->set_frame(1);
 		_third_meat->set_visible(false);
 		_fourth_meat->set_visible(false);
-	}
+	}*/
 
-	if (_player_hunger > _full_player_hunger*0.125 && _player_hunger <= _full_player_hunger*0.25)
+	if (_player_hunger > 0 && _player_hunger <= _full_player_hunger*0.25)
 	{
 
 		_first_meat->set_visible(true);
@@ -87,7 +87,7 @@ void godot::HungerUI::_process()
 		_fourth_meat->set_visible(false);
 	}
 
-	if (_player_hunger > 0 && _player_hunger <= _full_player_hunger*0.125)
+	/*if (_player_hunger > 0 && _player_hunger <= _full_player_hunger*0.125)
 	{
 
 		_first_meat->set_visible(true);
@@ -95,7 +95,7 @@ void godot::HungerUI::_process()
 		_second_meat->set_visible(false);
 		_third_meat->set_visible(false);
 		_fourth_meat->set_visible(false);
-	}
+	}*/
 
 	if (_player_hunger <= 0)
 	{

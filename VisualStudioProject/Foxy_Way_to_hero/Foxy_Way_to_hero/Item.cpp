@@ -50,6 +50,22 @@ void godot::Item::_ready()
 		_type = SPEED_ITEM;
 		Godot::print("Red fish");
 	}
+	else if (name == "BatWing")
+	{
+		_type = BAT_WING;
+	}
+	else if(name == "BoarFur")
+	{
+		_type = BOAR_FUR;
+	}
+	else if(name == "SnakeFang")
+	{
+		_type = SNAKE_FANG;
+	}
+	else if(name == "DamageItem")
+	{
+		_type = DAMAGE_ITEM;
+	}
 
 	_item_sprite = cast_to<Sprite>(get_child(0));
 }
