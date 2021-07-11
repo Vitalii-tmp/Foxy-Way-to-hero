@@ -65,8 +65,6 @@ void godot::Player::_ready()
 	_backpack = cast_to<Backpack>(backpack_node);
 
 	HungerUI::_get_singleton()->_set_full_player_hunger(_hunger);
-
-	
 	/*_death_timer = Timer::_new();
 	this->add_child(_death_timer);*/
 
@@ -128,13 +126,11 @@ void godot::Player::_physics_process(float delta)
 
 		if (HungerUI::_get_singleton()->_get_player_hunger()<=0)
 			_hunger = 0;
-		
+
 		if (_hunger <= 0)
 			_hp -= delta;
 	}
 
-	//Godot::print(String::num(_hunger));
-	
 }
 
 
@@ -344,10 +340,25 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 			}
 
 		}
+
+		if (_other_area->get_name() == "CactusHitArea")
+		{
+			auto _cactus = cast_to<StaticBody2D>(_other_area->get_parent());
+
+			_hp -= 7.f;
+
+			_hit_effect->set_visible(true);
+			_hit_effect->play();
+			_knockback_vector = (this->get_global_position() - _cactus->get_global_position()).normalized()*100;
+		}
+
+
+
 	}
-
-
 }
+
+
+
 
 
 //after player take damage hide animated sprite of _hit_effect
@@ -436,7 +447,7 @@ void godot::Player::_reset_player_speed()
 	{
 		//Godot::print("Timer connected");
 		_hurt_timer->disconnect("timeout", this, "_reset_player_speed");
-		
+
 	}
 }
 

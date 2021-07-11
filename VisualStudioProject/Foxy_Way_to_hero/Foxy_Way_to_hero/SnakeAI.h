@@ -76,6 +76,8 @@ namespace godot
 		AnimationPlayer* _animation_player = nullptr;
 		AnimationTree* _animation_tree = nullptr;
 		AnimationNodeStateMachinePlayback* _animation_state = nullptr;
+
+		ResourceLoader* _resource_loader;
 	};
 }
 
