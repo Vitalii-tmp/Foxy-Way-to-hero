@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/UI.gdns" type="Script" id=1]
 [ext_resource path="res://Sprites/Items/Backpack.png" type="Texture" id=2]
@@ -12,11 +12,16 @@
 [ext_resource path="res://Scripts/PauseButton.gdns" type="Script" id=10]
 [ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://Sprites/UI/buttonHover.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/UI/dialogsBackground.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 7
 font_data = ExtResource( 11 )
 
 [node name="UI" type="CanvasLayer"]
@@ -108,3 +113,45 @@ margin_top = 27.5
 margin_right = 12.5
 margin_bottom = 27.5
 rect_scale = Vector2( 1.25, 1.25 )
+
+[node name="DialogCountryMan" type="Sprite" parent="."]
+visible = false
+position = Vector2( 70.3201, 159.245 )
+scale = Vector2( 1.37008, 1.04599 )
+texture = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="DialogCountryMan"]
+margin_left = -46.0
+margin_top = -13.0
+margin_right = 45.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Hi"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogCraftMan" type="Sprite" parent="."]
+visible = false
+position = Vector2( 70.3201, 159.245 )
+scale = Vector2( 1.37008, 1.04599 )
+texture = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="DialogCraftMan"]
+margin_left = -46.0
+margin_top = -15.0
+margin_right = 45.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "I can boil a stew which 
+could update your score,
+damage and smth else"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

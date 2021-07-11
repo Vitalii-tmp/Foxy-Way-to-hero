@@ -17,10 +17,10 @@ void godot::Countryman::_process(float delta)
 {
 	std::string str;
 	if (_task == ACORNS) {
-		str = "HI! You can \nbuy some eat in\n my store";
+		str = "HI! You can buy some\n food in my store";
 	}
 	else {
-		str = "Are you hunger?\nWelcome in\n my store";
+		str = "Are you hunger? Welcome\n in my store";
 	}
 
 	_task_label->set("text", str.c_str());
@@ -39,11 +39,11 @@ void godot::Countryman::_ready()
 	if (rand() % 3 != 1) _task = ACORNS;
 	else _task = COINS;
 
-	_dialog_window = cast_to<Sprite>(get_child(2));
+	_dialog_window = cast_to<Sprite>(UI::get_singleton()->get_node("DialogCountryMan"));
 	
 	_task_label = cast_to<Label>(_dialog_window->get_child(0));
 	
-	_store_menu = cast_to<Sprite>(get_child(3));
+	_store_menu = cast_to<Sprite>(get_child(2));
 }
 
 void godot::Countryman::_on_detection_area_entered(Node* node)

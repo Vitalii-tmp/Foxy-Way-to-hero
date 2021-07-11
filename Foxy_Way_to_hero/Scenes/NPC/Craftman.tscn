@@ -1,20 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Craftman.gdns" type="Script" id=1]
 [ext_resource path="res://Sprites/NPC/alchemist.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/NPC/RecipeMenu.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/NPC/dialog_window.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scenes/Items/AlchemistPot.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Shadows/LargeShadow.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 142.542
 
-[sub_resource type="DynamicFont" id=2]
-size = 3
-font_data = ExtResource( 5 )
-
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 
 [node name="Craftman" type="StaticBody2D"]
 scale = Vector2( 0.42, 0.380001 )
@@ -38,35 +33,16 @@ position = Vector2( 141.764, -98.4571 )
 scale = Vector2( 2.00626, 2.00626 )
 z_index = 1
 
-[node name="DialogWindow" type="Sprite" parent="."]
-visible = false
-position = Vector2( 52.1143, -66.4615 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 4 )
-
-[node name="Dialog" type="Label" parent="DialogWindow"]
-margin_left = -11.0748
-margin_top = -6.72783
-margin_right = 28.9252
-margin_bottom = 7.27217
-rect_scale = Vector2( 0.523809, 0.824561 )
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "I can boil a stew 
-which could update 
-your score, damage 
-and smth else"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Shadow" type="Sprite" parent="."]
 position = Vector2( -0.731134, 3.5846 )
 scale = Vector2( 1.43452, 1.22923 )
 z_index = -1
 texture = ExtResource( 6 )
+
+[node name="AlchemistPot" parent="." instance=ExtResource( 4 )]
+position = Vector2( -45.0752, 5.27505 )
+scale = Vector2( 1.2, 1.2 )
