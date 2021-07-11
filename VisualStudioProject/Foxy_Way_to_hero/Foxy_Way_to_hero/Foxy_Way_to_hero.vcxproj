@@ -188,6 +188,7 @@
     <ClCompile Include="SnakeAI.cpp" />
     <ClCompile Include="StoreButton.cpp" />
     <ClCompile Include="Tomb.cpp" />
+    <ClCompile Include="TypingMessage.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="UpdateScoreButton.cpp" />
   </ItemGroup>
@@ -219,6 +220,7 @@
     <ClInclude Include="SnakeAI.h" />
     <ClInclude Include="StoreButton.h" />
     <ClInclude Include="Tomb.h" />
+    <ClInclude Include="TypingMessage.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="UpdateScoreButton.h" />
   </ItemGroup>
