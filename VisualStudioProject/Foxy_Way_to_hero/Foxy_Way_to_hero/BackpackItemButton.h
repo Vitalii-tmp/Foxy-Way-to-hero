@@ -7,6 +7,7 @@ namespace godot {
 		GODOT_CLASS(BackpackItemButton, TextureButton);
 
 	public:
+
 		static void _register_methods();
 		void _init();
 		void _ready();
@@ -18,5 +19,7 @@ namespace godot {
 		ResourceLoader* _resource_loader;
 
 		Label* _label = nullptr;
+
+		
 	};
 }
