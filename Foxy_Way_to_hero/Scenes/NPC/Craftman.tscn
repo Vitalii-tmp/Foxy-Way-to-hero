@@ -1,41 +1,36 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Craftman.gdns" type="Script" id=1]
-[ext_resource path="res://Sprites/NPC/Generic Male NPCs.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/NPC/alchemist.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/NPC/RecipeMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/NPC/dialog_window.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/Shadows/LargeShadow.png" type="Texture" id=6]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 2 )
-region = Rect2( 320, 480, 80, 120 )
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ SubResource( 1 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 radius = 142.542
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 3
 font_data = ExtResource( 5 )
 
-[node name="Craftman" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id=3]
+
+[node name="Craftman" type="StaticBody2D"]
 scale = Vector2( 0.42, 0.380001 )
 script = ExtResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 14.2888, -6.46754 )
+scale = Vector2( 2.52201, 2.7646 )
+texture = ExtResource( 2 )
+offset = Vector2( 5.328, -21.904 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 3 )
+position = Vector2( 0, 0.276605 )
+shape = SubResource( 1 )
 
 [node name="RecipeMenu" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -55,7 +50,7 @@ margin_top = -6.72783
 margin_right = 28.9252
 margin_bottom = 7.27217
 rect_scale = Vector2( 0.523809, 0.824561 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "I can boil a stew 
 which could update 
@@ -65,3 +60,13 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( -0.731134, 3.5846 )
+scale = Vector2( 1.43452, 1.22923 )
+z_index = -1
+texture = ExtResource( 6 )
