@@ -37,7 +37,7 @@ Player::Player()
 
 	_damage = 25.f;
 	_hp = 100.f;
-	_hunger = 160.f;
+	_hunger = 360.f;
 
 	_motion = Vector2(0, 0);
 	_input_vector = Vector2(0, 1);
@@ -421,6 +421,23 @@ float godot::Player::_get_hp()
 {
 	return _hp;
 }
+
+float godot::Player::_get_hunger()
+{
+	return _hunger;
+}
+
+void godot::Player::_set_hp(float _new_value)
+{
+	this->_hp = _new_value;
+}
+
+void godot::Player::_set_hunger(float _new_value)
+{
+	this->_hunger = _new_value;
+}
+
+
 
 
 

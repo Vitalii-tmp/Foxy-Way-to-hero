@@ -59,6 +59,10 @@ namespace godot {
 		int _get_current_state();
 		bool _get_is_alive();
 		float _get_hp();
+		float _get_hunger();
+
+		void _set_hp(float _new_value);
+		void _set_hunger(float _new_value);
 		//void _add_to_backpack(Meat* meat);
 
 		void _on_escape_pressed();
