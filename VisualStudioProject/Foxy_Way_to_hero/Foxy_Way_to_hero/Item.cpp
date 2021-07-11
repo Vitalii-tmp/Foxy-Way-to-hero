@@ -58,7 +58,7 @@ void godot::Item::_ready()
 	{
 		_type = BOAR_FUR;
 	}
-	else if(name == "SnakeFang")
+	else if(name == "SnakeSpike")
 	{
 		_type = SNAKE_FANG;
 	}
@@ -74,8 +74,8 @@ void godot::Item::_on_item_area_body_entered(Node* body)
 {
 	if (body->get_name() == "Player")
 	{
-		/*Godot::print("Collision with player");
-		if(Player::_get_singleton()->_backpack == nullptr)
+		Godot::print("Collision with player");
+		/*if(Player::_get_singleton()->_backpack == nullptr)
 		{
 			Godot::print("NULLPTR");
 
