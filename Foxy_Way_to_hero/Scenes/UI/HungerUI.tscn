@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Sprites/UI/hungerUI.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Items/Item_Black14.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Effects/HitEffect.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/HungerUI.gdns" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 24, 0, 24, 24 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Control"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullMeat" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="FullMeat"]
+visible = false
+frames = SubResource( 3 )
+
+[node name="FullMeat2" type="Sprite" parent="."]
+position = Vector2( 20.0048, -0.0415039 )
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="FullMeat2"]
+visible = false
+frames = SubResource( 3 )
+
+[node name="FullMeat3" type="Sprite" parent="."]
+position = Vector2( 40.4572, -0.175104 )
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="FullMeat3"]
+visible = false
+frames = SubResource( 3 )
+
+[node name="FullMeat4" type="Sprite" parent="."]
+position = Vector2( 59.9255, -0.00782776 )
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="FullMeat4"]
+visible = false
+frames = SubResource( 3 )
+
+[node name="EmptyMeat" type="Sprite" parent="."]
+position = Vector2( 1.33905, 0.573074 )
+scale = Vector2( 0.677027, 0.677027 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="EmptyMeat2" type="Sprite" parent="."]
+position = Vector2( 21.3423, 0.506329 )
+scale = Vector2( 0.677027, 0.677027 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="EmptyMeat3" type="Sprite" parent="."]
+position = Vector2( 41.7651, 0.397499 )
+scale = Vector2( 0.677027, 0.677027 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="EmptyMeat4" type="Sprite" parent="."]
+position = Vector2( 61.2504, 0.563476 )
+scale = Vector2( 0.677027, 0.677027 )
+z_index = -1
+texture = ExtResource( 2 )

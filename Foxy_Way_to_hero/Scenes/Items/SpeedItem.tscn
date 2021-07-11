@@ -9,6 +9,7 @@ radius = 12.2943
 [node name="SpeedItem" type="KinematicBody2D"]
 
 [node name="SpeedItem" type="Sprite" parent="."]
+scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]

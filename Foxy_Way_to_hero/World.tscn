@@ -3103,8 +3103,6 @@ position = Vector2( 94.6011, -472.794 )
 
 [node name="Fish" type="YSort" parent="YSort"]
 
-[node name="RedFish" type="YSort" parent="YSort"]
-
 [node name="Cactuses" type="YSort" parent="YSort"]
 
 [node name="Cactus" parent="YSort/Cactuses" instance=ExtResource( 1 )]
@@ -3129,7 +3127,11 @@ position = Vector2( 287.657, -1341.74 )
 
 [node name="BoarFur" type="YSort" parent="YSort"]
 
-[node name="SnakeSpikes" type="YSort" parent="YSort"]
+[node name="SnakeSpike" type="YSort" parent="YSort"]
+
+[node name="SpeedItem" type="YSort" parent="YSort"]
+
+[node name="DamageItem" type="YSort" parent="YSort"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -3155,7 +3157,7 @@ texture = ExtResource( 32 )
 position = Vector2( 2.08619, 21.9605 )
 scale = Vector2( 0.816313, 0.816313 )
 frames = SubResource( 287 )
-frame = 1
+frame = 10
 playing = true
 
 [node name="LargeShadow" type="Sprite" parent="alchemist"]

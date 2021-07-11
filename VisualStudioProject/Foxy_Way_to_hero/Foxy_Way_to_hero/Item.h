@@ -8,7 +8,11 @@ namespace godot
 		MEAT,
 		CHEESE,
 		FISH,
-		SPEED_ITEM
+		SPEED_ITEM,
+		BAT_WING,
+		BOAR_FUR,
+		SNAKE_FANG,
+		DAMAGE_ITEM
 	};
 	
 	class Item : public Area2D

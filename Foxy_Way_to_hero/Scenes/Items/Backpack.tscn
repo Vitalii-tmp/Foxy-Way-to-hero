@@ -51,28 +51,28 @@ margin_bottom = 14.0
 rect_min_size = Vector2( 13, 14 )
 rect_scale = Vector2( 1, 1 )
 
-[node name="BackpackItem4" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="BatWing" parent="GridContainer" instance=ExtResource( 3 )]
 margin_left = 68.0
 margin_right = 81.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 13, 14 )
 rect_scale = Vector2( 1, 1 )
 
-[node name="BackpackItem5" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="BoarFur" parent="GridContainer" instance=ExtResource( 3 )]
 margin_left = 85.0
 margin_right = 98.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 13, 14 )
 rect_scale = Vector2( 1, 1 )
 
-[node name="BackpackItem7" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="SnakeSpike" parent="GridContainer" instance=ExtResource( 3 )]
 margin_left = 102.0
 margin_right = 115.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 13, 14 )
 rect_scale = Vector2( 1, 1 )
 
-[node name="BackpackItem8" parent="GridContainer" instance=ExtResource( 3 )]
+[node name="DamageItem" parent="GridContainer" instance=ExtResource( 3 )]
 margin_left = 119.0
 margin_right = 132.0
 margin_bottom = 14.0

@@ -121,6 +121,10 @@ namespace godot
 		dict["Number of cheese"] = this->_numCheese;
 		dict["Number of fish"] = this->_numFish;
 		dict["Number of speed item"] = this->_numSpeedItem;
+		dict["Number of bat wings"] = this->_numBatWings;
+		dict["Number of boar furs"] = this->_numBoarFurs;
+		dict["Number of snake fangs"] = this->_numSnakeFangs;
+		dict["Number of damage item"] = this->_numDamageItem;
 		
 		_file->store_string(dict.to_json());
 		_file->close();
@@ -169,6 +173,26 @@ namespace godot
 	{
 		return this->_numSpeedItem;
 	}
+
+	int Loader::get_num_bat_wings()
+	{
+		return this->_numBatWings;
+	}
+
+	int Loader::get_num_boar_furs()
+	{
+		return this->_numBoarFurs;
+	}
+
+	int Loader::get_num_snake_fangs()
+	{
+		return this->_numSnakeFangs;
+	}
+
+	int Loader::get_num_damage_item()
+	{
+		return this->_numDamageItem;
+	}
 	
 	void Loader::set_start_position(Vector2 start_position)
 	{
@@ -194,7 +218,26 @@ namespace godot
 	{
 		_numSpeedItem = numSpeedItem;
 	}
-	
+
+	void Loader::set_num_bat_wings(int numBatWings)
+	{
+		_numBatWings = numBatWings;
+	}
+
+	void Loader::set_num_boar_furs(int numBoarFurs)
+	{
+		_numBoarFurs = numBoarFurs;
+	}
+
+	void Loader::set_num_snake_fangs(int numSnakeFangs)
+	{
+		_numSnakeFangs = numSnakeFangs;
+	}
+
+	void Loader::set_num_damage_item(int numDamageItem)
+	{
+		_numDamageItem = numDamageItem;
+	}
 	
 	Vector2 Loader::get_start_position()
 	{
@@ -233,6 +276,10 @@ namespace godot
 			_numCheese = rez["Number of cheese"];
 			_numFish = rez["Number of fish"];
 			_numSpeedItem = rez["Number of speed item"];
+			_numBatWings = rez["Number of bat wings"];
+			_numBoarFurs = rez["Number of boar furs"];
+			_numSnakeFangs = rez["Number of snake fangs"];
+			_numDamageItem = rez["Number of damage item"];
 			
 			//Godot::print(_player_start_position);
 			_file->close();

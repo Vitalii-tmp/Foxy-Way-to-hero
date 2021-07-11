@@ -247,7 +247,7 @@ void godot::SnakeAI::_on_hurt_area_area_entered(Area2D* _other_area)
 
 		auto item = cast_to<KinematicBody2D>(prefab->instance());
 
-		get_node(NodePath("/root/World/YSort/SnakeSpikes/"))->add_child(item);
+		get_node(NodePath("/root/World/YSort/SnakeSpike/"))->add_child(item);
 
 		item->set_global_position(pos);
 

@@ -58,6 +58,11 @@ void godot::BackpackItemButton::_on_item_button_pressed()
 			Loader::get_singleton()->set_num_speed_item(_label->get_text().to_int());
 			name = "SpeedItem";
 		}
+		else if(get_name() == "BatWing")
+		{
+			Loader::get_singleton()->set_num_bat_wings(_label->get_text().to_int());
+			name = "BatWing";
+		}
 
 		auto item = cast_to<KinematicBody2D>(prefab->instance());
 
