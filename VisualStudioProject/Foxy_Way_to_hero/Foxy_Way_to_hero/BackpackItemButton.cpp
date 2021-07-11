@@ -63,6 +63,21 @@ void godot::BackpackItemButton::_on_item_button_pressed()
 			Loader::get_singleton()->set_num_bat_wings(_label->get_text().to_int());
 			name = "BatWing";
 		}
+		else if (get_name() == "BoarFur")
+		{
+			Loader::get_singleton()->set_num_boar_furs(_label->get_text().to_int());
+			name = "BoarFur";
+		}
+		else if(get_name() == "SnakeSpike")
+		{
+			Loader::get_singleton()->set_num_snake_fangs(_label->get_text().to_int());
+			name = "SnakeSpike";
+		}
+		else if(get_name() == "DamageItem")
+		{
+			Loader::get_singleton()->set_num_damage_item(_label->get_text().to_int());
+			name = "DamageItem";
+		}
 
 		auto item = cast_to<KinematicBody2D>(prefab->instance());
 
