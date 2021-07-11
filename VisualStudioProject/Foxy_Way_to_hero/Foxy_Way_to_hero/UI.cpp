@@ -19,6 +19,15 @@ namespace godot
 	{
 		this->get_child(0)->set("text", this->get_coins_information().c_str());
 		this->get_child(1)->set("text", this->get_acorns_information().c_str());
+
+		if (!Loader::get_singleton()->get_is_first_time())
+		{
+			cast_to<Sprite>(get_node("FirstScene"))->set_visible(true);
+		}
+		else {
+			get_tree()->set_pause(false);
+			get_node("FirstScene")->queue_free();
+		}
 	}
 
 	void godot::UI::_process(float delta)

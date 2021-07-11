@@ -12,6 +12,7 @@ namespace godot
 		register_method("load_acorns_data", &Loader::load_acorns_data);
 		register_method("save_acorns_data", &Loader::save_acorns_data);
 		register_method("load_start_position_data", &Loader::load_start_position_data);
+		register_method("load_is_first_time", &Loader::load_is_first_time);
 		//register_method("save_start_position_data", &Loader::save_start_position_data);
 	}
 
@@ -26,6 +27,7 @@ namespace godot
 			load_coins_data();
 			load_acorns_data();
 			load_backpack_data();
+			load_is_first_time();
 		}
 		else
 		{
@@ -125,6 +127,7 @@ namespace godot
 		dict["Number of boar furs"] = this->_numBoarFurs;
 		dict["Number of snake fangs"] = this->_numSnakeFangs;
 		dict["Number of damage item"] = this->_numDamageItem;
+		dict["Is first time"] = this->_isFirstTime;
 		
 		_file->store_string(dict.to_json());
 		_file->close();
@@ -193,6 +196,11 @@ namespace godot
 	{
 		return this->_numDamageItem;
 	}
+
+	bool Loader::get_is_first_time()
+	{
+		return this->_isFirstTime;
+	}
 	
 	void Loader::set_start_position(Vector2 start_position)
 	{
@@ -238,6 +246,11 @@ namespace godot
 	{
 		_numDamageItem = numDamageItem;
 	}
+
+	void Loader::set_is_first_time(bool isFirstTime)
+	{
+		_isFirstTime = isFirstTime;
+	}
 	
 	Vector2 Loader::get_start_position()
 	{
@@ -282,6 +295,20 @@ namespace godot
 			_numDamageItem = rez["Number of damage item"];
 			
 			//Godot::print(_player_start_position);
+			_file->close();
+		}
+	}
+	void Loader::load_is_first_time()
+	{
+		Ref<File> _file = File::_new();
+		if (_file->file_exists(_dataFile))
+		{
+			_file->open(_dataFile, _file->READ);
+
+			const Dictionary rez = JSON::get_singleton()->parse(_file->get_as_text())->get_result();
+
+			_isFirstTime = rez["Is first time"];
+
 			_file->close();
 		}
 	}

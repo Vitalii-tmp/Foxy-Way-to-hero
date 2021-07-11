@@ -36,6 +36,7 @@ namespace godot
 		void set_num_boar_furs(int numBoarFurs);
 		void set_num_snake_fangs(int numSnakeFangs);
 		void set_num_damage_item(int numDamageItem);
+		void set_is_first_time(bool isFirstTime);
 
 		int get_coins() const;
 		int get_acorns() const;
@@ -47,11 +48,13 @@ namespace godot
 		int get_num_boar_furs();
 		int get_num_snake_fangs();
 		int get_num_damage_item();
+		bool get_is_first_time();
 		
 		Vector2 get_start_position();
 
 		void load_start_position_data();
 		void load_backpack_data();
+		void load_is_first_time();
 	private:
 		static inline Loader* _instance;
 
@@ -69,6 +72,8 @@ namespace godot
 		int _numBoarFurs = 0;
 		int _numSnakeFangs = 0;
 		int _numDamageItem = 0;
+
+		bool _isFirstTime = false;
 	};
 }
 
