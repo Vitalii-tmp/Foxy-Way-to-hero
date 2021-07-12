@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Craftman.gdns" type="Script" id=1]
 [ext_resource path="res://Sprites/NPC/alchemist.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/NPC/RecipeMenu.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Items/AlchemistPot.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Shadows/LargeShadow.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -42,7 +41,3 @@ position = Vector2( -0.731134, 3.5846 )
 scale = Vector2( 1.43452, 1.22923 )
 z_index = -1
 texture = ExtResource( 6 )
-
-[node name="AlchemistPot" parent="." instance=ExtResource( 4 )]
-position = Vector2( -45.0752, 5.27505 )
-scale = Vector2( 1.2, 1.2 )

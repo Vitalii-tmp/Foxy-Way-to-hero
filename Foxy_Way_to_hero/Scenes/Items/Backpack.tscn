@@ -8,81 +8,80 @@
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -3.22851, 9.97664 )
-rotation = 1.5708
+position = Vector2( -63.5435, 68.0317 )
+rotation = 3.14159
 scale = Vector2( 1.46744, 1.37224 )
 texture = ExtResource( 2 )
 
-[node name="GridContainer" type="GridContainer" parent="."]
-margin_left = -68.7773
-margin_top = 1.44319
-margin_right = 63.2227
-margin_bottom = 18.4432
+[node name="GridContainer" type="VBoxContainer" parent="."]
+margin_left = -71.0
+margin_top = 1.0
+margin_right = -56.0
+margin_bottom = 145.0
 rect_clip_content = true
-columns = 8
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Meat" parent="GridContainer" instance=ExtResource( 3 )]
-margin_right = 13.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 13, 14 )
+margin_right = 15.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 15, 13 )
 rect_scale = Vector2( 1, 1 )
 button_mask = 3
 
 [node name="Cheese" parent="GridContainer" instance=ExtResource( 3 )]
-margin_left = 17.0
-margin_right = 30.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 13, 14 )
+margin_top = 17.0
+margin_right = 15.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 15, 13 )
 rect_scale = Vector2( 1, 1 )
 button_mask = 3
 
 [node name="Fish" parent="GridContainer" instance=ExtResource( 3 )]
-margin_left = 34.0
-margin_right = 47.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 13, 14 )
+margin_top = 34.0
+margin_right = 15.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 13, 13 )
 rect_scale = Vector2( 1, 1 )
 button_mask = 3
 
 [node name="SpeedItem" parent="GridContainer" instance=ExtResource( 3 )]
-margin_left = 51.0
-margin_right = 64.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 13, 14 )
+margin_top = 51.0
+margin_right = 15.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 13, 13 )
 rect_scale = Vector2( 1, 1 )
 button_mask = 3
 
 [node name="BatWing" parent="GridContainer" instance=ExtResource( 3 )]
-margin_left = 68.0
-margin_right = 81.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 13, 14 )
+margin_top = 68.0
+margin_right = 15.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 13, 13 )
 rect_scale = Vector2( 1, 1 )
 button_mask = 3
 
 [node name="BoarFur" parent="GridContainer" instance=ExtResource( 3 )]
-margin_left = 85.0
-margin_right = 98.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 13, 14 )
+margin_top = 85.0
+margin_right = 15.0
+margin_bottom = 98.0
+rect_min_size = Vector2( 13, 13 )
 rect_scale = Vector2( 1, 1 )
 button_mask = 3
 
 [node name="SnakeSpike" parent="GridContainer" instance=ExtResource( 3 )]
-margin_left = 102.0
-margin_right = 115.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 13, 14 )
+margin_top = 102.0
+margin_right = 15.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 13, 13 )
 rect_scale = Vector2( 1, 1 )
 button_mask = 3
 
 [node name="DamageItem" parent="GridContainer" instance=ExtResource( 3 )]
-margin_left = 119.0
-margin_right = 132.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 13, 14 )
+margin_top = 119.0
+margin_right = 15.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 13, 13 )
 rect_scale = Vector2( 1, 1 )
 button_mask = 3

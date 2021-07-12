@@ -33,6 +33,7 @@
 #include <Array.hpp>
 #include <RandomNumberGenerator.hpp>
 #include <CenterContainer.hpp>
+#include <TextureRect.hpp>
 //My headers
 #include "Player.h"
 #include "Grass.h"
