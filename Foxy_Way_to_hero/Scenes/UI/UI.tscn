@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/UI.gdns" type="Script" id=1]
 [ext_resource path="res://Sprites/Items/Backpack.png" type="Texture" id=2]
@@ -6,21 +6,21 @@
 [ext_resource path="res://Scenes/UI/HealthUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Items/Backpack.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/UI/HungerUI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sprites/UI/button.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/NpcDialogeCraftman.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Items/Coint.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/LoadSceneButton.gdns" type="Script" id=9]
-[ext_resource path="res://Scripts/PauseButton.gdns" type="Script" id=10]
 [ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://Sprites/UI/buttonHover.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/UI/dialogsBackground.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/Shadows/MenuShadow.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/UI/menuBackground.png" type="Texture" id=15]
 [ext_resource path="res://Scripts/TypingMessage.gdns" type="Script" id=16]
+[ext_resource path="res://Sprites/UI/dialogBackgroundWithPerson.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
+size = 10
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 10
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -37,14 +37,13 @@ script = ExtResource( 1 )
 [node name="CoinText" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -35.8492
-margin_top = 25.9038
-margin_right = -17.8492
-margin_bottom = 41.9038
+margin_left = -303.105
+margin_top = 166.559
+margin_right = -285.105
+margin_bottom = 177.559
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10"
-align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,45 +52,35 @@ __meta__ = {
 [node name="AcornText" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -35.9711
-margin_top = 5.15847
-margin_right = -18.9711
-margin_bottom = 21.1585
+margin_left = -302.543
+margin_top = 156.189
+margin_right = -285.543
+margin_bottom = 167.189
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10"
-align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PauseButton" type="TextureButton" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -20.0
-margin_right = 20.0
-margin_bottom = 10.0
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 12 )
-texture_hover = ExtResource( 12 )
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="HealthUI" parent="." instance=ExtResource( 4 )]
+margin_left = 1.78583
+margin_top = 3.1748
+margin_right = 1.78583
+margin_bottom = 3.1748
+rect_scale = Vector2( 0.7, 0.7 )
 
 [node name="BackpackButton" type="TextureButton" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -36.3263
-margin_top = -43.4645
-margin_right = -11.3263
-margin_bottom = -12.4645
-rect_scale = Vector2( 1.3, 1.3 )
+margin_left = -25.4481
+margin_top = -32.2906
+margin_right = -0.44812
+margin_bottom = -1.29065
+rect_scale = Vector2( 0.945, 0.945 )
 texture_normal = ExtResource( 2 )
 script = ExtResource( 9 )
 __meta__ = {
@@ -100,40 +89,55 @@ __meta__ = {
 
 [node name="Backpack" parent="." instance=ExtResource( 5 )]
 visible = false
-position = Vector2( 221.701, 155.711 )
+position = Vector2( 352.588, 53.9134 )
+scale = Vector2( 0.741, 0.741 )
 z_index = -1
 
 [node name="CoinUI" type="Sprite" parent="."]
-position = Vector2( 273.823, 34.4672 )
-scale = Vector2( 2.40101, 2.25236 )
+position = Vector2( 8.47743, 171.739 )
 texture = ExtResource( 8 )
 hframes = 4
 
 [node name="AcornUI" type="Sprite" parent="."]
-position = Vector2( 273.694, 12.7233 )
-scale = Vector2( 2.18096, 2.18096 )
+position = Vector2( 9.18416, 161.015 )
 texture = ExtResource( 3 )
 
 [node name="Node2D" parent="." instance=ExtResource( 6 )]
-margin_left = 12.5
-margin_top = 27.5
-margin_right = 12.5
-margin_bottom = 27.5
-rect_scale = Vector2( 1.25, 1.25 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -62.579
+margin_top = 9.54594
+margin_right = -62.579
+margin_bottom = 9.54594
+rect_scale = Vector2( 0.9, 1 )
 
-[node name="DialogCountryMan" type="Sprite" parent="."]
+[node name="DialogCountryMan" type="TextureRect" parent="."]
 visible = false
-position = Vector2( 70.3201, 159.245 )
-scale = Vector2( 1.37008, 1.04599 )
-texture = ExtResource( 13 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -74.2427
+margin_top = -43.7814
+margin_right = 74.7573
+margin_bottom = -6.78137
+texture = ExtResource( 17 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="DialogCountryMan"]
-margin_left = -46.0
-margin_top = -13.0
-margin_right = 45.0
-margin_bottom = 13.0
+anchor_left = 0.602
+anchor_top = 0.5
+anchor_right = 0.602
+anchor_bottom = 0.5
+margin_left = -56.698
+margin_top = -14.5
+margin_right = 55.302
+margin_bottom = 15.5
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Hi"
 align = 1
 valign = 1
@@ -141,19 +145,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DialogCraftMan" type="Sprite" parent="."]
+[node name="DialogCraftMan" type="TextureRect" parent="."]
 visible = false
-position = Vector2( 70.3201, 159.245 )
-scale = Vector2( 1.37008, 1.04599 )
-texture = ExtResource( 13 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -74.0
+margin_top = -44.0
+margin_right = 75.0
+margin_bottom = -7.0
+texture = ExtResource( 7 )
+stretch_mode = 1
 
 [node name="Label" type="Label" parent="DialogCraftMan"]
-margin_left = -46.0
-margin_top = -15.0
-margin_right = 45.0
-margin_bottom = 17.0
+margin_left = 31.0
+margin_top = 3.0
+margin_right = 146.0
+margin_bottom = 35.0
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "I can boil a stew which 
 could update your score,
 damage and smth else"
@@ -165,6 +176,7 @@ __meta__ = {
 
 [node name="FirstScene" type="Sprite" parent="."]
 pause_mode = 2
+visible = false
 position = Vector2( 161.068, 86.9018 )
 scale = Vector2( 2.32272, 2.32272 )
 texture = ExtResource( 15 )

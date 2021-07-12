@@ -22,7 +22,7 @@ namespace godot
 	private:
 		Area2D* _detection_area = nullptr;
 		Sprite* _recipe_menu = nullptr;
-		Sprite* _dialog_window = nullptr;
+		TextureRect* _dialog_window = nullptr;
 
 		bool _is_in_area = false;
 

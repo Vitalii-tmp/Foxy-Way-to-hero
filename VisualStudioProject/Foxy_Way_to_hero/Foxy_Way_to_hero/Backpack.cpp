@@ -40,7 +40,7 @@ void godot::Backpack::_ready()
 	prefab = _resource_loader->load("res://Scenes/Items/Meat.tscn");
 	name = "Meat";
 	_b->set_normal_texture(cast_to<Sprite>(prefab->instance()->get_child(0))->get_texture());
-	_b->set_stretch_mode(3);
+	_b->set_stretch_mode(0);
 	_b->set_expand(true);
 	cast_to<Label>(get_node("GridContainer")->get_child(0)->get_child(0))->set_text(std::to_string(_number_meat).c_str());
 	_items[0] = _b;
@@ -49,7 +49,7 @@ void godot::Backpack::_ready()
 	prefab2 = _resource_loader->load("res://Scenes/Items/Cheese.tscn");
 	name = "Cheese";
 	_b2->set_normal_texture(cast_to<Sprite>(prefab2->instance()->get_child(0))->get_texture());
-	_b2->set_stretch_mode(3);
+	_b2->set_stretch_mode(0);
 	_b2->set_expand(true);
 	Godot::print(_b2->get_name());
 	cast_to<Label>(get_node("GridContainer")->get_child(1)->get_child(0))->set_text(std::to_string(_number_cheese).c_str());
@@ -60,7 +60,7 @@ void godot::Backpack::_ready()
 	prefab3 = _resource_loader->load("res://Scenes/Items/Fish.tscn");
 	name = "Fish";
 	_b3->set_normal_texture(cast_to<Sprite>(prefab3->instance()->get_child(0))->get_texture());
-	_b3->set_stretch_mode(3);
+	_b3->set_stretch_mode(0);
 	_b3->set_expand(true);
 	cast_to<Label>(get_node("GridContainer")->get_child(2)->get_child(0))->set_text(std::to_string(_number_fish).c_str());
 	_items[2] = _b3;
@@ -69,7 +69,7 @@ void godot::Backpack::_ready()
 	prefab4 = _resource_loader->load("res://Scenes/Items/SpeedItem.tscn");
 	name = "SpeedItem";
 	_b4->set_normal_texture(cast_to<Sprite>(prefab4->instance()->get_child(0))->get_texture());
-	_b4->set_stretch_mode(3);
+	_b4->set_stretch_mode(0);
 	_b4->set_expand(true);
 	cast_to<Label>(get_node("GridContainer")->get_child(3)->get_child(0))->set_text(std::to_string(_number_speed_item).c_str());
 	_items[3] = _b4;
@@ -78,7 +78,7 @@ void godot::Backpack::_ready()
 	prefab5 = _resource_loader->load("res://Scenes/Items/BatWing.tscn");
 	name = "BatWing";
 	_b5->set_normal_texture(cast_to<Sprite>(prefab5->instance()->get_child(0))->get_texture());
-	_b5->set_stretch_mode(3);
+	_b5->set_stretch_mode(0);
 	_b5->set_expand(true);
 	cast_to<Label>(get_node("GridContainer")->get_child(4)->get_child(0))->set_text(std::to_string(_number_bat_wings).c_str());
 	_items[4] = _b5;
@@ -87,7 +87,7 @@ void godot::Backpack::_ready()
 	prefab6 = _resource_loader->load("res://Scenes/Items/BoarFur.tscn");
 	name = "BoarFur";
 	_b6->set_normal_texture(cast_to<Sprite>(prefab6->instance()->get_child(0))->get_texture());
-	_b6->set_stretch_mode(3);
+	_b6->set_stretch_mode(0);
 	_b6->set_expand(true);
 	cast_to<Label>(get_node("GridContainer")->get_child(5)->get_child(0))->set_text(std::to_string(_number_boar_fur).c_str());
 	_items[5] = _b6;
@@ -96,7 +96,7 @@ void godot::Backpack::_ready()
 	prefab7 = _resource_loader->load("res://Scenes/Items/SnakeSpike.tscn");
 	name = "SnakeSpike";
 	_b7->set_normal_texture(cast_to<Sprite>(prefab7->instance()->get_child(0))->get_texture());
-	_b7->set_stretch_mode(3);
+	_b7->set_stretch_mode(0);
 	_b7->set_expand(true);
 	cast_to<Label>(get_node("GridContainer")->get_child(6)->get_child(0))->set_text(std::to_string(_number_snake_fang).c_str());
 	_items[6] = _b7;
@@ -105,7 +105,7 @@ void godot::Backpack::_ready()
 	prefab8 = _resource_loader->load("res://Scenes/Items/DamageItem.tscn");
 	name = "DamageItem";
 	_b8->set_normal_texture(cast_to<Sprite>(prefab8->instance()->get_child(0))->get_texture());
-	_b8->set_stretch_mode(3);
+	_b8->set_stretch_mode(0);
 	_b8->set_expand(true);
 	cast_to<Label>(get_node("GridContainer")->get_child(7)->get_child(0))->set_text(std::to_string(_number_damage_item).c_str());
 	_items[7] = _b8;
