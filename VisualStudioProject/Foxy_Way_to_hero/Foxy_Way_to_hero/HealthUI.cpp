@@ -29,20 +29,30 @@ void godot::HealthUI::_process(float delta)
 	if (_player_health > 87.5)
 	{
 		_fourth_heart->set_visible(true);
-		_fourth_heart->set_frame(0);
 		_first_heart->set_visible(true);
 		_second_heart->set_visible(true);
 		_third_heart->set_visible(true);
+		
+
+		_first_heart->set_frame(0);
+		_second_heart->set_frame(0);
+		_third_heart->set_frame(0);
+		_fourth_heart->set_frame(0);
 	}
 
 	if (_player_health > 75 && _player_health <= 87.5)
 	{
 		_fourth_heart->set_visible(true);
-		_fourth_heart->set_frame(1);
+		
 
 		_first_heart->set_visible(true);
 		_second_heart->set_visible(true);
 		_third_heart->set_visible(true);
+
+		_first_heart->set_frame(0);
+		_second_heart->set_frame(0);
+		_third_heart->set_frame(0);
+		_fourth_heart->set_frame(1);
 	}
 
 	if (_player_health > 62.5 && _player_health <= 75)
@@ -52,6 +62,11 @@ void godot::HealthUI::_process(float delta)
 		_third_heart->set_visible(true);
 		_third_heart->set_frame(0);
 		_fourth_heart->set_visible(false);
+
+		_first_heart->set_frame(0);
+		_second_heart->set_frame(0);
+		_third_heart->set_frame(0);
+		_fourth_heart->set_frame(1);
 	}
 
 	if (_player_health > 50 && _player_health <= 62.5)
@@ -61,42 +76,64 @@ void godot::HealthUI::_process(float delta)
 		_third_heart->set_visible(true);
 		_third_heart->set_frame(1);
 		_fourth_heart->set_visible(false);
+
+		_first_heart->set_frame(0);
+		_second_heart->set_frame(0);
+		_third_heart->set_frame(1);
+		_fourth_heart->set_frame(1);
 	}
 
 	if (_player_health > 37.5 && _player_health <= 50)
 	{
 		_first_heart->set_visible(true);
 		_second_heart->set_visible(true);
-		_second_heart->set_frame(0);
 		_third_heart->set_visible(false);
 		_fourth_heart->set_visible(false);
+
+		_first_heart->set_frame(0);
+		_second_heart->set_frame(0);
+		_third_heart->set_frame(1);
+		_fourth_heart->set_frame(1);
 	}
 
 	if (_player_health > 25 && _player_health <= 37.5)
 	{
 		_first_heart->set_visible(true);
 		_second_heart->set_visible(true);
-		_second_heart->set_frame(1);
 		_third_heart->set_visible(false);
 		_fourth_heart->set_visible(false);
+
+		_first_heart->set_frame(0);
+		_second_heart->set_frame(1);
+		_third_heart->set_frame(1);
+		_fourth_heart->set_frame(1);
 	}
 
 	if (_player_health > 12.5 && _player_health <= 25)
 	{
 		_first_heart->set_visible(true);
-		_first_heart->set_frame(0);
 		_second_heart->set_visible(false);
 		_third_heart->set_visible(false);
 		_fourth_heart->set_visible(false);
+
+		_first_heart->set_frame(0);
+		_second_heart->set_frame(1);
+		_third_heart->set_frame(1);
+		_fourth_heart->set_frame(1);
 	}
 
 	if (_player_health > 0 && _player_health <= 12.5)
 	{
 		_first_heart->set_visible(true);
-		_first_heart->set_frame(1);
+		
 		_second_heart->set_visible(false);
 		_third_heart->set_visible(false);
 		_fourth_heart->set_visible(false);
+
+		_first_heart->set_frame(1);
+		_second_heart->set_frame(1);
+		_third_heart->set_frame(1);
+		_fourth_heart->set_frame(1);
 	}
 
 	if(_player_health<=0)
