@@ -1,4 +1,4 @@
-[gd_scene load_steps=299 format=2]
+[gd_scene load_steps=301 format=2]
 
 [ext_resource path="res://Scenes/Environment/East_pointer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -23,8 +23,10 @@
 [ext_resource path="res://Scenes/Environment/Hay.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Sprites/Environment/HayBackground.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/Enemies/Boar.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Sprites/NPC/npcStore.png" type="Texture" id=24]
 [ext_resource path="res://Sprites/Environment/CliffTilesetNoCollision.png" type="Texture" id=25]
 [ext_resource path="res://Sprites/Environment/StoneGround.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Shadows/StoreShadow.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/Environment/Bush.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Sprites/Environment/Sound.png" type="Texture" id=30]
 
@@ -6041,6 +6043,15 @@ position = Vector2( -1032, -1230 )
 
 [node name="Countryman3" parent="YSort/NPC" instance=ExtResource( 18 )]
 position = Vector2( -1952, -1832 )
+
+[node name="Sprite" type="Sprite" parent="YSort/NPC/Countryman3"]
+position = Vector2( 36.5681, -6.54065 )
+texture = ExtResource( 24 )
+
+[node name="Sprite2" type="Sprite" parent="YSort/NPC/Countryman3"]
+position = Vector2( 36.1993, 11.365 )
+z_index = -1
+texture = ExtResource( 27 )
 
 [node name="Craftman" parent="YSort/NPC" instance=ExtResource( 19 )]
 position = Vector2( 64, -1440 )

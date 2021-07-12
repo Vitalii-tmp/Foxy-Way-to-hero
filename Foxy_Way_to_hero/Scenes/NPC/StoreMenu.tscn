@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Sprites/UI/menuBackground.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/UI/dialogBackgroundWithPerson.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/NPC/meat.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/NPC/fish.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/NPC/cheese.png" type="Texture" id=5]
@@ -8,111 +8,181 @@
 [ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=1]
+size = 8
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 7
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 7 )
+[node name="StoreMenu" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 7 )
-
-[node name="StoreMenu" type="Sprite"]
-position = Vector2( 74.3514, -60.8117 )
-scale = Vector2( 5.43905, 5.43905 )
+[node name="DialogCountryMan" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -16.0
+margin_right = 64.0
+margin_bottom = 16.0
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MeatButton" type="TextureButton" parent="."]
-margin_left = -16.5019
-margin_top = -19.5837
-margin_right = -0.501881
-margin_bottom = -3.58371
+[node name="Label" type="Label" parent="DialogCountryMan"]
+anchor_left = 0.598
+anchor_top = 0.391
+anchor_right = 0.598
+anchor_bottom = 0.391
+margin_left = -50.544
+margin_top = -9.39068
+margin_right = 50.456
+margin_bottom = 11.6093
+custom_fonts/font = SubResource( 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="DialogCountryMan"]
+anchor_left = 0.598
+anchor_top = 0.856
+anchor_right = 0.598
+anchor_bottom = 0.856
+margin_left = -47.8979
+margin_top = -5.53681
+margin_right = 47.1021
+margin_bottom = 5.46319
+custom_fonts/font = SubResource( 2 )
+text = "press e"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogCountryMan2" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -16.0
+margin_right = 64.0
+margin_bottom = 16.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DialogCountryMan2"]
+anchor_left = 0.598
+anchor_top = 0.11
+anchor_right = 0.599
+anchor_bottom = 0.11
+margin_left = -47.3676
+margin_top = -2.14568
+margin_right = 47.5044
+margin_bottom = 8.85432
+custom_fonts/font = SubResource( 2 )
+text = "what do you want?"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeatButton" type="TextureButton" parent="DialogCountryMan2"]
+anchor_left = 0.222
+anchor_top = 0.342
+anchor_right = 0.347
+anchor_bottom = 0.842
+margin_left = 1.64695
+margin_top = -1.12373
+margin_right = 1.64695
+margin_bottom = -1.12374
 texture_normal = ExtResource( 2 )
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="CheeseButton" type="TextureButton" parent="."]
-margin_left = -15.2941
-margin_top = -4.31288
-margin_right = 0.705963
-margin_bottom = 11.6871
+[node name="CheeseButton" type="TextureButton" parent="DialogCountryMan2"]
+anchor_left = 0.47
+anchor_top = 0.317
+anchor_right = 0.595
+anchor_bottom = 0.817
+margin_left = 3.62698
+margin_top = -0.177402
+margin_right = 3.62698
+margin_bottom = -0.177402
 texture_normal = ExtResource( 5 )
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="FishButton" type="TextureButton" parent="."]
-margin_left = -16.4813
-margin_top = 10.317
-margin_right = -0.48126
-margin_bottom = 26.317
+[node name="FishButton" type="TextureButton" parent="DialogCountryMan2"]
+anchor_left = 0.743
+anchor_top = 0.296
+anchor_right = 0.868
+anchor_bottom = 0.796
+margin_left = 1.83035
+margin_top = 0.00138092
+margin_right = 1.83035
+margin_bottom = 0.00137901
 texture_normal = ExtResource( 3 )
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Label" type="Label" parent="."]
-margin_left = 0.73691
-margin_top = -16.7067
-margin_right = 31.7369
-margin_bottom = -0.706747
-rect_scale = Vector2( 0.6, 0.6 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+[node name="Label2" type="Label" parent="DialogCountryMan2"]
+anchor_left = 0.35
+anchor_top = 0.421
+anchor_right = 0.42
+anchor_bottom = 0.765
+margin_left = -0.0473785
+margin_top = -0.00245762
+margin_right = -0.00737762
+margin_bottom = -0.010458
+custom_fonts/font = SubResource( 2 )
 text = "50"
 align = 1
-valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="."]
-margin_left = 1.01659
-margin_top = -1.04296
-margin_right = 32.0166
-margin_bottom = 14.957
-rect_scale = Vector2( 0.6, 0.6 )
+[node name="Label3" type="Label" parent="DialogCountryMan2"]
+anchor_left = 0.616
+anchor_top = 0.417
+anchor_right = 0.686
+anchor_bottom = 0.765
+margin_left = 1.9994
+margin_top = -0.0147696
+margin_right = 2.03941
+margin_bottom = -0.15077
+rect_pivot_offset = Vector2( 7.02477, 7.13698 )
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "40"
 align = 1
-valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="."]
-margin_left = 1.4493
-margin_top = 15.0338
-margin_right = 32.4493
-margin_bottom = 31.0338
-rect_scale = Vector2( 0.6, 0.6 )
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+[node name="Label4" type="Label" parent="DialogCountryMan2"]
+anchor_left = 0.875
+anchor_top = 0.394
+anchor_right = 0.946
+anchor_bottom = 0.737
+margin_left = 0.0628128
+margin_top = -0.0145559
+margin_right = -0.0251846
+margin_bottom = 0.00944328
+rect_pivot_offset = Vector2( 7.02477, 7.13698 )
+custom_fonts/font = SubResource( 2 )
 text = "60"
 align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label5" type="Label" parent="."]
-margin_left = -30.5092
-margin_top = -32.0
-margin_right = 46.4908
-margin_bottom = -11.0
-rect_scale = Vector2( 0.8, 0.8 )
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "store"
-align = 1
-valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

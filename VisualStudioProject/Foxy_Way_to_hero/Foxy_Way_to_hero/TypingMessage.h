@@ -3,9 +3,9 @@
 
 namespace godot
 {
-	class TypingMessage : public Sprite
+	class TypingMessage : public TextureRect
 	{
-		GODOT_CLASS(TypingMessage, Sprite);
+		GODOT_CLASS(TypingMessage, TextureRect);
 
 	public:
 		static void _register_methods();

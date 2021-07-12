@@ -20,7 +20,9 @@ void godot::StoreButton::_on_button_pressed()
 {
 	int coins = Loader::get_singleton()->get_coins();
 
-	const auto pos = cast_to<Node2D>(this->get_parent()->get_parent())->get_global_position();
+	Godot::print(get_parent()->get_name());
+
+	const auto pos = cast_to<Node2D>(get_parent()->get_parent()->get_parent()->get_parent())->get_global_position();
 
 	Ref<PackedScene> prefab;
 

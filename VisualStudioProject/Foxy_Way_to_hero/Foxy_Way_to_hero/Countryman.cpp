@@ -20,7 +20,7 @@ void godot::Countryman::_process(float delta)
 		str = "HI! You can buy some\n food in my store";
 	}
 	else {
-		str = "Are you hungry? Welcome\n to my store";
+		str = "Are you hungry?\nWelcome to my store";
 	}
 
 	_task_label->set("text", str.c_str());
@@ -39,11 +39,11 @@ void godot::Countryman::_ready()
 	if (rand() % 3 != 1) _task = ACORNS;
 	else _task = COINS;
 
-	_dialog_window = cast_to<TextureRect>(UI::get_singleton()->get_node("DialogCountryMan"));
+	_dialog_window = cast_to<TextureRect>(get_child(2)->get_child(0)->get_node("DialogCountryMan"));
 	
 	_task_label = cast_to<Label>(_dialog_window->get_child(0));
 	
-	_store_menu = cast_to<Sprite>(get_child(2));
+	_store_menu = cast_to<TextureRect>(get_child(2)->get_child(0)->get_node("DialogCountryMan2"));
 }
 
 void godot::Countryman::_on_detection_area_entered(Node* node)
@@ -71,6 +71,7 @@ void godot::Countryman::_buy_items()
 	if(i->is_action_just_pressed("e_action") && !_store_menu->is_visible())
 	{
 		_store_menu->set_visible(true);
+		_dialog_window->set_visible(false);
 		/*if(_task == ACORNS && Loader::get_singleton()->get_acorns() >= 30)
 		{
 			Loader::get_singleton()->set_acorns(-30);
@@ -85,6 +86,8 @@ void godot::Countryman::_buy_items()
 		Loader::get_singleton()->save_all_fields();*/
 
 	}
-	else if(i->is_action_just_pressed("e_action") && _store_menu->is_visible())
+	else if (i->is_action_just_pressed("e_action") && _store_menu->is_visible()) {
 		_store_menu->set_visible(false);
+		_dialog_window->set_visible(true);
+	}
 }
