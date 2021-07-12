@@ -25,7 +25,7 @@ namespace godot
 	private:
 
 		Area2D* _detection_area = nullptr;
-		Sprite* _dialog_window = nullptr;
+		TextureRect* _dialog_window = nullptr;
 		Sprite* _store_menu = nullptr;
 		Label* _task_label = nullptr;
 

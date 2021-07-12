@@ -20,7 +20,7 @@ void godot::Countryman::_process(float delta)
 		str = "HI! You can buy some\n food in my store";
 	}
 	else {
-		str = "Are you hunger? Welcome\n in my store";
+		str = "Are you hungry? Welcome\n to my store";
 	}
 
 	_task_label->set("text", str.c_str());
@@ -39,7 +39,7 @@ void godot::Countryman::_ready()
 	if (rand() % 3 != 1) _task = ACORNS;
 	else _task = COINS;
 
-	_dialog_window = cast_to<Sprite>(UI::get_singleton()->get_node("DialogCountryMan"));
+	_dialog_window = cast_to<TextureRect>(UI::get_singleton()->get_node("DialogCountryMan"));
 	
 	_task_label = cast_to<Label>(_dialog_window->get_child(0));
 	
