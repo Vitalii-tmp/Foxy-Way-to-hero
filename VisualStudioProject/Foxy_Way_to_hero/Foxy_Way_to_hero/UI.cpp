@@ -22,7 +22,7 @@ namespace godot
 
 		if (!Loader::get_singleton()->get_is_first_time())
 		{
-			cast_to<Sprite>(get_node("FirstScene"))->set_visible(true);
+			cast_to<TextureRect>(get_node("FirstScene"))->set_visible(true);
 		}
 		else {
 			get_tree()->set_pause(false);

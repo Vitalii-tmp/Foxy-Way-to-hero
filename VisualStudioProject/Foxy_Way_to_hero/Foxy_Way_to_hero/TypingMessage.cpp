@@ -19,7 +19,7 @@ void godot::TypingMessage::_ready()
 	_timer = Timer::_new();
 	add_child(_timer);
 
-	_message = "Hello, I`m Foxy and from\nmy childhood I have\ndreamed to become a\nhero. I think it`s time\nto do that. Let`s go\n wih me and do it together";
+	_message = "Hello, I`m Foxy and from\nmy childhood I have\ndreamed to become a\nhero. I think it`s time\nto do that. Let`s go\nwih me and do it together";
 	_current_text = "";
 
 	get_tree()->set_pause(true);
@@ -32,7 +32,7 @@ void godot::TypingMessage::_process(float delta)
 	{
 		_timer->connect("timeout", this, "_add_char");
 		//Godot::print(_current_text);
-		_timer->start(0.2);
+		_timer->start(0.1);
 	}
 	else if(_current_text == _message && !_timer->is_connected("timeout", this, "_delete_cut_scene")) {
 		/*_timer->start(3);*/
