@@ -214,7 +214,7 @@ void godot::Player::_long_attack_state()
 
 //if player roll
 void godot::Player::_roll_state()
-{
+{ 
 	_animation_tree->set("parameters/Roll/blend_position", _input_vector);
 	_animation_state->travel("Roll");
 	_input_vector = _input_vector.normalized() * _speed;
