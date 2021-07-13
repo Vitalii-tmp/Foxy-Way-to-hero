@@ -177,6 +177,8 @@ void godot::BackpackItemButton::_on_item_button_pressed()
 
 				if (text.to_int() >= 1)
 					_label->set_text(std::to_string((text.to_int() - 1)).c_str());
+
+				_player->_set_to_invisible();
 			}
 
 			
