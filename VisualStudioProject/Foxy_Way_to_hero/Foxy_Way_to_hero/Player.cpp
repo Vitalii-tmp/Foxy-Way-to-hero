@@ -218,7 +218,7 @@ void godot::Player::_roll_state()
 	_animation_tree->set("parameters/Roll/blend_position", _input_vector);
 	_animation_state->travel("Roll");
 	_input_vector = _input_vector.normalized() * _speed;
-	move_and_slide(_input_vector * 1.4);
+	move_and_slide(_input_vector * 1.7);
 
 	_knockback_vector = _knockback_vector.move_toward(Vector2::ZERO, 5);
 	move_and_slide(_knockback_vector);
