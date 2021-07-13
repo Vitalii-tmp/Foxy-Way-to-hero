@@ -111,7 +111,7 @@ void godot::BoarAI::_walk_state()
 	if (_hp < 100)
 		_agressive = true;
 
-	if (_agressive && _player != nullptr)
+	if (_agressive && _player != nullptr && _player->_get_invisible() == false)
 		_current_state = WANDER;
 }
 
@@ -138,23 +138,27 @@ void godot::BoarAI::_wander_state()
 
 void godot::BoarAI::_chase_state()
 {
-	_move_vector = (Player::_get_singleton()->get_global_position() - this->get_global_position()).normalized();
-	//_move_vector = _move_vector.move_toward(_move_vector, 5);
-	//Godot::print(_move_vector);
+	if ( _player->_get_invisible() == false)
+	{
+		_move_vector = (Player::_get_singleton()->get_global_position() - this->get_global_position()).normalized();
+		//_move_vector = _move_vector.move_toward(_move_vector, 5);
+		//Godot::print(_move_vector);
 
-	//check distance to player
-	auto _distance_to_player = sqrt(pow((this->get_global_position().x - Player::_get_singleton()->get_global_position().x), 2) +
-		pow((this->get_global_position().y - Player::_get_singleton()->get_global_position().y), 2));
+		//check distance to player
+		auto _distance_to_player = sqrt(pow((this->get_global_position().x - Player::_get_singleton()->get_global_position().x), 2) +
+			pow((this->get_global_position().y - Player::_get_singleton()->get_global_position().y), 2));
 
-	if (_distance_to_player > 130)
-		_current_state = WANDER;
+		if (_distance_to_player > 130)
+			_current_state = WANDER;
+
+		move_and_slide(_move_vector * _run_speed);
+
+		_animation_tree->set("parameters/Run/blend_position", _move_vector.normalized());
+	}
 
 	_knockback_vector = _knockback_vector.move_toward(Vector2::ZERO, 5);
 	move_and_slide(_knockback_vector);
-
-	move_and_slide(_move_vector * _run_speed);
-
-	_animation_tree->set("parameters/Run/blend_position", _move_vector.normalized());
+	
 }
 
 void godot::BoarAI::_walk()
@@ -205,7 +209,7 @@ void godot::BoarAI::_on_detection_area_body_entered(Node2D* _other_body)
 	{
 
 		_player = cast_to<Player>(_other_body);
-		if (_agressive)
+		if (_agressive && _player->_get_invisible() == false)
 		{
 			_current_state = WANDER;
 			Godot::print("attack");
@@ -270,7 +274,7 @@ void godot::BoarAI::_on_hurt_area_area_entered(Area2D* _other_area)
 
 void godot::BoarAI::_on_boar_hit_area_area_entered(Area2D* _other_area)
 {
-	if (_other_area->get_name() == "PlayerHurtArea" && _agressive)
+	if (_other_area->get_name() == "PlayerHurtArea" && _agressive && _player->_get_invisible() == false)
 	{
 		_stoping();
 	}

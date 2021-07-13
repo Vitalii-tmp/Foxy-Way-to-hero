@@ -50,7 +50,7 @@ namespace godot {
 
 		void _on_hurt_area_area_entered(Area2D* _other_area);
 		void _on_hit_effect_animation_finished();
-		
+
 		void _fire();
 		void _death();
 
@@ -58,6 +58,7 @@ namespace godot {
 		float _get_damage();
 		int _get_current_state();
 		bool _get_is_alive();
+		bool _get_invisible();
 		float _get_hp();
 		float _get_hunger();
 
@@ -66,10 +67,13 @@ namespace godot {
 		//void _add_to_backpack(Meat* meat);
 
 		void _on_escape_pressed();
-		
-		void _reset_player_speed();
+
+		void _reset_player_speed_after_snake();
+		void _reser_player_visibility();
+		void _reser_player_speed_after_item();
 
 		void _set_player_speed(float speed);
+		void _set_to_invisible();
 		// Gameplay variables
 	public:
 		Backpack* _backpack = nullptr;
@@ -77,6 +81,8 @@ namespace godot {
 
 		static inline Player* _instance = nullptr;
 
+		Sprite* _player_sprite = nullptr;
+		Sprite* _shadow = nullptr;
 
 		Vector2 _motion;
 		Vector2 _input_vector;
@@ -87,11 +93,13 @@ namespace godot {
 		AnimatedSprite* _hit_effect = nullptr;
 		AnimationNodeStateMachinePlayback* _animation_state = nullptr;
 		Area2D* _hit_area = nullptr;
-		
+
 		Timer* _death_timer = nullptr;
-		Timer* _hurt_timer = nullptr;
+		Timer* _timer = nullptr;
+		Timer* _cool_down_timer = nullptr;
 
 		bool _is_alive;
+		bool _invisible;
 		bool _can_fire;
 
 		float _speed;
@@ -102,6 +110,8 @@ namespace godot {
 		float _hunger;
 
 		int _current_state;
+		int _invisibility_cooldown;
+		int _speed_cooldown;
 
 		Ref<PackedScene>* _bullet;
 		ResourceLoader* _resource_loader;

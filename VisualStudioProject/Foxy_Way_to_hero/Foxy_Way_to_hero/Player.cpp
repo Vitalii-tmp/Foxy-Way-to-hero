@@ -21,7 +21,10 @@ void godot::Player::_register_methods()
 	register_method("_death", &Player::_death);
 
 	register_method("_on_escape_pressed", &Player::_on_escape_pressed);
-	register_method("_reset_player_speed", &Player::_reset_player_speed);
+	register_method("_reset_player_speed_after_snake", &Player::_reset_player_speed_after_snake);
+	register_method("_reset_player_visibility", &Player::_reser_player_visibility);
+	register_method("_reser_player_speed_after_item", &Player::_reser_player_speed_after_item);
+	
 }
 
 
@@ -44,7 +47,10 @@ Player::Player()
 
 	_is_alive = true;
 	_can_fire = true;
+	_invisible = false;
 
+	_speed_cooldown = 30;
+	_invisibility_cooldown = 30;
 }
 
 
@@ -65,6 +71,7 @@ void godot::Player::_ready()
 	_backpack = cast_to<Backpack>(backpack_node);
 
 	HungerUI::_get_singleton()->_set_full_player_hunger(_hunger);
+
 	/*_death_timer = Timer::_new();
 	this->add_child(_death_timer);*/
 
@@ -75,10 +82,14 @@ void godot::Player::_ready()
 	/*_death_timer = Timer::_new();
 	this->add_child(_death_timer);*/
 
-	_hurt_timer = Timer::_new();
-	this->add_child(_hurt_timer);
+	_timer = Timer::_new();
+	this->add_child(_timer);
 
 	set_global_position(Loader::get_singleton()->get_start_position());
+
+	_player_sprite = cast_to<Sprite>(get_node("PlayerSprite"));
+	_shadow = cast_to<Sprite>(get_node("Shadow"));
+
 }
 
 
@@ -124,7 +135,7 @@ void godot::Player::_physics_process(float delta)
 		_hunger -= delta;
 		HungerUI::_get_singleton()->_set_player_hunger(_hunger);
 
-		if (HungerUI::_get_singleton()->_get_player_hunger()<=0)
+		if (HungerUI::_get_singleton()->_get_player_hunger() <= 0)
 			_hunger = 0;
 
 		if (_hunger <= 0)
@@ -296,7 +307,7 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 
 		}
 
-		if (_other_area->get_name() == "BoarHitArea")
+		if (_other_area->get_name() == "BoarHitArea"&& !_invisible)
 		{
 			auto _boar = cast_to<BoarAI>(_other_area->get_parent());
 			auto _boar_damage = cast_to<BoarAI>(_other_area->get_parent())->_get_damage();
@@ -318,7 +329,7 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 
 
 
-		if (_other_area->get_name() == "SnakeHitArea")
+		if (_other_area->get_name() == "SnakeHitArea" && !_invisible)
 		{
 			auto _snake = cast_to<SnakeAI>(_other_area->get_parent());
 			auto _snake_damage = cast_to<SnakeAI>(_other_area->get_parent())->_get_damage();
@@ -332,11 +343,11 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 
 			_speed = 50;
 
-			if (!_hurt_timer->is_connected("timeout", this, "_reset_player_speed"))
+			if (!_timer->is_connected("timeout", this, "_reset_player_speed_after_snake"))
 			{
 				//Godot::print("Timer connected");
-				_hurt_timer->connect("timeout", this, "_reset_player_speed");
-				_hurt_timer->start(4);
+				_timer->connect("timeout", this, "_reset_player_speed_after_snake");
+				_timer->start(4);
 			}
 
 		}
@@ -349,7 +360,7 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 
 			_hit_effect->set_visible(true);
 			_hit_effect->play();
-			_knockback_vector = (this->get_global_position() - _cactus->get_global_position()).normalized()*100;
+			_knockback_vector = (this->get_global_position() - _cactus->get_global_position()).normalized() * 100;
 		}
 
 
@@ -416,6 +427,11 @@ bool godot::Player::_get_is_alive()
 	return _is_alive;
 }
 
+bool godot::Player::_get_invisible()
+{
+	return _invisible;
+}
+
 
 float godot::Player::_get_hp()
 {
@@ -456,14 +472,46 @@ void godot::Player::_on_escape_pressed()
 	}
 }
 
-void godot::Player::_reset_player_speed()
+void godot::Player::_reset_player_speed_after_snake()
 {
 	this->_speed = 100.f;
 
-	if (_hurt_timer->is_connected("timeout", this, "_reset_player_speed"))
+	if (_timer->is_connected("timeout", this, "_reset_player_speed_after_snake"))
 	{
 		//Godot::print("Timer connected");
-		_hurt_timer->disconnect("timeout", this, "_reset_player_speed");
+		_timer->disconnect("timeout", this, "_reset_player_speed_after_snake");
+
+	}
+}
+
+void godot::Player::_reser_player_visibility()
+{
+	if (_timer->is_connected("timeout", this, "_reset_player_visibility"))
+	{
+		//Godot::print("Timer connected");
+		_timer->disconnect("timeout", this, "_reset_player_visibility");
+		
+		auto _player_color = _player_sprite->get_modulate();
+		auto _shadow_color = _shadow->get_modulate();
+
+		auto _visibility_color = Color(_player_color.r, _player_color.g, _player_color.b, 1);
+		auto _shadow_visibility_color = Color(_shadow_color.r, _shadow_color.g, _shadow_color.b, 1);
+
+		_player_sprite->set_modulate(_visibility_color);
+		_shadow->set_modulate(_shadow_visibility_color);
+
+		_invisible = false;
+	}
+}
+
+void godot::Player::_reser_player_speed_after_item()
+{
+	this->_speed = 100.f;
+
+	if (_timer->is_connected("timeout", this, "_reser_player_speed_after_item"))
+	{
+		//Godot::print("Timer connected");
+		_timer->disconnect("timeout", this, "_reser_player_speed_after_item");
 
 	}
 }
@@ -471,6 +519,35 @@ void godot::Player::_reset_player_speed()
 void godot::Player::_set_player_speed(float speed)
 {
 	_speed = speed;
+
+	if (!_timer->is_connected("timeout", this, "_reser_player_speed_after_item"))
+	{
+		//Godot::print("Timer connected");
+		_timer->connect("timeout", this, "_reser_player_speed_after_item");
+		_timer->start(_speed_cooldown);
+	}
+
+}
+
+void godot::Player::_set_to_invisible()
+{
+	auto _player_color = _player_sprite->get_modulate();
+	auto _shadow_color =_shadow->get_modulate();
+
+	auto _invisibility_color = Color(_player_color.r, _player_color.g, _player_color.b, 0.2);
+	auto _shadow_invisibility_color = Color(_shadow_color.r, _shadow_color.g, _shadow_color.b, 0.5);
+	
+	_player_sprite->set_modulate(_invisibility_color);
+	_shadow->set_modulate(_shadow_invisibility_color);
+
+	_invisible=true;
+
+	if (!_timer->is_connected("timeout", this, "_reset_player_visibility"))
+	{
+		//Godot::print("Timer connected");
+		_timer->connect("timeout", this, "_reset_player_visibility");
+		_timer->start(_invisibility_cooldown);
+	}
 }
 
 //void godot::Player::_add_to_backpack(Meat* meat)

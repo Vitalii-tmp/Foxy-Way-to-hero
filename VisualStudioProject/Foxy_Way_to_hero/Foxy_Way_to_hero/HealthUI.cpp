@@ -125,7 +125,6 @@ void godot::HealthUI::_process(float delta)
 	if (_player_health > 0 && _player_health <= 12.5)
 	{
 		_first_heart->set_visible(true);
-		
 		_second_heart->set_visible(false);
 		_third_heart->set_visible(false);
 		_fourth_heart->set_visible(false);
