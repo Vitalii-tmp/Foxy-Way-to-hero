@@ -70,6 +70,53 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="DialogCountryMan3" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -16.0
+margin_right = 64.0
+margin_bottom = 16.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DialogCountryMan3"]
+anchor_left = 0.598
+anchor_top = 0.391
+anchor_right = 0.598
+anchor_bottom = 0.391
+margin_left = -50.544
+margin_top = -4.97598
+margin_right = 50.456
+margin_bottom = 16.024
+custom_fonts/font = SubResource( 1 )
+text = "you haven`t enought money"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="DialogCountryMan3"]
+anchor_left = 0.598
+anchor_top = 0.856
+anchor_right = 0.598
+anchor_bottom = 0.856
+margin_left = -47.8979
+margin_top = -5.53681
+margin_right = 47.1021
+margin_bottom = 5.46319
+custom_fonts/font = SubResource( 2 )
+text = "press e"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="DialogCountryMan2" type="TextureRect" parent="."]
 visible = false
 anchor_left = 0.5

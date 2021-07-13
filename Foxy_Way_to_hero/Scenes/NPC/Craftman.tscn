@@ -28,9 +28,6 @@ shape = SubResource( 1 )
 
 [node name="RecipeMenu" parent="." instance=ExtResource( 3 )]
 visible = false
-position = Vector2( 141.764, -98.4571 )
-scale = Vector2( 2.00626, 2.00626 )
-z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -41,3 +38,13 @@ position = Vector2( -0.731134, 3.5846 )
 scale = Vector2( 1.43452, 1.22923 )
 z_index = -1
 texture = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RecipeMenu" parent="CanvasLayer" instance=ExtResource( 3 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -0.28064
+margin_top = -24.1329
+margin_right = -0.28064
+margin_bottom = -24.1329

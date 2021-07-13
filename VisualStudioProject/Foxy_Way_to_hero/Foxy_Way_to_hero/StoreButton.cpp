@@ -38,8 +38,10 @@ void godot::StoreButton::_on_button_pressed()
 			prefab = _resource_loader->load("res://Scenes/Items/Meat.tscn");
 			name = "Meat";
 		}
-		else
+		else {
+			cast_to<TextureRect>(get_parent()->get_parent()->get_node("DialogCountryMan3"))->set_visible(true);
 			return;
+		}
 	}
 	else if(get_name() == "CheeseButton")
 	{
@@ -49,8 +51,10 @@ void godot::StoreButton::_on_button_pressed()
 			prefab = _resource_loader->load("res://Scenes/Items/Cheese.tscn");
 			name = "Cheese";
 		}
-		else
+		else{
+			cast_to<TextureRect>(get_parent()->get_parent()->get_node("DialogCountryMan3"))->set_visible(true);
 			return;
+		}
 	}
 	else if(get_name() == "FishButton")
 	{
@@ -61,7 +65,10 @@ void godot::StoreButton::_on_button_pressed()
 			name = "Fish";
 		}
 		else
+		{
+			cast_to<TextureRect>(get_parent()->get_parent()->get_node("DialogCountryMan3"))->set_visible(true);
 			return;
+		}
 	}
 	/*else if(get_name() == "RedFishButton")
 	{

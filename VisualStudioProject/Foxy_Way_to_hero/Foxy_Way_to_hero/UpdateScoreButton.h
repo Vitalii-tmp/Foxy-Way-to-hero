@@ -20,9 +20,11 @@ namespace godot
 
 		TextureButton* _wing_item;
 		TextureButton* _fur_item;
+		TextureButton* _snake_item;
 
 		Label* _label_wing;
 		Label* _label_fur;
+		Label* _label_spike;
 	};
 }
 

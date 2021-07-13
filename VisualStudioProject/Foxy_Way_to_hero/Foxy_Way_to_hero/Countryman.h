@@ -28,6 +28,7 @@ namespace godot
 		TextureRect* _dialog_window = nullptr;
 		TextureRect* _store_menu = nullptr;
 		Label* _task_label = nullptr;
+		TextureRect* _not_enough_money = nullptr;
 
 		task _task;
 		bool _is_in_area = false;
