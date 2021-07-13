@@ -20,7 +20,9 @@ void godot::StoreButton::_on_button_pressed()
 {
 	int coins = Loader::get_singleton()->get_coins();
 
-	const auto pos = cast_to<Node2D>(this->get_parent()->get_parent())->get_global_position();
+	Godot::print(get_parent()->get_name());
+
+	const auto pos = cast_to<Node2D>(get_parent()->get_parent()->get_parent()->get_parent())->get_global_position();
 
 	Ref<PackedScene> prefab;
 
@@ -36,8 +38,10 @@ void godot::StoreButton::_on_button_pressed()
 			prefab = _resource_loader->load("res://Scenes/Items/Meat.tscn");
 			name = "Meat";
 		}
-		else
+		else {
+			cast_to<TextureRect>(get_parent()->get_parent()->get_node("DialogCountryMan3"))->set_visible(true);
 			return;
+		}
 	}
 	else if(get_name() == "CheeseButton")
 	{
@@ -47,8 +51,10 @@ void godot::StoreButton::_on_button_pressed()
 			prefab = _resource_loader->load("res://Scenes/Items/Cheese.tscn");
 			name = "Cheese";
 		}
-		else
+		else{
+			cast_to<TextureRect>(get_parent()->get_parent()->get_node("DialogCountryMan3"))->set_visible(true);
 			return;
+		}
 	}
 	else if(get_name() == "FishButton")
 	{
@@ -59,7 +65,10 @@ void godot::StoreButton::_on_button_pressed()
 			name = "Fish";
 		}
 		else
+		{
+			cast_to<TextureRect>(get_parent()->get_parent()->get_node("DialogCountryMan3"))->set_visible(true);
 			return;
+		}
 	}
 	/*else if(get_name() == "RedFishButton")
 	{
