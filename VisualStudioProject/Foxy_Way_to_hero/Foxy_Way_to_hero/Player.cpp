@@ -129,7 +129,7 @@ void godot::Player::_physics_process(float delta)
 
 	if (_is_alive)
 	{
-		//_on_escape_pressed();
+		_on_escape_pressed();
 		_change_state_depend_on_behavior();
 
 		_hunger -= delta;
@@ -466,9 +466,10 @@ void godot::Player::_on_escape_pressed()
 		get_tree()->set_pause(true);
 
 		Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/UI/PauseMenu.tscn");
-
+		
 		auto* menu = cast_to<CanvasLayer>(prefab->instance());
 		get_node("/root/World/UI/")->add_child(menu);
+		
 	}
 }
 

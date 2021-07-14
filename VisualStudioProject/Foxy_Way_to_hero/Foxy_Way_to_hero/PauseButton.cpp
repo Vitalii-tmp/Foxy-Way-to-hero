@@ -20,7 +20,7 @@ void godot::PauseButton::_ready()
 
 void godot::PauseButton::_process(float delta)
 {
-	_on_escape_button_pressed();
+	//_on_escape_button_pressed();
 }
 
 void godot::PauseButton::_on_button_pause_pressed()
