@@ -10,16 +10,15 @@ extents = Vector2( 30.0312, 11.5183 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.166667, 16.8333 )
 texture = ExtResource( 2 )
-offset = Vector2( 0, -15.914 )
+offset = Vector2( 0, -19.941 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.631159, 15.3517 )
+position = Vector2( -0.797826, -5.31497 )
 shape = SubResource( 1 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 0.00284958, 22.6958 )
-scale = Vector2( 1.54465, 1 )
+position = Vector2( -0.163817, -2.3042 )
+scale = Vector2( 1.54465, 1.41667 )
 z_index = -1
 texture = ExtResource( 1 )
