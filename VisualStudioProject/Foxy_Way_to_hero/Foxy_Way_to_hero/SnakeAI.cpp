@@ -32,6 +32,9 @@ void godot::SnakeAI::_register_methods()
 
 	register_method("_on_hit_effect_animation_finished", &SnakeAI::_on_hit_effect_animation_finished);
 	register_method("_change_move_vector", &SnakeAI::_change_move_vector);
+
+	register_method("_spawn_coin", &SnakeAI::_spawn_coin);
+	
 	
 }
 
@@ -49,6 +52,7 @@ void godot::SnakeAI::_physics_process(float delta)
 	{
 		_is_alive = false;
 		_animation_state->travel("Die");
+		
 	}
 
 	if (_is_alive && !_is_attaking)
@@ -241,15 +245,8 @@ void godot::SnakeAI::_on_hurt_area_area_entered(Area2D* _other_area)
 	if (_hp <= 0 &&(_other_area->get_name() == "LongAttackArea"|| _other_area->get_name() == "ShortAttackArea"))
 	{
 
-		auto pos = this->get_global_position();
-
-		Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/SnakeSpike.tscn");
-
-		auto item = cast_to<KinematicBody2D>(prefab->instance());
-
-		get_node(NodePath("/root/World/YSort/SnakeSpike/"))->add_child(item);
-
-		item->set_global_position(pos);
+		_spawn_coin();
+		_spawn_spike();
 
 	}
 }
@@ -336,4 +333,30 @@ void godot::SnakeAI::_change_move_vector()
 		_timer->disconnect("timeout", this, "_change_move_vector");
 	}
 
+}
+
+void godot::SnakeAI::_spawn_coin()
+{
+	auto pos = this->get_global_position();
+
+	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/Coin.tscn");
+
+	auto item = cast_to<Area2D>(prefab->instance());
+
+	get_node(NodePath("/root/World/YSort/Coins/"))->add_child(item);
+
+	item->set_global_position(pos);
+}
+
+void godot::SnakeAI::_spawn_spike()
+{
+	auto pos = this->get_global_position();
+
+	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/SnakeSpike.tscn");
+
+	auto item = cast_to<KinematicBody2D>(prefab->instance());
+
+	get_node(NodePath("/root/World/YSort/SnakeSpike/"))->add_child(item);
+
+	item->set_global_position(pos);
 }

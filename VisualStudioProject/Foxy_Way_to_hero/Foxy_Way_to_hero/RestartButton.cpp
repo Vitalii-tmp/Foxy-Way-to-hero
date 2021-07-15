@@ -25,6 +25,8 @@ void godot::RestartButton::_process(float delta)
 
 	if (i->is_action_just_pressed("ui_cancel") && get_tree()->is_paused())
 	{
+		i->action_release("ui_cancel");
+
 		Godot::print("esc action");
 		get_tree()->set_pause(false);
 		this->get_parent()->queue_free();

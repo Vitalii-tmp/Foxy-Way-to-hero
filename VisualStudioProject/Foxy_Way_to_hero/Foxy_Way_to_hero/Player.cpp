@@ -465,6 +465,9 @@ void godot::Player::_on_escape_pressed()
 
 	if (i->is_action_just_pressed("ui_cancel") && !get_tree()->is_paused())
 	{
+
+		i->action_release("ui_cancel");
+
 		get_tree()->set_pause(true);
 		
 		Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/UI/PauseMenu.tscn");

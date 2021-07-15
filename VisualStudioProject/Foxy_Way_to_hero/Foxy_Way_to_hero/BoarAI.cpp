@@ -258,17 +258,8 @@ void godot::BoarAI::_on_hurt_area_area_entered(Area2D* _other_area)
 
 	if (_hp <= 0 && (_other_area->get_name() == "LongAttackArea" || _other_area->get_name() == "ShortAttackArea"))
 	{
-
-		auto pos = this->get_global_position();
-
-		Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/BoarFur.tscn");
-
-		auto item = cast_to<KinematicBody2D>(prefab->instance());
-
-		get_node(NodePath("/root/World/YSort/BoarFur/"))->add_child(item);
-
-		item->set_global_position(pos);
-
+		_spawn_coin();
+		_spawn_fur();
 	}
 }
 
@@ -354,6 +345,32 @@ bool godot::BoarAI::_get_agressive()
 godot::Vector2 godot::BoarAI::_get_move_vector()
 {
 	return _move_vector;
+}
+
+void godot::BoarAI::_spawn_coin()
+{
+	auto pos = this->get_global_position();
+
+	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/Coin.tscn");
+
+	auto item = cast_to<Area2D>(prefab->instance());
+
+	get_node(NodePath("/root/World/YSort/Coins/"))->add_child(item);
+
+	item->set_global_position(pos);
+}
+
+void godot::BoarAI::_spawn_fur()
+{
+	auto pos = this->get_global_position();
+
+	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/BoarFur.tscn");
+
+	auto item = cast_to<KinematicBody2D>(prefab->instance());
+
+	get_node(NodePath("/root/World/YSort/BoarFur/"))->add_child(item);
+
+	item->set_global_position(pos);
 }
 
 

@@ -36,6 +36,10 @@ namespace godot
 		void _on_die_effect_animation_finished();
 		void _on_hit_effect_animation_finished();
 		
+		void _spawn_coin();
+		void _spawn_wing();
+
+
 		//bat states and state changer
 		void _change_state_depend_on_player_position();
 		void _idle_state();

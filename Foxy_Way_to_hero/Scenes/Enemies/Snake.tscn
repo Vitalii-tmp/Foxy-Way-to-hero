@@ -210,9 +210,12 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.9 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "_spawn_coin"
+}, {
 "args": [  ],
 "method": "queue_free"
 } ]
@@ -263,9 +266,12 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.9 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "_spawn_coin"
+}, {
 "args": [  ],
 "method": "queue_free"
 } ]
