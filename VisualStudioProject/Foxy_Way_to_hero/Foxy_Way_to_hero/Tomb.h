@@ -14,9 +14,10 @@ namespace godot
 		void _ready();
 
 		void _load_death_menu();
+		void _load_fadeout_effect();
 
 	private:
-		Timer* _death_timer = nullptr;
+		Timer* _timer = nullptr;
 		ResourceLoader* _resource_loader;
 	};
 }

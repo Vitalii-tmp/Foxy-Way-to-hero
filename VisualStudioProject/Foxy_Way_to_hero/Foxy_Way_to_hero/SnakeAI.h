@@ -40,6 +40,9 @@ namespace godot
 
 		void walk();
 		void _change_move_vector();
+		
+		void _spawn_coin();
+		void _spawn_spike();
 		//Gameplay variables
 	public:
 

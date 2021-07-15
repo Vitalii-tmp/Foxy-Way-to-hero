@@ -107,8 +107,12 @@ void godot::BatAI::_on_hurt_area_area_entered(Area2D* _other_area)
 		_hp -= _pl_damage;
 	}
 
-	if (_hp <= 0)
+	if (_hp <= 0&&(_other_area->get_name() == "ShortAttackArea"|| _other_area->get_name() == "LongAttackArea"))
 	{
+
+		_spawn_coin();
+		_spawn_wing();
+
 		_is_alive = false;
 
 
@@ -117,15 +121,9 @@ void godot::BatAI::_on_hurt_area_area_entered(Area2D* _other_area)
 		_die_effect->set_visible(true);
 		_die_effect->play();
 
-		auto pos = this->get_global_position();
+		
 
-		Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/BatWing.tscn");
-
-		auto item = cast_to<KinematicBody2D>(prefab->instance());
-
-		get_node(NodePath("/root/World/YSort/BatWing/"))->add_child(item);
-
-		item->set_global_position(pos);
+	
 	}
 }
 
@@ -158,17 +156,10 @@ void godot::BatAI::_on_player_detection_area_body_exited(Node* _other_body)
 
 void godot::BatAI::_on_die_effect_animation_finished()
 {
-	/*auto pos = this->get_global_position();
-	
-	queue_free();
+	/*_spawn_coin();
+	_spawn_wing();*/
 
-	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/BatWing.tscn");
 
-	auto item = cast_to<KinematicBody2D>(prefab->instance());
-
-	get_node(NodePath("/root/World/YSort/BatWing/"))->add_child(item);
-
-	item->set_global_position(pos + Vector2(0, 20));*/
 	queue_free();
 }
 
@@ -178,6 +169,32 @@ void godot::BatAI::_on_hit_effect_animation_finished()
 {
 	_hit_effect->set_visible(false);
 	_hit_effect->set_frame(0);
+}
+
+void godot::BatAI::_spawn_coin()
+{
+	auto pos = this->get_global_position();
+
+	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/Coin.tscn");
+
+	auto item = cast_to<Area2D>(prefab->instance());
+
+	get_node(NodePath("/root/World/YSort/Coins/"))->add_child(item);
+
+	item->set_global_position(pos);
+}
+
+void godot::BatAI::_spawn_wing()
+{
+	auto pos = this->get_global_position();
+
+	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/BatWing.tscn");
+
+	auto item = cast_to<KinematicBody2D>(prefab->instance());
+
+	get_node(NodePath("/root/World/YSort/BatWing/"))->add_child(item);
+
+	item->set_global_position(pos);
 }
 
 

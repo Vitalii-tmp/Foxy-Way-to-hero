@@ -47,6 +47,9 @@ namespace godot
 		float _get_damage();
 		bool _get_agressive();
 		Vector2 _get_move_vector();
+
+		void _spawn_coin();
+		void _spawn_fur();
 		
 		//Gameplay variables
 	private:
