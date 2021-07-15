@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Shadows/StoreShadow.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Environment/building3.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 31.6921, 8.3811 )
+
+[node name="Building3" type="StaticBody2D"]
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+offset = Vector2( 0, -17.308 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.315552, -0.619881 )
+shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -0.39685, 0.63405 )
+scale = Vector2( 1.45472, 1.45886 )
+z_index = -1
+texture = ExtResource( 1 )
