@@ -41,4 +41,7 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<Item>();
 	register_class<HungerUI>();
 	register_class<TypingMessage>();
+	register_class<MainMenuCamera>();
+
+
 }

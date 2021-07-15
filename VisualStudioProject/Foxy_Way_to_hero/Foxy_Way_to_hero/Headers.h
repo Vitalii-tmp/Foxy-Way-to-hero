@@ -34,6 +34,8 @@
 #include <RandomNumberGenerator.hpp>
 #include <CenterContainer.hpp>
 #include <TextureRect.hpp>
+
+
 //My headers
 #include "Player.h"
 #include "Grass.h"
@@ -63,6 +65,8 @@
 #include "Item.h"
 #include "HungerUI.h"
 #include "TypingMessage.h"
+#include "MainMenuCamera.h"
+
 
 //cpp headers
 #include <cmath>
