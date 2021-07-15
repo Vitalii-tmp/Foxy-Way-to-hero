@@ -140,6 +140,8 @@ void godot::Player::_physics_process(float delta)
 
 		if (_hunger <= 0)
 			_hp -= delta;
+
+		_on_escape_pressed();
 	}
 
 }
@@ -463,10 +465,15 @@ void godot::Player::_on_escape_pressed()
 
 	if (i->is_action_just_pressed("ui_cancel") && !get_tree()->is_paused())
 	{
+
 		Godot::print("escape");
 		get_tree()->set_pause(true);
 		Godot::print("set pause");
 
+		i->action_release("ui_cancel");
+
+		get_tree()->set_pause(true);
+		
 		Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/UI/PauseMenu.tscn");
 		Godot::print("set load prefab");
 

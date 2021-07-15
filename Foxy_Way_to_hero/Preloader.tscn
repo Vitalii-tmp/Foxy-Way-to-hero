@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://VideoPlayer.gdns" type="Script" id=1]
+[ext_resource path="res://Preloader.ogv" type="VideoStream" id=2]
+
+[node name="Preloader" type="Control"]
+margin_right = 323.0
+margin_bottom = 184.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 320.0
+margin_bottom = 181.0
+stream = ExtResource( 2 )
+autoplay = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="finished" from="VideoPlayer" to="." method="_on_video_player_finished"]

@@ -20,10 +20,10 @@ void ContinueButton::_ready()
 	connect("pressed", this, "_on_button_continue_pressed");
 }
 
-//void godot::ContinueButton::_process(float delta)
-//{
-//	
-//}
+void godot::ContinueButton::_process(float delta)
+{
+	
+}
 
 void ContinueButton::_on_button_continue_pressed()
 {

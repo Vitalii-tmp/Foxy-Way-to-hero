@@ -1,4 +1,4 @@
-[gd_scene load_steps=309 format=2]
+[gd_scene load_steps=310 format=2]
 
 [ext_resource path="res://Scenes/Environment/East_pointer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -35,9 +35,10 @@
 [ext_resource path="res://Scenes/Environment/Box.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Scenes/Environment/Jug.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Scenes/Environment/CactusType2.tscn" type="PackedScene" id=35]
-[ext_resource path="res://Scenes/Environment/Cactus.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Scenes/Effects/FadeIn.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Scenes/Environment/Building.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Scenes/Environment/Building2.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Scenes/Environment/Cactus.tscn" type="PackedScene" id=39]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -10708,7 +10709,7 @@ position = Vector2( 39.1655, 11.7676 )
 
 [node name="Cactuses" type="YSort" parent="YSort"]
 
-[node name="CactusType1" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType1" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2462.77, -4002.96 )
 
 [node name="CactusType2" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -10717,16 +10718,16 @@ position = Vector2( -2443.84, -3992.99 )
 [node name="CactusType3" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -2276.33, -3945.75 )
 
-[node name="CactusType4" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType4" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2258.65, -3954.17 )
 
-[node name="CactusType5" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType5" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2408.31, -3863.95 )
 
 [node name="CactusType6" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -2069.96, -3920.1 )
 
-[node name="CactusType7" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType7" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2327.82, -4116.99 )
 
 [node name="CactusType8" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -10783,40 +10784,40 @@ position = Vector2( -1662.06, -4048.89 )
 [node name="CactusType25" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -1968.23, -3986.28 )
 
-[node name="CactusType26" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType26" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2603.92, -4065.15 )
 
-[node name="CactusType27" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType27" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2630.62, -4179.27 )
 
-[node name="CactusType28" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType28" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2417.04, -4162.59 )
 
-[node name="CactusType29" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType29" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2536.51, -4261.37 )
 
-[node name="CactusType30" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType30" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2320.14, -4287.49 )
 
-[node name="CactusType31" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType31" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2165.56, -4081.79 )
 
-[node name="CactusType32" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType32" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1915.98, -4054.23 )
 
-[node name="CactusType33" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType33" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1964.74, -4236.18 )
 
-[node name="CactusType34" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType34" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2078.09, -4048.87 )
 
-[node name="CactusType35" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType35" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2512.85, -4284.63 )
 
-[node name="CactusType36" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType36" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2458.05, -4213.57 )
 
-[node name="CactusType37" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType37" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2474.31, -4248.22 )
 
 [node name="CactusType38" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -10834,13 +10835,13 @@ position = Vector2( -2513.77, -4259.86 )
 [node name="CactusType42" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -2426.6, -4202.33 )
 
-[node name="CactusType43" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType43" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2005.31, -4367.69 )
 
-[node name="CactusType44" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType44" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1878.18, -4307.83 )
 
-[node name="CactusType45" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType45" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1940.69, -4521.31 )
 
 [node name="CactusType46" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -10861,37 +10862,37 @@ position = Vector2( -1777, -4448.21 )
 [node name="CactusType51" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -2107.02, -4516.01 )
 
-[node name="CactusType52" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType52" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2126.09, -4488.47 )
 
-[node name="CactusType53" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType53" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2211.67, -4235.48 )
 
-[node name="CactusType54" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType54" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2190.27, -4422.18 )
 
-[node name="CactusType55" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType55" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2108.8, -4305.64 )
 
-[node name="CactusType56" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType56" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2252.1, -4531.59 )
 
-[node name="CactusType57" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType57" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2256.86, -4261.64 )
 
-[node name="CactusType58" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType58" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2127.24, -4594.62 )
 
-[node name="CactusType59" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType59" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1859.67, -4237.26 )
 
-[node name="CactusType60" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType60" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2461.33, -4530.67 )
 
-[node name="CactusType61" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType61" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2540.37, -4401.17 )
 
-[node name="CactusType62" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType62" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2573.94, -4364.55 )
 
 [node name="CactusType63" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -10912,40 +10913,40 @@ position = Vector2( -2415.37, -4504.35 )
 [node name="CactusType68" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -2223.81, -4357.85 )
 
-[node name="CactusType69" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType69" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1988.21, -4698.59 )
 
-[node name="CactusType70" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType70" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1968.86, -4788.73 )
 
-[node name="CactusType71" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType71" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1976.41, -4767.02 )
 
-[node name="CactusType72" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType72" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1974.99, -4733.99 )
 
-[node name="CactusType73" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType73" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1833.41, -4802.89 )
 
-[node name="CactusType74" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType74" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1768.76, -4680.66 )
 
-[node name="CactusType75" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType75" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2027.38, -4611.28 )
 
-[node name="CactusType76" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType76" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2090.15, -4715.58 )
 
-[node name="CactusType77" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType77" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1866.45, -4796.28 )
 
-[node name="CactusType78" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType78" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1840.96, -4772.21 )
 
-[node name="CactusType79" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType79" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1791.88, -4762.78 )
 
-[node name="CactusType80" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType80" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1869.28, -4771.74 )
 
 [node name="CactusType81" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -10966,37 +10967,37 @@ position = Vector2( -1705.99, -4816.9 )
 [node name="CactusType86" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -1763.31, -4532.12 )
 
-[node name="CactusType87" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType87" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -2467.66, -4644.08 )
 
 [node name="CactusType88" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -2475.68, -4629.38 )
 
-[node name="CactusType89" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType89" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1611.88, -4751.73 )
 
-[node name="CactusType90" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType90" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1672.76, -4800.34 )
 
 [node name="CactusType91" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -1548.96, -4814.28 )
 
-[node name="CactusType92" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType92" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1529.48, -4797.8 )
 
-[node name="CactusType93" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType93" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1650.47, -4849.49 )
 
-[node name="CactusType94" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType94" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1633.48, -4570.56 )
 
-[node name="CactusType95" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType95" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1619.17, -4558.9 )
 
-[node name="CactusType96" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType96" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1583.68, -4683.92 )
 
-[node name="CactusType97" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType97" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1522.23, -4634.66 )
 
 [node name="CactusType98" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -11017,10 +11018,10 @@ position = Vector2( -1168.49, -4202.84 )
 [node name="CactusType103" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -1065.25, -4262.24 )
 
-[node name="CactusType104" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType104" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1378.5, -4103.84 )
 
-[node name="CactusType105" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType105" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1067.37, -4236.78 )
 
 [node name="CactusType106" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -11053,31 +11054,31 @@ position = Vector2( -1404, -4384 )
 [node name="CactusType115" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -1206, -4820 )
 
-[node name="CactusType116" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType116" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1641.65, -4063.59 )
 
-[node name="CactusType117" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType117" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1356.54, -4355.44 )
 
-[node name="CactusType118" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType118" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1245.42, -4611.36 )
 
-[node name="CactusType119" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType119" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1109.6, -4725.85 )
 
-[node name="CactusType120" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType120" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -943.479, -4743.81 )
 
-[node name="CactusType121" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType121" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -817.763, -4286.96 )
 
-[node name="CactusType122" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType122" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -660.619, -4478.91 )
 
-[node name="CactusType123" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType123" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -968.842, -4080.96 )
 
-[node name="CactusType124" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType124" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -1144.89, -3991.06 )
 
 [node name="CactusType125" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -11092,10 +11093,10 @@ position = Vector2( -696, -4446 )
 [node name="CactusType128" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -989, -4558 )
 
-[node name="CactusType129" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType129" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -969, -4572 )
 
-[node name="CactusType130" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType130" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -812, -4116 )
 
 [node name="CactusType131" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -11107,10 +11108,10 @@ position = Vector2( -922.708, -4472.2 )
 [node name="CactusType133" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -1396.07, -4296.25 )
 
-[node name="CactusType134" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType134" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -678.647, -4518.58 )
 
-[node name="CactusType135" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType135" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -727.729, -4561.52 )
 
 [node name="CactusType136" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -11119,10 +11120,10 @@ position = Vector2( -721.594, -4546.89 )
 [node name="CactusType137" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -700.357, -4561.52 )
 
-[node name="CactusType138" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType138" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -680.063, -4557.27 )
 
-[node name="CactusType139" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType139" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -696.581, -4512.91 )
 
 [node name="CactusType140" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -11134,10 +11135,10 @@ position = Vector2( -722.066, -4453.45 )
 [node name="CactusType142" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -691.86, -4341.28 )
 
-[node name="CactusType143" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType143" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -697.472, -4379.45 )
 
-[node name="CactusType144" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType144" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -662.676, -4345.77 )
 
 [node name="CactusType145" parent="YSort/Cactuses" instance=ExtResource( 35 )]
@@ -11233,64 +11234,64 @@ position = Vector2( -493, -4767.14 )
 [node name="CactusType175" parent="YSort/Cactuses" instance=ExtResource( 35 )]
 position = Vector2( -700, -4684.14 )
 
-[node name="CactusType176" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType176" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -754.527, -4790.91 )
 
-[node name="CactusType177" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType177" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -639.324, -4723.63 )
 
-[node name="CactusType178" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType178" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -556.076, -4546.21 )
 
-[node name="CactusType179" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType179" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -499.736, -4436.05 )
 
-[node name="CactusType180" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType180" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -245.785, -4415.03 )
 
-[node name="CactusType181" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType181" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -386.215, -4734.57 )
 
-[node name="CactusType182" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType182" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -633.438, -4836.31 )
 
-[node name="CactusType183" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType183" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -437.509, -4584.05 )
 
-[node name="CactusType184" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType184" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -580.921, -4322.31 )
 
-[node name="CactusType185" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType185" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -574.557, -4220.49 )
 
-[node name="CactusType186" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType186" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -457.177, -4280.59 )
 
-[node name="CactusType187" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType187" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -691.937, -4206.35 )
 
-[node name="CactusType188" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType188" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -441.621, -4187.26 )
 
-[node name="CactusType189" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType189" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -324.948, -4146.95 )
 
-[node name="CactusType190" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType190" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -252.116, -4260.09 )
 
-[node name="CactusType191" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType191" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -620.519, -4145.54 )
 
-[node name="CactusType192" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType192" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -324.241, -4332.21 )
 
-[node name="CactusType193" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType193" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -177.439, -4234.07 )
 
-[node name="CactusType194" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType194" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -713.244, -4101.72 )
 
-[node name="CactusType195" parent="YSort/Cactuses" instance=ExtResource( 36 )]
+[node name="CactusType195" parent="YSort/Cactuses" instance=ExtResource( 39 )]
 position = Vector2( -639.078, -4278.52 )
 
 [node name="BatWing" type="YSort" parent="YSort"]
@@ -11485,5 +11486,7 @@ position = Vector2( 6744, 744 )
 position = Vector2( -3992, -4960 )
 
 [node name="UI" parent="." instance=ExtResource( 12 )]
+
+[node name="FadeIn" parent="UI" instance=ExtResource( 36 )]
 
 [editable path="Camera2D"]

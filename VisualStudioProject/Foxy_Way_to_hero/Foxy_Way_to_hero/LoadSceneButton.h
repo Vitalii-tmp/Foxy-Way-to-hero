@@ -13,9 +13,12 @@ namespace godot
 		void _ready();
 
 		void _on_button_pressed();
+		void _load_world();
+		void _load_main_menu();
 
 	private:
 		ResourceLoader* _resource_loader = nullptr;
+		Timer* _timer = nullptr;
 	};
 }
 

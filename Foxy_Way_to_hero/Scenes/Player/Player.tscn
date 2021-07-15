@@ -767,7 +767,7 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="PlayerSprite" type="Sprite" parent="."]
-position = Vector2( 0, -8.20641 )
+position = Vector2( 0, -8.33141 )
 scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 1 )
 hframes = 85

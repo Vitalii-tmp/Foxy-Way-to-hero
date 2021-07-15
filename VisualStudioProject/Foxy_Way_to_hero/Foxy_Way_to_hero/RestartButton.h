@@ -16,8 +16,14 @@ namespace godot
 
 		void _on_restart_button_pressed();
 
+		void _restart_world();
+
 	private:
 		ResourceLoader* _resource_loader = nullptr;
+
+		Timer* _timer = nullptr;
+
+		String _button_name;
 	};
 }
 

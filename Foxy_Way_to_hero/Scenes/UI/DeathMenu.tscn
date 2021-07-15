@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/LoadSceneButton.gdns" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Sprites/UI/button.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Shadows/MenuShadow.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/UI/menuBackground.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Effects/FadeIn.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -102,3 +103,5 @@ position = Vector2( 159.59, 91.7626 )
 scale = Vector2( 20.9339, 12.4982 )
 z_index = -1
 texture = ExtResource( 5 )
+
+[node name="FadeIn" parent="." instance=ExtResource( 7 )]
