@@ -17,6 +17,7 @@
 #include <Control.hpp>
 #include <Texture.hpp>
 #include <Vector2.hpp>
+#include <VideoPlayer.hpp>
 
 #include <Position2D.hpp>
 #include <Input.hpp>
@@ -66,7 +67,7 @@
 #include "HungerUI.h"
 #include "TypingMessage.h"
 #include "MainMenuCamera.h"
-
+#include "Preloader.h"
 
 //cpp headers
 #include <cmath>

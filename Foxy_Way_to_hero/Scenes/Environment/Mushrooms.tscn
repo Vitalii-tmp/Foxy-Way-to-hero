@@ -65,7 +65,7 @@ animations = [ {
 show_behind_parent = true
 position = Vector2( 0.140305, 0 )
 frames = SubResource( 296 )
-frame = 8
+frame = 10
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Sprite"]

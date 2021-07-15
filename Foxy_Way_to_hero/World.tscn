@@ -2654,6 +2654,10 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 752, 752 )
 
 [node name="TextureRect" type="TextureRect" parent="Background"]
+anchor_left = 2.54785
+anchor_top = 0.0020752
+anchor_right = 2.54785
+anchor_bottom = 0.00213623
 margin_left = -1721.54
 margin_top = -1591.67
 margin_right = 2175.46
@@ -6540,6 +6544,5 @@ energy = 1.14
 shadow_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.439216, 0.439216, 0.439216, 1 )
 
 [editable path="Camera2D"]
