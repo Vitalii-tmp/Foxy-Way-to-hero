@@ -51,6 +51,9 @@ Player::Player()
 
 	_speed_cooldown = 30;
 	_invisibility_cooldown = 30;
+	_is_received_task_hunter = false;
+
+	_count_killed_boars = 0;
 }
 
 
@@ -445,6 +448,16 @@ float godot::Player::_get_hunger()
 	return _hunger;
 }
 
+bool godot::Player::_get_is_received_task_hunter()
+{
+	return _is_received_task_hunter;
+}
+
+int godot::Player::_get_killed_boars()
+{
+	return _count_killed_boars;
+}
+
 void godot::Player::_set_hp(float _new_value)
 {
 	this->_hp = _new_value;
@@ -453,6 +466,21 @@ void godot::Player::_set_hp(float _new_value)
 void godot::Player::_set_hunger(float _new_value)
 {
 	this->_hunger = _new_value;
+}
+
+void godot::Player::_set_is_received_task_hunter(bool is_received_task_hunter)
+{
+	this->_is_received_task_hunter = is_received_task_hunter;
+}
+
+void godot::Player::_set_plus_killed_boars(int plus)
+{
+	_count_killed_boars += plus;
+}
+
+void godot::Player::_set_killed_boars(int killed_boars)
+{
+	_count_killed_boars = killed_boars;
 }
 
 

@@ -69,6 +69,7 @@
 #include "TypingMessage.h"
 #include "MainMenuCamera.h"
 #include "Preloader.h"
+#include "NPC.h"
 #include "GameManager.h"
 #include "Mushrooms.h"
 

@@ -62,6 +62,7 @@ void godot::BoarAI::_physics_process(float delta)
 	//Godot::print(String::num(_hp));
 	if (_hp <= 0)
 	{
+		
 		_is_alive = false;
 		_agressive = false;
 		_animation_state->travel("Die");
@@ -349,6 +350,11 @@ godot::Vector2 godot::BoarAI::_get_move_vector()
 
 void godot::BoarAI::_spawn_coin()
 {
+	if (Player::_get_singleton()->_get_is_received_task_hunter())
+	{
+		Player::_get_singleton()->_set_plus_killed_boars(1);
+		Godot::print(String::num(Player::_get_singleton()->_get_killed_boars()));
+	}
 	auto pos = this->get_global_position();
 
 	Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/Coin.tscn");
