@@ -72,6 +72,7 @@
 #include "NPC.h"
 #include "GameManager.h"
 #include "Mushrooms.h"
+#include "SelectionButton.h"
 
 //cpp headers
 #include <cmath>

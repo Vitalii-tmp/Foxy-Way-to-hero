@@ -33,6 +33,7 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="DetectionArea" type="Area2D" parent="."]
