@@ -6,7 +6,8 @@ namespace godot
 	enum task
 	{
 		ACORNS,
-		COINS
+		COINS,
+		HUNTER,
 	};
 	
 	class Countryman : public Node2D

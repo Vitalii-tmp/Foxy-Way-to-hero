@@ -68,6 +68,7 @@
 #include "TypingMessage.h"
 #include "MainMenuCamera.h"
 #include "Preloader.h"
+#include "NPC.h"
 
 //cpp headers
 #include <cmath>

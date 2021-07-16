@@ -61,9 +61,15 @@ namespace godot {
 		bool _get_invisible();
 		float _get_hp();
 		float _get_hunger();
+		bool _get_is_received_task_hunter();
+		int _get_killed_boars();
 
 		void _set_hp(float _new_value);
 		void _set_hunger(float _new_value);
+		void _set_is_received_task_hunter(bool is_received_task_hunter);
+		void _set_plus_killed_boars(int plus);
+		void _set_killed_boars(int killed_boars);
+
 		//void _add_to_backpack(Meat* meat);
 
 		void _on_escape_pressed();
@@ -101,6 +107,7 @@ namespace godot {
 		bool _is_alive;
 		bool _invisible;
 		bool _can_fire;
+		bool _is_received_task_hunter = false;
 
 		float _speed;
 		//int _coins;
@@ -112,6 +119,7 @@ namespace godot {
 		int _current_state;
 		int _invisibility_cooldown;
 		int _speed_cooldown;
+		int _count_killed_boars;
 
 		Ref<PackedScene>* _bullet;
 		ResourceLoader* _resource_loader;

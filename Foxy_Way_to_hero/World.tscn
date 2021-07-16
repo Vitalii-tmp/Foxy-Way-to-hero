@@ -1,4 +1,4 @@
-[gd_scene load_steps=313 format=2]
+[gd_scene load_steps=314 format=2]
 
 [ext_resource path="res://Scenes/Environment/East_pointer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -42,6 +42,7 @@
 [ext_resource path="res://Scenes/Environment/Building3.tscn" type="PackedScene" id=40]
 [ext_resource path="res://Scenes/Environment/Building4.tscn" type="PackedScene" id=41]
 [ext_resource path="res://Scenes/Environment/Building5.tscn" type="PackedScene" id=42]
+[ext_resource path="res://Scenes/NPC/NPC.tscn" type="PackedScene" id=43]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -11134,6 +11135,36 @@ position = Vector2( -1903.93, -1408 )
 [node name="Boar12" parent="YSort/Boars" instance=ExtResource( 23 )]
 position = Vector2( -2791.93, -1656 )
 
+[node name="Boar13" parent="YSort/Boars" instance=ExtResource( 23 )]
+position = Vector2( 1058.38, -2296.83 )
+
+[node name="Boar14" parent="YSort/Boars" instance=ExtResource( 23 )]
+position = Vector2( 1434.6, -2113.48 )
+
+[node name="Boar15" parent="YSort/Boars" instance=ExtResource( 23 )]
+position = Vector2( 1877.48, -2165.87 )
+
+[node name="Boar16" parent="YSort/Boars" instance=ExtResource( 23 )]
+position = Vector2( 1872.72, -2506.37 )
+
+[node name="Boar17" parent="YSort/Boars" instance=ExtResource( 23 )]
+position = Vector2( 1415.55, -2538.11 )
+
+[node name="Boar18" parent="YSort/Boars" instance=ExtResource( 23 )]
+position = Vector2( 1154.11, -2170.82 )
+
+[node name="Boar19" parent="YSort/Boars" instance=ExtResource( 23 )]
+position = Vector2( 1196.18, -2511.32 )
+
+[node name="Boar20" parent="YSort/Boars" instance=ExtResource( 23 )]
+position = Vector2( 1516.84, -2450.2 )
+
+[node name="Boar21" parent="YSort/Boars" instance=ExtResource( 23 )]
+position = Vector2( 1520.8, -2196.22 )
+
+[node name="Boar22" parent="YSort/Boars" instance=ExtResource( 23 )]
+position = Vector2( 1830.35, -2308.92 )
+
 [node name="Pointers" type="YSort" parent="YSort"]
 
 [node name="East_pointer" parent="YSort/Pointers" instance=ExtResource( 1 )]
@@ -11489,6 +11520,9 @@ position = Vector2( 39.1655, 11.7676 )
 
 [node name="Countryman7" parent="YSort/NPC" instance=ExtResource( 18 )]
 position = Vector2( 1232.81, -2436.97 )
+
+[node name="NPC" parent="YSort/NPC" instance=ExtResource( 43 )]
+position = Vector2( 1439.52, -2307.03 )
 
 [node name="Meat" type="YSort" parent="YSort"]
 
