@@ -210,12 +210,9 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.6, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [  ],
-"method": "_spawn_coin"
-}, {
 "args": [  ],
 "method": "queue_free"
 } ]
@@ -266,12 +263,9 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.6, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.9 ),
+"transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [  ],
-"method": "_spawn_coin"
-}, {
 "args": [  ],
 "method": "queue_free"
 } ]
@@ -539,10 +533,10 @@ position = Vector2( 1.90735e-06, -0.132432 )
 texture = ExtResource( 1 )
 offset = Vector2( 0.933, -14.19 )
 hframes = 64
-frame = 21
+frame = 26
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 5.393, -0.456 )
+position = Vector2( -3.619, -0.456 )
 rotation = 1.5708
 shape = SubResource( 1 )
 

@@ -5,7 +5,6 @@ void godot::Preloader::_register_methods()
 	register_method("_ready", &Preloader::_ready);
 	register_method("_process", &Preloader::_process);
 	register_method("_on_video_player_finished", &Preloader::_on_video_player_finished);
-	
 }
 
 void godot::Preloader::_init()
