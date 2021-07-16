@@ -823,7 +823,7 @@ collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHurtArea"]
-position = Vector2( 0, -8.48529 )
+position = Vector2( 0, -8.3969 )
 shape = SubResource( 58 )
 
 [node name="HitEffect" parent="." instance=ExtResource( 3 )]

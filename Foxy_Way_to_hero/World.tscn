@@ -1,4 +1,4 @@
-[gd_scene load_steps=314 format=2]
+[gd_scene load_steps=315 format=2]
 
 [ext_resource path="res://Scenes/Environment/East_pointer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -42,7 +42,8 @@
 [ext_resource path="res://Scenes/Environment/Building3.tscn" type="PackedScene" id=40]
 [ext_resource path="res://Scenes/Environment/Building4.tscn" type="PackedScene" id=41]
 [ext_resource path="res://Scenes/Environment/Building5.tscn" type="PackedScene" id=42]
-[ext_resource path="res://Scenes/NPC/NPC.tscn" type="PackedScene" id=43]
+[ext_resource path="res://GameManager.gdns" type="Script" id=43]
+[ext_resource path="res://Scenes/Environment/Mushrooms.tscn" type="PackedScene" id=44]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -2620,6 +2621,7 @@ points = PoolVector2Array( 64, 40.7893, 0.046936, 40.7893, 0.046936, 29.9051, 64
 1/z_index = 0
 
 [node name="World" type="Node2D"]
+position = Vector2( 312, 1680 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 143, -85.5308 )
@@ -11135,36 +11137,6 @@ position = Vector2( -1903.93, -1408 )
 [node name="Boar12" parent="YSort/Boars" instance=ExtResource( 23 )]
 position = Vector2( -2791.93, -1656 )
 
-[node name="Boar13" parent="YSort/Boars" instance=ExtResource( 23 )]
-position = Vector2( 1058.38, -2296.83 )
-
-[node name="Boar14" parent="YSort/Boars" instance=ExtResource( 23 )]
-position = Vector2( 1434.6, -2113.48 )
-
-[node name="Boar15" parent="YSort/Boars" instance=ExtResource( 23 )]
-position = Vector2( 1877.48, -2165.87 )
-
-[node name="Boar16" parent="YSort/Boars" instance=ExtResource( 23 )]
-position = Vector2( 1872.72, -2506.37 )
-
-[node name="Boar17" parent="YSort/Boars" instance=ExtResource( 23 )]
-position = Vector2( 1415.55, -2538.11 )
-
-[node name="Boar18" parent="YSort/Boars" instance=ExtResource( 23 )]
-position = Vector2( 1154.11, -2170.82 )
-
-[node name="Boar19" parent="YSort/Boars" instance=ExtResource( 23 )]
-position = Vector2( 1196.18, -2511.32 )
-
-[node name="Boar20" parent="YSort/Boars" instance=ExtResource( 23 )]
-position = Vector2( 1516.84, -2450.2 )
-
-[node name="Boar21" parent="YSort/Boars" instance=ExtResource( 23 )]
-position = Vector2( 1520.8, -2196.22 )
-
-[node name="Boar22" parent="YSort/Boars" instance=ExtResource( 23 )]
-position = Vector2( 1830.35, -2308.92 )
-
 [node name="Pointers" type="YSort" parent="YSort"]
 
 [node name="East_pointer" parent="YSort/Pointers" instance=ExtResource( 1 )]
@@ -11520,9 +11492,6 @@ position = Vector2( 39.1655, 11.7676 )
 
 [node name="Countryman7" parent="YSort/NPC" instance=ExtResource( 18 )]
 position = Vector2( 1232.81, -2436.97 )
-
-[node name="NPC" parent="YSort/NPC" instance=ExtResource( 43 )]
-position = Vector2( 1439.52, -2307.03 )
 
 [node name="Meat" type="YSort" parent="YSort"]
 
@@ -12384,6 +12353,23 @@ position = Vector2( 1691.31, -2181.14 )
 [node name="Building5" parent="YSort/Buildings" instance=ExtResource( 42 )]
 position = Vector2( 1535.41, -2343.52 )
 
+[node name="Mushrooms" type="YSort" parent="YSort"]
+
+[node name="Mushrooms" parent="YSort/Mushrooms" instance=ExtResource( 44 )]
+position = Vector2( 968, -2296 )
+
+[node name="Mushrooms2" parent="YSort/Mushrooms" instance=ExtResource( 44 )]
+position = Vector2( 1054.06, -2104 )
+
+[node name="Mushrooms3" parent="YSort/Mushrooms" instance=ExtResource( 44 )]
+position = Vector2( 1008, -2432 )
+
+[node name="Mushrooms4" parent="YSort/Mushrooms" instance=ExtResource( 44 )]
+position = Vector2( 1344, -2112 )
+
+[node name="Mushrooms5" parent="YSort/Mushrooms" instance=ExtResource( 44 )]
+position = Vector2( 1432, -2352 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
@@ -12397,6 +12383,11 @@ position = Vector2( 6744, 744 )
 
 [node name="TopLeft" parent="Camera2D/Limits" index="1"]
 position = Vector2( -3992, -4960 )
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource( 43 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="GameManager"]
 
 [node name="UI" parent="." instance=ExtResource( 12 )]
 
