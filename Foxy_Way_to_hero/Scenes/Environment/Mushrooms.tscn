@@ -74,5 +74,5 @@ shadow_enabled = true
 show_behind_parent = true
 position = Vector2( 0.140305, 0 )
 frames = SubResource( 13 )
-frame = 2
+frame = 3
 playing = true
