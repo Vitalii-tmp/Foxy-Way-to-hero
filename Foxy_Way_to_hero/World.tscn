@@ -12383,10 +12383,10 @@ process_mode = 0
 smoothing_speed = 6.0
 
 [node name="BottomRight" parent="Camera2D/Limits" index="0"]
-position = Vector2( 6744, 744 )
+position = Vector2( 6720, 2456 )
 
 [node name="TopLeft" parent="Camera2D/Limits" index="1"]
-position = Vector2( -3992, -4960 )
+position = Vector2( -3816, -3568 )
 
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource( 43 )
@@ -12396,5 +12396,6 @@ script = ExtResource( 43 )
 [node name="UI" parent="." instance=ExtResource( 12 )]
 
 [node name="FadeIn" parent="UI" instance=ExtResource( 36 )]
+position = Vector2( 340.137, 250.72 )
 
 [editable path="Camera2D"]
