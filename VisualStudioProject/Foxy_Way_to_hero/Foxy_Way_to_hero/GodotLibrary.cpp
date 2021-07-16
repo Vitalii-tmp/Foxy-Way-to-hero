@@ -43,5 +43,7 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<TypingMessage>();
 	register_class<MainMenuCamera>();
 	register_class<Preloader>();
+	register_class<GameManager>();
+	register_class<Mushrooms>();
 
 }

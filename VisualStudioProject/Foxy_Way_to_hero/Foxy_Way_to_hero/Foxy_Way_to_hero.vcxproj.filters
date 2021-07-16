@@ -129,7 +129,10 @@
     <ClCompile Include="Preloader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="NPC.cpp">
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mushrooms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -230,7 +233,10 @@
     <ClInclude Include="Preloader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NPC.h">
+    <ClInclude Include="GameManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mushrooms.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

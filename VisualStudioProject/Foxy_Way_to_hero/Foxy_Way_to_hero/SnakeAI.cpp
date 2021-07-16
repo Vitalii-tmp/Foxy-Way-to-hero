@@ -132,7 +132,7 @@ void godot::SnakeAI::_wander_state()
 
 
 	//if player too close chase him
-	if (_distance_to_player < 75)
+	if (_distance_to_player < 75 && _player->_get_invisible() == false)
 		_current_state = CHASE;
 
 	_knockback_vector = _knockback_vector.move_toward(Vector2::ZERO, 5);

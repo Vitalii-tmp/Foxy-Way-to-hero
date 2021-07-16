@@ -35,7 +35,8 @@
 #include <RandomNumberGenerator.hpp>
 #include <CenterContainer.hpp>
 #include <TextureRect.hpp>
-
+#include <CanvasModulate.hpp>
+#include <Light2D.hpp>
 
 //My headers
 #include "Player.h"
@@ -68,6 +69,8 @@
 #include "TypingMessage.h"
 #include "MainMenuCamera.h"
 #include "Preloader.h"
+#include "GameManager.h"
+#include "Mushrooms.h"
 
 //cpp headers
 #include <cmath>
