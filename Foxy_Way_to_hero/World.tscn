@@ -1,4 +1,4 @@
-[gd_scene load_steps=316 format=2]
+[gd_scene load_steps=317 format=2]
 
 [ext_resource path="res://Scenes/Environment/East_pointer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -45,6 +45,7 @@
 [ext_resource path="res://GameManager.gdns" type="Script" id=43]
 [ext_resource path="res://Scenes/Environment/Mushrooms.tscn" type="PackedScene" id=44]
 [ext_resource path="res://Scenes/NPC/NPC.tscn" type="PackedScene" id=45]
+[ext_resource path="res://Scenes/BackgroundSounds/MainMenuSound2.tscn" type="PackedScene" id=46]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -2622,7 +2623,6 @@ points = PoolVector2Array( 64, 40.7893, 0.046936, 40.7893, 0.046936, 29.9051, 64
 1/z_index = 0
 
 [node name="World" type="Node2D"]
-position = Vector2( 312, 1680 )
 
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource( 43 )
@@ -11060,17 +11060,20 @@ position = Vector2( -127.361, -2075.77 )
 position = Vector2( -1513.36, -1785.84 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 206.202, 67.98 )
+position = Vector2( 98.096, 545.859 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
 update_rotation = false
 update_scale = false
 
+[node name="MainMenuSound2" parent="YSort/Player" instance=ExtResource( 46 )]
+position = Vector2( -98.096, -545.859 )
+
 [node name="CheckPoints" type="YSort" parent="YSort"]
 
 [node name="CheckPoint2" parent="YSort/CheckPoints" instance=ExtResource( 15 )]
-position = Vector2( 99.2184, 516.479 )
+position = Vector2( 99.5903, 516.479 )
 
 [node name="CheckPoint" parent="YSort/CheckPoints" instance=ExtResource( 15 )]
 position = Vector2( 1760.21, -1096.01 )
@@ -12382,7 +12385,7 @@ position = Vector2( 1432, -2352 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 206.202, 67.98 )
+position = Vector2( 98.096, 545.859 )
 zoom = Vector2( 1.1, 1.1 )
 process_mode = 0
 smoothing_speed = 6.0
