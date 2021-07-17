@@ -191,6 +191,8 @@
     <ClCompile Include="RestartButton.cpp" />
     <ClCompile Include="Root.cpp" />
     <ClCompile Include="SnakeAI.cpp" />
+    <ClCompile Include="SoundEffect.cpp" />
+    <ClCompile Include="SoundEffectsManager.cpp" />
     <ClCompile Include="StoreButton.cpp" />
     <ClCompile Include="Tomb.cpp" />
     <ClCompile Include="TypingMessage.cpp" />
@@ -228,6 +230,8 @@
     <ClInclude Include="RestartButton.h" />
     <ClInclude Include="Root.h" />
     <ClInclude Include="SnakeAI.h" />
+    <ClInclude Include="SoundEffect.h" />
+    <ClInclude Include="SoundEffectsManager.h" />
     <ClInclude Include="StoreButton.h" />
     <ClInclude Include="Tomb.h" />
     <ClInclude Include="TypingMessage.h" />

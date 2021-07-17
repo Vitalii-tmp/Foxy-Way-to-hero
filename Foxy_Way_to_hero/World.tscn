@@ -2624,6 +2624,11 @@ points = PoolVector2Array( 64, 40.7893, 0.046936, 40.7893, 0.046936, 29.9051, 64
 [node name="World" type="Node2D"]
 position = Vector2( 312, 1680 )
 
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource( 43 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="GameManager"]
+
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 143, -85.5308 )
 scale = Vector2( 3.13614, 3.44448 )
@@ -12387,11 +12392,6 @@ position = Vector2( 6720, 2456 )
 
 [node name="TopLeft" parent="Camera2D/Limits" index="1"]
 position = Vector2( -3816, -3568 )
-
-[node name="GameManager" type="Node2D" parent="."]
-script = ExtResource( 43 )
-
-[node name="CanvasModulate" type="CanvasModulate" parent="GameManager"]
 
 [node name="UI" parent="." instance=ExtResource( 12 )]
 

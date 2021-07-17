@@ -74,7 +74,11 @@ void godot::Bullet::_process(float delta)
 		pow((this->get_global_position().y - _start_possition.y), 2));
 
 	if (_distance > 140)
+	{
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("AcornFallSE", Player::_get_singleton());
 		queue_free();
+	}
+		
 
 	//Godot::print(String::num(_move_vector.x));
 }
@@ -91,8 +95,12 @@ void godot::Bullet::_ready()
 
 void godot::Bullet::_on_detect_area_body_entered(Node2D* _other_body)
 {
-	if (_other_body->is_in_group("_enviroment")|| _other_body->is_in_group("_wall"))
+	if (_other_body->is_in_group("_enviroment") || _other_body->is_in_group("_wall"))
+	{
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("AcornFallSE", Player::_get_singleton());
 		queue_free();
+	}
+		
 }
 
 

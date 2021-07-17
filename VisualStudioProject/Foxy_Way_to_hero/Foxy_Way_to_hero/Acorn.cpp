@@ -44,6 +44,7 @@ void godot::Acorn::_on_acorn_area_body_entered(Node* body)
 {
 	if (body->get_name() == "Player")
 	{
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("AcorPickupSE", Player::_get_singleton());
 		Loader::get_singleton()->set_acorns(1);
 		//Loader::get_singleton()->save_acorns_data();
 

@@ -37,6 +37,8 @@
 #include <TextureRect.hpp>
 #include <CanvasModulate.hpp>
 #include <Light2D.hpp>
+#include <AudioStreamPlayer2D.hpp>
+
 
 //My headers
 #include "Player.h"
@@ -72,6 +74,8 @@
 #include "NPC.h"
 #include "GameManager.h"
 #include "Mushrooms.h"
+#include "SoundEffect.h"
+#include "SoundEffectsManager.h"
 
 //cpp headers
 #include <cmath>

@@ -90,6 +90,8 @@ void godot::BatAI::_on_hurt_area_area_entered(Area2D* _other_area)
 		_knockback_vector = _vector.normalized() * 150;
 
 		_hp -= _pl_damage;
+
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("EnemyHitSE", Player::_get_singleton());
 	}
 
 	if (_other_area->get_name() == "LongAttackArea")
@@ -105,6 +107,8 @@ void godot::BatAI::_on_hurt_area_area_entered(Area2D* _other_area)
 		//knock back bat
 		_knockback_vector = _vector.normalized() * 150;
 		_hp -= _pl_damage;
+
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("EnemyHitSE", Player::_get_singleton());
 	}
 
 	if (_hp <= 0&&(_other_area->get_name() == "ShortAttackArea"|| _other_area->get_name() == "LongAttackArea"))

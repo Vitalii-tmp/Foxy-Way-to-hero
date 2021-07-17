@@ -196,6 +196,7 @@ void godot::Player::_move_state()
 //if player attack
 void godot::Player::_short_attack_state()
 {
+	
 
 	_animation_tree->set("parameters/Attack/blend_position", _input_vector);
 	_animation_state->travel("Attack");
@@ -233,6 +234,7 @@ void godot::Player::_roll_state()
 // after attack change state to move (calling in animation tree)
 void godot::Player::_short_attack_animation_is_finished()
 {
+	
 	_current_state = MOVE;
 }
 
@@ -255,10 +257,18 @@ void godot::Player::_change_state_depend_on_behavior()
 	Input* i = Input::get_singleton();
 
 	if (i->is_action_just_pressed("short_attack"))
+	{
 		_current_state = SHORT_ATTACK;
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("SwordAttackSE", this);
+	}
+		
 
 	if (i->is_action_just_pressed("roll"))
+	{
 		_current_state = ROLL;
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("RollSE", this);
+	}
+		
 
 	if (Loader::get_singleton()->get_acorns() > 0)
 	{

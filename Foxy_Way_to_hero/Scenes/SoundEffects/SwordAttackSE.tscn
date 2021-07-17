@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/SoundEffect.gdns" type="Script" id=1]
+[ext_resource path="res://Music and Sounds/SoundEffects/Sword_attack.wav" type="AudioStream" id=2]
+
+[node name="SwordAttackSE" type="AudioStreamPlayer2D"]
+stream = ExtResource( 2 )
+volume_db = -10.0
+autoplay = true
+attenuation = 3.36358
+script = ExtResource( 1 )

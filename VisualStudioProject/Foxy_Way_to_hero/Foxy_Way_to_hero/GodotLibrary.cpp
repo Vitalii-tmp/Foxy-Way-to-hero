@@ -46,4 +46,6 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	register_class<NPC>();
 	register_class<GameManager>();
 	register_class<Mushrooms>();
+	register_class<SoundEffect>();
+	//register_class<SoundEffectsManager>();
 }

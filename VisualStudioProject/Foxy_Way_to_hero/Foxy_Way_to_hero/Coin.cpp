@@ -14,7 +14,10 @@ void godot::Coin::On_body_entered(Node* body)
 {
 	if(body->get_name() == "Player")
 	{
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("CollectCoinSE", Player::_get_singleton());
+
 		Loader::get_singleton()->set_coins(1);
+		
 		//Loader::get_singleton()->save_coins_data();
 		//Loader::get_singleton()->save_all_fields();
 
