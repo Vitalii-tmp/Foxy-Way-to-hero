@@ -39,8 +39,8 @@ Player::Player()
 	_speed = 100.f;
 
 	_damage = 25.f;
-	_hp = 100.f;
-	_hunger = 360.f;
+	_hp = Loader::get_singleton()->get_hp();
+	_hunger = Loader::get_singleton()->get_hunger();
 
 	_motion = Vector2(0, 0);
 	_input_vector = Vector2(0, 1);
@@ -100,6 +100,7 @@ void godot::Player::_ready()
 void godot::Player::_physics_process(float delta)
 {
 	HealthUI::_get_singleton()->_set_health(_hp);
+	Loader::get_singleton()->set_hp(_hp);
 	if (_hp <= 0)
 	{
 		_is_alive = false;
@@ -107,6 +108,7 @@ void godot::Player::_physics_process(float delta)
 
 
 		Ref<PackedScene> _tmp_tomb = _resource_loader->load("res://Scenes/Items/Tomb.tscn");
+		Loader::get_singleton()->set_to_start_values();
 
 		/*get_node("/root/World")->set_name("to_delete");
 		get_node("/root/to_delete")->queue_free();
@@ -137,6 +139,7 @@ void godot::Player::_physics_process(float delta)
 
 		_hunger -= delta;
 		HungerUI::_get_singleton()->_set_player_hunger(_hunger);
+		Loader::get_singleton()->set_hunger(_hunger);
 
 		if (HungerUI::_get_singleton()->_get_player_hunger() <= 0)
 			_hunger = 0;

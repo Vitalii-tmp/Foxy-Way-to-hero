@@ -63,13 +63,15 @@ void godot::RestartButton::_restart_world()
 	Ref<PackedScene> world = _resource_loader->load("res://World.tscn");
 
 	if (_button_name == "RestartButton") {
+		Loader::get_singleton()->set_to_start_values();
+		Loader::get_singleton()->save_all_fields();
 		get_node("/root/World")->set_name("to_delete");
 		get_node("/root/to_delete")->queue_free();
 		get_tree()->set_pause(false);
 	}
 	else if (_button_name == "RestartDeathButton")
 	{
-		get_node("/root/DeathMenu")->set_name("to_delete");
+		get_node("/root/World")->set_name("to_delete");
 		get_node("/root/to_delete")->queue_free();
 	}
 	get_node("/root")->add_child(world->instance());

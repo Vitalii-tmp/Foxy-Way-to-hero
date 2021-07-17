@@ -137,6 +137,16 @@ bool godot::GameManager::_get_is_night()
 	return this->_is_night;
 }
 
+void godot::GameManager::_set_help_npc(bool can_help_npc)
+{
+	_can_help_npc = can_help_npc;
+}
+
+bool godot::GameManager::_get_help_npc()
+{
+	return _can_help_npc;
+}
+
 
 godot::GameManager* godot::GameManager::_get_singleton()
 {

@@ -7,6 +7,8 @@ void godot::LoadSceneButton::_register_methods()
 	register_method("_load_world", &LoadSceneButton::_load_world);
 	register_method("_load_main_menu", &LoadSceneButton::_load_main_menu);
 
+	register_method("_load_new_game", &LoadSceneButton::_load_new_game);
+
 }
 
 void godot::LoadSceneButton::_init()
@@ -78,7 +80,20 @@ void godot::LoadSceneButton::_on_button_pressed()
 		else cast_to<Node2D>(get_node("/root/World/UI/Backpack"))->set_visible(true);
 	}
 
-	
+
+	if(get_name() == "NewGameButton")
+	{
+		Ref<PackedScene> fade_out = _resource_loader->load("res://Scenes/Effects/FadeOut.tscn");
+
+		get_node("/root/MainMenu/UI")->add_child(fade_out->instance());
+
+		if (!_timer->is_connected("timeout", this, "_load_new_game"))
+		{
+			_timer->connect("timeout", this, "_load_new_game");
+			_timer->start(1);
+		}
+	}
+
 }
 
 void godot::LoadSceneButton::_load_world()
@@ -89,9 +104,16 @@ void godot::LoadSceneButton::_load_world()
 
 	get_node("/root")->add_child(world->instance());
 
+	Godot::print("Main menu");
+
 	if (_timer->is_connected("timeout", this, "_load_world"))
 	{
 		_timer->disconnect("timeout", this, "_load_world");
+	}
+
+	if (_timer->is_connected("timeout", this, "_load_new_game"))
+	{
+		_timer->disconnect("timeout", this, "_load_new_game");
 	}
 }
 
@@ -110,4 +132,16 @@ void godot::LoadSceneButton::_load_main_menu()
 	{
 		_timer->disconnect("timeout", this, "_load_main_menu");
 	}
+}
+
+void godot::LoadSceneButton::_load_new_game()
+{
+	Loader::get_singleton()->set_to_start_values();
+
+	/*if (_timer->is_connected("timeout", this, "_load_new_game"))
+	{
+		_timer->disconnect("timeout", this, "_load_new_game");
+	}*/
+
+	_load_world();
 }

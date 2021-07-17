@@ -74,8 +74,12 @@
 #include "NPC.h"
 #include "GameManager.h"
 #include "Mushrooms.h"
+
 #include "SoundEffect.h"
 #include "SoundEffectsManager.h"
+
+#include "SelectionButton.h"
+
 
 //cpp headers
 #include <cmath>
