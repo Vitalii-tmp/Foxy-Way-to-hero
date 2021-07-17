@@ -38,15 +38,19 @@ void godot::TypingMessage::_process(float delta)
 		/*_timer->start(3);*/
 
 		Godot::print("_current_text");
-		_timer->connect("timeout", this, "_delete_cut_scene");
-		_timer->start(1.5);
+		Input* i = Input::get_singleton();
+		if(i->is_action_just_pressed("e_action"))
+		{
+			_delete_cut_scene();
+		}
+		/*_timer->connect("timeout", this, "_delete_cut_scene");
+		_timer->start(1.5);*/
 		
 	}
 }
 
 void godot::TypingMessage::_add_char()
 {
-	Godot::print("_message[_pos]");
 	_timer->disconnect("timeout", this, "_add_char");
 
 	_current_text += _message[_pos];
@@ -60,7 +64,7 @@ void godot::TypingMessage::_delete_cut_scene()
 	Loader::get_singleton()->set_is_first_time(true);
 	Loader::get_singleton()->save_all_fields();
 	
-	_timer->disconnect("timeout", this, "_delete_cut_scene");
+	//_timer->disconnect("timeout", this, "_delete_cut_scene");
 	get_tree()->set_pause(false);
 	queue_free();
 }
