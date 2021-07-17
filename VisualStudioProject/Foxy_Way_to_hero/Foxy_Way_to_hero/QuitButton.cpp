@@ -20,5 +20,6 @@ void godot::QuitButton::_ready()
 void godot::QuitButton::_on_button_quit_pressed()
 {
 	//get_node("/root")->set_name("to_delete");
+	SoundEffectsManager::_get_singleton()->_play_sound_effect("ButtonClickSE", get_node("/root/"));
 	get_node("/root")->queue_free();
 }

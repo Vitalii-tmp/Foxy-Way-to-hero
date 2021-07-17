@@ -30,17 +30,21 @@ void godot::RestartButton::_process(float delta)
 
 	if (i->is_action_just_pressed("ui_cancel") && get_tree()->is_paused())
 	{
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("ButtonClickSE", get_node("/root/"));
 		i->action_release("ui_cancel");
 
 		Godot::print("esc action");
 		get_tree()->set_pause(false);
 		this->get_parent()->queue_free();
 	}
+
+	
 }
 
 void godot::RestartButton::_on_restart_button_pressed()
 {
 
+	SoundEffectsManager::_get_singleton()->_play_sound_effect("ButtonClickSE", get_node("/root/"));
 	_button_name = this->get_name();
 	Ref<PackedScene> fade_out = _resource_loader->load("res://Scenes/Effects/FadeOut.tscn");
 	this->add_child(fade_out->instance());
@@ -50,6 +54,8 @@ void godot::RestartButton::_on_restart_button_pressed()
 		_timer->connect("timeout", this, "_restart_world");
 		_timer->start(1);
 	}
+
+	
 }
 
 void godot::RestartButton::_restart_world()

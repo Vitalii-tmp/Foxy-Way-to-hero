@@ -107,7 +107,11 @@ void godot::Bullet::_on_detect_area_body_entered(Node2D* _other_body)
 void godot::Bullet::_on_detect_area_area_entered(Area2D* _other_area)
 {
 	if (_other_area->get_name() != "Player")
+	{
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("AcornFallSE", Player::_get_singleton());
 		queue_free();
+	}
+	
 }
 
 

@@ -45,6 +45,8 @@ void godot::BackpackItemButton::_on_item_button_pressed()
 	auto text = _label->get_text();
 	if (_input->is_action_just_released("mouse_right"))
 	{
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("ThrowFromBackPackSE", Player::_get_singleton());
+
 		if (text.to_int() >= 1) {
 			_label->set_text(std::to_string((text.to_int() - 1)).c_str());
 
@@ -103,86 +105,99 @@ void godot::BackpackItemButton::_on_item_button_pressed()
 
 		auto _player = Player::_get_singleton();
 
-		float _meat_restore=17.5;
-		float _cheese_restore=10.f;
-		float _fish_restore=25.f;
+		float _meat_restore = 17.5;
+		float _cheese_restore = 10.f;
+		float _fish_restore = 25.f;
 
-		
 
-			if (get_name() == "Meat") {
-				Loader::get_singleton()->set_num_meat(_label->get_text().to_int());
-				name = "Meat";
 
-				if (_player->_get_hp() + _meat_restore >= 100)
-					_player->_set_hp(100);
-				else
+		if (get_name() == "Meat") {
+			
+			SoundEffectsManager::_get_singleton()->_play_sound_effect("EatingSE", Player::_get_singleton());
+			
+			Loader::get_singleton()->set_num_meat(_label->get_text().to_int());
+			name = "Meat";
+
+			if (_player->_get_hp() + _meat_restore >= 100)
+				_player->_set_hp(100);
+			else
 				_player->_set_hp(_player->_get_hp() + _meat_restore);
 
 
-				if (_player->_get_hunger() + _meat_restore * 2 >= 360)
-					_player->_set_hunger(360);
-				else
-					_player->_set_hunger(_player->_get_hunger() + _meat_restore*2);
-				
-				if (text.to_int() >= 1)
-					_label->set_text(std::to_string((text.to_int() - 1)).c_str());
-			}
-			else if (get_name() == "Cheese") {
-				Loader::get_singleton()->set_num_cheese(_label->get_text().to_int());
-				name = "Cheese";
-				
-				if (_player->_get_hp() + _cheese_restore >= 100)
-					_player->_set_hp(100);
-				else
-					_player->_set_hp(_player->_get_hp() + _cheese_restore);
+			if (_player->_get_hunger() + _meat_restore * 2 >= 360)
+				_player->_set_hunger(360);
+			else
+				_player->_set_hunger(_player->_get_hunger() + _meat_restore * 2);
 
-				if (_player->_get_hunger() + _cheese_restore * 2 >= 360)
-					_player->_set_hunger(360);
-				else
-					_player->_set_hunger(_player->_get_hunger() + _cheese_restore * 2);
+			if (text.to_int() >= 1)
+				_label->set_text(std::to_string((text.to_int() - 1)).c_str());
+		}
+		else if (get_name() == "Cheese") {
 
-				if (text.to_int() >= 1)
-					_label->set_text(std::to_string((text.to_int() - 1)).c_str());
-			}
-			else if (get_name() == "Fish") {
-				Loader::get_singleton()->set_num_fish(_label->get_text().to_int());
-				name = "Fish";
-				
-				if (_player->_get_hp() + _fish_restore >= 100)
-					_player->_set_hp(100);
-				else
-					_player->_set_hp(_player->_get_hp() + _fish_restore);
+			SoundEffectsManager::_get_singleton()->_play_sound_effect("EatingSE", Player::_get_singleton());
+			Loader::get_singleton()->set_num_cheese(_label->get_text().to_int());
+			name = "Cheese";
 
-				if (_player->_get_hunger() + _fish_restore * 2 >= 360)
-					_player->_set_hunger(360);
-				else
-					_player->_set_hunger(_player->_get_hunger() + _fish_restore * 2);
+			if (_player->_get_hp() + _cheese_restore >= 100)
+				_player->_set_hp(100);
+			else
+				_player->_set_hp(_player->_get_hp() + _cheese_restore);
 
-				if (text.to_int() >= 1)
-					_label->set_text(std::to_string((text.to_int() - 1)).c_str());
-			}
-			else if (get_name() == "SpeedItem") {
-				Loader::get_singleton()->set_num_speed_item(_label->get_text().to_int());
-				name = "SpeedItem";
-				_player->_set_player_speed(200);
+			if (_player->_get_hunger() + _cheese_restore * 2 >= 360)
+				_player->_set_hunger(360);
+			else
+				_player->_set_hunger(_player->_get_hunger() + _cheese_restore * 2);
 
-				if (text.to_int() >= 1)
-					_label->set_text(std::to_string((text.to_int() - 1)).c_str());
-			}
+			if (text.to_int() >= 1)
+				_label->set_text(std::to_string((text.to_int() - 1)).c_str());
+		}
+		else if (get_name() == "Fish") {
+
+			SoundEffectsManager::_get_singleton()->_play_sound_effect("EatingSE", Player::_get_singleton());
 			
-			else if (get_name() == "DamageItem")
-			{
-				Loader::get_singleton()->set_num_damage_item(_label->get_text().to_int());
-				name = "DamageItem";
+			Loader::get_singleton()->set_num_fish(_label->get_text().to_int());
+			name = "Fish";
 
-				if (text.to_int() >= 1)
-					_label->set_text(std::to_string((text.to_int() - 1)).c_str());
+			if (_player->_get_hp() + _fish_restore >= 100)
+				_player->_set_hp(100);
+			else
+				_player->_set_hp(_player->_get_hp() + _fish_restore);
 
-				_player->_set_to_invisible();
-			}
+			if (_player->_get_hunger() + _fish_restore * 2 >= 360)
+				_player->_set_hunger(360);
+			else
+				_player->_set_hunger(_player->_get_hunger() + _fish_restore * 2);
 
+			if (text.to_int() >= 1)
+				_label->set_text(std::to_string((text.to_int() - 1)).c_str());
+		}
+		else if (get_name() == "SpeedItem") {
+
+			SoundEffectsManager::_get_singleton()->_play_sound_effect("ElixitPotionSE", Player::_get_singleton());
 			
+			Loader::get_singleton()->set_num_speed_item(_label->get_text().to_int());
+			name = "SpeedItem";
+			_player->_set_player_speed(200);
+
+			if (text.to_int() >= 1)
+				_label->set_text(std::to_string((text.to_int() - 1)).c_str());
 		}
 
+		else if (get_name() == "DamageItem")
+		{
+			SoundEffectsManager::_get_singleton()->_play_sound_effect("ElixitPotionSE", Player::_get_singleton());
+			
+			Loader::get_singleton()->set_num_damage_item(_label->get_text().to_int());
+			name = "DamageItem";
+
+			if (text.to_int() >= 1)
+				_label->set_text(std::to_string((text.to_int() - 1)).c_str());
+
+			_player->_set_to_invisible();
+		}
+
+
 	}
+
+}
 

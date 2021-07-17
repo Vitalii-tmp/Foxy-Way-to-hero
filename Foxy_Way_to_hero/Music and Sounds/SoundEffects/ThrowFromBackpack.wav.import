@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ThrowFromBackpack.wav-02843de4d50d51dfd6752b872c23682c.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/SoundEffects/ThrowFromBackpack.wav"
+dest_files=[ "res://.import/ThrowFromBackpack.wav-02843de4d50d51dfd6752b872c23682c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

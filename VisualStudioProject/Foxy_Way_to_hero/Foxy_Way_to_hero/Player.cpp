@@ -132,7 +132,7 @@ void godot::Player::_physics_process(float delta)
 
 	if (_is_alive)
 	{
-		_on_escape_pressed();
+		
 		_change_state_depend_on_behavior();
 
 		_hunger -= delta;
@@ -259,14 +259,14 @@ void godot::Player::_change_state_depend_on_behavior()
 	if (i->is_action_just_pressed("short_attack"))
 	{
 		_current_state = SHORT_ATTACK;
-		SoundEffectsManager::_get_singleton()->_play_sound_effect("SwordAttackSE", this);
+		//SoundEffectsManager::_get_singleton()->_play_sound_effect("SwordAttackSE", this);
 	}
 		
 
 	if (i->is_action_just_pressed("roll"))
 	{
 		_current_state = ROLL;
-		SoundEffectsManager::_get_singleton()->_play_sound_effect("RollSE", this);
+		//SoundEffectsManager::_get_singleton()->_play_sound_effect("RollSE", this);
 	}
 		
 
@@ -306,13 +306,13 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 	{
 		if (_other_area->get_name() == "BatHitArea")
 		{
-
+			
 			auto _bat_damage = cast_to<BatAI>(_other_area->get_parent())->_get_damage();
 
 			//if player is rolling dont damage from bats
 			if (_current_state != ROLL)
 			{
-
+				SoundEffectsManager::_get_singleton()->_play_sound_effect("PLayerDamagedSE", this);
 				_hp -= _bat_damage;
 				//HealthUI::_get_singleton()->_turn_on_hit_anim();
 
@@ -324,6 +324,7 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 
 		if (_other_area->get_name() == "BoarHitArea"&& !_invisible)
 		{
+			SoundEffectsManager::_get_singleton()->_play_sound_effect("PLayerDamagedSE", this);
 			auto _boar = cast_to<BoarAI>(_other_area->get_parent());
 			auto _boar_damage = cast_to<BoarAI>(_other_area->get_parent())->_get_damage();
 			auto _boar_agressive = cast_to<BoarAI>(_other_area->get_parent())->_get_agressive();
@@ -346,6 +347,7 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 
 		if (_other_area->get_name() == "SnakeHitArea" && !_invisible)
 		{
+			SoundEffectsManager::_get_singleton()->_play_sound_effect("PLayerDamagedSE", this);
 			auto _snake = cast_to<SnakeAI>(_other_area->get_parent());
 			auto _snake_damage = cast_to<SnakeAI>(_other_area->get_parent())->_get_damage();
 
@@ -369,6 +371,7 @@ void godot::Player::_on_hurt_area_area_entered(Area2D* _other_area)
 
 		if (_other_area->get_name() == "CactusHitArea")
 		{
+			SoundEffectsManager::_get_singleton()->_play_sound_effect("PLayerDamagedSE", this);
 			auto _cactus = cast_to<StaticBody2D>(_other_area->get_parent());
 
 			_hp -= 7.f;
@@ -503,6 +506,7 @@ void godot::Player::_on_escape_pressed()
 
 	if (i->is_action_just_pressed("ui_cancel") && !get_tree()->is_paused())
 	{
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("ButtonClickSE", get_node("/root/"));
 
 		Godot::print("escape");
 		get_tree()->set_pause(true);
