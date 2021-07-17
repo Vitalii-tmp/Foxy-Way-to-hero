@@ -138,7 +138,10 @@
     <ClCompile Include="NPC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SelectionButton.cpp">
+    <ClCompile Include="SoundEffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundEffectsManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -248,7 +251,10 @@
     <ClInclude Include="NPC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SelectionButton.h">
+    <ClInclude Include="SoundEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundEffectsManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

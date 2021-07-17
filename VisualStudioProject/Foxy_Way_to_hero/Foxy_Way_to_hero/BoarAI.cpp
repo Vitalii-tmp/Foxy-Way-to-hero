@@ -242,6 +242,8 @@ void godot::BoarAI::_on_hurt_area_area_entered(Area2D* _other_area)
 
 		_knockback_vector = _vector.normalized() * 150;
 		_hp -= _pl_damage;
+
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("EnemyHitSE", Player::_get_singleton());
 	}
 
 	if (_other_area->get_name() == "LongAttackArea")
@@ -255,6 +257,8 @@ void godot::BoarAI::_on_hurt_area_area_entered(Area2D* _other_area)
 
 		_knockback_vector = _vector.normalized() * 100;
 		_hp -= _pl_damage;
+
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("EnemyHitSE", Player::_get_singleton());
 	}
 
 	if (_hp <= 0 && (_other_area->get_name() == "LongAttackArea" || _other_area->get_name() == "ShortAttackArea"))

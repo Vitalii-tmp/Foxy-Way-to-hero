@@ -35,6 +35,7 @@ void godot::PauseButton::_on_button_pause_pressed()
 	auto* menu = cast_to<CanvasLayer>(prefab->instance());
 	get_node("/root/World/UI/")->add_child(menu);
 
+	SoundEffectsManager::_get_singleton()->_play_sound_effect("ButtonClickSE", get_node("/root/"));
 }
 
 void godot::PauseButton::_on_escape_button_pressed()

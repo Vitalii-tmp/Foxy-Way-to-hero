@@ -10,6 +10,9 @@ namespace godot
 		GODOT_CLASS(Loader, Node);
 
 	public:
+
+		Loader();
+
 		static void _register_methods();
 		void _init();
 
@@ -72,19 +75,19 @@ namespace godot
 		int _acorns ;
 		Vector2 _player_start_position;
 
-		int _numMeat = 0;
-		int _numCheese = 0;
-		int _numFish = 0;
-		int _numSpeedItem = 0;
-		int _numBatWings = 0;
-		int _numBoarFurs = 0;
-		int _numSnakeFangs = 0;
-		int _numDamageItem = 0;
+		int _numMeat ;
+		int _numCheese ;
+		int _numFish  ;
+		int _numSpeedItem ;
+		int _numBatWings ;
+		int _numBoarFurs ;
+		int _numSnakeFangs ;
+		int _numDamageItem ;
 
-		bool _isFirstTime = true;
+		bool _isFirstTime ;
 
-		float _hunger = 360.f;
-		float _hp = 100.f;
+		float _hunger ;
+		float _hp ;
 	};
 }
 

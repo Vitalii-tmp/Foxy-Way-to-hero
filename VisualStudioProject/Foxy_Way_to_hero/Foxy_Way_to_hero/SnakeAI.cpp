@@ -34,8 +34,8 @@ void godot::SnakeAI::_register_methods()
 	register_method("_change_move_vector", &SnakeAI::_change_move_vector);
 
 	register_method("_spawn_coin", &SnakeAI::_spawn_coin);
-	
-	
+
+
 }
 
 void godot::SnakeAI::_init()
@@ -52,7 +52,7 @@ void godot::SnakeAI::_physics_process(float delta)
 	{
 		_is_alive = false;
 		_animation_state->travel("Die");
-		
+
 	}
 
 	if (_is_alive && !_is_attaking)
@@ -68,7 +68,7 @@ void godot::SnakeAI::_physics_process(float delta)
 	_animation_tree->set("parameters/Attack/blend_position", _look_vector);
 	_animation_tree->set("parameters/Die/blend_position", _look_vector);
 
-	
+
 }
 
 
@@ -157,7 +157,7 @@ void godot::SnakeAI::_chase_state()
 		_is_attaking = true;
 		//_current_state = IDLE;
 	}
-		
+
 
 
 
@@ -199,6 +199,8 @@ void godot::SnakeAI::_on_hurt_area_area_entered(Area2D* _other_area)
 		_knockback_vector = _vector.normalized() * 50;
 
 		_hp -= _pl_damage;
+
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("EnemyHitSE", Player::_get_singleton());
 	}
 
 	if (_other_area->get_name() == "LongAttackArea")
@@ -214,37 +216,13 @@ void godot::SnakeAI::_on_hurt_area_area_entered(Area2D* _other_area)
 		//knock back bat
 		_knockback_vector = _vector.normalized() * 50;
 		_hp -= _pl_damage;
+
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("EnemyHitSE", Player::_get_singleton());
 	}
 
-	if (_other_area->get_name() == "ShortAttackArea")
+
+	if (_hp <= 0 && (_other_area->get_name() == "LongAttackArea" || _other_area->get_name() == "ShortAttackArea"))
 	{
-		//play hit affect
-		_hit_effect->set_visible(true);
-		_hit_effect->play();
-
-		auto _vector = Player::_get_singleton()->_get_input_vector();
-		auto _pl_damage = Player::_get_singleton()->_get_damage();
-
-		_knockback_vector = _vector.normalized() * 150;
-		_hp -= _pl_damage;
-	}
-
-	if (_other_area->get_name() == "LongAttackArea")
-	{
-		//play hit affect
-		_hit_effect->set_visible(true);
-		_hit_effect->play();
-
-		auto _vector = Player::_get_singleton()->_get_input_vector();
-		auto _pl_damage = Player::_get_singleton()->_get_damage();
-
-		_knockback_vector = _vector.normalized() * 100;
-		_hp -= _pl_damage;
-	}
-
-	if (_hp <= 0 &&(_other_area->get_name() == "LongAttackArea"|| _other_area->get_name() == "ShortAttackArea"))
-	{
-
 		_spawn_coin();
 		_spawn_spike();
 

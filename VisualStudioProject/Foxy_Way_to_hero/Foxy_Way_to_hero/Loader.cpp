@@ -16,6 +16,31 @@ namespace godot
 		//register_method("save_start_position_data", &Loader::save_start_position_data);
 	}
 
+
+	Loader::Loader()
+	{
+
+
+		_coins = 0;
+		_acorns = 0;
+		_player_start_position = Vector2(99.59, 545.859);
+
+		_numMeat = 0;
+		_numCheese = 0;
+		_numFish = 0;
+		_numSpeedItem = 0;
+		_numBatWings = 0;
+		_numBoarFurs = 0;
+		_numSnakeFangs = 0;
+		_numDamageItem = 0;
+
+		_isFirstTime = false;
+
+		_hunger = 360.f;
+		_hp = 100.f;
+	}
+
+
 	void Loader::_init()
 	{
 		_instance = this;
@@ -366,7 +391,7 @@ namespace godot
 	{
 		_coins = 0;
 		_acorns = 0;
-		_player_start_position = Vector2(0, 0);
+		_player_start_position = Vector2(99.59, 545.859);
 		_numMeat = 0;
 		_numCheese = 0;
 		_numFish = 0;
