@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Music and Sounds/SoundEffects/Grass.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/SoundEffect.gdns" type="Script" id=2]
+
+[node name="GrassSE" type="AudioStreamPlayer2D"]
+stream = ExtResource( 1 )
+volume_db = -2.0
+autoplay = true
+script = ExtResource( 2 )

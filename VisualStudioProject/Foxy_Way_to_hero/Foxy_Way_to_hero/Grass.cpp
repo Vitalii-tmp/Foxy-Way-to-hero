@@ -47,6 +47,8 @@ void godot::Grass::_on_player_hit_area_entered(Area2D* _other_area)
 {
 	if (_other_area->get_name() == "ShortAttackArea")
 	{
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("GrassSE", Player::_get_singleton());
+
 		_sprite->queue_free();
 		_animated_sprite->set_visible(true);
 		_animated_sprite->play("Animation");

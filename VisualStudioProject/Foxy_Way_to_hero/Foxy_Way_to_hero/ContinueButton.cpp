@@ -31,5 +31,8 @@ void ContinueButton::_on_button_continue_pressed()
 	get_tree()->set_pause(false);
 	//_pause_button->set_visible(true);
 
+	SoundEffectsManager::_get_singleton()->_play_sound_effect("ButtonClickSE", get_node("/root/"));
 	_menu->queue_free();
+
+
 }

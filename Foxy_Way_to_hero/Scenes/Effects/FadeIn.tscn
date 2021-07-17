@@ -30,6 +30,7 @@ tracks/1/keys = {
 }
 
 [node name="FadeIn" type="Node2D"]
+pause_mode = 2
 z_index = 5
 
 [node name="ColorRect" type="ColorRect" parent="."]

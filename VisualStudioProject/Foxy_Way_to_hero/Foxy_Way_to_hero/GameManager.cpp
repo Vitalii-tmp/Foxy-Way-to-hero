@@ -5,7 +5,7 @@
 godot::GameManager::GameManager()
 {
 	_current_state = DAY;
-	_period = 10;
+	_period = 180;
 
 	_is_day = true;
 	_is_night = false;
