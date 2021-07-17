@@ -81,7 +81,7 @@ namespace godot
 		int _numSnakeFangs = 0;
 		int _numDamageItem = 0;
 
-		bool _isFirstTime = false;
+		bool _isFirstTime = true;
 
 		float _hunger = 360.f;
 		float _hp = 100.f;

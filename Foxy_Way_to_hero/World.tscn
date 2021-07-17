@@ -11497,6 +11497,15 @@ position = Vector2( 1232.81, -2436.97 )
 [node name="NPC" parent="YSort/NPC" instance=ExtResource( 45 )]
 position = Vector2( 1454.42, -2316.19 )
 
+[node name="NPC2" parent="YSort/NPC" instance=ExtResource( 45 )]
+position = Vector2( 843.131, -2381.09 )
+
+[node name="NPC3" parent="YSort/NPC" instance=ExtResource( 45 )]
+position = Vector2( 1969.86, -2234.26 )
+
+[node name="NPC4" parent="YSort/NPC" instance=ExtResource( 45 )]
+position = Vector2( 1981.84, -2526.43 )
+
 [node name="Meat" type="YSort" parent="YSort"]
 
 [node name="Cheese" type="YSort" parent="YSort"]

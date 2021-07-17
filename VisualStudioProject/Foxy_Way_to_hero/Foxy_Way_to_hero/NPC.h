@@ -34,6 +34,7 @@ namespace godot {
 		TextureRect* _question_window = nullptr;
 		Label* _task_label = nullptr;
 		Label* _progress_label = nullptr;
+		Label* _question_label = nullptr;
 		TextureButton* _yes_button = nullptr;
 		TextureButton* _no_button = nullptr;
 

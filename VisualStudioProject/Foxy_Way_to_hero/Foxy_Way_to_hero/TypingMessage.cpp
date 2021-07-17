@@ -61,7 +61,7 @@ void godot::TypingMessage::_add_char()
 
 void godot::TypingMessage::_delete_cut_scene()
 {
-	Loader::get_singleton()->set_is_first_time(true);
+	Loader::get_singleton()->set_is_first_time(false);
 	Loader::get_singleton()->save_all_fields();
 	
 	//_timer->disconnect("timeout", this, "_delete_cut_scene");
