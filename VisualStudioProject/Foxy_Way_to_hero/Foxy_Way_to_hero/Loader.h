@@ -37,6 +37,8 @@ namespace godot
 		void set_num_snake_fangs(int numSnakeFangs);
 		void set_num_damage_item(int numDamageItem);
 		void set_is_first_time(bool isFirstTime);
+		void set_hunger(float hunger);
+		void set_hp(float hp);
 
 		int get_coins() const;
 		int get_acorns() const;
@@ -49,12 +51,18 @@ namespace godot
 		int get_num_snake_fangs();
 		int get_num_damage_item();
 		bool get_is_first_time();
+		float get_hunger();
+		float get_hp();
 		
 		Vector2 get_start_position();
 
 		void load_start_position_data();
 		void load_backpack_data();
 		void load_is_first_time();
+		void load_hunger();
+		void load_hp();
+
+		void set_to_start_values();
 	private:
 		static inline Loader* _instance;
 
@@ -74,6 +82,9 @@ namespace godot
 		int _numDamageItem = 0;
 
 		bool _isFirstTime = false;
+
+		float _hunger = 360.f;
+		float _hp = 100.f;
 	};
 }
 

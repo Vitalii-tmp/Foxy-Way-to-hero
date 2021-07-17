@@ -41,7 +41,7 @@ namespace godot
 
 	void Loader::_process(float delta)
 	{
-		
+
 	}
 
 	Loader* Loader::get_singleton()
@@ -109,7 +109,7 @@ namespace godot
 		_file->close();
 	}
 
-	void Loader::save_all_fields() 
+	void Loader::save_all_fields()
 	{
 		Ref<File> _file = File::_new();
 		_file->open(_dataFile, _file->WRITE);
@@ -128,13 +128,15 @@ namespace godot
 		dict["Number of snake fangs"] = this->_numSnakeFangs;
 		dict["Number of damage item"] = this->_numDamageItem;
 		dict["Is first time"] = this->_isFirstTime;
-		
+		dict["Hunger"] = this->_hunger;
+		dict["Hp"] = this->_hp;
+
 		_file->store_string(dict.to_json());
 		_file->close();
 
-		Godot::print("save all "+_player_start_position);
+		/*Godot::print("save all "+_player_start_position);
 		Godot::print("save all " + String::num(_acorns));
-		Godot::print("save all " + String::num(_coins));
+		Godot::print("save all " + String::num(_coins));*/
 	}
 
 	void Loader::set_coins(int coins)
@@ -201,7 +203,17 @@ namespace godot
 	{
 		return this->_isFirstTime;
 	}
-	
+
+	float Loader::get_hunger()
+	{
+		return this->_hunger;
+	}
+
+	float Loader::get_hp()
+	{
+		return this->_hp;
+	}
+
 	void Loader::set_start_position(Vector2 start_position)
 	{
 		_player_start_position = start_position;
@@ -251,13 +263,23 @@ namespace godot
 	{
 		_isFirstTime = isFirstTime;
 	}
-	
+
+	void Loader::set_hunger(float hunger)
+	{
+		_hunger = hunger;
+	}
+
+	void Loader::set_hp(float hp)
+	{
+		_hp = hp;
+	}
+
 	Vector2 Loader::get_start_position()
 	{
 		return _player_start_position;
 	}
-	
-	
+
+
 	void Loader::load_start_position_data()
 	{
 		Godot::print("load_start_position_data");
@@ -275,7 +297,7 @@ namespace godot
 			_file->close();
 		}
 	}
-	
+
 	void Loader::load_backpack_data()
 	{
 		Ref<File> _file = File::_new();
@@ -293,7 +315,7 @@ namespace godot
 			_numBoarFurs = rez["Number of boar furs"];
 			_numSnakeFangs = rez["Number of snake fangs"];
 			_numDamageItem = rez["Number of damage item"];
-			
+
 			//Godot::print(_player_start_position);
 			_file->close();
 		}
@@ -311,5 +333,54 @@ namespace godot
 
 			_file->close();
 		}
+	}
+	void Loader::load_hunger()
+	{
+		Ref<File> _file = File::_new();
+		if (_file->file_exists(_dataFile))
+		{
+			_file->open(_dataFile, _file->READ);
+
+			const Dictionary rez = JSON::get_singleton()->parse(_file->get_as_text())->get_result();
+
+			_hunger = rez["Hunger"];
+
+			_file->close();
+		}
+	}
+	void Loader::load_hp()
+	{
+		Ref<File> _file = File::_new();
+		if (_file->file_exists(_dataFile))
+		{
+			_file->open(_dataFile, _file->READ);
+
+			const Dictionary rez = JSON::get_singleton()->parse(_file->get_as_text())->get_result();
+
+			_hp = rez["Hp"];
+
+			_file->close();
+		}
+	}
+	void Loader::set_to_start_values()
+	{
+		_coins = 0;
+		_acorns = 0;
+		_player_start_position = Vector2(0, 0);
+		_numMeat = 0;
+		_numCheese = 0;
+		_numFish = 0;
+		_numSpeedItem = 0;
+		_numBatWings = 0;
+		_numBoarFurs = 0;
+		_numSnakeFangs = 0;
+		_numDamageItem = 0;
+
+		_isFirstTime = false;
+
+		_hunger = 360.f;
+		_hp = 100.f;
+
+		save_all_fields();
 	}
 }
