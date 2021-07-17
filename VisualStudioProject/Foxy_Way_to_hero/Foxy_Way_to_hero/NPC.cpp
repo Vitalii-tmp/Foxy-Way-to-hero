@@ -24,7 +24,19 @@ void godot::NPC::_process(float delta)
 	_progress_label->set_text(progress_str);
 
 	if (_is_in_area)
+	{
 		_progress_check();
+		/*if (GameManager::_get_singleton()->_get_help_npc())
+		{
+			_dialog_window->set_visible(true);
+			Player::_get_singleton()->_set_is_received_task_hunter(true);
+			_question_window->set_visible(false);
+		}
+		else
+		{
+			_question_window->set_visible(true);
+		}*/
+	}
 }
 
 void godot::NPC::_ready()
@@ -33,8 +45,16 @@ void godot::NPC::_ready()
 
 	String str;
 
+	_question_window = cast_to<TextureRect>(get_child(2)->get_child(0)->get_node("QuestionWindow"));
+	_yes_button = cast_to<TextureButton>(_question_window->get_child(1));
+	_no_button = cast_to<TextureButton>(_question_window->get_child(2));
+
 	if (_task == HUNTER)
+	{
 		str = "You need to find and \nkill 5 boars";
+		_yes_button->set_name("HunterYes");
+		_no_button->set_name("HunterNo");
+	}
 
 	_detection_area = cast_to<Area2D>(get_child(1));
 	_detection_area->connect("body_entered", this, "_on_detection_area_entered");
@@ -57,8 +77,15 @@ void godot::NPC::_on_detection_area_entered(Node* node)
 
 	if (node->get_name() == "Player")
 	{
-		_dialog_window->set_visible(true);
-		Player::_get_singleton()->_set_is_received_task_hunter(true);
+		if (GameManager::_get_singleton()->_get_help_npc())
+		{
+			_dialog_window->set_visible(true);
+			Player::_get_singleton()->_set_is_received_task_hunter(true);
+		}
+		else
+		{
+			_question_window->set_visible(true);
+		}
 		_is_in_area = true;
 	}
 }
@@ -69,6 +96,8 @@ void godot::NPC::_from_detection_area_exit(Node* node)
 	{
 		_dialog_window->set_visible(false);
 		_progress_menu->set_visible(false);
+		_question_window->set_visible(false);
+		_result_menu->set_visible(false);
 		_is_in_area = false;
 	}
 }
@@ -87,6 +116,7 @@ void godot::NPC::_progress_check()
 	else if (i->is_action_just_pressed("e_action") && !_progress_menu->is_visible()
 		&& !_result_menu->is_visible() && _count_of_boars <= 5)
 	{
+		Godot::print("In this");
 			_progress_menu->set_visible(true);
 		_dialog_window->set_visible(false);
 		_result_menu->set_visible(false);

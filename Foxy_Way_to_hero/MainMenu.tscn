@@ -3043,48 +3043,49 @@ position = Vector2( 3789.11, 165 )
 show_behind_parent = true
 position = Vector2( 112.327, 41.6787 )
 frames = SubResource( 295 )
+frame = 11
 playing = true
 
 [node name="Sprite5" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 2724.15, 145.95 )
 frames = SubResource( 295 )
-frame = 11
+frame = 10
 playing = true
 
 [node name="Sprite6" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 2397.88, 78.6781 )
 frames = SubResource( 295 )
-frame = 10
+frame = 9
 playing = true
 
 [node name="Sprite7" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 3427.14, 139.223 )
 frames = SubResource( 295 )
-frame = 10
+frame = 9
 playing = true
 
 [node name="Sprite2" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 124.609, 141.946 )
 frames = SubResource( 295 )
-frame = 11
+frame = 10
 playing = true
 
 [node name="Sprite3" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 745.891, 13.4241 )
 frames = SubResource( 295 )
-frame = 11
+frame = 10
 playing = true
 
 [node name="Sprite4" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 555.073, 180.11 )
 frames = SubResource( 295 )
-frame = 10
+frame = 9
 playing = true
 
 [node name="Grass" type="YSort" parent="YSort"]
@@ -3461,10 +3462,10 @@ position = Vector2( 2523.85, 47.5268 )
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="PlayButton" type="TextureButton" parent="UI"]
-margin_left = 5.49491
-margin_top = 94.8565
-margin_right = 44.4949
-margin_bottom = 104.856
+margin_left = 4.89964
+margin_top = 69.2597
+margin_right = 43.8996
+margin_bottom = 79.2597
 rect_scale = Vector2( 2.5, 2.5 )
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 6 )
@@ -3481,7 +3482,35 @@ margin_right = 36.0
 margin_bottom = 9.0
 custom_fonts/font = SubResource( 296 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "play"
+text = "continue"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGameButton" type="TextureButton" parent="UI"]
+margin_left = 5.09805
+margin_top = 95.0549
+margin_right = 44.0981
+margin_bottom = 105.055
+rect_scale = Vector2( 2.5, 2.5 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/NewGameButton"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 36.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 296 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "new game"
 align = 1
 valign = 1
 __meta__ = {

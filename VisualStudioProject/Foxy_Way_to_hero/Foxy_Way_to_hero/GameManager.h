@@ -32,6 +32,9 @@ namespace godot
 
 		bool _get_is_day();
 		bool _get_is_night();
+
+		void _set_help_npc(bool can_help_npc);
+		bool _get_help_npc();
 	private:
 
 		static inline GameManager* _instance = nullptr;
@@ -50,6 +53,8 @@ namespace godot
 
 		Color _day_color;
 		Color _night_color;
+
+		bool _can_help_npc = false;
 	};
 }
 

@@ -31,8 +31,11 @@ namespace godot {
 		TextureRect* _dialog_window = nullptr;
 		TextureRect* _progress_menu = nullptr;
 		TextureRect* _result_menu = nullptr;
+		TextureRect* _question_window = nullptr;
 		Label* _task_label = nullptr;
 		Label* _progress_label = nullptr;
+		TextureButton* _yes_button = nullptr;
+		TextureButton* _no_button = nullptr;
 
 		ResourceLoader* _resource_loader;
 	};
