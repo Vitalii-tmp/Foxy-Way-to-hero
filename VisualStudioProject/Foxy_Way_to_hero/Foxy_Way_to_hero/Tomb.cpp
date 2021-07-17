@@ -38,10 +38,10 @@ void godot::Tomb::_load_death_menu()
 
 	Ref<PackedScene> _death_menu = _resource_loader->load("res://Scenes/UI/DeathMenu.tscn");
 
-	get_node("/root/World")->set_name("to_delete");
-	get_node("/root/to_delete")->queue_free();
+	//get_node("/root/World")->set_name("to_delete");
+	//get_node("/root/to_delete")->queue_free();
 
-	get_node("/root")->add_child(_death_menu->instance());
+	get_node("/root/World/UI")->add_child(_death_menu->instance());
 
 
 	if (_timer->is_connected("timeout", this, "_load_death_menu"))

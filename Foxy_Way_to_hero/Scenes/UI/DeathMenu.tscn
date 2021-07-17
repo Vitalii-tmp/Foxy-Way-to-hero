@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/LoadSceneButton.gdns" type="Script" id=2]
@@ -7,9 +7,11 @@
 [ext_resource path="res://Sprites/Shadows/MenuShadow.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/UI/menuBackground.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Effects/FadeIn.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/Fonts/Welbut__.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 1 )
+size = 18
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 7
@@ -19,7 +21,7 @@ font_data = ExtResource( 1 )
 size = 7
 font_data = ExtResource( 1 )
 
-[node name="DeathMenu" type="Node2D"]
+[node name="DeathMenu" type="CanvasLayer"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 161.306, 87.1913 )
@@ -27,10 +29,10 @@ scale = Vector2( 2.36846, 2.5 )
 texture = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 123.149
-margin_top = 35.7962
-margin_right = 198.149
-margin_bottom = 51.7962
+margin_left = 99.2051
+margin_top = 37.1559
+margin_right = 224.205
+margin_bottom = 62.1559
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "GAME OVER"
@@ -99,7 +101,7 @@ z_index = -1
 texture = ExtResource( 5 )
 
 [node name="Shadow2" type="Sprite" parent="."]
-position = Vector2( 159.59, 91.7626 )
+position = Vector2( 159.441, 91.2907 )
 scale = Vector2( 20.9339, 12.4982 )
 z_index = -1
 texture = ExtResource( 5 )
