@@ -6,7 +6,7 @@ void godot::RestartButton::_register_methods()
 	register_method("_process", &RestartButton::_process);
 	register_method("_on_restart_button_pressed", &RestartButton::_on_restart_button_pressed);
 	register_method("_restart_world", &RestartButton::_restart_world);
-	
+	register_method("_fade_world_music_in", &RestartButton::_fade_world_music_in);
 }
 
 void godot::RestartButton::_init()
@@ -21,6 +21,9 @@ void godot::RestartButton::_ready()
 
 	_timer = Timer::_new();
 	this->add_child(_timer);
+
+	_music_timer = Timer::_new();
+	this->add_child(_music_timer);
 }
 
 void godot::RestartButton::_process(float delta)
@@ -43,6 +46,7 @@ void godot::RestartButton::_process(float delta)
 
 void godot::RestartButton::_on_restart_button_pressed()
 {
+	_fade_world_music_in();
 
 	SoundEffectsManager::_get_singleton()->_play_sound_effect("ButtonClickSE", get_node("/root/"));
 	_button_name = this->get_name();
@@ -84,4 +88,9 @@ void godot::RestartButton::_restart_world()
 	}
 
 
+}
+
+void godot::RestartButton::_fade_world_music_in()
+{
+	AudioController::_get_singleton()->_fade_world_music_in(_music_timer,this);
 }

@@ -38,7 +38,10 @@
 #include <CanvasModulate.hpp>
 #include <Light2D.hpp>
 #include <AudioStreamPlayer2D.hpp>
-
+#include <AudioServer.hpp>
+#include <CheckBox.hpp>
+#include <OS.hpp>
+#include <HSlider.hpp>
 
 //My headers
 #include "Player.h"
@@ -79,7 +82,8 @@
 #include "SoundEffectsManager.h"
 
 #include "SelectionButton.h"
-
+#include "AudioController.h"
+#include "Options.h"
 
 //cpp headers
 #include <cmath>

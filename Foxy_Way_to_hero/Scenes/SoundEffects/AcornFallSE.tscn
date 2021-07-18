@@ -5,3 +5,4 @@
 [node name="AcornFallSE" type="AudioStreamPlayer2D"]
 stream = ExtResource( 1 )
 autoplay = true
+bus = "SoundEffects"
