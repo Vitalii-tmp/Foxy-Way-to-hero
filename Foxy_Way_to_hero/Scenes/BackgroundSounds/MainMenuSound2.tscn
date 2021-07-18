@@ -5,3 +5,4 @@
 [node name="MainMenuSound2" type="AudioStreamPlayer2D"]
 stream = ExtResource( 1 )
 autoplay = true
+bus = "MainMenuBackground"

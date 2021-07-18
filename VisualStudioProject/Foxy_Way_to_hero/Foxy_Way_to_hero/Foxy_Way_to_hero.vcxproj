@@ -162,6 +162,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Acorn.cpp" />
+    <ClCompile Include="AudioController.cpp" />
     <ClCompile Include="Backpack.cpp" />
     <ClCompile Include="BackpackItemButton.cpp" />
     <ClCompile Include="BatAI.cpp" />
@@ -202,6 +203,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Acorn.h" />
+    <ClInclude Include="AudioController.h" />
     <ClInclude Include="Backpack.h" />
     <ClInclude Include="BackpackItemButton.h" />
     <ClInclude Include="BatAI.h" />

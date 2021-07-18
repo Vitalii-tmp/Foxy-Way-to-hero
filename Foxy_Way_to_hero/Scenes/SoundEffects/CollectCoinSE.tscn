@@ -6,4 +6,5 @@
 [node name="CollectCoinSE" type="AudioStreamPlayer2D"]
 stream = ExtResource( 2 )
 autoplay = true
+bus = "SoundEffects"
 script = ExtResource( 1 )

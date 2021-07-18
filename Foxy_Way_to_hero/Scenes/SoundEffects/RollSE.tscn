@@ -7,3 +7,4 @@ stream = ExtResource( 2 )
 volume_db = -10.0
 pitch_scale = 1.68
 autoplay = true
+bus = "SoundEffects"

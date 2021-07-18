@@ -9,4 +9,5 @@ stream = ExtResource( 2 )
 autoplay = true
 max_distance = 9.22337e+18
 attenuation = 1e-05
+bus = "SoundEffects"
 script = ExtResource( 1 )

@@ -80,6 +80,8 @@ namespace godot {
 
 		void _set_player_speed(float speed);
 		void _set_to_invisible();
+
+		void _fade_world_music_out();
 		// Gameplay variables
 	public:
 		Backpack* _backpack = nullptr;
@@ -103,6 +105,7 @@ namespace godot {
 		Timer* _death_timer = nullptr;
 		Timer* _timer = nullptr;
 		Timer* _cool_down_timer = nullptr;
+		Timer* _music_timer = nullptr;
 
 		bool _is_alive;
 		bool _invisible;
