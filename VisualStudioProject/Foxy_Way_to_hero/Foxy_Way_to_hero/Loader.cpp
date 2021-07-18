@@ -34,7 +34,7 @@ namespace godot
 		_numSnakeFangs = 0;
 		_numDamageItem = 0;
 
-		_isFirstTime = false;
+		_isFirstTime = true;
 
 		_hunger = 360.f;
 		_hp = 100.f;
@@ -401,7 +401,7 @@ namespace godot
 		_numSnakeFangs = 0;
 		_numDamageItem = 0;
 
-		_isFirstTime = false;
+		_isFirstTime = true;
 
 		_hunger = 360.f;
 		_hp = 100.f;

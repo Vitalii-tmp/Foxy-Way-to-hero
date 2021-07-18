@@ -67,7 +67,7 @@ void godot::LoadSceneButton::_on_button_pressed()
 	{
 		Ref<PackedScene> world = _resource_loader->load("res://MainMenu.tscn");
 
-		get_node("/root/DeathMenu")->set_name("to_delete");
+		get_node("/root/World")->set_name("to_delete");
 		get_node("/root/to_delete")->queue_free();
 		get_tree()->set_pause(false);
 

@@ -19,7 +19,7 @@ void godot::TypingMessage::_ready()
 	_timer = Timer::_new();
 	add_child(_timer);
 
-	_message = "Hello, I`m Foxy and from\nmy childhood I have\ndreamed to become a\nhero. I think it`s time\nto do that. Let`s go\nwih me and do it together";
+	_message = "Hello, I`m Foxy and from\nmy childhood I have\ndreamed to become a\nhero. I think it`s time\nto do that. Let`s go\nwith me and do it together";
 	_current_text = "";
 
 	get_tree()->set_pause(true);
