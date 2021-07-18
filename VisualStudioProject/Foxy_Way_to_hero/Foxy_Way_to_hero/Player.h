@@ -68,7 +68,7 @@ namespace godot {
 		void _set_hunger(float _new_value);
 		void _set_is_received_task_hunter(bool is_received_task_hunter);
 		void _set_plus_killed_boars(int plus);
-		void _set_killed_boars(int killed_boars);
+		void _set_killed_boars(int killed_boars); 
 
 		//void _add_to_backpack(Meat* meat);
 
