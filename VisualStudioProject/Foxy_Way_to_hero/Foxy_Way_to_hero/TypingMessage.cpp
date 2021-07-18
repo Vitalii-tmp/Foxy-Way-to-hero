@@ -19,7 +19,7 @@ void godot::TypingMessage::_ready()
 	_timer = Timer::_new();
 	add_child(_timer);
 
-	_message = "Hello, I`m Foxy and from\nmy childhood I have\ndreamed to become a\nhero. I think it`s time\nto do that. Let`s go\nwih me and do it together";
+	_message = "Hello, I`m Foxy and from\nmy childhood I have\ndreamed to become a\nhero. I think it`s time\nto do that. Let`s go\nwith me and do it together";
 	_current_text = "";
 
 	get_tree()->set_pause(true);
@@ -61,7 +61,7 @@ void godot::TypingMessage::_add_char()
 
 void godot::TypingMessage::_delete_cut_scene()
 {
-	Loader::get_singleton()->set_is_first_time(true);
+	Loader::get_singleton()->set_is_first_time(false);
 	Loader::get_singleton()->save_all_fields();
 	
 	//_timer->disconnect("timeout", this, "_delete_cut_scene");
