@@ -3046,49 +3046,49 @@ position = Vector2( 3789.11, 165 )
 show_behind_parent = true
 position = Vector2( 112.327, 41.6787 )
 frames = SubResource( 295 )
-frame = 3
+frame = 11
 playing = true
 
 [node name="Sprite5" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 2724.15, 145.95 )
 frames = SubResource( 295 )
-frame = 2
+frame = 10
 playing = true
 
 [node name="Sprite6" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 2397.88, 78.6781 )
 frames = SubResource( 295 )
-frame = 1
+frame = 9
 playing = true
 
 [node name="Sprite7" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 3427.14, 139.223 )
 frames = SubResource( 295 )
-frame = 1
+frame = 9
 playing = true
 
 [node name="Sprite2" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 124.609, 141.946 )
 frames = SubResource( 295 )
-frame = 2
+frame = 10
 playing = true
 
 [node name="Sprite3" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 745.891, 13.4241 )
 frames = SubResource( 295 )
-frame = 2
+frame = 10
 playing = true
 
 [node name="Sprite4" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 555.073, 180.11 )
 frames = SubResource( 295 )
-frame = 1
+frame = 9
 playing = true
 
 [node name="Grass" type="YSort" parent="YSort"]
@@ -3465,10 +3465,14 @@ position = Vector2( 2523.85, 47.5268 )
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="PlayButton" type="TextureButton" parent="UI"]
-margin_left = 4.89964
-margin_top = 69.2597
-margin_right = 43.8996
-margin_bottom = 79.2597
+anchor_left = 0.015
+anchor_top = 0.385
+anchor_right = 0.32
+anchor_bottom = 0.524
+margin_left = 0.0996399
+margin_top = -0.0403061
+margin_right = -58.5004
+margin_bottom = -15.0603
 rect_scale = Vector2( 2.5, 2.5 )
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 6 )
@@ -3479,10 +3483,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="UI/PlayButton"]
-margin_left = 3.0
-margin_top = 1.0
-margin_right = 36.0
-margin_bottom = 9.0
+anchor_left = 0.077
+anchor_top = 0.1
+anchor_right = 0.923
+anchor_bottom = 0.9
+margin_left = -0.00300026
+margin_right = 0.00299835
 custom_fonts/font = SubResource( 296 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "continue"
@@ -3493,10 +3499,14 @@ __meta__ = {
 }
 
 [node name="NewGameButton" type="TextureButton" parent="UI"]
-margin_left = 5.09805
-margin_top = 95.0549
-margin_right = 44.0981
-margin_bottom = 105.055
+anchor_left = 0.016
+anchor_top = 0.528
+anchor_right = 0.321
+anchor_bottom = 0.667
+margin_left = -0.0219502
+margin_top = 0.0149002
+margin_right = -58.6219
+margin_bottom = -15.005
 rect_scale = Vector2( 2.5, 2.5 )
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 6 )
@@ -3507,10 +3517,14 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="UI/NewGameButton"]
-margin_left = 3.0
-margin_top = 1.0
-margin_right = 36.0
-margin_bottom = 9.0
+anchor_left = 0.077
+anchor_top = 0.1
+anchor_right = 0.923
+anchor_bottom = 0.9
+margin_left = -0.00300407
+margin_top = -9.89437e-06
+margin_right = 0.00295258
+margin_bottom = -8.96454e-05
 custom_fonts/font = SubResource( 296 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "new game"
@@ -3521,10 +3535,14 @@ __meta__ = {
 }
 
 [node name="SettingsButton" type="TextureButton" parent="UI"]
-margin_left = 4.88638
-margin_top = 121.432
-margin_right = 43.8864
-margin_bottom = 131.432
+anchor_left = 0.015
+anchor_top = 0.675
+anchor_right = 0.32
+anchor_bottom = 0.814
+margin_left = 0.08638
+margin_top = -0.0680008
+margin_right = -58.5136
+margin_bottom = -15.088
 rect_scale = Vector2( 2.5, 2.5 )
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 6 )
@@ -3534,10 +3552,14 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="UI/SettingsButton"]
-margin_left = 3.0
-margin_top = 1.0
-margin_right = 36.0
-margin_bottom = 9.00001
+anchor_left = 0.077
+anchor_top = 0.1
+anchor_right = 0.923
+anchor_bottom = 0.9
+margin_left = -0.00300169
+margin_top = -8.34465e-07
+margin_right = 0.00297928
+margin_bottom = 1.90735e-06
 custom_fonts/font = SubResource( 296 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "settings"
@@ -3548,10 +3570,14 @@ __meta__ = {
 }
 
 [node name="QuitButton" type="TextureButton" parent="UI"]
-margin_left = 5.0
-margin_top = 147.0
-margin_right = 44.0
-margin_bottom = 157.0
+anchor_left = 0.016
+anchor_top = 0.817
+anchor_right = 0.32
+anchor_bottom = 0.956
+margin_left = -0.12
+margin_top = -0.0600128
+margin_right = -58.4
+margin_bottom = -15.08
 rect_scale = Vector2( 2.5, 2.5 )
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 6 )
@@ -3562,10 +3588,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="UI/QuitButton"]
-margin_left = 3.0
+anchor_left = 0.077
+anchor_right = 0.923
+anchor_bottom = 0.9
+margin_left = -0.00300026
 margin_top = 1.0
-margin_right = 36.0
-margin_bottom = 9.0
+margin_right = 0.00299835
 custom_fonts/font = SubResource( 296 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "quit"

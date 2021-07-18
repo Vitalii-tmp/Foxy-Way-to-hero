@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/LoadSceneButton.gdns" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Sprites/UI/menuBackground.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Effects/FadeIn.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Sprites/Fonts/Welbut__.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Sprites/UI/buttonHover.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -29,10 +30,14 @@ scale = Vector2( 2.36846, 2.5 )
 texture = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 99.2051
-margin_top = 37.1559
-margin_right = 224.205
-margin_bottom = 62.1559
+anchor_left = 0.31
+anchor_top = 0.206
+anchor_right = 0.701
+anchor_bottom = 0.345
+margin_left = 0.00510406
+margin_top = 0.0758972
+margin_right = -0.115005
+margin_bottom = 0.0558929
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "GAME OVER"
@@ -43,22 +48,31 @@ __meta__ = {
 }
 
 [node name="RestartDeathButton" type="TextureButton" parent="."]
-margin_left = 108.505
-margin_top = 62.6629
-margin_right = 147.505
-margin_bottom = 72.6629
+anchor_left = 0.339
+anchor_top = 0.348
+anchor_right = 0.668
+anchor_bottom = 0.498
+margin_left = 0.0249939
+margin_top = 0.0228958
+margin_right = -66.255
+margin_bottom = -16.9771
 rect_scale = Vector2( 2.7, 2.7 )
 texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 9 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="RestartDeathButton"]
-margin_left = 3.0
-margin_top = 1.0
-margin_right = 36.0
-margin_bottom = 9.0
+anchor_left = 0.077
+anchor_top = 0.1
+anchor_right = 0.923
+anchor_bottom = 1.0
+margin_left = -0.00300097
+margin_top = -3.57628e-07
+margin_right = 0.00299072
+margin_bottom = -1.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "restart"
@@ -69,22 +83,31 @@ __meta__ = {
 }
 
 [node name="MainMenuDeathButton" type="TextureButton" parent="."]
-margin_left = 108.883
-margin_top = 98.0669
-margin_right = 147.883
-margin_bottom = 108.067
+anchor_left = 0.34
+anchor_top = 0.545
+anchor_right = 0.669
+anchor_bottom = 0.695
+margin_left = 0.0830002
+margin_top = -0.0331039
+margin_right = -66.197
+margin_bottom = -17.033
 rect_scale = Vector2( 2.7, 2.7 )
 texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 9 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="MainMenuDeathButton"]
-margin_left = 3.0
-margin_top = 1.0
-margin_right = 36.0
-margin_bottom = 9.0
+anchor_left = 0.077
+anchor_top = 0.1
+anchor_right = 0.923
+anchor_bottom = 0.9
+margin_left = -0.00300026
+margin_top = -9.89437e-06
+margin_right = 0.00299835
+margin_bottom = -8.96454e-05
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "main menu"
