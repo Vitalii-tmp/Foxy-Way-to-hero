@@ -17131,6 +17131,7 @@ position = Vector2( 6720, 2456 )
 position = Vector2( -3816, -3568 )
 
 [node name="GameBackgroundSound" parent="Camera2D" instance=ExtResource( 46 )]
+bus = "Master"
 
 [node name="UI" parent="." instance=ExtResource( 12 )]
 
