@@ -20,6 +20,8 @@ void godot::NPC::_process(float delta)
 
 	if (_task == HUNTER)
 		progress_str = String::num(_count_of_boars) + "/5 boars to\n get a prize";
+	else if (_task == ACORNS)
+		progress_str = "";
 
 	_progress_label->set_text(progress_str);
 
@@ -41,19 +43,33 @@ void godot::NPC::_process(float delta)
 
 void godot::NPC::_ready()
 {
-	_task = HUNTER;
+	if (rand() % 2 == 0) {
+		_task = HUNTER;
+	}
+	else
+		_task = ACORNS;
+	//_task = HUNTER;
 
-	String str;
+	String str, question;
 
 	_question_window = cast_to<TextureRect>(get_child(2)->get_child(0)->get_node("QuestionWindow"));
+	_question_label = cast_to<Label>(_question_window->get_child(0));
 	_yes_button = cast_to<TextureButton>(_question_window->get_child(1));
 	_no_button = cast_to<TextureButton>(_question_window->get_child(2));
 
 	if (_task == HUNTER)
 	{
+		question = "Can you help me?";
 		str = "You need to find and \nkill 5 boars";
 		_yes_button->set_name("HunterYes");
 		_no_button->set_name("HunterNo");
+	}
+	else if(_task == ACORNS)
+	{
+		question = "Can you give me 15 acorns?\nI don`t have any weapon to\nprotect my home from enemies...";
+		str = "";
+		_yes_button->set_name("AcornsYes");
+		_no_button->set_name("AcornsNo");
 	}
 
 	_detection_area = cast_to<Area2D>(get_child(1));
@@ -68,7 +84,8 @@ void godot::NPC::_ready()
 	_progress_label = cast_to<Label>(_progress_menu->get_child(0));
 
 	_task_label->set_text(str);
-
+	_question_label->set_text(question);
+	
 	_resource_loader = ResourceLoader::get_singleton();
 }
 
@@ -122,19 +139,22 @@ void godot::NPC::_progress_check()
 		_result_menu->set_visible(false);
 	}
 	else if (i->is_action_just_pressed("e_action") && !_progress_menu->is_visible()
-		&& _result_menu->is_visible() && _count_of_boars >= 5)
+		&& _result_menu->is_visible() /*&& _count_of_boars >= 5*/)
 	{
 		_progress_menu->set_visible(false);
 		_dialog_window->set_visible(true);
 		_result_menu->set_visible(false);
 
-		Player::_get_singleton()->_set_is_received_task_hunter(false);
-		Player::_get_singleton()->_set_killed_boars(0);
+		if (_task == HUNTER) {
+			Player::_get_singleton()->_set_is_received_task_hunter(false);
+			Player::_get_singleton()->_set_killed_boars(0);
+			_count_of_boars = 0;
 
+		}
 
 		auto pos = this->get_global_position();
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < rand()%40; i++) {
 			Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/Coin.tscn");
 
 			auto item = cast_to<Area2D>(prefab->instance());
@@ -144,7 +164,6 @@ void godot::NPC::_progress_check()
 			item->set_global_position(pos + Vector2(0, rand() % 10));
 		}
 
-		_count_of_boars = 0;
 	}
 	else if (i->is_action_just_pressed("e_action") && _progress_menu->is_visible()) {
 		_progress_menu->set_visible(false);

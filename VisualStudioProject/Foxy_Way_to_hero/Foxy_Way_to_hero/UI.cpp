@@ -20,7 +20,7 @@ namespace godot
 		this->get_child(0)->set("text", this->get_coins_information().c_str());
 		this->get_child(1)->set("text", this->get_acorns_information().c_str());
 
-		if (!Loader::get_singleton()->get_is_first_time())
+		if (Loader::get_singleton()->get_is_first_time())
 		{
 			cast_to<TextureRect>(get_node("FirstScene"))->set_visible(true);
 		}
