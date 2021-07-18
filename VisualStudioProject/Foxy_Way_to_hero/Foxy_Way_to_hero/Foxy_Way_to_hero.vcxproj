@@ -185,6 +185,7 @@
     <ClCompile Include="MainMenuCamera.cpp" />
     <ClCompile Include="Mushrooms.cpp" />
     <ClCompile Include="NPC.cpp" />
+    <ClCompile Include="Options.cpp" />
     <ClCompile Include="PauseButton.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Preloader.cpp" />
@@ -226,6 +227,7 @@
     <ClInclude Include="MainMenuCamera.h" />
     <ClInclude Include="Mushrooms.h" />
     <ClInclude Include="NPC.h" />
+    <ClInclude Include="Options.h" />
     <ClInclude Include="PauseButton.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Preloader.h" />

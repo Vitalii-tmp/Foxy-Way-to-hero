@@ -27,7 +27,7 @@ void godot::AudioController::_fade_main_menu_music_out(Timer* _timer, Node* node
 	auto _menu_music_bass_index = audio_server->get_bus_index("MainMenuBackground");
 
 
-	if (audio_server->get_bus_volume_db(_menu_music_bass_index) < 0)
+	if (audio_server->get_bus_volume_db(_menu_music_bass_index) < _max_sound_value)
 	{
 		audio_server->set_bus_volume_db(_menu_music_bass_index, audio_server->get_bus_volume_db(_menu_music_bass_index) + 0.8);
 
@@ -65,7 +65,7 @@ void godot::AudioController::_fade_world_music_out(Timer* _timer, Node* node)
 	auto _world_music_bass_index = audio_server->get_bus_index("WorldBackground");
 
 
-	if (audio_server->get_bus_volume_db(_world_music_bass_index) < 0)
+	if (audio_server->get_bus_volume_db(_world_music_bass_index) < _max_sound_value)
 	{
 		audio_server->set_bus_volume_db(_world_music_bass_index, audio_server->get_bus_volume_db(_world_music_bass_index) + 0.8);
 
@@ -76,10 +76,22 @@ void godot::AudioController::_fade_world_music_out(Timer* _timer, Node* node)
 
 }
 
-void godot::AudioController::_set_music_volume(Timer* _timer, Node* node)
+void godot::AudioController::_set_music_volume(float _value)
 {
+	auto _world_music_bass_index = audio_server->get_bus_index("WorldBackground");
+	auto _menu_music_bass_index = audio_server->get_bus_index("MainMenuBackground");
+
+	audio_server->set_bus_volume_db(_world_music_bass_index, _value-90);
+	audio_server->set_bus_volume_db(_menu_music_bass_index, _value - 90);
 }
 
-void godot::AudioController::_set_sound_effects_volume(Timer* _timer, Node* node)
+void godot::AudioController::_set_sound_effects_volume(float _value)
 {
+	auto _sound_effects_bass_index = audio_server->get_bus_index("SoundEffects");
+	audio_server->set_bus_volume_db(_sound_effects_bass_index, _value - 90);
+}
+
+void godot::AudioController::_set_max_sound_value(float _value)
+{
+	this->_max_sound_value = _value-90;
 }

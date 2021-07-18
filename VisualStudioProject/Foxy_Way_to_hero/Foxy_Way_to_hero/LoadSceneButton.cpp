@@ -114,7 +114,9 @@ void godot::LoadSceneButton::_on_button_pressed()
 
 	if (get_name() == "SettingsButton")
 	{
-		
+		Ref<PackedScene> fade_out = _resource_loader->load("res://Scenes/Settings.tscn");
+
+		get_node("/root/MainMenu/UI")->add_child(fade_out->instance());
 	}
 }
 
