@@ -3,7 +3,7 @@
 void godot::MainMenuCamera::_register_methods()
 {
 	register_method("_ready", &MainMenuCamera::_ready);
-	register_method("_process", &MainMenuCamera::_process);
+	register_method("_physics_process", &MainMenuCamera::_physics_process);
 }
 
 void godot::MainMenuCamera::_init()
@@ -14,7 +14,7 @@ void godot::MainMenuCamera::_ready()
 {
 }
 
-void godot::MainMenuCamera::_process(float delta)
+void godot::MainMenuCamera::_physics_process(float delta)
 {
 	auto _current_pos = this->get_global_position();
 
