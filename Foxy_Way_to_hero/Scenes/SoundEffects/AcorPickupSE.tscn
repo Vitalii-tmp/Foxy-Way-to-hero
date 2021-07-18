@@ -7,4 +7,5 @@
 stream = ExtResource( 2 )
 volume_db = -3.0
 autoplay = true
+bus = "SoundEffects"
 script = ExtResource( 1 )

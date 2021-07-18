@@ -45,7 +45,7 @@
 [ext_resource path="res://GameManager.gdns" type="Script" id=43]
 [ext_resource path="res://Scenes/Environment/Mushrooms.tscn" type="PackedScene" id=44]
 [ext_resource path="res://Scenes/NPC/NPC.tscn" type="PackedScene" id=45]
-[ext_resource path="res://Scenes/BackgroundSounds/MainMenuSound2.tscn" type="PackedScene" id=46]
+[ext_resource path="res://Scenes/BackgroundSounds/GameBackgroundSound.tscn" type="PackedScene" id=46]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -15045,9 +15045,6 @@ remote_path = NodePath("../../../Camera2D")
 update_rotation = false
 update_scale = false
 
-[node name="MainMenuSound2" parent="YSort/Player" instance=ExtResource( 46 )]
-position = Vector2( -98.096, -545.859 )
-
 [node name="CheckPoints" type="YSort" parent="YSort"]
 
 [node name="CheckPoint2" parent="YSort/CheckPoints" instance=ExtResource( 15 )]
@@ -16949,6 +16946,8 @@ position = Vector2( 6720, 2456 )
 
 [node name="TopLeft" parent="Camera2D/Limits" index="1"]
 position = Vector2( -3816, -3568 )
+
+[node name="GameBackgroundSound" parent="Camera2D" instance=ExtResource( 46 )]
 
 [node name="UI" parent="." instance=ExtResource( 12 )]
 

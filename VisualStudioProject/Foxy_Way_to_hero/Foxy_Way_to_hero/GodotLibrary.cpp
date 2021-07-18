@@ -51,5 +51,5 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle) {
 	//register_class<SoundEffectsManager>();
 
 	register_class<SelectionButton>();
-
+	register_class<Options>();
 }

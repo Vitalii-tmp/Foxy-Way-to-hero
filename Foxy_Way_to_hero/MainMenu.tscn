@@ -2709,8 +2709,6 @@ font_data = ExtResource( 4 )
 
 [node name="MainMenu" type="Node2D"]
 
-[node name="MainMenuSound1" parent="." instance=ExtResource( 35 )]
-
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -160, -128 )
 scale = Vector2( 1.01196, 1.00752 )
@@ -2734,6 +2732,9 @@ position = Vector2( 160, 94.8486 )
 current = true
 smoothing_enabled = true
 script = ExtResource( 20 )
+
+[node name="MainMenuSound1" parent="MainMenuCamera" instance=ExtResource( 35 )]
+position = Vector2( -160, -94.8486 )
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
 z_index = -1
@@ -3046,49 +3047,49 @@ position = Vector2( 3789.11, 165 )
 show_behind_parent = true
 position = Vector2( 112.327, 41.6787 )
 frames = SubResource( 295 )
-frame = 3
+frame = 10
 playing = true
 
 [node name="Sprite5" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 2724.15, 145.95 )
 frames = SubResource( 295 )
-frame = 2
+frame = 9
 playing = true
 
 [node name="Sprite6" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 2397.88, 78.6781 )
 frames = SubResource( 295 )
-frame = 1
+frame = 8
 playing = true
 
 [node name="Sprite7" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 3427.14, 139.223 )
 frames = SubResource( 295 )
-frame = 1
+frame = 8
 playing = true
 
 [node name="Sprite2" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 124.609, 141.946 )
 frames = SubResource( 295 )
-frame = 2
+frame = 9
 playing = true
 
 [node name="Sprite3" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 745.891, 13.4241 )
 frames = SubResource( 295 )
-frame = 2
+frame = 9
 playing = true
 
 [node name="Sprite4" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 555.073, 180.11 )
 frames = SubResource( 295 )
-frame = 1
+frame = 8
 playing = true
 
 [node name="Grass" type="YSort" parent="YSort"]
@@ -3529,6 +3530,7 @@ rect_scale = Vector2( 2.5, 2.5 )
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 6 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

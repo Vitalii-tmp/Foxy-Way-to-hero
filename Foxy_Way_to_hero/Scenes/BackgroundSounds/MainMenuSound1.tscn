@@ -5,3 +5,5 @@
 [node name="MainMenuSound1" type="AudioStreamPlayer2D"]
 stream = ExtResource( 1 )
 autoplay = true
+max_distance = 60819.0
+bus = "MainMenuBackground"

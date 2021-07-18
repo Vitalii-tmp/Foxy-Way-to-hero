@@ -25,6 +25,8 @@ void godot::Player::_register_methods()
 	register_method("_reset_player_visibility", &Player::_reser_player_visibility);
 	register_method("_reser_player_speed_after_item", &Player::_reser_player_speed_after_item);
 	
+	register_method("_fade_world_music_out", &Player::_fade_world_music_out);
+	
 }
 
 
@@ -93,6 +95,11 @@ void godot::Player::_ready()
 	_player_sprite = cast_to<Sprite>(get_node("PlayerSprite"));
 	_shadow = cast_to<Sprite>(get_node("Shadow"));
 
+	_music_timer = Timer::_new();
+	this->add_child(_music_timer);
+
+
+	_fade_world_music_out();
 }
 
 
@@ -126,6 +133,7 @@ void godot::Player::_physics_process(float delta)
 			_death_timer->start(2);
 		}*/
 
+		SoundEffectsManager::_get_singleton()->_play_sound_effect("DeathSE", get_node("/root/World/Camera2D/"));
 
 		queue_free();
 
@@ -604,6 +612,11 @@ void godot::Player::_set_to_invisible()
 		_timer->connect("timeout", this, "_reset_player_visibility");
 		_timer->start(_invisibility_cooldown);
 	}
+}
+
+void godot::Player::_fade_world_music_out()
+{
+	AudioController::_get_singleton()->_fade_world_music_out(_music_timer, this);
 }
 
 //void godot::Player::_add_to_backpack(Meat* meat)

@@ -7,3 +7,4 @@ stream = ExtResource( 2 )
 volume_db = -10.0
 autoplay = true
 attenuation = 3.36358
+bus = "SoundEffects"
