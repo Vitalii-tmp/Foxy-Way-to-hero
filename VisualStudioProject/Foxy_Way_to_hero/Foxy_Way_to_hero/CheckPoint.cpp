@@ -44,4 +44,6 @@ void godot::CheckPoint::_on_check_point_animation_finished()
 	//save data
 	Loader::get_singleton()->set_start_position(this->get_global_position()+Vector2(0,30));
 	Loader::get_singleton()->save_all_fields();
+
+	SoundEffectsManager::_get_singleton()->_play_sound_effect("CheckPointSE", this);
 }

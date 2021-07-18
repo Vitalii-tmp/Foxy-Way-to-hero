@@ -46,7 +46,7 @@ void godot::RestartButton::_process(float delta)
 
 void godot::RestartButton::_on_restart_button_pressed()
 {
-	
+	_fade_world_music_in();
 
 	SoundEffectsManager::_get_singleton()->_play_sound_effect("ButtonClickSE", get_node("/root/"));
 	_button_name = this->get_name();
