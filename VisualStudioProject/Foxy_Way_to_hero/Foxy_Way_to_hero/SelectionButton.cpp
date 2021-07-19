@@ -45,6 +45,12 @@ void godot::SelectionButton::_on_button_pressed()
 			cast_to<TextureRect>(get_parent()->get_parent()->get_node("DialogNPC3"))->set_visible(true);
 			cast_to<TextureRect>(get_parent())->set_visible(false);
 		}
+		else
+		{
+			Godot::print("in else");
+			cast_to<TextureRect>(get_parent()->get_parent()->get_node("NoAcornsWindow"))->set_visible(true);
+			//cast_to<TextureRect>(get_parent())->set_visible(false);
+		}
 	}
 	else if (get_name() == "AcornsNo")
 	{

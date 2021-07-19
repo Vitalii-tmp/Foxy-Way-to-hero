@@ -15869,6 +15869,9 @@ position = Vector2( 5115.07, -2791.25 )
 position = Vector2( 5296.5, -2789.99 )
 
 [node name="NPC" type="YSort" parent="YSort"]
+__meta__ = {
+"_edit_bone_": true
+}
 
 [node name="Countryman" parent="YSort/NPC" instance=ExtResource( 18 )]
 position = Vector2( 1560, -944 )
@@ -15968,6 +15971,9 @@ position = Vector2( 1117.65, -2305.24 )
 
 [node name="NPC7" parent="YSort/NPC" instance=ExtResource( 45 )]
 position = Vector2( 1361.33, -2120.89 )
+
+[node name="NPC8" parent="YSort/NPC" instance=ExtResource( 45 )]
+position = Vector2( 346.966, -252.568 )
 
 [node name="Meat" type="YSort" parent="YSort"]
 
