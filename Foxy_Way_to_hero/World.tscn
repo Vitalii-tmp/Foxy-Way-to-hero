@@ -17131,10 +17131,10 @@ process_mode = 0
 smoothing_speed = 6.0
 
 [node name="BottomRight" parent="Camera2D/Limits" index="0"]
-position = Vector2( 6720, 2456 )
+position = Vector2( 7008.17, 820.189 )
 
 [node name="TopLeft" parent="Camera2D/Limits" index="1"]
-position = Vector2( -3816, -3568 )
+position = Vector2( -3657.43, -5312.28 )
 
 [node name="GameBackgroundSound" parent="Camera2D" instance=ExtResource( 46 )]
 bus = "Master"

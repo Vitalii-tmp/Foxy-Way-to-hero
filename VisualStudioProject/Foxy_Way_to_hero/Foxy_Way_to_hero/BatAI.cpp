@@ -59,14 +59,14 @@ void godot::BatAI::_physics_process(float delta)
 
 	if (!_is_alive)
 	{
-		
 
-		_bat_hit_area->queue_free();
+
+		/*_bat_hit_area->queue_free();
 		_bat_sprite->set_visible(false);
-		_die_effect->set_visible(true);
-		_die_effect->play();
-
+		_die_effect->set_visible(true);*/
 		
+
+
 	}
 
 
@@ -76,59 +76,61 @@ void godot::BatAI::_physics_process(float delta)
 //hurt area take damage from player
 void godot::BatAI::_on_hurt_area_area_entered(Area2D* _other_area)
 {
-	if (_other_area->get_name() == "ShortAttackArea")
+	if (_is_alive)
 	{
-		//play hit affect
-		_hit_effect->set_visible(true);
-		_hit_effect->play();
+		if (_other_area->get_name() == "ShortAttackArea")
+		{
 
-		//get vector(direction) player knocks bat and damage
-		auto _vector = Player::_get_singleton()->_get_input_vector();
-		auto _pl_damage = Player::_get_singleton()->_get_damage();
+			//play hit affect
+			_hit_effect->set_visible(true);
+			_hit_effect->play();
 
-		//knock back bat
-		_knockback_vector = _vector.normalized() * 150;
+			//get vector(direction) player knocks bat and damage
+			auto _vector = Player::_get_singleton()->_get_input_vector();
+			auto _pl_damage = Player::_get_singleton()->_get_damage();
 
-		_hp -= _pl_damage;
+			//knock back bat
+			_knockback_vector = _vector.normalized() * 150;
 
-		SoundEffectsManager::_get_singleton()->_play_sound_effect("EnemyHitSE", Player::_get_singleton());
+			_hp -= _pl_damage;
+
+			SoundEffectsManager::_get_singleton()->_play_sound_effect("EnemyHitSE", Player::_get_singleton());
+		}
+
+		if (_other_area->get_name() == "LongAttackArea")
+		{
+			//play hit affect
+			_hit_effect->set_visible(true);
+			_hit_effect->play();
+
+			//get vector(direction) player knocks bat and damage
+			auto _vector = Player::_get_singleton()->_get_input_vector();
+			auto _pl_damage = Player::_get_singleton()->_get_damage();
+
+			//knock back bat
+			_knockback_vector = _vector.normalized() * 150;
+			_hp -= _pl_damage;
+
+			SoundEffectsManager::_get_singleton()->_play_sound_effect("EnemyHitSE", Player::_get_singleton());
+		}
+
+		if (_hp <= 0 && (_other_area->get_name() == "ShortAttackArea" || _other_area->get_name() == "LongAttackArea"))
+		{
+			
+			_is_alive = false;
+
+
+			_is_alive = false;
+			_bat_sprite->set_visible(false);
+			_die_effect->set_visible(true);
+			_die_effect->play();
+
+
+
+
+		}
 	}
-
-	if (_other_area->get_name() == "LongAttackArea")
-	{
-		//play hit affect
-		_hit_effect->set_visible(true);
-		_hit_effect->play();
-
-		//get vector(direction) player knocks bat and damage
-		auto _vector = Player::_get_singleton()->_get_input_vector();
-		auto _pl_damage = Player::_get_singleton()->_get_damage();
-
-		//knock back bat
-		_knockback_vector = _vector.normalized() * 150;
-		_hp -= _pl_damage;
-
-		SoundEffectsManager::_get_singleton()->_play_sound_effect("EnemyHitSE", Player::_get_singleton());
-	}
-
-	if (_hp <= 0&&(_other_area->get_name() == "ShortAttackArea"|| _other_area->get_name() == "LongAttackArea"))
-	{
-
-		_spawn_coin();
-		_spawn_wing();
-
-		_is_alive = false;
-
-
-		_is_alive = false;
-		_bat_sprite->set_visible(false);
-		_die_effect->set_visible(true);
-		_die_effect->play();
-
-		
-
 	
-	}
 }
 
 
@@ -162,7 +164,8 @@ void godot::BatAI::_on_die_effect_animation_finished()
 {
 	/*_spawn_coin();
 	_spawn_wing();*/
-
+	_spawn_coin();
+	_spawn_wing();
 
 	queue_free();
 }
