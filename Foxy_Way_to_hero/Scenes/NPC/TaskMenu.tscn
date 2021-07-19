@@ -122,6 +122,56 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="NoAcornsWindow" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -63.685
+margin_top = -41.5134
+margin_right = 64.315
+margin_bottom = -9.5134
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NoAcornsWindow"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -38.0
+margin_top = -15.0
+margin_right = 63.0
+margin_bottom = 8.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "You don`t have enough acorns
+Please search more...."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="NoAcornsWindow"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.7136
+margin_top = 7.23597
+margin_right = 57.2864
+margin_bottom = 15.236
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "press e"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="DialogNPC3" type="TextureRect" parent="."]
 visible = false
 anchor_left = 0.5

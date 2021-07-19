@@ -3047,49 +3047,49 @@ position = Vector2( 3789.11, 165 )
 show_behind_parent = true
 position = Vector2( 112.327, 41.6787 )
 frames = SubResource( 295 )
-frame = 10
+frame = 5
 playing = true
 
 [node name="Sprite5" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 2724.15, 145.95 )
 frames = SubResource( 295 )
-frame = 9
+frame = 4
 playing = true
 
 [node name="Sprite6" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 2397.88, 78.6781 )
 frames = SubResource( 295 )
-frame = 8
+frame = 3
 playing = true
 
 [node name="Sprite7" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 3427.14, 139.223 )
 frames = SubResource( 295 )
-frame = 8
+frame = 3
 playing = true
 
 [node name="Sprite2" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 124.609, 141.946 )
 frames = SubResource( 295 )
-frame = 9
+frame = 4
 playing = true
 
 [node name="Sprite3" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 745.891, 13.4241 )
 frames = SubResource( 295 )
-frame = 9
+frame = 4
 playing = true
 
 [node name="Sprite4" type="AnimatedSprite" parent="YSort/Musrooms"]
 show_behind_parent = true
 position = Vector2( 555.073, 180.11 )
 frames = SubResource( 295 )
-frame = 8
+frame = 3
 playing = true
 
 [node name="Grass" type="YSort" parent="YSort"]

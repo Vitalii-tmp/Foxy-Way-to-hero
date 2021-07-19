@@ -116,7 +116,36 @@ void godot::LoadSceneButton::_on_button_pressed()
 	{
 		Ref<PackedScene> fade_out = _resource_loader->load("res://Scenes/Settings.tscn");
 
+		//cast_to<TextureButton>(this->get_parent()->get_parent()->get_node("PlayButton"))->set_visible(false);
+		//this->set_visible(false);
+		//cast_to<TextureButton>(this->get_parent()->get_parent()->get_node("NewGameButton"))->set_visible(false);
+		//cast_to<TextureButton>(this->get_parent()->get_parent()->get_node("QuitButton"))->set_visible(false);
+
+		cast_to<TextureButton>(get_node("/root/MainMenu/UI/PlayButton"))->set_visible(false);
+		cast_to<TextureButton>(get_node("/root/MainMenu/UI/NewGameButton"))->set_visible(false);
+		cast_to<TextureButton>(get_node("/root/MainMenu/UI/QuitButton"))->set_visible(false);
+		cast_to<TextureButton>(get_node("/root/MainMenu/UI/SettingsButton"))->set_visible(false);
+
+		
 		get_node("/root/MainMenu/UI")->add_child(fade_out->instance());
+	}
+
+	if (get_name() == "BackButton")
+	{
+		//Ref<PackedScene> fade_out = _resource_loader->load("res://Scenes/Settings.tscn");
+
+		//cast_to<TextureButton>(this->get_parent()->get_parent()->get_node("PlayButton"))->set_visible(false);
+		//this->set_visible(false);
+		//cast_to<TextureButton>(this->get_parent()->get_parent()->get_node("NewGameButton"))->set_visible(false);
+		//cast_to<TextureButton>(this->get_parent()->get_parent()->get_node("QuitButton"))->set_visible(false);
+
+		cast_to<TextureButton>(get_node("/root/MainMenu/UI/PlayButton"))->set_visible(true);
+		cast_to<TextureButton>(get_node("/root/MainMenu/UI/NewGameButton"))->set_visible(true);
+		cast_to<TextureButton>(get_node("/root/MainMenu/UI/QuitButton"))->set_visible(true);
+		cast_to<TextureButton>(get_node("/root/MainMenu/UI/SettingsButton"))->set_visible(true);
+
+
+		get_node("/root/MainMenu/UI/Settings")->queue_free();
 	}
 }
 

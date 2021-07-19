@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/UI/menuBackground.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Settings.gdns" type="Script" id=3]
+[ext_resource path="res://Sprites/Shadows/MenuShadow.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/LoadSceneButton.gdns" type="Script" id=5]
+[ext_resource path="res://Sprites/UI/button.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/UI/buttonHover.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -13,6 +17,10 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 13
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 10
 font_data = ExtResource( 1 )
 
 [node name="Settings" type="Control"]
@@ -49,9 +57,9 @@ __meta__ = {
 
 [node name="FullScreenCB" type="CheckBox" parent="."]
 margin_left = 27.5795
-margin_top = -31.1501
+margin_top = -41.1501
 margin_right = 51.5795
-margin_bottom = -7.15009
+margin_bottom = -17.1501
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -70,27 +78,27 @@ __meta__ = {
 
 [node name="SoundEffectsSlider" type="HSlider" parent="."]
 margin_left = -13.0904
-margin_top = 1.27917
+margin_top = -8.72083
 margin_right = 67.9096
-margin_bottom = 17.2792
+margin_bottom = 7.2792
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MusicSlider" type="HSlider" parent="."]
 margin_left = -12.0768
-margin_top = 33.0672
+margin_top = 23.0672
 margin_right = 69.9232
-margin_bottom = 49.0672
+margin_bottom = 39.0672
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
 margin_left = -58.3196
-margin_top = 3.42899
+margin_top = -6.57101
 margin_right = -18.3196
-margin_bottom = 17.429
+margin_bottom = 7.429
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Effects"
@@ -100,15 +108,51 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="."]
 margin_left = -59.2645
-margin_top = 35.0922
+margin_top = 25.0922
 margin_right = -19.2645
-margin_bottom = 49.0922
+margin_bottom = 39.0922
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Volume"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 5.49999, -2 )
+scale = Vector2( 23.375, 14 )
+z_index = -2
+texture = ExtResource( 4 )
+
+[node name="BackButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.9614
+margin_top = 43.0189
+margin_right = 2.0386
+margin_bottom = 53.0189
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BackButton"]
+anchor_left = 0.077
+anchor_right = 0.923
+anchor_bottom = 1.0
+margin_left = -0.400301
+margin_top = 0.132439
+margin_right = -0.394302
+margin_bottom = 1.13244
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Back"
+align = 1
 
 [connection signal="button_up" from="FullScreenCB" to="." method="_on_full_screen_button_up"]
 [connection signal="value_changed" from="SoundEffectsSlider" to="." method="_on_sound_effects_slider_value_changed"]
