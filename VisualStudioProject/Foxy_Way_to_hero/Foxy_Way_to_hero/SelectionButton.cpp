@@ -47,13 +47,15 @@ void godot::SelectionButton::_on_button_pressed()
 		}
 		else
 		{
-			if(get_parent()->get_parent()->get_node("NoAcornsWindow")== nullptr)
+			if (get_parent()->get_parent()->get_node("NoAcornsWindow") != nullptr)
+			{
 				Godot::print("nullptr");
 
-			auto noAcorns = cast_to<TextureRect>(get_parent()->get_parent()->get_node("NoAcornsWindow"));
-			
-			noAcorns->set_visible(true);
-			cast_to<TextureRect>(get_parent())->set_visible(false);
+				auto noAcorns = cast_to<TextureRect>(get_parent()->get_parent()->get_node("NoAcornsWindow"));
+
+				noAcorns->set_visible(true);
+				cast_to<TextureRect>(get_parent())->set_visible(false);
+			} 
 		}
 	}
 	else if (get_name() == "AcornsNo")
