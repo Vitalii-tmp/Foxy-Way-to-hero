@@ -66,7 +66,7 @@ void godot::NPC::_ready()
 	}
 	else if(_task == ACORNS)
 	{
-		question = "Can you give me 15 acorns?\nI don`t have any weapon to\nprotect my home from enemies...";
+		question = "Can you give me 15 acorns?\nI don`t have any weapon...";
 		str = "";
 		_yes_button->set_name("AcornsYes");
 		_no_button->set_name("AcornsNo");
@@ -94,7 +94,7 @@ void godot::NPC::_on_detection_area_entered(Node* node)
 
 	if (node->get_name() == "Player")
 	{
-		if (GameManager::_get_singleton()->_get_help_npc())
+		if (GameManager::_get_singleton()->_get_help_npc() && _task == HUNTER)
 		{
 			_dialog_window->set_visible(true);
 			Player::_get_singleton()->_set_is_received_task_hunter(true);
@@ -123,26 +123,35 @@ void godot::NPC::_progress_check()
 {
 	Input* i = Input::get_singleton();
 
-	if (i->is_action_just_pressed("e_action") && !_progress_menu->is_visible()
-		&& !_result_menu->is_visible() && _count_of_boars >= 5)
-	{
-		_progress_menu->set_visible(false);
-		_dialog_window->set_visible(false);
-		_result_menu->set_visible(true);
-	}
-	else if (i->is_action_just_pressed("e_action") && !_progress_menu->is_visible()
-		&& !_result_menu->is_visible() && _count_of_boars <= 5)
-	{
-		Godot::print("In this");
+	if (_task == HUNTER) {
+		if (i->is_action_just_pressed("e_action") && !_progress_menu->is_visible()
+			&& !_result_menu->is_visible() && _count_of_boars >= 5)
+		{
+			_progress_menu->set_visible(false);
+			_dialog_window->set_visible(false);
+			_result_menu->set_visible(true);
+		}
+		else if (i->is_action_just_pressed("e_action") && !_progress_menu->is_visible()
+			&& !_result_menu->is_visible() && _count_of_boars <= 5)
+		{
+			Godot::print("In this");
 			_progress_menu->set_visible(true);
-		_dialog_window->set_visible(false);
-		_result_menu->set_visible(false);
+			_dialog_window->set_visible(false);
+			_result_menu->set_visible(false);
+		}
+	
+		else if (i->is_action_just_pressed("e_action") && _progress_menu->is_visible()) {
+			_progress_menu->set_visible(false);
+			_dialog_window->set_visible(true);
+			_result_menu->set_visible(false);
+			//_not_enough_money->set_visible(false);
+		}
 	}
-	else if (i->is_action_just_pressed("e_action") && !_progress_menu->is_visible()
+	if (i->is_action_just_pressed("e_action") && !_progress_menu->is_visible()
 		&& _result_menu->is_visible() /*&& _count_of_boars >= 5*/)
 	{
 		_progress_menu->set_visible(false);
-		_dialog_window->set_visible(true);
+		_question_window->set_visible(true);
 		_result_menu->set_visible(false);
 
 		if (_task == HUNTER) {
@@ -154,7 +163,7 @@ void godot::NPC::_progress_check()
 
 		auto pos = this->get_global_position();
 
-		for (int i = 0; i < rand()%40; i++) {
+		for (int i = 0; i < rand() % 40; i++) {
 			Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/Coin.tscn");
 
 			auto item = cast_to<Area2D>(prefab->instance());
@@ -164,11 +173,5 @@ void godot::NPC::_progress_check()
 			item->set_global_position(pos + Vector2(0, rand() % 10));
 		}
 
-	}
-	else if (i->is_action_just_pressed("e_action") && _progress_menu->is_visible()) {
-		_progress_menu->set_visible(false);
-		_dialog_window->set_visible(true);
-		_result_menu->set_visible(false);
-		//_not_enough_money->set_visible(false);
 	}
 }

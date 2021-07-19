@@ -34,14 +34,14 @@ pause_mode = 2
 layer = 2
 
 [node name="MainMenuButton" type="TextureButton" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 32.4005
-margin_top = 46.2711
-margin_right = 71.4005
-margin_bottom = 56.2711
+anchor_left = 0.343
+anchor_top = 0.568
+anchor_right = 0.672
+anchor_bottom = 0.718
+margin_left = 82.6405
+margin_top = 34.0311
+margin_right = 16.3605
+margin_bottom = 17.0311
 rect_scale = Vector2( 2.7, 2.7 )
 rect_pivot_offset = Vector2( 48.6602, 20 )
 texture_normal = ExtResource( 8 )
@@ -53,10 +53,14 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="MainMenuButton"]
-margin_left = 3.21852
-margin_top = 0.979115
-margin_right = 36.2185
-margin_bottom = 8.97911
+anchor_left = 0.083
+anchor_top = 0.098
+anchor_right = 0.929
+anchor_bottom = 0.898
+margin_left = -0.0184803
+margin_top = -0.00088501
+margin_right = -0.0125008
+margin_bottom = -0.000890732
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "main menu"
@@ -64,14 +68,14 @@ align = 1
 valign = 1
 
 [node name="ContinueButton" type="TextureButton" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -50.5791
-margin_top = -44.1619
-margin_right = -11.5791
-margin_bottom = -34.1619
+anchor_left = 0.342
+anchor_top = 0.255
+anchor_right = 0.671
+anchor_bottom = 0.405
+margin_left = -0.019104
+margin_top = -0.0619049
+margin_right = -66.2991
+margin_bottom = -17.0619
 rect_scale = Vector2( 2.7, 2.7 )
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
@@ -82,10 +86,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="ContinueButton"]
-margin_left = 3.0
-margin_top = 1.0
-margin_right = 36.0
-margin_bottom = 9.0
+anchor_left = 0.077
+anchor_top = 0.1
+anchor_right = 0.923
+anchor_bottom = 0.9
+margin_left = -0.00300026
+margin_right = 0.00299835
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "continue"
@@ -93,14 +99,14 @@ align = 1
 valign = 1
 
 [node name="RestartButton" type="TextureButton" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -50.2045
-margin_top = -15.7272
-margin_right = -11.2045
-margin_bottom = -5.72717
+anchor_left = 0.343
+anchor_top = 0.413
+anchor_right = 0.672
+anchor_bottom = 0.563
+margin_left = 0.0354919
+margin_top = -0.0672073
+margin_right = -66.2445
+margin_bottom = -17.0672
 rect_scale = Vector2( 2.7, 2.7 )
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
@@ -111,10 +117,14 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="RestartButton"]
-margin_left = 3.0
-margin_top = 1.0
-margin_right = 36.0
-margin_bottom = 9.0
+anchor_left = 0.077
+anchor_top = 0.1
+anchor_right = 0.923
+anchor_bottom = 0.9
+margin_left = -0.00300026
+margin_top = -3.09944e-06
+margin_right = 0.00299835
+margin_bottom = -2.76566e-05
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "restart"
@@ -125,14 +135,14 @@ __meta__ = {
 }
 
 [node name="QuitButton" type="TextureButton" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -50.2045
-margin_top = -49.7272
-margin_right = -11.2045
-margin_bottom = -39.7272
+anchor_left = 0.343
+anchor_top = 0.724
+anchor_right = 0.672
+anchor_bottom = 0.874
+margin_left = 0.0354919
+margin_top = -0.0472107
+margin_right = -66.2445
+margin_bottom = -17.0472
 rect_scale = Vector2( 2.7, 2.7 )
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
@@ -143,10 +153,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="QuitButton"]
-margin_left = 3.0
-margin_top = 1.0
-margin_right = 36.0
-margin_bottom = 9.0
+anchor_left = 0.077
+anchor_top = 0.1
+anchor_right = 0.923
+anchor_bottom = 0.9
+margin_left = -0.00300026
+margin_right = 0.00299835
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "quit"
@@ -157,12 +169,14 @@ __meta__ = {
 }
 
 [node name="MenuLabel" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -45.4205
-margin_top = 21.4429
-margin_right = 43.5795
-margin_bottom = 47.4429
+anchor_left = 0.358
+anchor_top = 0.119
+anchor_right = 0.636
+anchor_bottom = 0.264
+margin_left = 0.0194931
+margin_top = 0.0228996
+margin_right = 0.0594788
+margin_bottom = -0.0770988
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "MENU"
