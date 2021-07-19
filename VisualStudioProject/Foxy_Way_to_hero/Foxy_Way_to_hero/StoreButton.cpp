@@ -32,9 +32,9 @@ void godot::StoreButton::_on_button_pressed()
 
 	if(get_name() == "MeatButton")
 	{
-		if (coins >= 50)
+		if (coins >= 10)
 		{
-			Loader::get_singleton()->set_coins(-50);
+			Loader::get_singleton()->set_coins(-10);
 			prefab = _resource_loader->load("res://Scenes/Items/Meat.tscn");
 			name = "Meat";
 		}
@@ -45,9 +45,9 @@ void godot::StoreButton::_on_button_pressed()
 	}
 	else if(get_name() == "CheeseButton")
 	{
-		if (coins >= 40)
+		if (coins >= 7)
 		{
-			Loader::get_singleton()->set_coins(-40);
+			Loader::get_singleton()->set_coins(-7);
 			prefab = _resource_loader->load("res://Scenes/Items/Cheese.tscn");
 			name = "Cheese";
 		}
@@ -58,9 +58,9 @@ void godot::StoreButton::_on_button_pressed()
 	}
 	else if(get_name() == "FishButton")
 	{
-		if (coins >= 60)
+		if (coins >=12)
 		{
-			Loader::get_singleton()->set_coins(-60);
+			Loader::get_singleton()->set_coins(-12);
 			prefab = _resource_loader->load("res://Scenes/Items/Fish.tscn");
 			name = "Fish";
 		}
