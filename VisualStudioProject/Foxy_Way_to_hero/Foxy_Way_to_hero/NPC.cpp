@@ -94,7 +94,8 @@ void godot::NPC::_on_detection_area_entered(Node* node)
 
 	if (node->get_name() == "Player")
 	{
-		if (GameManager::_get_singleton()->_get_help_npc() && _task == HUNTER)
+		if (GameManager::_get_singleton()->_get_help_npc() && _task == HUNTER 
+			&& !cast_to<TextureRect>(get_child(2)->get_child(0)->get_node("NoAcornsWindow"))->is_visible())
 		{
 			_dialog_window->set_visible(true);
 			Player::_get_singleton()->_set_is_received_task_hunter(true);
