@@ -194,7 +194,7 @@ margin_top = -0.00245762
 margin_right = -0.00737762
 margin_bottom = -0.010458
 custom_fonts/font = SubResource( 2 )
-text = "50"
+text = "10"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -211,7 +211,7 @@ margin_right = 2.03941
 margin_bottom = -0.15077
 rect_pivot_offset = Vector2( 7.02477, 7.13698 )
 custom_fonts/font = SubResource( 2 )
-text = "40"
+text = "7"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -228,7 +228,7 @@ margin_right = -0.0251846
 margin_bottom = 0.00944328
 rect_pivot_offset = Vector2( 7.02477, 7.13698 )
 custom_fonts/font = SubResource( 2 )
-text = "60"
+text = "12"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

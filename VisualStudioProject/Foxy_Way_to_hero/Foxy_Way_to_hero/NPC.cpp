@@ -163,7 +163,7 @@ void godot::NPC::_progress_check()
 
 		auto pos = this->get_global_position();
 
-		for (int i = 0; i < rand() % 40; i++) {
+		for (int i = 0; i < 20 +rand() % 20; i++) {
 			Ref<PackedScene> prefab = _resource_loader->load("res://Scenes/Items/Coin.tscn");
 
 			auto item = cast_to<Area2D>(prefab->instance());
@@ -173,5 +173,10 @@ void godot::NPC::_progress_check()
 			item->set_global_position(pos + Vector2(0, rand() % 10));
 		}
 
+	}
+	if(cast_to<TextureRect>(get_child(2)->get_child(0)->get_node("NoAcornsWindow"))->is_visible())
+	{
+		_question_window->set_visible(true);
+		cast_to<TextureRect>(get_child(2)->get_child(0)->get_node("NoAcornsWindow"))->set_visible(false);
 	}
 }
