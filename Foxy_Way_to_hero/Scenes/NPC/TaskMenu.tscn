@@ -6,7 +6,7 @@
 [ext_resource path="res://Scripts/SelectionButton.gdns" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 8
+size = 7
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -197,10 +197,10 @@ anchor_left = 0.598
 anchor_top = 0.414
 anchor_right = 0.599
 anchor_bottom = 0.414
-margin_left = -50.3567
-margin_top = -6.50223
-margin_right = 50.5153
-margin_bottom = 6.49777
+margin_left = -50.5335
+margin_top = -12.3359
+margin_right = 50.3385
+margin_bottom = 0.664121
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Can you help me?"
@@ -226,9 +226,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -7.73596
-margin_top = -5.76404
+margin_top = -4.17305
 margin_right = 7.26404
-margin_bottom = 6.23596
+margin_bottom = 7.82695
 custom_fonts/font = SubResource( 3 )
 text = "yes"
 align = 1
@@ -252,10 +252,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -7.73596
-margin_top = -5.76404
-margin_right = 7.26404
-margin_bottom = 6.23596
+margin_left = -7.55919
+margin_top = -3.81949
+margin_right = 7.44081
+margin_bottom = 8.18051
 custom_fonts/font = SubResource( 3 )
 text = "no"
 align = 1

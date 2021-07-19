@@ -1,0 +1,137 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/UI/menuBackground.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/AlundraText.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+font_data = ExtResource( 2 )
+
+[node name="Control" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -72.5
+margin_top = -72.5
+margin_right = 72.5
+margin_bottom = 72.5
+texture = ExtResource( 1 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.237
+anchor_right = 0.5
+anchor_bottom = 0.237
+margin_left = -24.0
+margin_top = -7.91
+margin_right = 24.0
+margin_bottom = 8.09
+rect_pivot_offset = Vector2( 24, 7.91 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="."]
+anchor_left = 0.585
+anchor_top = 0.372
+anchor_right = 0.585
+anchor_bottom = 0.372
+margin_left = -18.8424
+margin_top = -9.9637
+margin_right = 57.1576
+margin_bottom = 30.0363
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.45
+anchor_top = 0.368
+anchor_right = 0.45
+anchor_bottom = 0.368
+margin_left = -24.9185
+margin_top = -5.94711
+margin_right = 25.0815
+margin_bottom = 6.05289
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "full sreen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 0.392
+anchor_top = 0.512
+anchor_right = 0.392
+anchor_bottom = 0.512
+margin_left = -17.5265
+margin_top = -5.98161
+margin_right = 17.4735
+margin_bottom = 6.01839
+rect_pivot_offset = Vector2( 111.423, 4.97279 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="."]
+anchor_left = 0.571
+anchor_top = 0.5
+anchor_right = 0.571
+anchor_bottom = 0.5
+margin_left = -36.72
+margin_top = -6.0
+margin_right = 36.28
+margin_bottom = 10.0
+rect_pivot_offset = Vector2( 73, 7.15118 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+anchor_left = 0.393
+anchor_top = 0.665
+anchor_right = 0.393
+anchor_bottom = 0.665
+margin_left = -17.5965
+margin_top = -6.02161
+margin_right = 17.4035
+margin_bottom = 5.97839
+rect_pivot_offset = Vector2( 111.423, 4.97279 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "effects"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider2" type="HSlider" parent="."]
+anchor_left = 0.571
+anchor_top = 0.664
+anchor_right = 0.572
+anchor_bottom = 0.664
+margin_left = -36.1337
+margin_top = -8.02
+margin_right = 36.5464
+margin_bottom = 7.98
+rect_pivot_offset = Vector2( 73, 7.15118 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
