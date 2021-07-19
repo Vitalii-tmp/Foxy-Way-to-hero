@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-07-19T11:55:13.477Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="grhKHAl4-PE4tpXSfZbB" version="14.9.0" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-07-19T12:20:41.262Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" etag="do_c5oPuGArCvPGt0YZV" version="14.9.0" type="github" pages="3">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="4211" dy="3303" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3519" dy="2917" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -1452,6 +1452,135 @@
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="-820" y="-300" as="sourcePoint" />
             <mxPoint x="-660" y="-300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rZE4yMMH9xMfXooVE0I6-0" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.016;entryY=0.746;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="-8VN0zfKQkm0l35zNo2X-1" source="qX5uQ_oKlgKAKx4QuLBi-7" target="XG_LJ8N6QOOyCR3qO4Fz-7">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-10" y="-657" as="sourcePoint" />
+            <mxPoint x="-240" y="-511" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="LYbjXacAc3xDtfz8o2bZ" name="Player and Enemies">
+    <mxGraphModel dx="3730" dy="3496" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-0" />
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-1" parent="O3Le30GiIJVLBsp4Hdg0-0" />
+        <mxCell id="JWV5WszP7UY7g_IixZO_-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="O3Le30GiIJVLBsp4Hdg0-1" source="O3Le30GiIJVLBsp4Hdg0-3" target="O3Le30GiIJVLBsp4Hdg0-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-3" value="BatAI" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-1">
+          <mxGeometry x="-810" y="-1380" width="250" height="560" as="geometry">
+            <mxRectangle x="-800" y="-1380" width="60" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-4" value="- _hp : float&#xa;- _damage : float&#xa;- _speed : float&#xa;- _is_alive : bool&#xa;- _current_state : int&#xa;- _knockback_vector : Vector2&#xa;- _move_vector : Vector2&#xa;- _start_position :Vector2&#xa;- _die_effect :AnimatedSprite* = nullptr&#xa;- _hit_effect : AnimatedSprite* = nullptr&#xa;- _bat_sprite : AnimatedSprite* = nullptr&#xa;- _player : Player*&#xa;- _bat_hit_area : Area2D* = nullptr&#xa;- _resource_loader : ResourceLoader*" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-3">
+          <mxGeometry y="26" width="250" height="204" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-5" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-3">
+          <mxGeometry y="230" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-6" value="&lt;&lt;constructor&gt;&gt; + BatAI()&#xa;&lt;&lt;destructor&gt;&gt; + ~BatAI()&#xa;+ _register_method() : static void&#xa;+ _init() : void&#xa;+ _physics_process(delta : float) : void&#xa;+ _ready() : void&#xa;+ _on_hurt_area_area_entered(_other_area &#xa;: Area2D*) : void&#xa;+ _on_player_detection_area_body_entered&#xa;(_other_body : Node*) : void&#xa;+ _on_player_detection_area_body_exited&#xa;(_other_body : Node*) : void&#xa;+ _on_die_effect_animation_finished() : void&#xa;+ _on_hit_effect_animation_finished() : void&#xa;+ _change_state_depend_on_player_position&#xa;() : void&#xa;+ _idle_state() : void&#xa;+ _wander_state() : void&#xa;+ _chase_state() : void&#xa;+ _get_damage() : float&#xa;+ _spawn_coin() : void&#xa;+ _spawn_wing() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-3">
+          <mxGeometry y="238" width="250" height="322" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-7" value="&quot;enumeration&quot;&#xa;state" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-1">
+          <mxGeometry x="-755" y="-420" width="140" height="90" as="geometry">
+            <mxRectangle x="-1830" y="-814" width="110" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-8" value="IDLE&#xa;WANDER&#xa;CHASE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-7">
+          <mxGeometry y="40" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="JWV5WszP7UY7g_IixZO_-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.999;exitY=0.765;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O3Le30GiIJVLBsp4Hdg0-1" source="O3Le30GiIJVLBsp4Hdg0-12" target="O3Le30GiIJVLBsp4Hdg0-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-9" value="BoarAI" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-1">
+          <mxGeometry x="-1070" y="-1380" width="230" height="890" as="geometry">
+            <mxRectangle x="-1040" y="-1310" width="70" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-10" value="- _current_state : int&#xa;- _start_time : int&#xa;- _hp : float&#xa;- _run_speed : float&#xa;- _walk_speed : float&#xa;- _damage : float&#xa;- _is_alive : bool&#xa;- _agressive : bool&#xa;- _can_move : bool&#xa;- _is_stoping : bool&#xa;- _move_vector : Vector2&#xa;- _prew_position : Vector2&#xa;- _current_position : Vector2&#xa;- _knockback_vector : Vector2&#xa;- _look_vector : Vector2&#xa;- _player : Player* = nullptr&#xa;- _hit_effect : AnimatedSprite* = nullptr&#xa;- _environment : Node2D* = nullptr&#xa;- _entered_bodies : Array&#xa;- _timer : Timer*&#xa;- _animation_player : AnimationPlayer *  &#xa;= nullptr&#xa;- _animation_tree : AnimationTree* &#xa;= nullptr&#xa;- _animation_state : &#xa;AnimationNodeStateMachinePlayback* &#xa;= nullptr&#xa;- _timer_start_time : &#xa;RandomNumberGenerator* = nullptr&#xa;- _resource_loader : ResourceLoader*" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-9">
+          <mxGeometry y="26" width="230" height="434" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-9">
+          <mxGeometry y="460" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-12" value="&lt;&lt;constructor&gt;&gt; + BoarAI()&#xa;&lt;&lt;destructor&gt;&gt; + ~BoarAI()&#xa;+ _register_methods : static void&#xa;+ _init() : void&#xa;+ _ready() : void&#xa;+ _physics_process(delta : float) : void&#xa;+ _walk_state() : void&#xa;+ _wander_state() : void&#xa;+ _chase_state() : void&#xa;+ _walk() : void&#xa;+ _change_state() : void&#xa;+ _on_detection_area_body_entered&#xa;(_other_body : Node2D*) : void&#xa;+ _on_detection_area_body_exited&#xa;(_other_body : Node2D*) : void&#xa;+ _on_hurt_area_area_entered&#xa;(_other_area : Area2D*) : void&#xa;+ _on_boar_hit_area_area_entered&#xa;(_other_area : Area2D*) : void&#xa;+ _on_hit_effect_animation_finished() &#xa;: void&#xa;+ _set_move_vector() : void&#xa;+ _stopping() : void&#xa;+ _change_to_can_move() : void&#xa;+ _get_damage() : float&#xa;+ _get_agressive() : bool&#xa;+ _get_move_vector() : Vector2&#xa;+ _spawn_coin() : void&#xa;+ _spawn_fur() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-9">
+          <mxGeometry y="468" width="230" height="422" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="O3Le30GiIJVLBsp4Hdg0-1" source="O3Le30GiIJVLBsp4Hdg0-16" target="O3Le30GiIJVLBsp4Hdg0-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-1530" y="-1162" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-15" value="Player" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-1">
+          <mxGeometry x="-1420" y="-1380" width="320" height="940" as="geometry">
+            <mxRectangle x="-1660" y="-910" width="70" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-16" value="+ _backpack : Backpack* = nullptr&#xa;- _instance : static inline Player* = nullptr&#xa;- _motion : Vector2D&#xa;- _input_vector : Vector2D&#xa;- _knockback_vector : Vector2D&#xa;- _animation : AnimationPlayer* = nullptr&#xa;- _animation_tree : AnimationTree* = nullptr&#xa;- _hit_effect : Area2D* = nullptr&#xa;- _death_timer : Timer* = nullptr&#xa;- _hurt_timer : Timer* = nullptr&#xa;- _cool_down_timer : Timer* = nullptr&#xa;- _is_alive : bool&#xa;- _invisible : bool&#xa;- _can_fire : bool&#xa;- _is_recieved_task_hunter : bool = false&#xa;- _speed : float&#xa;- _hp : float&#xa;- _damage : float&#xa;- _hunger : float&#xa;- _current_state : int&#xa;- _invisibility_cooldown : int&#xa;- _speed_cooldown : int&#xa;- _count_killed_boars : int&#xa;- _bullet : Ref&lt;PackedScene&gt;*&#xa;- _resource_loader : ResourceLoader*&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-15">
+          <mxGeometry y="26" width="320" height="384" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-15">
+          <mxGeometry y="410" width="320" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-18" value="+ _get_singleton() : static Player*&#xa;+ _register_methods() : static void&#xa;+ _init() : void&#xa;+ _ready() : void&#xa;+ _physics_process(delta : float) : void&#xa;+ _move_state() : void&#xa;+ _short_attack_state() : void&#xa;+ _long_attack_state() : void&#xa;+ _roll_state() : void&#xa;+ _short_attack_animation_is_finished() : void&#xa;+ _long_attack_animation_is_finished() : void&#xa;+ _roll_animation_is_finished() : void&#xa;+ _change_state_depend_on_behavior() : void&#xa;+ _on_hurt_area_area_entered(_other_area :&#xa; Area2D*) : void&#xa;+ _on_hit_effect_animation_finished() : void&#xa;+ _fire() : void&#xa;+ _death() : void&#xa;+ _get_input_vector() : Vector2&#xa;+ _get_damage() : float&#xa;+ _get_current_state() : int&#xa;+ _get_is_alive() : bool&#xa;+ _get_hp() : float&#xa;+ _get_hunger() : float&#xa;+ _set_is_recieved_task_hunter(is_recieved_task_hunter &#xa;: bool) : void&#xa;+ _set_hp(_new_value : float) : void&#xa;+ _set_plus_killed_boars(plus : int) : void&#xa;+ _set_killed_boars(killed_boars : int) : void&#xa;+ _on_escape_pressed() : void&#xa;+ _reset_player_speed_after_snake() : void&#xa;+ _reset_player_visibility() : void&#xa;+ _reset_player_speed_after_item() : void &#xa;+ _set_player_speed(speed : float) : void &#xa;+ _set_to_invisible() : void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-15">
+          <mxGeometry y="418" width="320" height="522" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-19" value="&quot;enumeration&quot;&#xa;state" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-1">
+          <mxGeometry x="-1600" y="-690" width="140" height="110" as="geometry">
+            <mxRectangle x="-1590" y="-837" width="110" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-20" value="MOVE&#xa;ROLL&#xa;SHORT_ATTACK&#xa;LONG_ATTACK&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-19">
+          <mxGeometry y="40" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="JWV5WszP7UY7g_IixZO_-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.161;exitY=1.001;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="O3Le30GiIJVLBsp4Hdg0-1" source="O3Le30GiIJVLBsp4Hdg0-25" target="O3Le30GiIJVLBsp4Hdg0-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-22" value="SnakeAI" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-1">
+          <mxGeometry x="-530" y="-1380" width="300" height="750" as="geometry">
+            <mxRectangle x="-530" y="-1380" width="80" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-23" value="- _hp : float&#xa;- _damage : float&#xa;- _speed : float&#xa;- _is_alive : bool&#xa;- _current_state : int&#xa;- _knockback_vector : Vector2&#xa;- _move_vector : Vector2&#xa;- _start_position :Vector2&#xa;- _die_effect :AnimatedSprite* = nullptr&#xa;- _hit_effect : AnimatedSprite* = nullptr&#xa;- _bat_sprite : AnimatedSprite* = nullptr&#xa;- _player : Player*&#xa;- _resource_loader : ResourceLoader*&#xa;- _start_time : int&#xa;- _is_attaking : bool&#xa;- _look_vector : Vector2&#xa;- _timer : Timer* = nullptr&#xa;- _timer_start_time &#xa;: RandomNumberGenerator* = nullptr&#xa;+ _animation_player : AnimationPlayer* &#xa;= nullptr&#xa;+ _animation_tree : AnimationTree * &#xa;= nullptr&#xa;+ _animation_state &#xa;: AnimationNodeStateMachinePlayback* &#xa;= nullptr&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-22">
+          <mxGeometry y="30" width="300" height="384" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-24" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-22">
+          <mxGeometry y="414" width="300" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-25" value="+ _register_method() : static void&#xa;+ _init() : void&#xa;+ _physics_process(delta : float) : void&#xa;+ _ready() : void&#xa;+ _on_hurt_area_area_entered(_other_area &#xa;: Area2D*) : void&#xa;+ _on_detection_area_body_entered&#xa;(_other_body : Node*) : void&#xa;+ _on_detection_area_body_exited&#xa;(_other_body : Node*) : void&#xa;+ _on_hit_effect_animation_finished() : void&#xa;+ _change_state_depend_on_player_position&#xa;() : void&#xa;+ _idle_state() : void&#xa;+ _wander_state() : void&#xa;+ _chase_state() : void&#xa;+ _get_damage() : float&#xa;+ _on_attack_animation_finished() : void&#xa;+ _walk() : void&#xa;+ _change_move_vector() : void&#xa;+ _spawn_coin() : void&#xa;+ _spawn_spike() : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="O3Le30GiIJVLBsp4Hdg0-22">
+          <mxGeometry y="422" width="300" height="328" as="geometry" />
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-26" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="O3Le30GiIJVLBsp4Hdg0-1" source="O3Le30GiIJVLBsp4Hdg0-15" target="O3Le30GiIJVLBsp4Hdg0-9">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-1910" y="-840" as="sourcePoint" />
+            <mxPoint x="-2070" y="-840" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1100" y="-1450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-27" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="O3Le30GiIJVLBsp4Hdg0-1" source="O3Le30GiIJVLBsp4Hdg0-15" target="O3Le30GiIJVLBsp4Hdg0-3">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-1495" y="-920" as="sourcePoint" />
+            <mxPoint x="-1545" y="-1014" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1090" y="-1480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O3Le30GiIJVLBsp4Hdg0-28" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="O3Le30GiIJVLBsp4Hdg0-1" source="O3Le30GiIJVLBsp4Hdg0-15" target="O3Le30GiIJVLBsp4Hdg0-22">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-1485" y="-910" as="sourcePoint" />
+            <mxPoint x="-1535" y="-1004" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1100" y="-1510" />
+            </Array>
           </mxGeometry>
         </mxCell>
       </root>
